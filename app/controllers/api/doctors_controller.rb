@@ -7,12 +7,11 @@ module Api
     end
 
     def show
-      doctor = Doctor.find_by(doc_id: params['id'])
-      render json: doctor, status: 200
+      d = Doctor.find_by(doc_id: params['id'])
+      render json: d, status: 200
     end
 
     private
-
       def default_location
         [46.950745, 7.440618]
       end

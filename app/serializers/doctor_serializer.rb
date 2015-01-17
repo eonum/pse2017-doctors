@@ -4,4 +4,8 @@ class DoctorSerializer < ActiveModel::Serializer
   def id
     object.doc_id
   end
+
+  def distance
+    object.geo_near_distance
+  end
 end

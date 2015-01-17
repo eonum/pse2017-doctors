@@ -1,6 +1,6 @@
 development:
   sessions:
     default:
-      database: "mongoid_test_development"
+      database: orange-proton
       hosts:
         - localhost:27017

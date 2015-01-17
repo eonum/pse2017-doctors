@@ -2,6 +2,8 @@ class Doctor
   include Mongoid::Document
   include Geocoder::Model::Mongoid
 
+  has_and_belongs_to_many :specialities, inverse_of: nil
+
   field :doc_id, type: Integer
   field :name
   field :title

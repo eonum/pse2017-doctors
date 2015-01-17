@@ -83,4 +83,17 @@ namespace :db do
       end
     end
   end
+
+  task seed_doctor_specs: :environment do
+    db = Moped::Session.new(['127.0.0.1:27017'])
+    db.use 'orange-proton'
+
+    Doctor.each do |d|
+      fields = d.docfields
+      fmhs = db[:docfield_to_fmh].find({ docfield: { "$in" => fields } }).to_a
+      fs_codes = fmhs.map { |f| f['fs_code']}
+      d.speciality_ids = fs_codes
+      d.save
+    end
+  end
 end
