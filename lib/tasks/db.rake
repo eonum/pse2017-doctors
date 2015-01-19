@@ -1,3 +1,5 @@
+require 'csv'
+
 namespace :db do
   desc 'Extract Hospitals from Doctors'
   task seed_hospitals: :environment do
@@ -95,5 +97,45 @@ namespace :db do
       d.speciality_ids = fs_codes
       d.save
     end
+  end
+
+  namespace :seed do
+
+    desc 'Seed ICD Codes'
+    task icd: :environment do
+      file = Rails.root.join('data','icd', 'icdgm2014.csv')
+      count = `wc -l #{file}`.to_i
+
+      CSV.foreach file, headers: true, col_sep: ";"  do |row|
+        puts row[0]
+      end
+    end
+
+    desc 'Seed CHOP Codes'
+    task chop: :environment do
+      file =  Rails.root.join('data','chop', 'chop2015.csv')
+      count = `wc -l #{file}`.to_i
+
+      CSV.foreach file, headers: true, col_sep: "|" do |row|
+        puts row[0]
+      end
+    end
+
+    desc 'Seed MDC Codes'
+    task mdc: :environment do
+      Mdc.delete_all
+      #version;code;text_de;text_it;text_fr;prefix
+
+      file = Rails.root.join('data','mdc', 'mdc40.csv')
+      count = `wc -l #{file}`.to_i
+
+      CSV.foreach file, headers: true, col_sep: ";" do |row|
+        mdc = Mdc.create(code: row[1], version: row[0], prefix: row[5])
+        mdc.text_translations = { de: row[2], it: row[3], fr: row[4] }
+        mdc.save
+      end
+
+    end
+
   end
 end

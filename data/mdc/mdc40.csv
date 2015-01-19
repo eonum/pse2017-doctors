@@ -1,0 +1,28 @@
+version;code;text_de;text_it;text_fr;prefix
+V4.0;Pre;Prä-MDC;Pre-MDC;Pré-MDC;A
+V4.0;01;Krankheiten und Störungen des Nervensystems;Malattie e disturbi del sistema nervoso;Maladies et troubles du système nerveux;B
+V4.0;02;Krankheiten und Störungen des Auges;Malattie e disturbi dell'occhio;Maladies et troubles de l´oeil;C
+V4.0;03;Krankheiten und Störungen des Ohres, der Nase, des Mundes und des Halses;Malattie e disturbi dell'orecchio, del naso, della bocca e della gola;Maladies et troubles de l´oreille, du nez, de la bouche et de la gorge;D
+V4.0;04;Krankheiten und Störungen der Atmungsorgane;Malattie e disturbi dell'apparato respiratorio;Maladies et troubles des organes respiratoires;E
+V4.0;05;Krankheiten und Störungen des Kreislaufsystems;Malattie e disturbi del sistema cardiovascolare;Maladies et troubles de l’appareil circulatoire;F
+V4.0;06;Krankheiten und Störungen der Verdauungsorgane;Malattie e disturbi dell'apparato digerente;Maladies et troubles des organes digestifs;G
+V4.0;07;Krankheiten und Störungen an hepatobiliärem System und Pankreas;Malattie e disturbi dell'apparato epatobiliare e del pancreas;Maladies et troubles du système hépatobiliaire et du pancréas;H
+V4.0;08;Krankheiten und Störungen an Muskel-Skelett-System und Bindegewebe;Malattie e disturbi del sistema muscoloscheletrico e tessuto connettivo;Maladies et troubles de l’appareil musculosquelettique et du tissu conjonctif;I
+V4.0;09;Krankheiten und Störungen an Haut, Unterhaut und Mamma;Malattie e disturbi della pelle, del tessuto sottocutaneo e della mammella;Maladies et troubles de la peau, du tissu sous-cutané et de la glande mammaire;J
+V4.0;10;Endokrine, Ernährungs- und Stoffwechselkrankheiten;Malattie endocrine, nutrizionali e metaboliche;Maladies endocriniennes, nutritionnelles et métaboliques;K
+V4.0;11;Krankheiten und Störungen der Harnorgane;Malattie e disturbi dell'apparato urinario;Maladies et troubles des organes urinaires;L
+V4.0;12;Krankheiten und Störungen der männlichen Geschlechtsorgane;Malattie e disturbi dell'apparato genitale maschile;Maladies et troubles des organes génitaux masculins;M
+V4.0;13;Krankheiten und Störungen der weiblichen Geschlechtsorgane;Malattie e disturbi dell'apparato genitale femminile;Maladies et troubles des organes génitaux féminins;N
+V4.0;15;Neugeborene;Neonati;Nouveau-nés;P
+V4.0;16;Krankheiten des Blutes, der blutbildenden Organe und des Immunsystems;Malattie del sangue, degli organi emopoietici e del sistema immunitario;Affections du sang, des organes hématopoïétiques et du système immunitaire;Q
+V4.0;17;Hämatologische und solide Neubildungen;Neoplasie ematologiche e solide;Néoformations hématologiques et solides;R
+V4.0;18A;HIV;HIV;VIH;S
+V4.0;18B;Infektiöse und parasitäre Krankheiten;Malattie infettive e parassitarie;Maladies infectieuses et parasitaires;T
+V4.0;19;Psychische Krankheiten und Störungen;Malattie e disturbi psichici;Maladies et troubles psychiques;U
+V4.0;20;Alkohol- und Drogengebrauch und alkohol- und drogeninduzierte psychische Störungen;Uso di alcool e droghe e disturbi psichici indotti da alcool e droghe;Usage d’alcool et de drogues et troubles psychiques induits par l´alcool et les drogues;V
+V4.0;21A;Polytrauma;Politrauma;Traumatisme multiple;W
+V4.0;21B;Verletzungen, Vergiftungen und toxische Wirkungen von Drogen und Medikamenten;Traumatismi, avvelenamenti ed effetti tossici di droghe e farmaci;Blessures, empoisonnements et effets toxiques dus aux drogues et médicaments;X
+V4.0;22;Verbrennungen;Ustioni;Brûlures;Y
+V4.0;23;Faktoren, die den Gesundheitszustand beeinflussen, und andere Inanspruchnahme des Gesundheitswesens;Fattori che influenzano lo stato di salute e altro ricorso a servizi sanitari;Facteurs influant sur l’état de santé et autre mise à contribution de la santé publique;Z
+V4.0;14;Schwangerschaft, Geburt und Wochenbett;Gravidanza, parto e puerperio;Grossesse, naissance et suites de couches;O
+V4.0;99;Fehler-DRGs und sonstige DRGs;DRG errati e altri DRG;DRG d´erreur et DRG autres;9
