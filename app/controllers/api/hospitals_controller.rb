@@ -2,13 +2,11 @@ module Api
   class HospitalsController < ApplicationController
 
     def index
-      hospitals = Hospital.near(default_location).order_by(:doc_id.asc).limit(10)
-      render json: hospitals, status: 200
+      @hospitals = Hospital.near(default_location).order_by(:doc_id.asc).limit(10)
     end
 
     def show
-      h = Hospital.find_by(doc_id: params['id'])
-      render json: h, status: 200
+      @hospital = Hospital.find_by(doc_id: params['id'])
     end
 
     private

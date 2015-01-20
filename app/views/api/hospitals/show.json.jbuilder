@@ -1,0 +1,1 @@
+json.extract! @hospital, :id
