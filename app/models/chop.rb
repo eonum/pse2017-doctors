@@ -8,6 +8,7 @@ class Chop
   field :version
   field :synonyms, localize: true, type: Array
   field :exclusiva, localize: true, type: Array
-  field :inclusiva, localice: true, type: Array
+  field :inclusiva, localize: true, type: Array
+  field :drgs, type: Array
 
 end

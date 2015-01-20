@@ -1,12 +1,13 @@
 require 'csv'
+require_relative 'seed_helpers.rb'
 
 namespace :db do
   desc 'Extract Hospitals from Doctors'
   task seed_hospitals: :environment do
-
+    Doctor.delete_all
     puts "Found #{Doctor.hospital.count} hospitals in doctors"
 
-    Doctor.hospital.each do |hospital|
+    Doctor.with(database: 'orange-proton').hospital.each do |hospital|
       Hospital.with(database: 'mongoid_test_development').create do |new_hospital|
         new_hospital.doc_id = hospital.doc_id
         new_hospital.name = hospital.name
@@ -103,28 +104,80 @@ namespace :db do
 
     desc 'Seed ICD Codes'
     task icd: :environment do
+      # 0code;text_de;text_fr;text_it;text_en;5version;inclusions_de;inclusions_fr;inclusions_it;exclusions_de;10exclusions_fr;
+      # 11exclusions_it;synonyms_de;synonyms_fr;synonyms_it;15subclasses;16most_relevant_drgs
+
       file = Rails.root.join('data','icd', 'icdgm2014.csv')
       count = `wc -l #{file}`.to_i
 
-      CSV.foreach file, headers: true, col_sep: ";"  do |row|
-        puts row[0]
+      pg = ProgressBar.create(total: count)
+
+      CSV.foreach file, headers: true, col_sep: ";" do |row|
+        code = row[0]
+        version = row[5]
+        drgs = parse_psql_array(row[16])
+        subclasses = parse_psql_array(row[15])
+
+        icd = Icd.create(code: code, version: version, drgs: drgs, subclasses: subclasses)
+        icd.text_translations = { de: row[1], fr: row[2], it: row[3], en: row[4] }
+        icd.inclusiva_translations = {
+            de: parse_psql_array(row[6]),
+            fr: parse_psql_array(row[7]),
+            it: parse_psql_array(row[8])
+        }
+        icd.exclusiva_translations = {
+            de: parse_psql_array(row[9]),
+            fr: parse_psql_array(row[10]),
+            it: parse_psql_array(row[11])
+        }
+        icd.synonyms_translations = {
+            de: parse_psql_array(row[12]),
+            fr: parse_psql_array(row[13]),
+            it: parse_psql_array(row[14])
+        }
+        icd.save
+
+        pg.increment
       end
     end
 
     desc 'Seed CHOP Codes'
     task chop: :environment do
+      Chop.delete_all
+      # 0code|text_fr|text_de|text_it|version|5inclusions_de|inclusions_fr|inclusions_it|exclusions_de|exclusions_fr|10exclusions_it|
+      # 11descriptions_de|descriptions_fr|descriptions_it|14most_relevant_drgs
       file =  Rails.root.join('data','chop', 'chop2015.csv')
       count = `wc -l #{file}`.to_i
 
+      pg = ProgressBar.create(total: count)
+
       CSV.foreach file, headers: true, col_sep: "|" do |row|
-        puts row[0]
+        code = row[0]
+        version = row[4]
+        drgs = parse_psql_array(row[14])
+
+        chop = Chop.create(code: code, version: version, drgs: drgs)
+        chop.text_translations = { de: row[2], fr: row[1], it: row[3] }
+        chop.inclusiva_translations = {
+            de: parse_psql_array(row[5]),
+            fr: parse_psql_array(row[6]),
+            it: parse_psql_array(row[7])
+        }
+        chop.exclusiva_translations = {
+            de: parse_psql_array(row[8]),
+            fr: parse_psql_array(row[9]),
+            it: parse_psql_array(row[10])
+        }
+        chop.save
+
+        pg.increment
       end
     end
 
     desc 'Seed MDC Codes'
     task mdc: :environment do
       Mdc.delete_all
-      #version;code;text_de;text_it;text_fr;prefix
+      # version;code;text_de;text_it;text_fr;prefix
 
       file = Rails.root.join('data','mdc', 'mdc40.csv')
       count = `wc -l #{file}`.to_i
@@ -134,8 +187,8 @@ namespace :db do
         mdc.text_translations = { de: row[2], it: row[3], fr: row[4] }
         mdc.save
       end
-
     end
 
   end
+
 end

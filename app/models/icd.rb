@@ -8,5 +8,7 @@ class Icd
   field :inclusiva, type: Array, localize: true
   field :exclusiva, type: Array, localize: true
   field :synonyms, type: Array, localize: true
+  field :subclasses, type: Array
+  field :drgs, type: Array
 
 end
