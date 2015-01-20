@@ -2,6 +2,8 @@ class Hospital
   include Mongoid::Document
   include Geocoder::Model::Mongoid
 
+  embeds_many :ratings
+
   field :doc_id, type: Integer
   field :name
   field :title
@@ -14,5 +16,15 @@ class Hospital
 
   geocoded_by :address, coordinates: :location
   reverse_geocoded_by :location
+
   scope :in_canton, ->(canton) { where(canton: canton) }
+end
+
+class Rating
+  include Mongoid::Document
+
+  embedded_in :hospial
+
+  field :code
+  field :level, type: Integer
 end

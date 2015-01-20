@@ -189,6 +189,25 @@ namespace :db do
       end
     end
 
+    desc 'Seed Reputations'
+    task reputation: :environment do
+
+      Hospital.each do |h|
+        h.ratings.delete_all
+        h.save
+      end
+
+      file = Rails.root.join('data','relations', 'reputation_icd.csv')
+      count = `wc -l #{file}`.to_i
+
+      CSV.foreach file, col_sep: ";" do |row|
+        h = Hospital.where(doc_id: row[0].to_i).first
+        h.ratings.build(code: row[1], level: row[2])
+        h.save
+      end
+
+    end
+
   end
 
 end
