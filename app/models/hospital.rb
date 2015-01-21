@@ -14,6 +14,8 @@ class Hospital
   field :canton
   field :location, type: Array, default: [7.43, 46.96] # Close to Berne
 
+  index({ doc_id: 1 }, { unique: true })
+
   geocoded_by :address, coordinates: :location
   reverse_geocoded_by :location
 

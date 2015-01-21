@@ -11,4 +11,6 @@ class Icd
   field :subclasses, type: Array
   field :drgs, type: Array
 
+  index({ code: 1, version: 1 }, { unique: true })
+
 end

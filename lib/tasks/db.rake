@@ -144,8 +144,8 @@ namespace :db do
     desc 'Seed CHOP Codes'
     task chop: :environment do
       Chop.delete_all
-      # 0code|text_fr|text_de|text_it|version|5inclusions_de|inclusions_fr|inclusions_it|exclusions_de|exclusions_fr|10exclusions_it|
-      # 11descriptions_de|descriptions_fr|descriptions_it|14most_relevant_drgs
+      #0"code"|"code_short"|"text_de"|"text_fr"|"text_it"|5"version"|"inclusions_de"|"inclusions_fr"|"inclusions_it"|
+      # "exclusions_de"|10"exclusions_fr"|"exclusions_it"|"descriptions_de"|"descriptions_fr"|"descriptions_it"|"most_relevant_drgs"
       file =  Rails.root.join('data','chop', 'chop2015.csv')
       count = `wc -l #{file}`.to_i
 
@@ -153,20 +153,21 @@ namespace :db do
 
       CSV.foreach file, headers: true, col_sep: "|" do |row|
         code = row[0]
-        version = row[4]
-        drgs = parse_psql_array(row[14])
+        code_short = row[1]
+        version = row[5]
+        drgs = parse_psql_array(row[15])
 
-        chop = Chop.create(code: code, version: version, drgs: drgs)
-        chop.text_translations = { de: row[2], fr: row[1], it: row[3] }
+        chop = Chop.create(code: code, code_short: code_short, version: version, drgs: drgs)
+        chop.text_translations = { de: row[3], fr: row[2], it: row[4] }
         chop.inclusiva_translations = {
-            de: parse_psql_array(row[5]),
-            fr: parse_psql_array(row[6]),
-            it: parse_psql_array(row[7])
+            de: parse_psql_array(row[6]),
+            fr: parse_psql_array(row[7]),
+            it: parse_psql_array(row[8])
         }
         chop.exclusiva_translations = {
-            de: parse_psql_array(row[8]),
-            fr: parse_psql_array(row[9]),
-            it: parse_psql_array(row[10])
+            de: parse_psql_array(row[9]),
+            fr: parse_psql_array(row[10]),
+            it: parse_psql_array(row[11])
         }
         chop.save
 

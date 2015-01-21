@@ -6,4 +6,6 @@ class Mdc
   field :text, localize: true
   field :version
   field :prefix
+
+  index({ code: 1, version: 1 }, { unique: true })
 end

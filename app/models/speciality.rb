@@ -6,4 +6,6 @@ class Speciality
   field :code, type: Integer
   field :name, localize: true
   field :fallbacks, type: Array, default: []
+
+  index({ code: 1 }, { unique: true })
 end
