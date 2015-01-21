@@ -13,4 +13,8 @@ class Icd
 
   index({ code: 1, version: 1 }, { unique: true })
 
+  def to_param
+    code
+  end
+
 end

@@ -20,6 +20,10 @@ class Hospital
   reverse_geocoded_by :location
 
   scope :in_canton, ->(canton) { where(canton: canton) }
+
+  def to_param
+    doc_id
+  end
 end
 
 class Rating

@@ -26,4 +26,8 @@ class Doctor
   def nametitle
     "#{title}-#{name}"
   end
+
+  def to_param
+    doc_id
+  end
 end

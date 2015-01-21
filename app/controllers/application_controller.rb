@@ -5,7 +5,12 @@ class ApplicationController < ActionController::Base
 
   rescue_from Mongoid::Errors::DocumentNotFound, with: :error_method
 
+  before_action :set_language
+
   private
+    def set_language
+      I18n.locale = :de
+    end
 
     def error_method
       render json: 'No such entry has been found!', status: 404

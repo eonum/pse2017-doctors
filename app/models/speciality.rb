@@ -8,4 +8,8 @@ class Speciality
   field :fallbacks, type: Array, default: []
 
   index({ code: 1 }, { unique: true })
+
+  def to_param
+    code
+  end
 end

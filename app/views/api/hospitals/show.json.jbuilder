@@ -1,1 +1,1 @@
-json.extract! @hospital, :id
+json.extract! @hospital, :doc_id, :name, :title, :address

@@ -1,0 +1,1 @@
+json.extract! @speciality, :code, :name, :fallbacks
