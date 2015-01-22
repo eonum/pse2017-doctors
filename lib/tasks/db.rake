@@ -70,21 +70,60 @@ namespace :db do
     end
   end
 
+  'Seed FMH Specialties with fallbacks and compounds'
   task seed_specialities: :environment do
     Speciality.delete_all
 
-    db = Moped::Session.new(['127.0.0.1:27017'])
-    db.use 'orange-proton'
+    file = Rails.root.join('data','fmh','fmh_names.csv')
+    count = `wc -l #{file}`.to_i
 
-    db[:fmh_names].find.to_a.each do |doc|
-      Speciality.create do |s|
-        s.code = doc[:code]
-        %i(de fr it en).each do |lang|
-          I18n.locale = lang
-          s.name = doc[lang]
-        end
+    pg = ProgressBar.create(total: count)
+
+    # Seed names
+    CSV.foreach file, col_sep: ";" do |row|
+      code = row[0].to_i
+
+      Speciality.create(code: code) do |fmh|
+        fmh.name_translations = { de: row[1], en: row[2], fr: row[3], it: row[4] }
       end
+
+      pg.increment
     end
+
+    # Seed fallbacks
+    fallbacks = {}
+    CSV.foreach Rails.root.join('data', 'fmh', 'fmh_fallbacks.csv'), col_sep: ';' do |row|
+      code = row[0].to_i
+      fallback = row[1].to_i
+      fallbacks[code] = fallback
+    end
+
+    fallbacks.each_key do |k|
+      fmh_fallbacks = []
+      code = k
+      while not fallbacks[code].nil?
+        code = fallbacks[code]
+        fmh_fallbacks << code
+      end
+
+      # Add Allgemeinmedizin
+      fmh_fallbacks << 5 unless fmh_fallbacks.include? 5
+
+      fmh = Speciality.find_by(code: k)
+      fmh.fallbacks = fmh_fallbacks
+      fmh.save
+    end
+
+    # Seed compounds
+    CSV.foreach Rails.root.join('data', 'fmh', 'fmh_compounds.csv'), col_sep: ';' do |row|
+      code = row[0].to_i
+      compounds = [row[1].to_i, row[2].to_i]
+
+      fmh = Speciality.find_by(code: code)
+      fmh.compounds = compounds
+      fmh.save
+    end
+
   end
 
   task seed_doctor_specs: :environment do
@@ -183,10 +222,14 @@ namespace :db do
       file = Rails.root.join('data','mdc', 'mdc40.csv')
       count = `wc -l #{file}`.to_i
 
+      pg = ProgressBar.create(total: count)
+
       CSV.foreach file, headers: true, col_sep: ";" do |row|
         mdc = Mdc.create(code: row[1], version: row[0], prefix: row[5])
         mdc.text_translations = { de: row[2], it: row[3], fr: row[4] }
         mdc.save
+
+        pg.increment
       end
     end
 
@@ -198,13 +241,17 @@ namespace :db do
         h.save
       end
 
-      file = Rails.root.join('data','relations', 'reputation_icd.csv')
+      file = Rails.root.join('data','medical', 'reputation_icd.csv')
       count = `wc -l #{file}`.to_i
+
+      pg = ProgressBar.create(total: count)
 
       CSV.foreach file, col_sep: ";" do |row|
         h = Hospital.where(doc_id: row[0].to_i).first
         h.ratings.build(code: row[1], level: row[2])
         h.save
+
+        pg.increment
       end
 
     end
