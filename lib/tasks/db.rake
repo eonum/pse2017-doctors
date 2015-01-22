@@ -2,73 +2,73 @@ require 'csv'
 require_relative 'seed_helpers.rb'
 
 namespace :db do
-  desc 'Extract Hospitals from Doctors'
-  task seed_hospitals: :environment do
-    Doctor.delete_all
-    puts "Found #{Doctor.hospital.count} hospitals in doctors"
-
-    Doctor.with(database: 'orange-proton').hospital.each do |hospital|
-      Hospital.with(database: 'mongoid_test_development').create do |new_hospital|
-        new_hospital.doc_id = hospital.doc_id
-        new_hospital.name = hospital.name
-        new_hospital.title = hospital.title
-        new_hospital.address = hospital.address
-        new_hospital.phone1 = hospital.phone1
-        new_hospital.phone2 = hospital.phone2
-        new_hospital.email = hospital.email
-        new_hospital.canton = hospital.canton
-        new_hospital.lat = hospital.lat
-        new_hospital.long = hospital.long
-      end
-
-      hospital.destroy
-    end
-  end
 
   desc 'Extract Hospitals from Doctors'
   task seed_doctors: :environment do
     Doctor.delete_all
+    Hospital.delete_all
+    Doctor.remove_indexes
 
-    puts "Found #{Doctor.with(database: 'orange-proton').count} doctors"
+    file = Rails.root.join('data','medical','doctors.csv')
+    count = `wc -l #{file}`.to_i
 
-    Doctor.with(database: 'orange-proton').each do |doctor|
-      Doctor.with(database: 'mongoid_test_development').create do |new_doctor|
-        new_doctor.doc_id = doctor.doc_id
-        new_doctor.name = doctor.name
-        new_doctor.title = doctor.title
-        new_doctor.address = doctor.address
-        new_doctor.phone1 = doctor.phone1
-        new_doctor.phone2 = doctor.phone2
-        new_doctor.email = doctor.email
-        new_doctor.canton = doctor.canton
-        new_doctor.lat = doctor.lat
-        new_doctor.long = doctor.long
-        new_doctor.docfield = doctor.docfield
+    pg = ProgressBar.create(total: count)
+
+    IO.foreach(file) do |line|
+      row = line.split(';')
+      Doctor.create do |d|
+        d.doc_id   = row[0].strip.to_i
+        d.name     = row[1].strip
+        d.title    = (row[2]||'').strip
+        d.address  = (row[3]||'').strip
+        d.email    = (row[4]||'').strip
+        d.phone1   = (row[5]||'').strip
+        d.phone2   = (row[6]||'').strip
+        d.canton   = (row[7]||'').strip
+        d.docfield = (row[8]||'').strip
+        d.location = [row[9].strip.to_f, row[10].strip.to_f] # long/lat
       end
-    end
-  end
 
-  task geocode: :environment do
-    [Hospital, Doctor].each do |model|
-      model.not_geocoded.each do |instance|
-        instance.location = [instance.long, instance.lat]
-        instance.save
+      pg.increment
+    end
+
+    # Extract hospitals from doctors
+    Doctor.where(docfield: 'spital').each do |d|
+      Hospital.create do |h|
+        h.doc_id  = d.doc_id
+        h.name    = d.name
+        h.title   = d.title
+        h.address = d.address
+        h.phone1  = d.phone1
+        h.phone2  = d.phone2
+        h.email   = d.email
+        h.canton  = d.canton
+        h.location = d.location
       end
+
+      d.destroy
     end
-  end
 
-  task consolidate_specialities: :environment do
-    doctors = Doctor.exists(docfields: false)
 
-    pg = ProgressBar.create(total: doctors.count)
+    Doctor.index({ name: 1, title: 1 })
+    Doctor.create_indexes
 
-    doctors.each do |d|
+    # Consolidate doctor's specialities
+    pg = ProgressBar.create(total: Doctor.count)
+
+    Doctor.each do |d|
       fields = Doctor.where(title: d.title, name: d.name).map(&:docfield)
       d.docfields = fields
       d.save
       pg.increment
     end
+
+    Doctor.remove_indexes
+
+    # remove temporary field
+    # Doctor.unset :docfield
   end
+
 
   'Seed FMH Specialties with fallbacks and compounds'
   task seed_specialities: :environment do
@@ -127,15 +127,34 @@ namespace :db do
   end
 
   task seed_doctor_specs: :environment do
-    db = Moped::Session.new(['127.0.0.1:27017'])
-    db.use 'orange-proton'
+    d_to_fmh = {}
+
+    CSV.foreach Rails.root.join('data', 'relations', 'docfield_to_fmh.csv'), col_sep: ',' do |row|
+      d_to_fmh[row[0]] = row[3..-1] if row[0]
+      d_to_fmh[row[1]] = row[3..-1] if row[1]
+      d_to_fmh[row[3]] = row[3..-1] if row[2]
+    end
+
+    # Remove nil entries
+    d_to_fmh.compact!
+    d_to_fmh.each_value {|v| v.compact!}
+    d_to_fmh.each_value {|v| v.map!(&:to_i)}
+
+
+    pg = ProgressBar.create(total: Doctor.count)
 
     Doctor.each do |d|
       fields = d.docfields
-      fmhs = db[:docfield_to_fmh].find({ docfield: { "$in" => fields } }).to_a
-      fs_codes = fmhs.map { |f| f['fs_code']}
-      d.speciality_ids = fs_codes
+
+      fs_codes = []
+      fields.each do |f|
+        fs_codes << d_to_fmh[f]
+      end
+
+      d.specialities = Speciality.in(code: fs_codes.compact.flatten)
       d.save
+
+      pg.increment
     end
   end
 
@@ -143,6 +162,7 @@ namespace :db do
 
     desc 'Seed ICD Codes'
     task icd: :environment do
+      Icd.destroy_all
       # 0code;text_de;text_fr;text_it;text_en;5version;inclusions_de;inclusions_fr;inclusions_it;exclusions_de;10exclusions_fr;
       # 11exclusions_it;synonyms_de;synonyms_fr;synonyms_it;15subclasses;16most_relevant_drgs
 
@@ -182,7 +202,7 @@ namespace :db do
 
     desc 'Seed CHOP Codes'
     task chop: :environment do
-      Chop.delete_all
+      Chop.destroy_all
       #0"code"|"code_short"|"text_de"|"text_fr"|"text_it"|5"version"|"inclusions_de"|"inclusions_fr"|"inclusions_it"|
       # "exclusions_de"|10"exclusions_fr"|"exclusions_it"|"descriptions_de"|"descriptions_fr"|"descriptions_it"|"most_relevant_drgs"
       file =  Rails.root.join('data','chop', 'chop2015.csv')
@@ -216,7 +236,7 @@ namespace :db do
 
     desc 'Seed MDC Codes'
     task mdc: :environment do
-      Mdc.delete_all
+      Mdc.destroy_all
       # version;code;text_de;text_it;text_fr;prefix
 
       file = Rails.root.join('data','mdc', 'mdc40.csv')
@@ -237,7 +257,7 @@ namespace :db do
     task reputation: :environment do
 
       Hospital.each do |h|
-        h.ratings.delete_all
+        h.ratings.destroy_all
         h.save
       end
 

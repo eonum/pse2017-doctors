@@ -12,6 +12,7 @@ class Doctor
   field :phone1
   field :phone2
   field :canton
+  field :docfield
   field :docfields, type: Array, default: []
   field :location, type: Array, default: [8.5, 47]
 
