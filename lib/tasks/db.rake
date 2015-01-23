@@ -141,9 +141,9 @@ namespace :db do
     d_to_fmh.each_value {|v| v.map!(&:to_i)}
 
 
-    pg = ProgressBar.create(total: Doctor.count)
+    pg = ProgressBar.create(total: Doctor.where(speciality_ids: []).count)
 
-    Doctor.each do |d|
+    Doctor.where(speciality_ids: []).each do |d|
       fields = d.docfields
 
       fs_codes = []

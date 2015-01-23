@@ -1,22 +1,15 @@
+require_relative '../concerns/locatable.rb'
+
 module Api
   class DoctorsController < ApplicationController
+    include Locatable
 
     def index
-      @doctors = Doctor.near(default_location).order_by(:doc_id.asc).limit(default_count)
+      @doctors = Doctor.near(@location).order_by(:doc_id.asc).limit(default_return_count)
     end
 
     def show
       @doctor = Doctor.find_by(doc_id: params['id'])
-    end
-
-    private
-
-    def default_location
-      [46.950745, 7.440618]
-    end
-
-    def default_count
-      10
     end
   end
 end
