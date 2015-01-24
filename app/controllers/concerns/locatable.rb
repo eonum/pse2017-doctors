@@ -6,8 +6,12 @@ module Locatable
     before_action :set_location
   end
 
+  def set_location
+    @location = supplied_location || ip_location || default_location
+  end
+
   def default_location #lat/lng
-    [46.950745, 7.440618]
+    [46.950745, 7.440618] # Berne center
   end
 
   def ip_location
@@ -17,10 +21,6 @@ module Locatable
 
   def supplied_location
     params[:location] ? params[:location].split(',').map(&:to_f) : nil
-  end
-
-  def set_location
-    @location = supplied_location || ip_location || default_location
   end
 
   def valid_location?(location)

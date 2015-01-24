@@ -17,4 +17,11 @@ class Icd
     code
   end
 
+  def superclass
+    nil if code.length == 3
+
+    offset = code[-2] == '.' ? -3 : -2
+    Icd.where(code: code[0..offset]).exists? ? code[0..offset] : nil
+  end
+
 end

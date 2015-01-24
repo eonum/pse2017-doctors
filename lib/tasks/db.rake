@@ -123,7 +123,40 @@ namespace :db do
       fmh.compounds = compounds
       fmh.save
     end
+  end
 
+  task seed_keywords: :environment do
+    # Seed keywords
+    files = {
+        chop: Rails.root.join('data', 'chop', 'chop_dictionary.csv'),
+        icd: Rails.root.join('data', 'icd', 'icd_dictionary.csv')
+    }
+
+    files.each do |k, file|
+      IO.foreach file do |line|
+        row = line.split(',')
+
+        keyword = row[0]
+        exclusiva = row[1..2].reject(&:empty?).reject{ |e| e == "\n" }
+        fs_codes = row[3..-1].reject(&:empty?).reject{ |e| e == "\n" }.map(&:to_i)
+
+        puts keyword + ': ' + fs_codes.inspect
+        fs_codes.each do |code|
+          fmh = Speciality.find_by(code: code)
+          fmh.chop_keywords = []
+          fmh.icd_keywords = []
+          fmh.save
+
+          if k == :chop
+            fmh.chop_keywords << fmh.chop_keywords.create(keyword: keyword, exclusiva: exclusiva)
+          else
+            fmh.icd_keywords << fmh.icd_keywords.create(keyword: keyword, exclusiva: exclusiva)
+          end
+
+          fmh.save
+        end
+      end
+    end
   end
 
   task seed_doctor_specs: :environment do
@@ -135,15 +168,14 @@ namespace :db do
       d_to_fmh[row[3]] = row[3..-1] if row[2]
     end
 
-    # Remove nil entries
+    # Remove nil entries and convert to integers
     d_to_fmh.compact!
     d_to_fmh.each_value {|v| v.compact!}
     d_to_fmh.each_value {|v| v.map!(&:to_i)}
 
-
     pg = ProgressBar.create(total: Doctor.where(speciality_ids: []).count)
 
-    Doctor.where(speciality_ids: []).each do |d|
+    Doctor.where(speciality_ids: []).no_timeout.each do |d|
       fields = d.docfields
 
       fs_codes = []
@@ -273,9 +305,6 @@ namespace :db do
 
         pg.increment
       end
-
     end
-
   end
-
 end
