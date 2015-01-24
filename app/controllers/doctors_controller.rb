@@ -2,7 +2,7 @@ class DoctorsController < ApplicationController
   include Locatable
 
   def index
-    @doctors = Doctor.near(@location).order_by(:doc_id.asc).limit(default_return_count)
+    @doctors = Doctor.near(@location).limit(default_return_count)
   end
 
   def show
