@@ -281,6 +281,18 @@ namespace :db do
 
         pg.increment
       end
+
+      # Seed Mdc Specialities
+      IO.foreach(Rails.root.join('data','relations','mdc_to_fmh.csv')) do |line|
+        row = line.split(';')
+        puts row.inspect
+        fs_code = row[0].to_i
+        mdc_code = row[1]
+
+        s = Speciality.find_by(code: fs_code)
+        s.mdcs << Mdc.find_by(code: mdc_code)
+        s.save
+      end
     end
 
     desc 'Seed Reputations'
@@ -302,6 +314,29 @@ namespace :db do
         h.save
 
         pg.increment
+      end
+    end
+
+    desc 'Seed Thesaurs'
+    task thesaur: :environment do
+      Thesaur.delete_all
+
+      IO.foreach(Rails.root.join('data','relations','thesaur_to_icd.csv')) do |line|
+        row = line.split(';')
+        thesaur = row[0]
+        icds = row[1..-2]
+
+        Thesaur.create(name: thesaur, codes: icds)
+      end
+
+      IO.foreach(Rails.root.join('data','relations','thesaur_to_fmh.csv')) do |line|
+        row = line.split(';')
+        fs_code = row[0].to_i
+        thesaur = row[1]
+
+        t = Thesaur.find_by(name: thesaur)
+        t.specialities << Speciality.find_by(code: fs_code)
+        t.save
       end
     end
   end

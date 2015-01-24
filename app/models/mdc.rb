@@ -7,5 +7,7 @@ class Mdc
   field :version
   field :prefix
 
+  has_and_belongs_to_many :specialities
+
   index({ code: 1, version: 1 }, { unique: true })
 end
