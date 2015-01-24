@@ -126,6 +126,11 @@ namespace :db do
   end
 
   task seed_keywords: :environment do
+
+    Speciality.each do |s|
+      s.keywords.clear
+    end
+
     # Seed keywords
     files = {
         chop: Rails.root.join('data', 'chop', 'chop_dictionary.csv'),
@@ -143,15 +148,8 @@ namespace :db do
         puts keyword + ': ' + fs_codes.inspect
         fs_codes.each do |code|
           fmh = Speciality.find_by(code: code)
-          fmh.chop_keywords = []
-          fmh.icd_keywords = []
-          fmh.save
 
-          if k == :chop
-            fmh.chop_keywords << fmh.chop_keywords.create(keyword: keyword, exclusiva: exclusiva)
-          else
-            fmh.icd_keywords << fmh.icd_keywords.create(keyword: keyword, exclusiva: exclusiva)
-          end
+          fmh.keywords.create(keyword: keyword, exclusiva: exclusiva, type: k.to_s)
 
           fmh.save
         end
