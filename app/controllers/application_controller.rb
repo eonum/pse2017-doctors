@@ -7,9 +7,13 @@ class ApplicationController < ActionController::Base
 
   before_action :set_language
 
+  def default_url_options
+    { :locale => I18n.locale }
+  end
+
   private
     def set_language
-      I18n.locale = :de
+      I18n.locale = params['locale']
     end
 
     def error_method

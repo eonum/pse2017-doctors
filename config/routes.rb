@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :doctors, only: [:index, :show]
-  resources :hospitals, only: [:index, :show]
-  resources :specialities, only: [:index, :show]
+  scope '/:locale', :locale => /de|fr|it|en/ do
+    resources :doctors, only: [:index, :show]
+    resources :hospitals, only: [:index, :show]
+    resources :specialities, only: [:index, :show]
+  end
 
 end
