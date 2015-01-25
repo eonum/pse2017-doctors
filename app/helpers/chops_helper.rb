@@ -1,0 +1,2 @@
+module ChopsHelper
+end
