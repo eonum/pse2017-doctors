@@ -1,6 +1,12 @@
+require_relative '../models/service/speciality_finder.rb'
+
 class SpecialitiesController < ApplicationController
   def index
-    @specialities = Speciality.all
+    if params[:code]
+      @specialities = SpecialityFinder.new.find(params[:code])
+    else
+      @specialities = Speciality.all
+    end
   end
 
   def show

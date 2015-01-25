@@ -24,4 +24,16 @@ class Icd
     Icd.where(code: code[0..offset]).exists? ? code[0..offset] : nil
   end
 
+  def subclass_objects
+    subclasses.map{ |sc| Icd.find_by(code: sc) }
+  end
+
+  def clean_text
+    related_regex = /\s*\{(.*?)\}\s*/
+    t = text.gsub(related_regex, '')
+    r = text.match related_regex
+
+    return t, r
+  end
+
 end
