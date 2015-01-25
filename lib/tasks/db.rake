@@ -131,6 +131,8 @@ namespace :db do
       s.keywords.clear
     end
 
+    Keyword.delete_all
+
     # Seed keywords
     files = {
         chop: Rails.root.join('data', 'chop', 'chop_dictionary.csv'),
@@ -141,7 +143,7 @@ namespace :db do
       IO.foreach file do |line|
         row = line.split(',')
 
-        keyword = row[0]
+        keyword = row[0].downcase
         exclusiva = row[1..2].reject(&:empty?).reject{ |e| e == "\n" }
         fs_codes = row[3..-1].reject(&:empty?).reject{ |e| e == "\n" }.map(&:to_i)
 
@@ -150,8 +152,6 @@ namespace :db do
           fmh = Speciality.find_by(code: code)
 
           fmh.keywords.create(keyword: keyword, exclusiva: exclusiva, type: k.to_s)
-
-          fmh.save
         end
       end
     end
@@ -339,5 +339,43 @@ namespace :db do
         t.save
       end
     end
+
+    desc 'Seed Ranges'
+    task range: :environment do
+      FieldRange.delete_all
+
+      # ICD Ranges
+      IO.foreach(Rails.root.join('data','icd','icd_ranges.csv')) do |line|
+        row = line.split(';')
+
+        level = row[0].to_i
+        beginning = row[1]
+        ending = row[2]
+        name = row[3]
+
+        fs_codes = row[4..-2].map(&:to_i)
+
+        FieldRange.create(type: 'icd', name: name, beginning: beginning, ending: ending) do |range|
+          range.specialities = Speciality.in(code: fs_codes).to_a
+        end
+      end
+
+      # Chop Ranges
+      IO.foreach(Rails.root.join('data','chop','chop_ranges.csv')) do |line|
+        row = line.split(';')
+
+        level = row[0].to_i
+        beginning = row[1]
+        ending = row[2]
+        name = row[3]
+
+        fs_codes = row[4..-2].map(&:to_i)
+
+        FieldRange.create(type: 'chop', name: name, beginning: beginning, ending: ending) do |range|
+          range.specialities = Speciality.in(code: fs_codes).to_a
+        end
+      end
+    end
+
   end
 end
