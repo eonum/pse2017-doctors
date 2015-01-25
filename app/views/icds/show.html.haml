@@ -1,0 +1,8 @@
+%dl
+  %dt Code
+  %dd= @icd.code
+  %dt Text
+  %dd= @icd.text
+  -if @icd.superclass
+    %dt Superclass
+    %dd= link_to @icd.superclass, icd_url(@icd.superclass)

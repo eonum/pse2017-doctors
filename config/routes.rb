@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
-  scope '/:locale', :locale => /de|fr|it|en/ do
+  scope '/:locale', :locale => /de|fr|it|en/, :format => /json|html/ do
     resources :doctors, only: [:index, :show]
     resources :hospitals, only: [:index, :show]
     resources :specialities, only: [:index, :show]
-    resources :icds,  id: /[\w\.]+?/, format: /json|xml/, only: [:index, :show]
-    resources :chops, id: /[\w\.]+?/, format: /json|xml/, only: [:index, :show]
+    resources :icds,  id: /[\w\.]+?/, only: [:index, :show]
+    resources :chops, id: /[\w\.]+?/, only: [:index, :show]
   end
 
 end

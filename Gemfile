@@ -26,3 +26,5 @@ gem 'mongoid'
 gem 'geocoder'
 gem 'ruby-progressbar'
 
+gem 'haml-rails'
+
