@@ -247,7 +247,7 @@ namespace :db do
         drgs = parse_psql_array(row[15])
 
         chop = Chop.create(code: code, code_short: code_short, version: version, drgs: drgs)
-        chop.text_translations = { de: row[3], fr: row[2], it: row[4] }
+        chop.text_translations = { de: row[2], fr: row[3], it: row[4] }
         chop.inclusiva_translations = {
             de: parse_psql_array(row[6]),
             fr: parse_psql_array(row[7]),
