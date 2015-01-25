@@ -1,18 +1,44 @@
 class SpecialityFinder
+
   def find(code)
-    code_type code
+    case code_type code
+      when :icd then find_for_icd code
+      when :chop then find_for_chop code
+      else []
+    end
   end
 
   private
 
+    def find_for_icd(code)
+
+      return [] unless Icd.where(code: code).exists?
+
+      # Search thesaurs
+      thesaur = Thesaur.where(codes: code).first
+      from_thesaur = thesaur ? thesaur.specialities : []
+
+      # Search keywords
+      text  = Icd.find_by(code: code).text_translations[:de].downcase
+      matched_keywords = []
+      Keyword.icd.each do |k|
+        matched_keywords << k if text.include? k.keyword
+      end
+
+      from_keymatch = matched_keywords.map(&:specialities)
+
+      from_thesaur | from_keymatch
+    end
+
+    def find_for_chop(code)
+      []
+    end
+
     def code_type(code)
       case code
-        when icd_regex
-          :icd
-        when chop_regex
-          :chop
-        else
-          :none
+        when icd_regex then :icd
+        when chop_regex then :chop
+        else :none
       end
     end
 
