@@ -28,15 +28,26 @@
 // Example:
 // @link-color: #ff0000;
 
+@navbar-inverse-bg: #3e255e;
+@navbar-inverse-color: #ffffff;
+@navbar-inverse-link-color: darken(@navbar-inverse-color, 5%);
+
 .navbar-brand {
   font-weight: bold;
 }
 
+#search {
+  overflow-y: auto;
+}
 #search-bar {
   margin-bottom: 10px;
 }
 
 .map-holder {
-  width: 860px;
   height: 500px;
 }
+
+.list-group {
+  //box-shadow: 0 0 50px 1px #888;
+}
+

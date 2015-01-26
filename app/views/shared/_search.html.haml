@@ -1,0 +1,10 @@
+- content_for :search do
+  %ul.list-group
+    -if @search.size > 0
+      -@search.each do |s|
+        %li.list-group-item{class: params['id']==s.code ? 'active' : ''}
+          %h4.list-group-item-heading= s.text
+          =link_to s.code, icd_url(s, params: params)
+    -else
+      %li.list-group-item.list-group-item-info
+        %p Nothing found!!!

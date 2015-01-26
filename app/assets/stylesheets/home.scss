@@ -5,13 +5,13 @@ html,body {
 }
 
 body {
-  overflow: hidden;
+  //overflow: hidden;
 }
 
 h1 {
   font-family: 'Antic Slab', serif;
   font-size:80px;
-  color:#DDCCEE;
+  color: #fffbff;
 }
 
 .lead {
@@ -24,7 +24,7 @@ h1 {
   margin: 0 auto;
   width: 100%;
   min-height:100%;
-  background-color:#110022;
+  background-color: #3e255e;
   color:#eee;
   overflow:hidden;
 }

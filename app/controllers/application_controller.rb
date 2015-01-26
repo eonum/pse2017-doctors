@@ -6,12 +6,18 @@ class ApplicationController < ActionController::Base
   rescue_from Mongoid::Errors::DocumentNotFound, with: :error_method
 
   before_action :set_language
+  before_action :set_search
 
   def default_url_options
     { :locale => I18n.locale }
   end
 
   private
+
+    def set_search
+      @search = (params['q'] and not params['q'].blank?) ? Icd.order_by(:code.asc).limit(10) : []
+    end
+
     def set_language
       I18n.locale = params['locale']
       session[:locale] = I18n.locale
