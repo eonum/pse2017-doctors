@@ -9,11 +9,8 @@
     / Le HTML5 shim, for IE6-8 support of HTML elements
     /[if lt IE 9]
       = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    = javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCmgeVHosSLqzZA2a86MjH9GDrcgr_ynuQ&sensor=true'
     = stylesheet_link_tag "application", :media => "all"
-    = favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144'
-    = favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114'
-    = favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72'
-    = favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png'
     = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
     = javascript_include_tag "application"
 
@@ -33,9 +30,10 @@
             %li= link_to 'About', about_url
           %ul.nav.navbar-nav.navbar-right
             %li
-              %button.btn.btn-primary.navbar-btn.has-popover{:type => 'button', :title => 'Change Location', 'data-content' => 'Change Your location here'}
+              %button#location-btn.btn.btn-primary.navbar-btn.has-popover{"data-target" => ".bs-example-modal-lg", "data-toggle" => "modal",
+               :type => 'button', :title => 'Change Location', 'data-content' => 'Change Your location here'}
                 %i.fa.fa-location-arrow
-                Haslerstrasse 18, 3008 Berne
+                = current_address
             %li= link_to 'Help', help_url
             %li.dropdown
               %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
@@ -54,7 +52,7 @@
             #search-bar
               = form_tag({}, method: 'get') do
                 .input-group
-                  %input.form-control{type: 'text', name: 'q'}
+                  %input.form-control{type: 'text', name: 'q', value: "#{params[:q]}"}
                   %span.input-group-btn
                     %button.btn.btn-primary{type: 'submit'}
                       %span.fa.fa-search
@@ -70,3 +68,18 @@
         .col-lg-8
           = bootstrap_flash
           = yield
+
+
+    .modal.fade.bs-example-modal-lg{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel", :role => "dialog", :tabindex => "-1"}
+      .modal-dialog.modal-lg
+        .modal-content
+          .modal-header.text-center
+            %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+              %span{"aria-hidden" => "true"} ×
+            %h4#myLargeModalLabel.modal-title.text-info Location Selection
+          .modal-body
+            .map-holder
+              #map
+          .modal-footer
+            %a.btn{"data-dismiss" => "modal"} Close
+            %a.btn.btn-primary.save Save changes

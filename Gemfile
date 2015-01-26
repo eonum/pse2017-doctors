@@ -30,4 +30,6 @@ gem 'haml-rails'
 gem 'twitter-bootstrap-rails'
 gem 'therubyracer'
 gem 'less-rails'
+gem 'jquery-cookie-rails'
+gem 'nprogress-rails'
 
