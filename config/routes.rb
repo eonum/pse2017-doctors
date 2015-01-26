@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :specialities, only: [:index, :show]
     resources :icds,  id: /[\w\.]+?/, only: [:index, :show]
     resources :chops, id: /[\w\.]+?/, only: [:index, :show]
+    get '', to: 'home#home'
   end
 
+  root to: 'home#redirect'
 end

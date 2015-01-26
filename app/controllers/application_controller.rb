@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
   private
     def set_language
       I18n.locale = params['locale']
+      session[:locale] = I18n.locale
     end
 
     def error_method

@@ -1,28 +1,59 @@
-!!!
-%html
+!!! 5
+%html(lang="en")
   %head
-    %meta{:content => 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type'}/
-    %title MongoidTest
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %meta(charset="utf-8")
+    %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    %title= content_for?(:title) ? yield(:title) : 'Ekonsil Experts 2.0'
     = csrf_meta_tags
+    / Le HTML5 shim, for IE6-8 support of HTML elements
+    /[if lt IE 9]
+      = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    = stylesheet_link_tag "application", :media => "all"
+    = favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144'
+    = favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114'
+    = favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72'
+    = favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png'
+    = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
+    = javascript_include_tag "application"
+
   %body
-    = nav_bar static: :top, brand: 'Ekonsil Experts 2.0', brand_link: '/' do
+    .navbar.navbar-default.navbar-static-top
+      .container
+        %button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse")
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.navbar-brand(href="#")
+          %i.fa.fa-user-md.fa-lg
+          Ekonsil Experts 2.0
+        .navbar-collapse.collapse.navbar-responsive-collapse
+          %ul.nav.navbar-nav
+            %li= link_to 'Home', '/'
+            %li= link_to 'About', '/'
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              %a Help
+            %li.dropdown
+              %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                = current_language
+                %span.caret
+              %ul.dropdown-menu{:role => "menu"}
+                %li= link_to 'Deutsch', locale: :de
+                %li= link_to 'Francais', locale: :fr
+                %li= link_to 'Italiano', locale: :it
+                %li= link_to 'English', locale: :en
 
-      = menu_group do
-        = menu_item "Home", '/'
-        = menu_item "About Us", '/'
-        = menu_item "Contact", '/'
-
-      = menu_group pull: :right do
-        = drop_down 'Language' do
-          = menu_item 'Deutsch', '/'
-          = menu_item 'Deutsch', '/'
-          = menu_item 'Deutsch', '/'
-          = menu_item 'Deutsch', '/'
-
-    .col-md-3
-      .well{height: '100%'}
-      = yield :sidebar
-    .col-md-9
-      = yield
+    .container
+      .row
+        .col-lg-3
+          .well.sidebar-nav
+            %h3 Sidebar
+            %ul.nav.nav-list
+              %li.nav-header Sidebar
+              %li= link_to "Link 1", "/path1"
+              %li= link_to "Link 2", "/path2"
+              %li= link_to "Link 3", "/path3"
+        .col-lg-9
+          = bootstrap_flash
+          = yield

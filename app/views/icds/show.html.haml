@@ -1,4 +1,7 @@
-%dl
+.page-header
+  %h2 ICD Details
+
+%dl.dl-horizontal
   %dt Code
   %dd= @icd.code
   %dt Text
@@ -6,3 +9,9 @@
   -if @icd.superclass
     %dt Superclass
     %dd= link_to @icd.superclass, icd_url(@icd.superclass)
+
+  %dt Synonyms
+  %dd
+    %ul
+      - @icd.synonyms.each do |s|
+        %li= s
