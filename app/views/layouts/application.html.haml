@@ -50,7 +50,7 @@
         .col-lg-4
           .well.well-sm
             #search-bar
-              = form_tag({}, method: 'get') do
+              = form_tag({}, method: 'get', turboboost: true) do
                 .input-group
                   %input.form-control{type: 'text', name: 'q', value: "#{params[:q]}"}
                   %span.input-group-btn

@@ -17,5 +17,6 @@
 //= require turbolinks
 //= require nprogress
 //= require nprogress-turbolinks
+//= require turboboost
 //= require gmaps
 //= require_tree .
