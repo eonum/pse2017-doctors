@@ -7,4 +7,22 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    = yield
+    = nav_bar static: :top, brand: 'Ekonsil Experts 2.0', brand_link: '/' do
+
+      = menu_group do
+        = menu_item "Home", '/'
+        = menu_item "About Us", '/'
+        = menu_item "Contact", '/'
+
+      = menu_group pull: :right do
+        = drop_down 'Language' do
+          = menu_item 'Deutsch', '/'
+          = menu_item 'Deutsch', '/'
+          = menu_item 'Deutsch', '/'
+          = menu_item 'Deutsch', '/'
+
+    .col-md-3
+      .well{height: '100%'}
+      = yield :sidebar
+    .col-md-9
+      = yield
