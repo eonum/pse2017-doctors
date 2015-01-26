@@ -29,11 +29,14 @@
           Ekonsil Experts 2.0
         .navbar-collapse.collapse.navbar-responsive-collapse
           %ul.nav.navbar-nav
-            %li= link_to 'Home', '/'
-            %li= link_to 'About', '/'
+            %li= link_to 'Home', home_url
+            %li= link_to 'About', about_url
           %ul.nav.navbar-nav.navbar-right
             %li
-              %a Help
+              %button.btn.btn-primary.navbar-btn.has-popover{:type => 'button', :title => 'Change Location', 'data-content' => 'Change Your location here'}
+                %i.fa.fa-location-arrow
+                Haslerstrasse 18, 3008 Berne
+            %li= link_to 'Help', help_url
             %li.dropdown
               %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
                 = current_language
@@ -46,14 +49,24 @@
 
     .container
       .row
-        .col-lg-3
-          .well.sidebar-nav
-            %h3 Sidebar
-            %ul.nav.nav-list
-              %li.nav-header Sidebar
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
-        .col-lg-9
+        .col-lg-4
+          .well.well-sm
+            #search-bar
+              = form_tag({}, method: 'get') do
+                .input-group
+                  %input.form-control{type: 'text', name: 'q'}
+                  %span.input-group-btn
+                    %button.btn.btn-primary{type: 'submit'}
+                      %span.fa.fa-search
+                      Search
+            #search-results
+              %ul.list-group
+                %li.list-group-item.list-group-item-info
+                  Enter your full text search term here.
+                  %br
+                  %br
+                  %b Examples
+                  "aölskdjfaskdj"
+        .col-lg-8
           = bootstrap_flash
           = yield
