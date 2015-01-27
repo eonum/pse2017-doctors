@@ -1,5 +1,6 @@
 class Doctor
   include Mongoid::Document
+  include Mongoid::Elasticsearch
   include Geocoder::Model::Mongoid
 
   has_and_belongs_to_many :specialities
@@ -15,6 +16,8 @@ class Doctor
   field :docfield
   field :docfields, type: Array, default: []
   field :location, type: Array, default: [8.5, 47]
+
+  elasticsearch!
 
   index({ name: 1, title: 1 }, { unique: true, drop_dups: true })
 

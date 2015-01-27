@@ -1,6 +1,14 @@
 require 'csv'
 require_relative 'seed_helpers.rb'
 
+namespace :search do
+  task reindex_all: :environment do
+    [Icd, Chop, Hospital, Doctor, Speciality].each do |model|
+      model.es.index_all
+    end
+  end
+end
+
 namespace :db do
 
   desc 'Extract Hospitals from Doctors'

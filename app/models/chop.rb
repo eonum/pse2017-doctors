@@ -1,5 +1,6 @@
 class Chop
   include Mongoid::Document
+  include Mongoid::Elasticsearch
 
   field :code
   field :code_short
@@ -9,6 +10,8 @@ class Chop
   field :exclusiva, localize: true, type: Array
   field :inclusiva, localize: true, type: Array
   field :drgs, type: Array
+
+  elasticsearch!
 
   index({ code: 1, version: 1 }, { unique: true })
   index({ code_short: 1, version: 1 }, { unique: true })

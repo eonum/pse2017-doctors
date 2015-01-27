@@ -1,5 +1,6 @@
 class Icd
   include Mongoid::Document
+  include Mongoid::Elasticsearch
 
   field :code
   field :text, localize: true
@@ -11,6 +12,8 @@ class Icd
   field :drgs, type: Array
 
   index({ code: 1, version: 1 }, { unique: true })
+
+  elasticsearch!
 
   def to_param
     code

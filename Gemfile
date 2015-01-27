@@ -33,4 +33,5 @@ gem 'less-rails'
 gem 'jquery-cookie-rails'
 gem 'nprogress-rails'
 gem 'turboboost'
+gem 'mongoid-elasticsearch'
 

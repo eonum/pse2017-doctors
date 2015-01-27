@@ -1,3 +1,5 @@
+require_relative '../models/service/search.rb'
+
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -15,7 +17,7 @@ class ApplicationController < ActionController::Base
   private
 
     def set_search
-      @search = (params['q'] and not params['q'].blank?) ? Icd.limit(15) : []
+      @search = (params['q'] and not params['q'].blank?) ? Search.search(params['q']) : []
     end
 
     def set_language

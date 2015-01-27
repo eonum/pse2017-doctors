@@ -1,5 +1,6 @@
 class Speciality
   include Mongoid::Document
+  include Mongoid::Elasticsearch
 
   has_and_belongs_to_many :doctors
   has_and_belongs_to_many :keywords
@@ -9,6 +10,8 @@ class Speciality
   field :name, localize: true
   field :fallbacks, type: Array, default: []
   field :compounds, type: Array, default: []
+
+  elasticsearch!
 
   index({ code: 1 }, { unique: true })
 
