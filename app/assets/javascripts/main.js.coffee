@@ -2,7 +2,7 @@
 
 ready = =>
   $(window).on 'resize', ->
-    $('#search-bar').parent().height($(window).height()-110)
+    $('#search-bar').parent().height($(window).height()-131)
   $(window).trigger 'resize'
 
   if $('#map').length > 0

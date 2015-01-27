@@ -1,4 +1,5 @@
 - render :partial => 'shared/search'
+- content_for :title, @icd.text
 
 .page-header
   %h2 ICD Details
@@ -10,10 +11,17 @@
   %dd= @icd.text
   -if @icd.superclass
     %dt Superclass
-    %dd= link_to @icd.superclass, icd_url(@icd.superclass)
-
-  %dt Synonyms
-  %dd
-    %ul
-      - @icd.synonyms.each do |s|
-        %li= s
+    %dd= link_to @icd.superclass, icd_url(@icd.superclass, q: params['q'])
+  -if @icd.subclasses.any?
+    %dt Subclasses
+    %dd
+      %ul
+        - @icd.subclasses.each do |s|
+          %li
+            =link_to s, icd_url(s, q: params['q'])
+  -if @icd.synonyms.any?
+    %dt Synonyms
+    %dd
+      %ul
+        - @icd.synonyms.each do |s|
+          %li= s

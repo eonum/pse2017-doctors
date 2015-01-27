@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   private
 
     def set_search
-      @search = (params['q'] and not params['q'].blank?) ? Icd.order_by(:code.asc).limit(10) : []
+      @search = (params['q'] and not params['q'].blank?) ? Icd.limit(15) : []
     end
 
     def set_language
