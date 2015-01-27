@@ -37,6 +37,7 @@ ready = =>
   $('.modal').on 'shown.bs.modal', =>
     console.log 'refreshing map'
     @app.map.refresh()
+    @app.map.setCenter(@app.location[0], @app.location[1])
 
   console.log 'Displaying address'
   $('#location-btn').html('<i class="fa fa-location-arrow"></i> ' + @app.address) if @app.address?

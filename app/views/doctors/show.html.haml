@@ -1,0 +1,11 @@
+- render :partial => 'shared/search'
+- content_for :title, @doctor.name
+
+.page-header
+  %h2 Doctor Details
+
+%dl.dl-horizontal
+  %dt Title
+  %dd= @doctor.title
+  %dt Name
+  %dd= @doctor.name

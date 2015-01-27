@@ -1,0 +1,21 @@
+- render :partial => 'shared/search'
+- content_for :title, @chop.text
+
+.page-header
+  %h2 CHOP Details
+
+%dl.dl-horizontal
+  %dt Code
+  %dd= @chop.code
+  %dt Text
+  %dd= @chop.text
+  -if @chop.superclass
+    %dt Superclass
+    %dd= link_to @chop.superclass, chop_url(@chop.superclass, q: params['q'])
+  -if @chop.subclasses.any?
+    %dt Subclasses
+    %dd
+      %ul
+        - @chop.subclasses.each do |s|
+          %li
+            =link_to s, chop_url(s, q: params['q'])
