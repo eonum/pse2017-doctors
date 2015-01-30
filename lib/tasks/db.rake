@@ -2,7 +2,19 @@ require 'csv'
 require_relative 'seed_helpers.rb'
 
 namespace :search do
-  task reindex_all: :environment do
+  namespace :index do
+    task remove: :environment do
+      [Icd, Chop, Hospital, Doctor, Speciality].each do |model|
+        model.es.index.delete
+      end
+    end
+    task create: :environment do
+      [Icd, Chop, Hospital, Doctor, Speciality].each do |model|
+        model.es.index.create
+      end
+    end
+  end
+  task reindex: :environment do
     [Icd, Chop, Hospital, Doctor, Speciality].each do |model|
       model.es.index_all
     end

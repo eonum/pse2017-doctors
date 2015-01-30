@@ -1,4 +1,5 @@
 require_relative '../models/service/search.rb'
+require_relative '../models/service/speciality_finder.rb'
 
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
@@ -26,7 +27,10 @@ class ApplicationController < ActionController::Base
     end
 
     def error_method
-      render json: 'No such entry has been found!', status: 404
+      respond_to do |format|
+        format.html render file: "#{Rails.root}/public/404", layout: false, status: 404
+        format.json render json: 'No such entry has been found!', status: 404
+      end
     end
 
     def default_return_count

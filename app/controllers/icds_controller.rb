@@ -5,5 +5,6 @@ class IcdsController < ApplicationController
 
   def show
     @icd = Icd.find_by(code: params['id'])
+    @specialities = SpecialityFinder.new.find(@icd.code)
   end
 end

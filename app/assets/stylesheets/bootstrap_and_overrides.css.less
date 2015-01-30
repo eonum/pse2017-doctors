@@ -28,7 +28,7 @@
 // Example:
 // @link-color: #ff0000;
 
-@navbar-inverse-bg: #3e255e;
+@navbar-inverse-bg: #4E5584;
 @navbar-inverse-color: #ffffff;
 @navbar-inverse-link-color: darken(@navbar-inverse-color, 5%);
 
@@ -65,10 +65,18 @@
   }
   .progress {
     width: 65%;
-    margin-bottom: 10px;
+    margin-bottom: 14px;
+    border-radius: 0;
     &.progress-xs {
-      height: 5px;
+      height: 4px;
     }
+  }
+  ul {
+    padding-left: 10px;
+  }
+  li.synonym {
+    font-size: 10px;
+    list-style-type: none;
   }
 }
 
@@ -99,6 +107,10 @@
   &.label-speciality {
     background-color: powderblue;
   }
+}
+
+dl {
+  margin-bottom: 0;
 }
 
 

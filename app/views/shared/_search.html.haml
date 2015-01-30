@@ -8,6 +8,9 @@
               %span.label.label-diagnosis Diagnosis
               != progress_bar(s._score * 20, 'progress-xs')
               %h4.list-group-item-heading= s.clean_text[0]
+              %ul
+                - s.synonyms[0..3].each do |syn|
+                  %li.synonym= syn
           - when 'chop'
             %a.list-group-item{href: chop_path(s, q: params['q']), class: params['id']==s.code ? 'active' : ''}
               %span.label.label-procedure Procedure
