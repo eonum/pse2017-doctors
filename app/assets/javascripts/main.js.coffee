@@ -1,20 +1,21 @@
 @app = {}
 
-ready = =>
-  console.log 'Geolocating...'
-  GMaps.geolocate
-    success: (position) =>
-      @app.location = [position.coords.latitude, position.coords.longitude]
-      GMaps.geocode
-        lat: @app.location[0],
-        lng: @app.location[1],
-        callback: (results, status) =>
-          if status is 'OK'
-            @app.address = results[0].formatted_address
-            $('#location-btn').html('<i class="fa fa-location-arrow"></i> ' + @app.address)
-            $.cookie 'location', @app.address,
-              expires: 1,
-              path: '/'
+ready = (geolocate = true) =>
+  if geolocate
+    console.log 'Geolocating...'
+    GMaps.geolocate
+      success: (position) =>
+        @app.location = [position.coords.latitude, position.coords.longitude]
+        GMaps.geocode
+          lat: @app.location[0],
+          lng: @app.location[1],
+          callback: (results, status) =>
+            if status is 'OK'
+              @app.address = results[0].formatted_address
+              $('#location-btn').html('<i class="fa fa-location-arrow"></i> ' + @app.address)
+              $.cookie 'location', @app.address,
+                expires: 1,
+                path: '/'
 
   $('.modal').on 'show.bs.modal', =>
     console.log 'Showing map...'
@@ -42,8 +43,10 @@ ready = =>
   console.log 'Displaying address'
   $('#location-btn').html('<i class="fa fa-location-arrow"></i> ' + @app.address) if @app.address?
 
-$(document).on 'page:load', ready
+$(document).on 'page:load', =>
+  ready(false)
 $(document).ready ready
+
 $(window).on 'resize', ->
   console.log 'resizing'
   $('#search-bar').parent().height($(window).height()-131)

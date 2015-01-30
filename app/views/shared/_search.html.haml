@@ -5,23 +5,35 @@
         - case s._type
           - when 'icd'
             %a.list-group-item{href: icd_path(s, q: params['q']), class: params['id']==s.code ? 'active' : ''}
+              %span.label.label-diagnosis Diagnosis
+              != progress_bar(s._score * 20, 'progress-xs')
               %h4.list-group-item-heading= s.clean_text[0]
-              %p= s.code
           - when 'chop'
             %a.list-group-item{href: chop_path(s, q: params['q']), class: params['id']==s.code ? 'active' : ''}
+              %span.label.label-procedure Procedure
+              != progress_bar(s._score * 20, 'progress-xs')
               %h4.list-group-item-heading= s.text
-              %p= s.code
           - when 'speciality'
             %a.list-group-item{href: speciality_path(s, q: params['q']), class: params['id'].to_i==s.code ? 'active' : ''}
+              %span.label.label-speciality Speciality
+              != progress_bar(s._score * 20, 'progress-xs')
               %h4.list-group-item-heading= s.name
           - when 'doctor'
             %a.list-group-item{href: doctor_path(s, q: params['q']), class: params['id'].to_i==s.doc_id ? 'active' : ''}
+              %span.label.label-doctor Doctor
+              != progress_bar(s._score * 20, 'progress-xs')
+              %p
+                %em.title= s.title
               %h4.list-group-item-heading= s.name
-              %p= s.title
+              %p= s.address
           - when 'hospital'
             %a.list-group-item{href: hospital_path(s, q: params['q']), class: params['id'].to_i==s.doc_id ? 'active' : ''}
+              %span.label.label-hospital Hospital
+              != progress_bar(s._score * 20, 'progress-xs')
+              %p
+                %em.title= s.title
               %h4.list-group-item-heading= s.name
-              %p= s.title
+              %p= s.address
     -else
       %li.list-group-item.list-group-item-info
         %p Nothing found!!!

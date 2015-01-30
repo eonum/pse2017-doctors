@@ -15,8 +15,12 @@ module Locatable
   end
 
   def ip_location
-    loc = request.location.coordinates
-    valid_location? loc ? loc : nil
+    if request.location
+      loc = request.location.coordinates
+      valid_location? loc ? loc : nil
+    else
+      nil
+    end
   end
 
   def supplied_location

@@ -1,0 +1,55 @@
+.container-full
+  .row
+    .col-lg-12.text-center.v-center
+      %h1
+        %i.fa.fa-user-md.fa-lg.fa-2x
+      %h1 Ekonsil Experts
+      %p.lead Your definitive source for location aware medical information
+      %br/
+      = form_tag(entry_url, method: 'get', turboboost: true) do
+        .input-group.input-group-lg.col-sm-offset-4.col-sm-4
+          %input.center-block.form-control.input-lg{:autofocus => 'true', :name => 'q', :placeholder => 'Enter your search query', :title => 'Enter your search query', :type => 'text', :value => params['q']}/
+          %span.input-group-btn
+            %button.btn.btn-lg.btn-primary{:type => 'submit'} Search
+
+.container
+  %hr/
+  .row
+    .col-md-4
+      .panel.panel-default
+        .panel-heading
+          %h3 Hello.
+        .panel-body
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
+          Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
+          dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
+          Aliquam in felis sit amet augue.
+    .col-md-4
+      .panel.panel-default
+        .panel-heading
+          %h3 Hello.
+        .panel-body
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
+          Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
+          dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
+          Aliquam in felis sit amet augue.
+    .col-md-4
+      .panel.panel-default
+        .panel-heading
+          %h3 Hello.
+        .panel-body
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
+          Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
+          dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
+          Aliquam in felis sit amet augue.
+  .row
+    .col-lg-12
+      %br/
+      %br/
+      %p.pull-right
+        %a{:href => 'http://www.bootply.com'} Template from Bootply
+          ©Copyright 2013 ACME
+        %sup TM
+        Brand.
+      %br/
+      %br/

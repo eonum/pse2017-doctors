@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :icds,  id: /[\w\.]+?/, only: [:index, :show]
     resources :chops, id: /[\w\.]+?/, only: [:index, :show]
 
+    get '/entry', to: 'home#entry', as: 'entry'
     get '/about', to: 'home#home', as: 'about'
     get '/help', to: 'home#home', as: 'help'
 

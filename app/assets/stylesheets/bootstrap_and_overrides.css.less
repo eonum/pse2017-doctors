@@ -32,7 +32,7 @@
 @navbar-inverse-color: #ffffff;
 @navbar-inverse-link-color: darken(@navbar-inverse-color, 5%);
 
-@component-active-bg: #3e255e;
+@component-active-bg: lighten(@navbar-inverse-bg, 3%);
 
 .navbar-brand {
   font-weight: bold;
@@ -49,7 +49,57 @@
   height: 500px;
 }
 
-.list-group {
-  //box-shadow: 0 0 50px 1px #888;
+.list-group-item {
+  //box-shadow: 0 0 30px 0px #888;
+  //margin-bottom: 5px;
+  padding-right: 10px;
+  span.label {
+    float: right;
+  }
+  h4 {
+    font-size: 16px;
+  }
+  .title {
+    .text-muted;
+    font-size: smaller;
+  }
+  .progress {
+    width: 65%;
+    margin-bottom: 10px;
+    &.progress-xs {
+      height: 5px;
+    }
+  }
 }
+
+.modal-body {
+  padding: 0;
+}
+
+.modal-header {
+  .bg-primary;
+  border-radius: 5px 5px 0 0;
+  color: white;
+}
+
+.label {
+  font-weight: normal;
+  &.label-doctor {
+    background-color: cadetblue;
+  }
+  &.label-diagnosis {
+    background-color: rgb(52, 153, 166);
+  }
+  &.label-procedure {
+    background-color: seagreen;
+  }
+  &.label-hospital {
+    background-color: powderblue;
+  }
+  &.label-speciality {
+    background-color: powderblue;
+  }
+}
+
+
 

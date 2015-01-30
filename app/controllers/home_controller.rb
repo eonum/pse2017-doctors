@@ -3,6 +3,10 @@ class HomeController < ApplicationController
     render layout: 'home'
   end
 
+  def entry
+    render layout: 'application'
+  end
+
   def redirect
     redirect_to "/#{session[:language] || I18n.locale}"
   end

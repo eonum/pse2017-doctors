@@ -21,7 +21,7 @@
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        %a.navbar-brand(href="#")
+        %a.navbar-brand(href="#{home_path}")
           %i.fa.fa-user-md
           Ekonsil Experts
         .navbar-collapse.collapse.navbar-responsive-collapse
@@ -30,7 +30,7 @@
             %li= link_to 'About', about_url
           %ul.nav.navbar-nav.navbar-right
             %li
-              %button#location-btn.btn.btn-primary.navbar-btn.has-popover{"data-target" => ".bs-example-modal-lg", "data-toggle" => "modal",
+              %button#location-btn.btn.btn-default.navbar-btn.has-popover{"data-target" => ".bs-example-modal-lg", "data-toggle" => "modal",
                :type => 'button', :title => 'Change Location', 'data-content' => 'Change Your location here'}
                 %i.fa.fa-location-arrow
                 = current_address
@@ -52,7 +52,7 @@
             #search-bar
               = form_tag({}, method: 'get', turboboost: true) do
                 .input-group
-                  %input.form-control{type: 'text', name: 'q', value: "#{params[:q]}"}
+                  %input.form-control{type: 'text', name: 'q', value: "#{params[:q]}", placeholder: 'Enter your search query'}
                   %span.input-group-btn
                     %button.btn.btn-primary{type: 'submit'}
                       %span.fa.fa-search
@@ -78,7 +78,7 @@
           .modal-header.text-center
             %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
               %span{"aria-hidden" => "true"} ×
-            %h4#myLargeModalLabel.modal-title.text-info Location Selection
+            %h4#myLargeModalLabel.modal-title Location Selection
           .modal-body
             .map-holder
               #map

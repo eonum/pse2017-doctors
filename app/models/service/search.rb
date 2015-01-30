@@ -9,7 +9,7 @@ class Search
       results.concat search.results
     end
 
-    results
+    results.sort_by(&:_score).reverse
   end
 
 end
