@@ -34,4 +34,8 @@ class Doctor
   def to_param
     doc_id
   end
+
+  def clean_address
+    address.gsub(/\u00a0/, ' ')
+  end
 end

@@ -1,10 +1,11 @@
-%a.list-group-item{ href: doctor_url(doctor, q: params['q']) }
+%a.list-group-item.doctor{ href: doctor_url(doctor, q: params['q']) }
   %dl.dl-horizontal
     %dt Title
     %dd= doctor.title
     %dt Name
-    %dd= doctor.name
+    %dd
+      %b= doctor.name
     %dt Address
-    %dd= doctor.address
+    %dd!= doctor.clean_address.split(',').map(&:strip).join('<br>')
     %dt Distance
     %dd!= "#{doctor.distance_to(@location).round(2)} km, <em>#{compass_point(doctor.bearing_to @location)}</em>"

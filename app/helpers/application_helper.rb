@@ -17,8 +17,8 @@ module ApplicationHelper
     cookies[:location] || 'No location set'
   end
 
-  def fa_icon(name)
-    content_tag(:i, class: "fa fa-#{name}")
+  def fa_icon(name, text='')
+    safe_join([content_tag(:i, nil, class: "fa fa-#{name}"), " #{text}"])
   end
 
   def progress_bar(value, css_class)
@@ -27,9 +27,6 @@ module ApplicationHelper
       'aria-valuemin' => 0, 'aria-valuemax' => 100, style: "width: #{value}%;" ) do
         content_tag(:span, 'BLabla',  class: 'sr-only')
       end
-      # raw '<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-      #   <span class="sr-only">60% Complete</span>
-      # </div>'
     end
   end
 end
