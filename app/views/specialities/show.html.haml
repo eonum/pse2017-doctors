@@ -1,19 +1,24 @@
 - render :partial => 'shared/search'
 - content_for :title, @speciality.name
 
-.panel.panel-default
-  .panel-heading
-    %h3.panel-title Speciality Details
-  .panel-body
-    %dl.dl-horizontal
-      %dt Description
-      %dd= @speciality.name
+.row
 
-.panel.panel-default
-  .panel-heading
-    %a{ href: '/' }
-      %span.pull-right Show on Map
-    %h3.panel-title Nearby Doctors
-  .panel-body
-    %ul.list-group
-      = render @doctors
+  .col-md-6
+    .panel.panel-default
+      .panel-heading
+        %h3.panel-title Speciality Details
+      .panel-body
+        %dl.dl-horizontal
+          %dt Description
+          %dd= @speciality.name
+
+  .col-md-6
+    .panel.panel-default
+      .panel-heading
+        %a{ href: '/' }
+          %span.pull-right
+            =fa_icon('map-marker', 'Show on Map')
+        %h3.panel-title Nearby Doctors
+      .panel-body
+        %ul.list-group
+          = render @doctors

@@ -1,33 +1,42 @@
 - render :partial => 'shared/search'
 - content_for :title, @icd.clean_text[0]
+.row
+  .col-md-6
+    .panel.panel-default
+      .panel-heading
+        %h3.panel-title Diagnose Details
+      .panel-body
+        %table.table
+          %tr
+            %th Code
+            %td= @icd.code
+          %tr
+            %th Text
+            %td= @icd.text
+          -if @icd.superclass
+            %tr
+              %th Superclass
+              %td= link_to @icd.superclass, icd_url(@icd.superclass, q: params['q'])
+          -if @icd.subclasses.any?
+            %tr
+              %th Subclasses
+              %td
+                %ul
+                  - @icd.subclasses.each do |s|
+                    %li
+                      =link_to s, icd_url(s, q: params['q'])
+          -if @icd.synonyms.any?
+            %tr
+              %th Synonyms
+              %td
+                %ul
+                  - @icd.synonyms.each do |s|
+                    %li= s
 
-.panel.panel-default
-  .panel-heading
-    %h3.panel-title Diagnose Details
-  .panel-body
-    %dl.dl-horizontal
-      %dt Code
-      %dd= @icd.code
-      %dt Text
-      %dd= @icd.text
-      -if @icd.superclass
-        %dt Superclass
-        %dd= link_to @icd.superclass, icd_url(@icd.superclass, q: params['q'])
-      -if @icd.subclasses.any?
-        %dt Subclasses
-        %dd
-          %ul
-            - @icd.subclasses.each do |s|
-              %li
-                =link_to s, icd_url(s, q: params['q'])
-      -if @icd.synonyms.any?
-        %dt Synonyms
-        %dd
-          %ul
-            - @icd.synonyms.each do |s|
-              %li= s
-.panel.panel-default
-  .panel-heading
-    %h3.panel-title Specialities
-  .panel-body
-    = render @specialities
+  .col-md-6
+    .panel.panel-default
+      .panel-heading
+        %h3.panel-title Specialities
+      .panel-body
+        = render @specialities
+  .col-md-4

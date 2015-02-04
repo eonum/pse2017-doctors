@@ -1,11 +1,12 @@
 class SpecialityFinder
 
   def find(code)
-    case code_type code
-      when :icd then find_for_icd code
-      when :chop then find_for_chop code
-      else []
-    end
+    specs = case code_type code
+              when :icd then find_for_icd code
+              when :chop then find_for_chop code
+              else []
+            end
+    specs | Speciality.compounds_for(specs)
   end
 
   private

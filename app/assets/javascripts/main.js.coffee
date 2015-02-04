@@ -16,6 +16,10 @@ ready = (geolocate = true) =>
               $.cookie 'location', @app.address,
                 expires: 1,
                 path: '/'
+        $('a.locatable').each (i,e) =>
+          target = $(e).attr('href')
+          target = target + '&location=' + @app.location
+          $(e).attr('href', target)
 
   $('.modal').on 'show.bs.modal', =>
     console.log 'Showing map...'
@@ -46,6 +50,11 @@ ready = (geolocate = true) =>
 # Do not geolocate on turbolink refresh
 $(document).on 'page:load', =>
   ready(false)
+
+  $('a.locatable').each (i,e) =>
+    target = $(e).attr('href')
+    target = target + '&location=' + @app.location
+    $(e).attr('href', target)
 
 # Do geolocate only on hard refresh
 $(document).ready ready

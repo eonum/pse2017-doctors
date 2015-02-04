@@ -28,7 +28,7 @@ class Speciality
     keywords.map(&:specialities)
   end
 
-  def self.generate_compounds_for(specialites)
+  def self.compounds_for(specialites)
     codes = specialites.map(&:code)
     Speciality.where(:compounds.ne => []).to_a.select { |fmh| (fmh.compounds - codes).empty? }
   end
