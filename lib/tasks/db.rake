@@ -38,6 +38,7 @@ namespace :db do
 
     doc_file = IO.readlines(file)
 
+    # Find all docfields for each doctor
     d_hash = {}
     doc_file.each_with_index do |line, index|
       row = line.split(';')
@@ -55,10 +56,12 @@ namespace :db do
       pg.increment
     end
 
+    fields_to_fmh = docfield_to_fmh
+
     pg = ProgressBar.create(total: d_hash.size, title: 'Importing Doctors')
     d_hash.each do |k,v|
       row = doc_file[v[:line]].split(';')
-
+      fs_codes = fields_to_fmh.values_at(*v[:fields])
       Doctor.create do |d|
         d.doc_id   = row[0].strip.to_i
         d.name     = row[1].strip
@@ -69,6 +72,7 @@ namespace :db do
         d.phone2   = (row[6]||'').strip
         d.canton   = (row[7]||'').strip
         d.docfields = v[:fields]
+        d.specialities = Speciality.in(code: fs_codes.compact.flatten)
         d.location = [row[9].strip.to_f, row[10].strip.to_f] # long/lat
       end
 
@@ -91,6 +95,9 @@ namespace :db do
       # Delete hospital from doctors
       d.destroy
     end
+
+    Doctor.create_indexes
+    Hospital.create_indexes
   end
 
   'Seed FMH Specialties with fallbacks and compounds'
@@ -146,6 +153,8 @@ namespace :db do
       fmh.compounds = compounds
       fmh.save
     end
+
+    Speciality.create_indexes
   end
 
   task seed_keywords: :environment do
@@ -177,37 +186,6 @@ namespace :db do
           fmh.keywords.create(keyword: keyword, exclusiva: exclusiva, type: k.to_s)
         end
       end
-    end
-  end
-
-  task seed_doctor_specs: :environment do
-    d_to_fmh = {}
-
-    CSV.foreach Rails.root.join('data', 'relations', 'docfield_to_fmh.csv'), col_sep: ',' do |row|
-      d_to_fmh[row[0]] = row[3..-1] if row[0]
-      d_to_fmh[row[1]] = row[3..-1] if row[1]
-      d_to_fmh[row[3]] = row[3..-1] if row[2]
-    end
-
-    # Remove nil entries and convert to integers
-    d_to_fmh.compact!
-    d_to_fmh.each_value {|v| v.compact!}
-    d_to_fmh.each_value {|v| v.map!(&:to_i)}
-
-    pg = ProgressBar.create(total: Doctor.count, title: 'Doctor-Specialitites')
-
-    Doctor.no_timeout.each do |d|
-      fields = d.docfields
-
-      fs_codes = []
-      fields.each do |f|
-        fs_codes << d_to_fmh[f]
-      end
-
-      d.specialities = Speciality.in(code: fs_codes.compact.flatten)
-      d.save
-
-      pg.increment
     end
   end
 
@@ -318,8 +296,8 @@ namespace :db do
       end
     end
 
-    desc 'Seed Reputations'
-    task reputation: :environment do
+    desc 'Seed Hospital Ratings'
+    task rating: :environment do
 
       Hospital.each do |h|
         h.ratings.destroy_all
@@ -329,12 +307,11 @@ namespace :db do
       file = Rails.root.join('data','medical', 'reputation_icd.csv')
       count = `wc -l #{file}`.to_i
 
-      pg = ProgressBar.create(total: count, title: 'Reputation')
+      pg = ProgressBar.create(total: count, title: 'Hospital Ratings')
 
       CSV.foreach file, col_sep: ";" do |row|
         h = Hospital.find_by(doc_id: row[0].to_i)
-        h.ratings.build(code: row[1], level: row[2])
-        h.save
+        h.ratings.create(code: row[1], level: row[2])
 
         pg.increment
       end
@@ -403,14 +380,13 @@ namespace :db do
     task all: :environment do
       Rake::Task['db:mongoid:remove_indexes'].execute
 
-      Rake::Task['db:seed_doctors'].execute
       Rake::Task['db:seed_specialities'].execute
+      Rake::Task['db:seed_doctors'].execute
       Rake::Task['db:seed_keywords'].execute
-      Rake::Task['db:seed_doctor_specs'].execute
       Rake::Task['db:seed:icd'].execute
       Rake::Task['db:seed:chop'].execute
       Rake::Task['db:seed:mdc'].execute
-      Rake::Task['db:seed:reputation'].execute
+      Rake::Task['db:seed:rating'].execute
       Rake::Task['db:seed:thesaur'].execute
       Rake::Task['db:seed:range'].execute
 

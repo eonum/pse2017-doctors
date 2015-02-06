@@ -3,7 +3,7 @@ class Doctor
   include Mongoid::Elasticsearch
   include Geocoder::Model::Mongoid
 
-  has_and_belongs_to_many :specialities
+  has_and_belongs_to_many :specialities, inverse_of: nil
 
   field :doc_id, type: Integer
   field :name
@@ -19,6 +19,7 @@ class Doctor
   elasticsearch!({ callbacks: false })
 
   index({ name: 1, title: 1 }, { unique: true, drop_dups: true })
+  index({ doc_id: 1 })
 
   geocoded_by :address, coordinates: :location
   reverse_geocoded_by :location

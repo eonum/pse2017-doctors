@@ -1,13 +1,13 @@
 development:
   sessions:
     default:
-      database: mongoid_test_development
+      database: op2_development
       hosts:
         - localhost:27017
 
 production:
   sessions:
     default:
-      database: mongoid_test_development
+      database: op2_development
       hosts:
         - localhost:27017

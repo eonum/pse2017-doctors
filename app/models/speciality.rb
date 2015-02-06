@@ -2,7 +2,6 @@ class Speciality
   include Mongoid::Document
   include Mongoid::Elasticsearch
 
-  has_and_belongs_to_many :doctors
   has_and_belongs_to_many :keywords
   has_and_belongs_to_many :mdcs
 
