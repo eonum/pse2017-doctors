@@ -4,12 +4,14 @@ require_relative 'seed_helpers.rb'
 namespace :search do
   namespace :index do
 
+    desc 'Remove existing Search indices'
     task remove: :environment do
       [Icd, Chop, Hospital, Doctor, Speciality].each do |model|
         model.es.index.delete
       end
     end
 
+    desc 'Create Search indices'
     task create: :environment do
       [Icd, Chop, Hospital, Doctor, Speciality].each do |model|
         model.es.index.create
@@ -17,6 +19,7 @@ namespace :search do
     end
   end
 
+  desc 'Reindex all model data'
   task reindex: :environment do
     [Icd, Chop, Hospital, Doctor, Speciality].each do |model|
       model.es.index_all
@@ -157,6 +160,7 @@ namespace :db do
     Speciality.create_indexes
   end
 
+  desc 'Seed FMH Keywords'
   task seed_keywords: :environment do
 
     Speciality.each do |s|
