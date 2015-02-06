@@ -11,7 +11,7 @@ class Chop
   field :inclusiva, localize: true, type: Array
   field :drgs, type: Array
 
-  elasticsearch!
+  elasticsearch!({ callbacks: false })
 
   index({ code: 1, version: 1 }, { unique: true })
   index({ code_short: 1, version: 1 }, { unique: true })

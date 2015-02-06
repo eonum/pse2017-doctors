@@ -11,7 +11,7 @@ class Speciality
   field :fallbacks, type: Array, default: []
   field :compounds, type: Array, default: []
 
-  elasticsearch!
+  elasticsearch!({ callbacks: false })
 
   index({ code: 1 }, { unique: true })
 

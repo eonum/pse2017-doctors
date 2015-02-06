@@ -3,17 +3,20 @@ require_relative 'seed_helpers.rb'
 
 namespace :search do
   namespace :index do
+
     task remove: :environment do
       [Icd, Chop, Hospital, Doctor, Speciality].each do |model|
         model.es.index.delete
       end
     end
+
     task create: :environment do
       [Icd, Chop, Hospital, Doctor, Speciality].each do |model|
         model.es.index.create
       end
     end
   end
+
   task reindex: :environment do
     [Icd, Chop, Hospital, Doctor, Speciality].each do |model|
       model.es.index_all
@@ -27,15 +30,35 @@ namespace :db do
   task seed_doctors: :environment do
     Doctor.delete_all
     Hospital.delete_all
-    Doctor.remove_indexes
 
     file = Rails.root.join('data','medical','doctors.csv')
     count = `wc -l #{file}`.to_i
 
-    pg = ProgressBar.create(total: count)
+    pg = ProgressBar.create(total: count, title: 'Indexing Doctor Fields')
 
-    IO.foreach(file) do |line|
+    doc_file = IO.readlines(file)
+
+    d_hash = {}
+    doc_file.each_with_index do |line, index|
       row = line.split(';')
+
+      name = row[1].strip
+      title = (row[2]||'').strip
+      field = (row[8]||'').strip
+
+      if d_hash.has_key?(name+title)
+        d_hash[name+title][:fields] << field
+      else
+        d_hash[name+title] = { line: index, fields: [field]}
+      end
+
+      pg.increment
+    end
+
+    pg = ProgressBar.create(total: d_hash.size, title: 'Importing Doctors')
+    d_hash.each do |k,v|
+      row = doc_file[v[:line]].split(';')
+
       Doctor.create do |d|
         d.doc_id   = row[0].strip.to_i
         d.name     = row[1].strip
@@ -45,7 +68,7 @@ namespace :db do
         d.phone1   = (row[5]||'').strip
         d.phone2   = (row[6]||'').strip
         d.canton   = (row[7]||'').strip
-        d.docfield = (row[8]||'').strip
+        d.docfields = v[:fields]
         d.location = [row[9].strip.to_f, row[10].strip.to_f] # long/lat
       end
 
@@ -53,7 +76,7 @@ namespace :db do
     end
 
     # Extract hospitals from doctors
-    Doctor.where(docfield: 'spital').each do |d|
+    Doctor.where(docfields: 'spital').each do |d|
       Hospital.create do |h|
         h.doc_id  = d.doc_id
         h.name    = d.name
@@ -65,30 +88,10 @@ namespace :db do
         h.canton  = d.canton
         h.location = d.location
       end
-
+      # Delete hospital from doctors
       d.destroy
     end
-
-
-    Doctor.index({ name: 1, title: 1 })
-    Doctor.create_indexes
-
-    # Consolidate doctor's specialities
-    pg = ProgressBar.create(total: Doctor.count)
-
-    Doctor.each do |d|
-      fields = Doctor.where(title: d.title, name: d.name).map(&:docfield)
-      d.docfields = fields
-      d.save
-      pg.increment
-    end
-
-    Doctor.remove_indexes
-
-    # remove temporary field
-    # Doctor.unset :docfield
   end
-
 
   'Seed FMH Specialties with fallbacks and compounds'
   task seed_specialities: :environment do
@@ -97,7 +100,7 @@ namespace :db do
     file = Rails.root.join('data','fmh','fmh_names.csv')
     count = `wc -l #{file}`.to_i
 
-    pg = ProgressBar.create(total: count)
+    pg = ProgressBar.create(total: count, title: 'Specialities')
 
     # Seed names
     CSV.foreach file, col_sep: ";" do |row|
@@ -167,7 +170,7 @@ namespace :db do
         exclusiva = row[1..2].reject(&:empty?).reject{ |e| e == "\n" }
         fs_codes = row[3..-1].reject(&:empty?).reject{ |e| e == "\n" }.map(&:to_i)
 
-        puts keyword + ': ' + fs_codes.inspect
+        #puts keyword + ': ' + fs_codes.inspect
         fs_codes.each do |code|
           fmh = Speciality.find_by(code: code)
 
@@ -191,9 +194,9 @@ namespace :db do
     d_to_fmh.each_value {|v| v.compact!}
     d_to_fmh.each_value {|v| v.map!(&:to_i)}
 
-    pg = ProgressBar.create(total: Doctor.where(speciality_ids: []).count)
+    pg = ProgressBar.create(total: Doctor.count, title: 'Doctor-Specialitites')
 
-    Doctor.where(speciality_ids: []).no_timeout.each do |d|
+    Doctor.no_timeout.each do |d|
       fields = d.docfields
 
       fs_codes = []
@@ -219,7 +222,7 @@ namespace :db do
       file = Rails.root.join('data','icd', 'icdgm2014.csv')
       count = `wc -l #{file}`.to_i
 
-      pg = ProgressBar.create(total: count)
+      pg = ProgressBar.create(total: count, title: 'ICD')
 
       CSV.foreach file, headers: true, col_sep: ";" do |row|
         code = row[0]
@@ -258,7 +261,7 @@ namespace :db do
       file =  Rails.root.join('data','chop', 'chop2015.csv')
       count = `wc -l #{file}`.to_i
 
-      pg = ProgressBar.create(total: count)
+      pg = ProgressBar.create(total: count, title: 'CHOP')
 
       CSV.foreach file, headers: true, col_sep: "|" do |row|
         code = row[0]
@@ -292,7 +295,7 @@ namespace :db do
       file = Rails.root.join('data','mdc', 'mdc40.csv')
       count = `wc -l #{file}`.to_i
 
-      pg = ProgressBar.create(total: count)
+      pg = ProgressBar.create(total: count, title: 'MDC')
 
       CSV.foreach file, headers: true, col_sep: ";" do |row|
         mdc = Mdc.create(code: row[1], version: row[0], prefix: row[5])
@@ -305,7 +308,7 @@ namespace :db do
       # Seed Mdc Specialities
       IO.foreach(Rails.root.join('data','relations','mdc_to_fmh.csv')) do |line|
         row = line.split(';')
-        puts row.inspect
+        #puts row.inspect
         fs_code = row[0].to_i
         mdc_code = row[1]
 
@@ -326,10 +329,10 @@ namespace :db do
       file = Rails.root.join('data','medical', 'reputation_icd.csv')
       count = `wc -l #{file}`.to_i
 
-      pg = ProgressBar.create(total: count)
+      pg = ProgressBar.create(total: count, title: 'Reputation')
 
       CSV.foreach file, col_sep: ";" do |row|
-        h = Hospital.where(doc_id: row[0].to_i).first
+        h = Hospital.find_by(doc_id: row[0].to_i)
         h.ratings.build(code: row[1], level: row[2])
         h.save
 
@@ -395,6 +398,23 @@ namespace :db do
           range.specialities = Speciality.in(code: fs_codes).to_a
         end
       end
+    end
+
+    task all: :environment do
+      Rake::Task['db:mongoid:remove_indexes'].execute
+
+      Rake::Task['db:seed_doctors'].execute
+      Rake::Task['db:seed_specialities'].execute
+      Rake::Task['db:seed_keywords'].execute
+      Rake::Task['db:seed_doctor_specs'].execute
+      Rake::Task['db:seed:icd'].execute
+      Rake::Task['db:seed:chop'].execute
+      Rake::Task['db:seed:mdc'].execute
+      Rake::Task['db:seed:reputation'].execute
+      Rake::Task['db:seed:thesaur'].execute
+      Rake::Task['db:seed:range'].execute
+
+      Rake::Task['db:mongoid:create_indexes'].execute
     end
 
   end

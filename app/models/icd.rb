@@ -13,7 +13,7 @@ class Icd
 
   index({ code: 1, version: 1 }, { unique: true })
 
-  elasticsearch!
+  elasticsearch!({ callbacks: false })
 
   def to_param
     code

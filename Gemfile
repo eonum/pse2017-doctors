@@ -27,12 +27,13 @@ gem 'mongoid'
 gem 'geocoder'
 gem 'ruby-progressbar'
 
+# Should probaly use a development group on some of those gems
 gem 'haml-rails'
 gem 'twitter-bootstrap-rails'
 gem 'therubyracer'
 gem 'less-rails'
 gem 'jquery-cookie-rails'
-gem 'nprogress-rails'
-gem 'turboboost'
+gem 'nprogress-rails'   # Fancy async loading bar at the top of page, Youtube style
+gem 'turboboost'        # Turbolinks for forms
 gem 'mongoid-elasticsearch'
 

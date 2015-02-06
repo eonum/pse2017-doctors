@@ -45,7 +45,7 @@ GEM
     coffee-script (2.3.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.8.0)
+    coffee-script-source (1.9.0)
     commonjs (0.2.7)
     connection_pool (2.1.1)
     elasticsearch (1.0.6)
@@ -57,15 +57,15 @@ GEM
       faraday
       multi_json
     erubis (2.7.0)
-    execjs (2.2.2)
+    execjs (2.3.0)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     geocoder (1.2.7)
-    globalid (0.3.0)
+    globalid (0.3.1)
       activesupport (>= 4.1.0)
     haml (4.0.6)
       tilt
-    haml-rails (0.7.0)
+    haml-rails (0.8.2)
       actionpack (>= 4.0.1)
       activesupport (>= 4.0.1)
       haml (>= 3.1, < 5.0)
@@ -118,7 +118,7 @@ GEM
     multipart-post (2.0.0)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
-    nprogress-rails (0.1.6.5)
+    nprogress-rails (0.1.6.6)
     optionable (0.2.0)
     origin (2.1.1)
     rack (1.6.0)
@@ -154,7 +154,7 @@ GEM
     ruby-progressbar (1.7.1)
     ruby_parser (3.6.4)
       sexp_processor (~> 4.1)
-    sass (3.4.10)
+    sass (3.4.11)
     sass-rails (5.0.1)
       railties (>= 4.0.0, < 5.0)
       sass (~> 3.1)
