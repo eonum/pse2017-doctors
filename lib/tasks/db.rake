@@ -213,7 +213,9 @@ namespace :db do
         subclasses = parse_psql_array(row[15])
 
         icd = Icd.create(code: code, version: version, drgs: drgs, subclasses: subclasses)
-        icd.text_translations = { de: row[1], fr: row[2], it: row[3], en: row[4] }
+        text_t =  { de: row[1], fr: row[2], it: row[3] }
+        text_t[:en] = row[4] if row[4]
+        icd.text_translations = text_t
         icd.inclusiva_translations = {
             de: parse_psql_array(row[6]),
             fr: parse_psql_array(row[7]),
