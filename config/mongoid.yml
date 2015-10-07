@@ -1,12 +1,12 @@
 development:
-  sessions:
+  clients:
     default:
       database: op2_development
       hosts:
         - localhost:27017
 
 production:
-  sessions:
+  clients:
     default:
       database: op2_development
       hosts:
