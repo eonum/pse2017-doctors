@@ -1,13 +1,13 @@
 development:
   clients:
     default:
-      database: op2_development
+      database: qualimed_hospitals
       hosts:
         - localhost:27017
 
 production:
   clients:
     default:
-      database: op2_development
+      database: qualimed_hospitals
       hosts:
         - localhost:27017

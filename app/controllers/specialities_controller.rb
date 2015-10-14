@@ -1,11 +1,9 @@
-require_relative '../models/service/speciality_finder.rb'
-
 class SpecialitiesController < ApplicationController
   include Locatable
 
   def index
     if params[:code]
-      @specialities = SpecialityFinder.new.find(params[:code])
+      @specialities = Speciality.find_by(code: params[:code])
     else
       @specialities = Speciality.all
     end

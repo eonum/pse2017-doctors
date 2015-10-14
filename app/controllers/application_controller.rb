@@ -1,6 +1,3 @@
-require_relative '../models/service/search.rb'
-require_relative '../models/service/speciality_finder.rb'
-
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
