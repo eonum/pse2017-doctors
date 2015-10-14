@@ -1,16 +1,10 @@
 class Speciality
   include Mongoid::Document
-  include Mongoid::Elasticsearch
-
-  has_and_belongs_to_many :keywords
-  has_and_belongs_to_many :mdcs
 
   field :code, type: Integer
   field :name, localize: true
   field :fallbacks, type: Array, default: []
   field :compounds, type: Array, default: []
-
-  elasticsearch!({ callbacks: false })
 
   index({ code: 1 }, { unique: true })
 

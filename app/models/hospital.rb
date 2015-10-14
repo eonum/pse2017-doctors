@@ -1,9 +1,6 @@
 class Hospital
   include Mongoid::Document
   include Geocoder::Model::Mongoid
-  include Mongoid::Elasticsearch
-
-  embeds_many :ratings
 
   field :doc_id, type: Integer
   field :name
@@ -15,8 +12,6 @@ class Hospital
   field :canton
   field :location, type: Array, default: [7.43, 46.96] # Close to Berne
 
-  elasticsearch!({ callbacks: false })
-
   index({ doc_id: 1 }, { unique: true })
 
   geocoded_by :address, coordinates: :location
@@ -27,13 +22,4 @@ class Hospital
   def to_param
     doc_id
   end
-end
-
-class Rating
-  include Mongoid::Document
-
-  embedded_in :hospial
-
-  field :code
-  field :level, type: Integer
 end
