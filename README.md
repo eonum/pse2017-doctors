@@ -7,3 +7,13 @@ The provided quality indicators are released by the Federal Office of Public Hea
 
 ### Seeding
 1. Run `rake db:seed:all` to seed all necessary data. MongoDB indices will be created automatically.
+
+### Change the admin user password for production
+1. Run `rails c`
+2. In the console:
+```ruby
+admin = User.first
+admin.password = 'new_password_very_secret'
+admin.password_confirmation = 'new_password_very_secret'
+admin.save
+```
