@@ -1,0 +1,31 @@
+%p#notice= notice
+%h2
+  = @variable.field_name + ' - ' + @variable.localized_field('name', locale)
+%div
+  = @variable.localized_field('description', locale)
+.field
+  %p
+    = t('data_type')
+    \:
+    \#{t('array_of') if @variable.isarray}
+    \#{@variable.variable_type}
+  - if @variable.from != nil
+    %p
+      = 'Wertebereich'
+      %br
+      von #{@variable.from} bis #{@variable.to}
+  %p
+    - if !@variable['values'].empty?
+      = 'Mögliche Werte'
+      %br
+      %span
+        - @variable['values'].each do |entry|
+          %span.tm-tag= entry
+  %p
+    - if @variable['values_' + locale.to_s] != nil && !@variable['values_' + locale.to_s].empty?
+      = 'Wertbeschreibungen'
+      %br
+      %span
+        - @variable['values_' + locale.to_s].each do |entry|
+          %span.tm-tag= entry
+= link_to 'Edit', edit_variable_path(@variable)

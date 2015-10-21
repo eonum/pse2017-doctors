@@ -1,0 +1,74 @@
+:javascript
+  var listEntry = "<span>#{j text_field_tag '@@variable@@', '', :style => 'width: 100px; margin-right: 2px', :class => 'inputText listsOnly'}"
+  + "#{j image_tag '/images/icons/bullet_toggle_minus.png', :title =>'delete', :onclick => '$(this).closest(\'span\').remove()', :class => 'delete_button_array_list'}</span>";
+= form_for(@variable) do |f|
+  - if @variable.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@variable.errors.count, "error")
+        prohibited this variable from being saved:
+      %ul
+        - @variable.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label 'Variablenname'
+    = f.text_field :field_name
+    Rank:#{f.number_field :rank, :style => 'width: 40px;'}
+    Import Rank:#{f.number_field :import_rank, :style => 'width: 40px;'}
+  %div
+    %span
+      Sets
+      %br
+      - @variable['variable_sets'].each do |entry|
+        %span
+          = text_field_tag 'variable[variable_sets][]', entry, :style => 'width: 100px;', :class => 'inputText'
+          = image_tag '/images/icons/bullet_toggle_minus.png', :title => 'delete', :onclick => '$(this).closest(\'span\').remove()', :class => 'delete_button_array_list'
+    %span.pseudoLink{onclick: "$(this).prev().append(listEntry.replace(\"@@variable@@\", \"variable[variable_sets][]\"));", title: ""} Add value
+  .field
+    = f.label t('name')
+    %br
+    = f.text_field :name_de
+    = f.text_field :name_fr
+    = f.text_field :name_it
+  .field
+    = f.label t('description')
+    %br
+    = f.text_area :description_de, {:cols => 35, :rows => 10}
+    = f.text_area :description_fr, {:cols => 35, :rows => 10}
+    = f.text_area :description_it, {:cols => 35, :rows => 10}
+  .field
+    %p
+      = f.label 'Variablentyp'
+      %br
+      = f.select :variable_type, options_for_select([['Number', :number], ['String', :string], ['Code', :code], ['Date', :date]], @variable['variable_type'])
+      = f.label 'Array: '
+
+    %p
+      = f.label 'Mögliche Werte: Kein Eintrag => Freitext'
+      %br
+      %span
+        - @variable['values'].each do |entry|
+          %span
+            = text_field_tag 'variable[values][]', entry, :style => 'width: 100px;', :class => 'inputText'
+            = image_tag '/images/icons/bullet_toggle_minus.png', :title => 'delete', :onclick => '$(this).closest(\'span\').remove()', :class => 'delete_button_array_list'
+      %span.pseudoLink{onclick: "$(this).prev().append(listEntry.replace(\"@@variable@@\", \"variable[values][]\"));", title: ""} Add value
+      %br
+      %span
+        Beschreibungen Deutsch
+        %br
+        - @variable['values_de'].each do |entry|
+          %span
+            = text_field_tag 'variable[values_de][]', entry, :style => 'width: 100px;', :class => 'inputText'
+            = image_tag '/images/icons/bullet_toggle_minus.png', :title => 'delete', :onclick => '$(this).closest(\'span\').remove()', :class => 'delete_button_array_list'
+      %span.pseudoLink{onclick: "$(this).prev().append(listEntry.replace(\"@@variable@@\", \"variable[values_de][]\"));", title: ""} Add value
+      %br
+      %span
+        Beschreibungen Französisch
+        %br
+        - @variable['values_fr'].each do |entry|
+          %span
+            = text_field_tag 'variable[values_fr][]', entry, :style => 'width: 100px;', :class => 'inputText'
+            = image_tag '/images/icons/bullet_toggle_minus.png', :title => 'delete', :onclick => '$(this).closest(\'span\').remove()', :class => 'delete_button_array_list'
+      %span.pseudoLink{onclick: "$(this).prev().append(listEntry.replace(\"@@variable@@\", \"variable[values_fr][]\"));", title: ""} Add value
+  .actions
+    = f.submit t('save')

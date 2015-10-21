@@ -19,6 +19,10 @@ class ApplicationController < ActionController::Base
     { :locale => I18n.locale }
   end
 
+  def escape_query query
+    return (query or '').gsub(/\\/, '\&\&').gsub(/'/, "''")
+  end
+
   private
 
     def set_search
@@ -40,4 +44,5 @@ class ApplicationController < ActionController::Base
     def default_return_count
       10
     end
+
 end

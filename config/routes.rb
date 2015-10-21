@@ -8,7 +8,6 @@ Rails.application.routes.draw do
     resources :specialities, only: [:index, :show]
 
     resources :variables do
-      get :filter_condition, :on => :collection
       post :set_variable_sets, :on => :member
     end
 
