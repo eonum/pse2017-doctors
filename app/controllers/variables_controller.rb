@@ -78,9 +78,9 @@ class VariablesController < ApplicationController
   end
 
   def variable_params
-    params.require(:variable).permit(:field_name, :rank, :import_rank, :variable_sets, :name_de,
-                                     :name_fr, :name_it, :description_de, :description_fr,
-                                     :description_it, :variable_type, :values, :values_de, :values_fr,
-                                     :values_it)
+    params.require(:variable).permit(:field_name, :rank, :import_rank, :name_de,:name_fr, :name_it,
+                                     :description_de, :description_fr,:description_it, :variable_type,
+                                     :variable_sets => [], :values => [], :values_de => [], :values_fr => [],
+                                     :values_it => [])
   end
 end
