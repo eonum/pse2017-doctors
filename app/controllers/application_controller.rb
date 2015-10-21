@@ -14,14 +14,6 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) {|u| u.permit(:username, :email, :password, :password_confirmation, :current_password)}
   end
 
-  def ensure_login
-    unless current_user
-      store_location
-      flash[:notice] = t('login_requisited')
-      redirect_to new_user_session_url
-      return false
-    end
-  end
 
   def default_url_options
     { :locale => I18n.locale }
