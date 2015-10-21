@@ -24,7 +24,9 @@ module Locatable
   end
 
   def supplied_location
-    params[:location] ? params[:location].split(',').map(&:to_f) : nil
+    location = params[:location] || ''
+    return nil unless location.match /^(\-?\d+(\.\d+)?),\s*(\-?\d+(\.\d+)?)$/
+    location.split(',').map(&:to_f)
   end
 
   def valid_location?(location)
