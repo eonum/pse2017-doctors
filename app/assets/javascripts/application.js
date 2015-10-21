@@ -13,10 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.cookie
+//= require jquery-ui/autocomplete
 //= require twitter/bootstrap
 //= require turbolinks
 //= require nprogress
 //= require nprogress-turbolinks
 //= require turboboost
 //= require gmaps
+//= require tagmanager
 //= require_tree .
+

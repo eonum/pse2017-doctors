@@ -2,7 +2,7 @@
 = link_to 'Neue Variable', new_variable_path
 %div
   :javascript
-    addLoadEvent(function () {
+    $(function () {
         $('#tag_field_all').tagsManager({
             prefilled: #{raw @sets},
             deleteTagsOnBackspace: false,
@@ -38,7 +38,7 @@
       %td= variable.variable_type
       %td
         :javascript
-          addLoadEvent(function () {
+          $(function () {
               $('#tag_field_#{variable.field_name}').tagsManager({
                   prefilled: #{raw (variable.variable_sets)},
                   deleteTagsOnBackspace: false,
