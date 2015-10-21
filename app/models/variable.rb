@@ -21,7 +21,7 @@ class Variable
   field :description_fr, :type => String, :default => ''
   field :description_it, :type => String, :default => ''
 
-  field :variable_type, :type => Symbol, :default => :string # can be one of :percentage, :string, :boolean,
+  field :variable_type, :type => Symbol, :default => :string # can be one of :percentage, :string, :boolean, :number,
 
   # possible values if enum string, null, empty => free text or numeric
   field :values, :type => Array, :default => []

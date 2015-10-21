@@ -7,13 +7,7 @@
   %p
     = t('data_type')
     \:
-    \#{t('array_of') if @variable.isarray}
     \#{@variable.variable_type}
-  - if @variable.from != nil
-    %p
-      = 'Wertebereich'
-      %br
-      von #{@variable.from} bis #{@variable.to}
   %p
     - if !@variable['values'].empty?
       = 'Mögliche Werte'
@@ -28,4 +22,4 @@
       %span
         - @variable['values_' + locale.to_s].each do |entry|
           %span.tm-tag= entry
-= link_to 'Edit', edit_variable_path(@variable)
+= link_to 'Bearbeiten', edit_variable_path(@variable)

@@ -14,16 +14,16 @@
     });
   = form_tag variables_path(), :method => 'get' do |f|
     %input#tag_field_all.tm-tag{name: "sets", placeholder: "Sets", style: "width:5em;", type: "text"}
-    = submit_tag(t('show_selected_sets'), :class => 'tm-tag', :style => 'margin-top: 0px; padding: 3px;')
+    = submit_tag('Ausgewählte Sets anzeigen', :class => 'tm-tag', :style => 'margin-top: 0px; padding: 3px;')
 = form_tag(variables_path, :method => "get") do
-  = label_tag(:q, t('search'))
+  = label_tag(:q, 'Suche')
   = text_field_tag(:q, params[:q])
-  = submit_tag(t('search'))
+  = submit_tag('Suche')
 %table
   %tr
-    %th= t('name')
-    %th= t('description')
-    %th Type
+    %th= 'Variablenname'
+    %th= 'Beschrieb'
+    %th Typ
     %th{width: "300px"} Sets
     %th{width: "80px"}
   - @variables.each do |variable|
@@ -50,8 +50,8 @@
           });
         = form_for variable, :url => set_variable_sets_variable_path(variable), :method => 'post' do |f|
           %input.tm-tag{id: "tag_field_#{variable.field_name}", name: "sets", placeholder: "Sets", style: "width:5em;", type: "text"}
-          = submit_tag(t('save'), :class => 'tm-tag', :style => 'margin-top: 0px; padding: 3px;')
+          = submit_tag('Speichern', :class => 'tm-tag', :style => 'margin-top: 0px; padding: 3px;')
       %td
-        = link_to image_tag('icons/application_view_list.png', :style => 'border-style:none'), variable
-        = link_to image_tag('icons/note_edit.png', :style => 'border-style:none'), edit_variable_path(variable)
-        = link_to image_tag('icons/note_delete.png', :style => 'border-style:none'), variable, method: :delete, :title => t('delete_analysis'), :data => {:confirm => t('confirm_delete_analysis')}
+        = link_to image_tag('application_view_list.png', :style => 'border-style:none'), variable
+        = link_to image_tag('note_edit.png', :style => 'border-style:none'), edit_variable_path(variable)
+        = link_to image_tag('delete.png', :style => 'border-style:none'), variable, method: :delete, :title => 'Löschen', :data => {:confirm => 'Möchten Sie diese Kennzahl wirklich löschen?'}

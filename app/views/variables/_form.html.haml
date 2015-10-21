@@ -25,13 +25,13 @@
           = image_tag '/images/icons/bullet_toggle_minus.png', :title => 'delete', :onclick => '$(this).closest(\'span\').remove()', :class => 'delete_button_array_list'
     %span.pseudoLink{onclick: "$(this).prev().append(listEntry.replace(\"@@variable@@\", \"variable[variable_sets][]\"));", title: ""} Add value
   .field
-    = f.label t('name')
+    = f.label 'Name'
     %br
     = f.text_field :name_de
     = f.text_field :name_fr
     = f.text_field :name_it
   .field
-    = f.label t('description')
+    = f.label 'Beschrieb'
     %br
     = f.text_area :description_de, {:cols => 35, :rows => 10}
     = f.text_area :description_fr, {:cols => 35, :rows => 10}
@@ -40,9 +40,7 @@
     %p
       = f.label 'Variablentyp'
       %br
-      = f.select :variable_type, options_for_select([['Number', :number], ['String', :string], ['Code', :code], ['Date', :date]], @variable['variable_type'])
-      = f.label 'Array: '
-
+      = f.select :variable_type, options_for_select([['Freitext', :string], ['Prozentzahl', :percentage], ['Fallzahl', :number], ['Flag', :boolean]], @variable['variable_type'])
     %p
       = f.label 'Mögliche Werte: Kein Eintrag => Freitext'
       %br
@@ -71,4 +69,4 @@
             = image_tag '/images/icons/bullet_toggle_minus.png', :title => 'delete', :onclick => '$(this).closest(\'span\').remove()', :class => 'delete_button_array_list'
       %span.pseudoLink{onclick: "$(this).prev().append(listEntry.replace(\"@@variable@@\", \"variable[values_fr][]\"));", title: ""} Add value
   .actions
-    = f.submit t('save')
+    = f.submit 'Speichern'

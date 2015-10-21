@@ -27,12 +27,11 @@ class VariablesController < ApplicationController
   end
 
   def create
-    @variable = Variable.new(params[:variable])
+    @variable = Variable.new(variable_params)
     preprocess_values params
 
     respond_to do |format|
       if @variable.save
-        DescriptionCache.reload_variable_cache
         format.html { redirect_to @variable, notice: 'Variable was successfully created.' }
       else
         format.html { render action: "new" }
@@ -45,8 +44,7 @@ class VariablesController < ApplicationController
     preprocess_values params
 
     respond_to do |format|
-      if @variable.update_attributes(params[:variable])
-        DescriptionCache.reload_variable_cache
+      if @variable.update_attributes(variable_params)
         format.html { redirect_to @variable, notice: 'Variable was successfully updated.' }
       else
         format.html { render action: "edit" }
@@ -77,5 +75,12 @@ class VariablesController < ApplicationController
     @variable.variable_sets = sets
     @variable.save!
     redirect_to variables_path()
+  end
+
+  def variable_params
+    params.require(:variable).permit(:field_name, :rank, :import_rank, :variable_sets, :name_de,
+                                     :name_fr, :name_it, :description_de, :description_fr,
+                                     :description_it, :variable_type, :values, :values_de, :values_fr,
+                                     :values_it)
   end
 end
