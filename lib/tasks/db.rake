@@ -51,10 +51,18 @@ namespace :db do
     Hospital.create_indexes
   end
 
+  desc 'Create admin user'
+  task seed_admin_user: :environment do
+    User.delete_all
+    user = User.create!(:email => 'admin@qualitaetsmedizin.ch', :password => 'change_me', :password_confirmation => 'change_me')
+    puts 'Admin login created: ' << user.email
+  end
+
   namespace :seed do
     task all: :environment do
       Rake::Task['db:mongoid:remove_indexes'].execute
       Rake::Task['db:seed_hospitals'].execute
+      Rake::Task['db:seed_admin_user'].execute
       Rake::Task['db:mongoid:create_indexes'].execute
     end
   end
