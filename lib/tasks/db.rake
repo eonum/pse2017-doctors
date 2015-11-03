@@ -5,7 +5,7 @@ namespace :db do
   task seed_hospitals: :environment do
     Hospital.delete_all
 
-    file = Rails.root.join('data', 'medical', 'doctors.csv')
+    file = Rails.root.join('data', 'medical', 'hospitals.csv')
     count = `wc -l #{file}`.to_i
 
     pg = ProgressBar.create(total: count, title: 'Indexing Hospital Fields')
