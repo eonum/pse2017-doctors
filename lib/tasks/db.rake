@@ -146,13 +146,52 @@ namespace :db do
         d.name_it = row[2].strip
         d.variable_sets = ['qip', type]
       end
-
       file.close
 
       pg.increment
     end
 
     Variable.create_indexes
+  end
+
+  desc 'Import QIP data'
+  task seed_qip_data: :environment do
+    variables = {}
+    Variable.where({ 'variable_sets' => { '$in' => ['qip'] }}).each {|var| variables[var.field_name] = var}
+    hospitals = {}
+    Hospital.all.each {|hop| hospitals[hop.name] = hop}
+
+    files = {
+        2012 => Rails.root.join('data', 'medical', 'qip12_tabdaten.csv'),
+        2013 => Rails.root.join('data', 'medical', 'qip13_tabdaten.csv')
+    }
+
+    files.each do |year, file|
+      count = `wc -l #{file}`.to_i
+      qip_file = IO.readlines(file)
+
+      pg = ProgressBar.create(total: count, title: "Importing QIP data from year #{year}")
+      qip_file.each_with_index do |line, index|
+        next if line.blank?
+        row = line.split(';')
+        var_name = row[1].split(' ')[0]
+        var = variables[var_name]
+        next if var == nil
+        hop = hospitals[row[0].strip]
+
+        qip = {}
+        qip['observed'] = (row[6]||'').strip.to_f unless (row[6]||'').blank?
+        qip['expected'] = (row[7]||'').strip.to_f unless (row[7]||'').blank?
+        qip['SMR'] = (row[8]||'').strip.to_f  unless (row[8]||'').blank?
+        qip['num_cases'] = (row[9]||'').strip.to_i  unless (row[9]||'').blank?
+
+        hop[var.field_name] = {} if hop[var.field_name] == nil
+        hop[var.field_name][year] = qip
+        hop.save!
+
+        pg.increment
+      end
+    end
   end
 
   desc 'Link hospitals and their locations'
@@ -197,6 +236,7 @@ namespace :db do
       Rake::Task['db:seed_hospital_variables'].execute
       Rake::Task['db:seed_hospitals'].execute
       Rake::Task['db:seed_qip_variables'].execute
+      Rake::Task['db:seed_qip_data'].execute
       Rake::Task['db:link_hospitals'].execute
       Rake::Task['db:seed_admin_user'].execute
       Rake::Task['db:mongoid:create_indexes'].execute
