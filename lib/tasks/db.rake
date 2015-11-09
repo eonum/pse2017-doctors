@@ -51,28 +51,58 @@ namespace :db do
     HospitalLocation.create_indexes
   end
 
+  desc 'Import KZP variables'
+  task seed_hospital_variables: :environment do
+    Variable.delete_all
+
+    file = Rails.root.join('data', 'medical', 'kzp12_daten_hospital_variables.csv')
+    count = `wc -l #{file}`.to_i
+
+    var_file = IO.readlines(file)
+
+    pg = ProgressBar.create(total: count, title: 'Importing hospital variables')
+    var_file.each_with_index do |line, index|
+      row = line.split(';')
+      next if row[0].strip.blank? || index == 0
+      Variable.create do |d|
+        d.rank = index
+        d.import_rank = index - 1
+        d.field_name = row[0].strip
+        d.name_de = row[1].strip
+        d.name_fr = row[2].strip
+        d.name_it = row[3].strip
+        d.variable_sets = ['kzp']
+      end
+
+      pg.increment
+    end
+
+    Variable.create_indexes
+  end
+
   desc 'Import Hospitals'
   task seed_hospitals: :environment do
     Hospital.delete_all
 
     file = Rails.root.join('data', 'medical', 'kzp12_daten.csv')
     count = `wc -l #{file}`.to_i
-
     hop_file = IO.readlines(file)
+    variables = {}
+    # Use only the variables described in the KZP variable set.
+    valid_field_names = Variable.where({ 'variable_sets' => { '$in' => ['kzp'] }}).map {|var| var.field_name }
 
     pg = ProgressBar.create(total: count, title: 'Importing Hospitals')
     hop_file.each_with_index do |line, index|
+      next if line.blank?
       row = line.split(';')
+      if(index == 0)
+        row.each_with_index { |var_name, index| variables[index] = var_name if(valid_field_names.include? var_name) }
+        next
+      end
+
       next if row[1].strip.blank?
       Hospital.create do |d|
-        d.canton = row[0].strip
-        d.name = row[1].strip
-        d.address1 = (row[2]||'').strip
-        d.address2 = (row[3]||'').strip
-        d.bfs_typo  = (row[4]||'').strip
-        d.legal_status  = (row[5]||'').strip
-        d.num_locations  = (row[9]||'').strip.to_i
-        d.hospital_location_ids = []
+        variables.each {|index, field_name| d[field_name] = (row[index]||'').strip}
       end
 
       pg.increment
@@ -120,7 +150,7 @@ namespace :db do
     task all: :environment do
       Rake::Task['db:mongoid:remove_indexes'].execute
       Rake::Task['db:seed_hospital_locations'].execute
-
+      Rake::Task['db:seed_hospital_variables'].execute
       Rake::Task['db:seed_hospitals'].execute
       Rake::Task['db:link_hospitals'].execute
       Rake::Task['db:seed_admin_user'].execute
