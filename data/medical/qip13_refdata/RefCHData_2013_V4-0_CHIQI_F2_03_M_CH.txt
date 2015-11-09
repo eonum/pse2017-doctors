@@ -1,0 +1,22 @@
+
+	F.2.3.M Endovaskuläre abdominale OP bei Aortenaneurysma nicht rupturiert, Mortalität // OP abdominale endovasculaire en cas d’anévrisme de l’aorte sans rupture, mortalité // OP addominale endovascolare in caso di aneurisma aortico senza lacerazione, mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	NA	NA	NA	
+	1999	NA	NA	NA	
+	2000	NA	NA	NA	
+	2001	NA	2	NA	
+	2002	NA	51	NA	
+	2003	4	109	3.669725	
+	2004	2	129	1.550388	
+	2005	6	171	3.508772	
+	2006	4	198	2.020202	
+	2007	5	267	1.872659	
+	2008	7	301	2.325581	
+	2009	8	343	2.332362	
+	2010	4	393	1.017812	
+	2011	6	402	1.492537	
+	2012	10	450	2.222222	
+	2013	7	506	1.383399	
+

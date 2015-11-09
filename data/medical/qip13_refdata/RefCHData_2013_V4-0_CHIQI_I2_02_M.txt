@@ -1,5 +1,5 @@
 
-	I.2.2.M Exzision von Bandscheibengewebe (ohne Unfall, Tumor, komplexe OP an Wirbels√§ule), Mortalit√§t // Discectomie (sans accident, tumeur, OP complexe de la colonne vert√©brale), mortalit√© // Escissione dei tessuti intervertebrali (senza infortunio, tumore, OP complessa alla colonna vertrebrale), mortalit√†
+	I.2.2.M Exzision von Bandscheibengewebe (ohne Unfall, Tumor, komplexe OP an Wirbels‰ule), Mortalit‰t // Discectomie (sans accident, tumeur, OP complexe de la colonne vertÈbrale), mortalitÈ // Escissione dei tessuti intervertebrali (senza infortunio, tumore, OP complessa alla colonna vertrebrale), mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	AltEGrp	Sex	DeathCH	CasesCH	pCH	

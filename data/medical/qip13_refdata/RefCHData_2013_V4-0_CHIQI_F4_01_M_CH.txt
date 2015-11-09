@@ -1,5 +1,5 @@
 
-	F.4.1.M Amputation im Fussbereich, kein Trauma, Mortalit√§t // Amputation non traumatique au niveau du pied, mortalit√© // Amputazione non traumatica nella regione del piede, mortalit√†
+	F.4.1.M Amputation im Fussbereich, kein Trauma, Mortalit‰t // Amputation non traumatique au niveau du pied, mortalitÈ // Amputazione non traumatica nella regione del piede, mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	DeathCH	CasesCH	pCH	

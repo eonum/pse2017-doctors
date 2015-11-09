@@ -1,5 +1,5 @@
 
-	B.1.7.M Hirninfarkt (ICDÂ­10 I63, Alter >19), MortalitÃ¤t // Infarctus cÃ©rÃ©bral (CIMÂ­10 I63, Ã¢ge >19), mortalitÃ© // Infarto cerebrale (ICDÂ­10 I63, etÃ  >19), mortalitÃ 
+	B.1.7.M Hirninfarkt (ICD­10 I63, Alter >19), Mortalität // Infarctus cérébral (CIM­10 I63, âge >19), mortalité // Infarto cerebrale (ICD­10 I63, età >19), mortalità
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	DeathCH	CasesCH	pCH	

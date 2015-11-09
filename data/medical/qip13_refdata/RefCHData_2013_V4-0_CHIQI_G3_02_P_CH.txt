@@ -1,5 +1,5 @@
 
-	G.3.2.P Anteil laparoskopische/vaginale OP bei Hysterektomien, ohne Plastik // HystÃ©rectomies laparoscopiques/vaginales, sans plastie, pourcentage // OP laparoscopica/vaginale in caso di isterectomia, senza plastica, percentuale
+	G.3.2.P Anteil laparoskopische/vaginale OP bei Hysterektomien, ohne Plastik // Hystérectomies laparoscopiques/vaginales, sans plastie, pourcentage // OP laparoscopica/vaginale in caso di isterectomia, senza plastica, percentuale
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	CasesCHDen	pCH	

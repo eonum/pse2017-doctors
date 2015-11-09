@@ -1,0 +1,22 @@
+
+	G.2.2.F Neugeborene <1250 g, Zuverlegungen // Nouveau­nés <1250 g, transféré d’un autre hôpital // Neonati <1250 g, trasferiti da un altro ospedale
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	NA	
+	1999	NA	
+	2000	NA	
+	2001	NA	
+	2002	NA	
+	2003	NA	
+	2004	NA	
+	2005	NA	
+	2006	NA	
+	2007	NA	
+	2008	25	
+	2009	98	
+	2010	124	
+	2011	142	
+	2012	107	
+	2013	109	
+

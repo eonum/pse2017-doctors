@@ -1,5 +1,5 @@
 
-	G.1.2.P Anteil vaginale Geburten mit Dammriss 3. und 4. Grades // Accouchements par voie vaginale avec rupture pÃ©rinÃ©ale du 3Ã¨me et 4Ã¨me degrÃ©, pourcentage // Parti vaginali con lacerazione perineale di 3Â° e 4Â° grado, percentuale
+	G.1.2.P Anteil vaginale Geburten mit Dammriss 3. und 4. Grades // Accouchements par voie vaginale avec rupture périnéale du 3ème et 4ème degré, pourcentage // Parti vaginali con lacerazione perineale di 3° e 4° grado, percentuale
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	CasesCHDen	pCH	

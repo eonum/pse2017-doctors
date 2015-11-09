@@ -1,5 +1,5 @@
 
-	D.1.7.M HD Pneumonie, Alter 1-19, ohne Tumor oder Mukoviszidose, Direktaufnahmen, Mortalit√§t // DP de pneumonie, √¢ge 1-19, sans tumeur ni mucoviscidose, admissions directes, mortalit√© // DP polmonite, et√† 1-19, senza tumore o mucoviscidosi, ammissioni dirette, mortalit√†
+	D.1.7.M HD Pneumonie, Alter 1-19, ohne Tumor oder Mukoviszidose, Direktaufnahmen, Mortalit‰t // DP de pneumonie, ‚ge 1-19, sans tumeur ni mucoviscidose, admissions directes, mortalitÈ // DP polmonite, et‡ 1-19, senza tumore o mucoviscidosi, ammissioni dirette, mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	DeathCH	CasesCH	pCH	

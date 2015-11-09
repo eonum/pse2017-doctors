@@ -1,5 +1,5 @@
 
-	D.2.2.M COPD ohne Tumor mit FEV1 <35% (Alter >19), Mortalit√§t // BPCO sans tumeur avec VEF1 <35 % (√¢ge >19), mortalit√© // BPCO senza tumore con VEMS1 <35 % (et√† >19), mortalit√†
+	D.2.2.M COPD ohne Tumor mit FEV1 <35% (Alter >19), Mortalit‰t // BPCO sans tumeur avec VEF1 <35 % (‚ge >19), mortalitÈ // BPCO senza tumore con VEMS1 <35 % (et‡ >19), mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	AltEGrp	Sex	DeathCH	CasesCH	pCH	

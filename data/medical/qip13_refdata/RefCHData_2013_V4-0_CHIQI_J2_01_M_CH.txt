@@ -1,5 +1,5 @@
 
-	J.2.1.M HD Sepsis, Mortalit√§t // DP √©tats septiques, mortalit√© // DP sepsi, mortalit√†
+	J.2.1.M HD Sepsis, Mortalit‰t // DP Ètats septiques, mortalitÈ // DP sepsi, mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	DeathCH	CasesCH	pCH	

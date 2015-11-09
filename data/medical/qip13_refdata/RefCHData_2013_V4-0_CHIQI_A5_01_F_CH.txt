@@ -1,5 +1,5 @@
 
-	A.5.1.F Schrittmacherversorgung (Implantationen und Wechsel, inkl. Defibrillatoren) // Traitement par pacemaker (implantation et changement, dÃ©fibrillateur inclus) // Trattamento con pacemaker (impianto e sostituzione, incluso defibrillatore)
+	A.5.1.F Schrittmacherversorgung (Implantationen und Wechsel, inkl. Defibrillatoren) // Traitement par pacemaker (implantation et changement, défibrillateur inclus) // Trattamento con pacemaker (impianto e sostituzione, incluso defibrillatore)
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	

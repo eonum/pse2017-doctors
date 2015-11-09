@@ -1,0 +1,22 @@
+
+	A.3.2.M Katheter der Koronargefässe bei HD Herzinfarkt ohne OP am Herzen (Alter >19), Mortalität // Cathétérisme des vaisseaux coronaires en cas de DP infarctus du myocarde sans OP du cœur (âge >19), mortalité // Catetere dei vasi coronarici in caso di DP infarto miocardico senza OP al cuore (età >19), mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	6	454	1.321586	
+	1999	13	942	1.380042	
+	2000	41	1137	3.605981	
+	2001	68	1928	3.526971	
+	2002	77	2568	2.998442	
+	2003	82	2630	3.117871	
+	2004	92	3130	2.939297	
+	2005	125	3885	3.217503	
+	2006	136	5063	2.686154	
+	2007	214	5839	3.665011	
+	2008	221	6181	3.575473	
+	2009	191	6646	2.873909	
+	2010	252	7831	3.21798	
+	2011	263	8346	3.15121	
+	2012	320	8818	3.628941	
+	2013	316	9131	3.460738	
+

@@ -1,0 +1,22 @@
+
+	H.3.6.M Eviszeration des Beckens bei Mann oder Frau, Mortalität // Eviscération pelvienne chez l’homme ou la femme, mortalité // Eviscerazione pelvica nell'uomo o nella donna, mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	NA	15	NA	
+	1999	NA	20	NA	
+	2000	1	19	5.263158	
+	2001	1	16	6.25	
+	2002	NA	20	NA	
+	2003	NA	13	NA	
+	2004	3	27	11.11111	
+	2005	1	27	3.703704	
+	2006	NA	19	NA	
+	2007	2	26	7.692308	
+	2008	NA	26	NA	
+	2009	1	22	4.545455	
+	2010	NA	24	NA	
+	2011	4	36	11.11111	
+	2012	2	56	3.571429	
+	2013	1	72	1.388889	
+

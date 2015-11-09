@@ -1,5 +1,5 @@
 
-	E.4.5.M Kolorektale Resektionen bei Divertikel ohne Abszess/Perforation, Mortalit√§t // R√©sections colorectales pour diverticule sans abc√®s/perforation, mortalit√© // Resezioni colorettali per diverticolo senza ascesso/perforazione, mortalit√†
+	E.4.5.M Kolorektale Resektionen bei Divertikel ohne Abszess/Perforation, Mortalit‰t // RÈsections colorectales pour diverticule sans abcËs/perforation, mortalitÈ // Resezioni colorettali per diverticolo senza ascesso/perforazione, mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	AltEGrp	Sex	DeathCH	CasesCH	pCH	

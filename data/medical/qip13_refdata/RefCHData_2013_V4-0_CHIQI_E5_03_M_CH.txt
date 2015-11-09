@@ -1,0 +1,22 @@
+
+	E.5.3.M Magenresektionen mit komplexem Eingriff am Ösophagus, Mortalität // Gastrectomies avec OP complexe de l’œsophage, mortalité // Resezione gastrica con complesso intervento all’esofago, mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	NA	25	NA	
+	1999	NA	20	NA	
+	2000	1	39	2.564103	
+	2001	6	46	13.04348	
+	2002	3	60	5	
+	2003	5	62	8.064516	
+	2004	8	76	10.52632	
+	2005	12	69	17.3913	
+	2006	5	77	6.493506	
+	2007	8	73	10.9589	
+	2008	7	92	7.608696	
+	2009	6	94	6.382979	
+	2010	9	132	6.818182	
+	2011	8	156	5.128205	
+	2012	7	145	4.827586	
+	2013	21	180	11.66667	
+

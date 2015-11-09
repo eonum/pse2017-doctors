@@ -1,0 +1,22 @@
+
+	E.5.4.F Stationäre Behandlungen bei Magenkarzinom // Traitements hospitaliers en cas de cancer de l’estomac // Ospedalizzazioni in caso di carcinoma dello stomaco
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	1302	
+	1999	1640	
+	2000	1832	
+	2001	2003	
+	2002	1932	
+	2003	1895	
+	2004	1892	
+	2005	1793	
+	2006	2210	
+	2007	2176	
+	2008	2109	
+	2009	2469	
+	2010	2569	
+	2011	2681	
+	2012	2485	
+	2013	2782	
+

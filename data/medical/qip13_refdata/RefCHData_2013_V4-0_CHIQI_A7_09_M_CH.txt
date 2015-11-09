@@ -1,5 +1,5 @@
 
-	A.7.9.M Minimalinvasive Implantation einer Aortenklappe endovaskul√§r, Mortalit√§t // Implantation mini¬≠invasive de valve aortique par voie endovasculaire, mortalit√© // Applicazione minimamente invasiva di valvola aortica endovascolare, mortalit√†
+	A.7.9.M Minimalinvasive Implantation einer Aortenklappe endovaskul‰r, Mortalit‰t // Implantation mini≠invasive de valve aortique par voie endovasculaire, mortalitÈ // Applicazione minimamente invasiva di valvola aortica endovascolare, mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	DeathCH	CasesCH	pCH	

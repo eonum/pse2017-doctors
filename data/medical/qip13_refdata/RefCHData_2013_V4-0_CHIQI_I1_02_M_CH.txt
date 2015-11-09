@@ -1,0 +1,22 @@
+
+	I.1.2.M Hüft­TEP­Wechsel und Komponentenwechsel, Mortalität // Changement d’EPT de hanche et changement de composants, mortalité // Sostituzione dell’endoprotesi totale dell’anca e sostituzione dei componenti, mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	NA	NA	NA	
+	1999	NA	NA	NA	
+	2000	NA	NA	NA	
+	2001	NA	NA	NA	
+	2002	NA	NA	NA	
+	2003	NA	NA	NA	
+	2004	8	1850	0.4324324	
+	2005	13	1873	0.6940737	
+	2006	18	1898	0.9483667	
+	2007	11	1930	0.5699482	
+	2008	25	2219	1.126634	
+	2009	26	2157	1.205378	
+	2010	20	2178	0.9182736	
+	2011	26	2293	1.133886	
+	2012	39	2414	1.615576	
+	2013	33	2412	1.368159	
+

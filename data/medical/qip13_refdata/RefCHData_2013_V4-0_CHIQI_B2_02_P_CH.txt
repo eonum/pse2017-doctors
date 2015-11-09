@@ -1,5 +1,5 @@
 
-	B.2.2.P Anteil TIA mit Stroke Unit Behandlung // AIT avec traitement en unitÃ© cÃ©rÃ©broÂ­vasculaire, pourcentage // TIA con trattamento in unitÃ  Stroke, percentuale
+	B.2.2.P Anteil TIA mit Stroke Unit Behandlung // AIT avec traitement en unité cérébro­vasculaire, pourcentage // TIA con trattamento in unità Stroke, percentuale
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	CasesCHDen	pCH	

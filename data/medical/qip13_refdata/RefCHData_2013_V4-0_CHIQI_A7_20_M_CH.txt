@@ -1,0 +1,22 @@
+
+	A.7.20.M Isolierter offener Aortenklappenersatz ohne weitere OP am Herzen ohne HD Endokarditis, Mortalität // Remplacement isolé de valve aortique à cœur ouvert sans autre OP du cœur sans DP endocardite, mortalité // Sostituzione isolata della valvola aortica a cuore aperto senza altre OP al cuore senza DP endocardite, mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	3	352	0.8522727	
+	1999	9	412	2.184466	
+	2000	10	601	1.663894	
+	2001	17	721	2.357836	
+	2002	34	819	4.151404	
+	2003	24	762	3.149606	
+	2004	23	888	2.59009	
+	2005	26	818	3.178484	
+	2006	32	880	3.636364	
+	2007	20	1091	1.833181	
+	2008	35	1121	3.122212	
+	2009	25	1163	2.149613	
+	2010	24	1162	2.065404	
+	2011	16	877	1.824401	
+	2012	20	888	2.252252	
+	2013	16	973	1.644399	
+

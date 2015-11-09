@@ -1,5 +1,5 @@
 
-	D.4.5.M Pleurektomie, Mortalit√§t // Pleurectomie, mortalit√© // Pleurectomia, mortalit√†
+	D.4.5.M Pleurektomie, Mortalit‰t // Pleurectomie, mortalitÈ // Pleurectomia, mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	DeathCH	CasesCH	pCH	

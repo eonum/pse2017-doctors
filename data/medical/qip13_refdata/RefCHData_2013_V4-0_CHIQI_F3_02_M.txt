@@ -1,5 +1,5 @@
 
-	F.3.2.M OP an Becken¬≠/Beinarterien bei Claudicatio, Mortalit√§t // OP des art√®res du bassin/des jambes en cas de claudication, mortalit√© // OP alle arterie del bacino/delle gambe in caso di claudicatio, mortalit√†
+	F.3.2.M OP an Becken≠/Beinarterien bei Claudicatio, Mortalit‰t // OP des artËres du bassin/des jambes en cas de claudication, mortalitÈ // OP alle arterie del bacino/delle gambe in caso di claudicatio, mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	AltEGrp	Sex	DeathCH	CasesCH	pCH	

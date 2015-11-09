@@ -1,0 +1,22 @@
+
+	L.2.1.F Lungen­ und Herz­Lungen­Transplantation insgesamt // Total des transplantations pulmonaires et transplantations combinées cœur­poumons // Numero totale di trapianti di polmone e trapianti combinati cuore­polmone
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	20	
+	1999	24	
+	2000	23	
+	2001	27	
+	2002	36	
+	2003	27	
+	2004	30	
+	2005	37	
+	2006	33	
+	2007	30	
+	2008	40	
+	2009	39	
+	2010	49	
+	2011	52	
+	2012	51	
+	2013	50	
+

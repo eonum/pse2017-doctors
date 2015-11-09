@@ -1,5 +1,5 @@
 
-	F.1.2.M Perkutane Stentimplantation in extrakranielle GefÃ¤sse, MortalitÃ¤t // Implantation percutanÃ©e de stents dans des vaisseaux extraÂ­crÃ¢niens, mortalitÃ© // Impianto percutaneo di stent in vasi extracranici, mortalitÃ 
+	F.1.2.M Perkutane Stentimplantation in extrakranielle Gefässe, Mortalität // Implantation percutanée de stents dans des vaisseaux extra­crâniens, mortalité // Impianto percutaneo di stent in vasi extracranici, mortalità
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	AltEGrp	Sex	DeathCH	CasesCH	pCH	

@@ -1,5 +1,5 @@
 
-	E.4.14.P Anteil Leberresektion/Â¬destruktion mit kolorektalen Resektionen bei kolorektalem Karzinom // RÃ©section/destruction du foie avec rÃ©sections colorectales pour carcinome colorectal, pourcentage // Resezione/distruzione del fegato con resezione colorettale in caso di carcinoma colorettale, percentuale
+	E.4.14.P Anteil Leberresektion/¬destruktion mit kolorektalen Resektionen bei kolorektalem Karzinom // Résection/destruction du foie avec résections colorectales pour carcinome colorectal, pourcentage // Resezione/distruzione del fegato con resezione colorettale in caso di carcinoma colorettale, percentuale
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	CasesCHDen	pCH	

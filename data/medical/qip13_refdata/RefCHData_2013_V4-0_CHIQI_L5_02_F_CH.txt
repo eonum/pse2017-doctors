@@ -1,5 +1,5 @@
 
-	L.5.2.F Nierentransplantation, Lebendspender allogen, syngen // Transplantation rÃ©nale, donneur vivant allogÃ©nique, syngÃ©nique // Trapianto di rene da donatore vivente allogenico, singenico
+	L.5.2.F Nierentransplantation, Lebendspender allogen, syngen // Transplantation rénale, donneur vivant allogénique, syngénique // Trapianto di rene da donatore vivente allogenico, singenico
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	

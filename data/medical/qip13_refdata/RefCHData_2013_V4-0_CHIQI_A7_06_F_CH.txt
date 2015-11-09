@@ -1,0 +1,22 @@
+
+	A.7.6.F OP am Herzen bei Kindern und Jugendlichen (Alter <20) // OP du cœur chez l’enfant et l’adolescent (âge <20) // OP al cuore di bambini o adolescenti (età <20)
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	294	
+	1999	344	
+	2000	439	
+	2001	487	
+	2002	347	
+	2003	569	
+	2004	559	
+	2005	539	
+	2006	527	
+	2007	521	
+	2008	496	
+	2009	513	
+	2010	511	
+	2011	518	
+	2012	622	
+	2013	626	
+

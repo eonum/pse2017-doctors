@@ -1,5 +1,5 @@
 
-	D.2.1.M COPD ohne Tumor (Alter >19), MortalitÃ¤t // BPCO sans tumeur (Ã¢ge >19), mortalitÃ© // BPCO senza tumore (etÃ  >19), mortalitÃ 
+	D.2.1.M COPD ohne Tumor (Alter >19), Mortalität // BPCO sans tumeur (âge >19), mortalité // BPCO senza tumore (età >19), mortalità
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	DeathCH	CasesCH	pCH	

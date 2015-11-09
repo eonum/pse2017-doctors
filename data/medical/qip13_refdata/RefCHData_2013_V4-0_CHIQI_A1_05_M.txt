@@ -1,5 +1,5 @@
 
-	A.1.5.M HD Herzinfarkt, Alter >84, MortalitÃ¤t // DP infarctus du myocarde, Ã¢ge >84, mortalitÃ© // DP infarto miocardico, etÃ  >84, mortalitÃ 
+	A.1.5.M HD Herzinfarkt, Alter >84, Mortalität // DP infarctus du myocarde, âge >84, mortalité // DP infarto miocardico, età >84, mortalità
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	AltEGrp	Sex	DeathCH	CasesCH	pCH	

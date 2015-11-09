@@ -1,0 +1,22 @@
+
+	F.3.5.M OP an Becken­/Beinarterien bei arterieller Embolie/Thrombose, Mortalität // OP des artères du bassin/des jambes en cas d’embolie/de thrombose des artères, mortalité // OP alle arterie del bacino/delle gambe in caso di embolia/trombosi, mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	11	145	7.586207	
+	1999	11	185	5.945946	
+	2000	10	202	4.950495	
+	2001	9	208	4.326923	
+	2002	10	241	4.149378	
+	2003	12	252	4.761905	
+	2004	15	286	5.244755	
+	2005	21	350	6	
+	2006	14	351	3.988604	
+	2007	28	339	8.259587	
+	2008	19	422	4.50237	
+	2009	23	429	5.361305	
+	2010	24	459	5.228758	
+	2011	38	612	6.20915	
+	2012	40	674	5.934718	
+	2013	36	664	5.421687	
+

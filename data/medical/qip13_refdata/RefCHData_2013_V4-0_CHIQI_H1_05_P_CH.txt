@@ -1,5 +1,5 @@
 
-	H.1.5.P Anteil partielle Nephrektomie bei Nierentumor // NÃ©phrectomie partielle en cas de tumeur maligne du rein, pourcentage // Nefrectomia parziale in caso di tumore maligno del rene, percentuale
+	H.1.5.P Anteil partielle Nephrektomie bei Nierentumor // Néphrectomie partielle en cas de tumeur maligne du rein, pourcentage // Nefrectomia parziale in caso di tumore maligno del rene, percentuale
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	CasesCHDen	pCH	

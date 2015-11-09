@@ -1,0 +1,22 @@
+
+	A.3.6.F Fälle mit Herzkathetern bei Kindern und Jugendlichen (Alter <20) // Cas avec cathétérisme cardiaque chez l’enfant et l’adolescent (âge <20) // Casi con cateterismo cardiaco su bambini e adolescenti (età <20)
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	62	
+	1999	264	
+	2000	235	
+	2001	284	
+	2002	108	
+	2003	411	
+	2004	451	
+	2005	457	
+	2006	393	
+	2007	431	
+	2008	407	
+	2009	361	
+	2010	275	
+	2011	322	
+	2012	266	
+	2013	273	
+

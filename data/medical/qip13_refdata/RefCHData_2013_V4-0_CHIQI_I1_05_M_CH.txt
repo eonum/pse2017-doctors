@@ -1,0 +1,22 @@
+
+	I.1.5.M Hüft­ oder Knie­TEP mit Tumorendoprothese, Mortalität // EPT de hanche ou de genou après chirurgie tumorale, mortalité // Endoprotesi totale tumorale dell’anca o del ginocchio, mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	NA	NA	NA	
+	1999	NA	NA	NA	
+	2000	NA	NA	NA	
+	2001	NA	NA	NA	
+	2002	NA	NA	NA	
+	2003	NA	NA	NA	
+	2004	6	75	8	
+	2005	1	70	1.428571	
+	2006	6	87	6.896552	
+	2007	15	134	11.19403	
+	2008	17	171	9.94152	
+	2009	11	159	6.918239	
+	2010	6	183	3.278689	
+	2011	11	216	5.092593	
+	2012	11	209	5.263158	
+	2013	9	226	3.982301	
+

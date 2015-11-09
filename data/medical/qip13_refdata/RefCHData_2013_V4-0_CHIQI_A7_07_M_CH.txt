@@ -1,0 +1,22 @@
+
+	A.7.7.M Isolierter offener Aortenklappenersatz ohne weitere OP am Herzen, Mortalität // Remplacement isolé de valve aortique à cœur ouvert sans autre OP du cœur, mortalité // Sostituzione isolata della valvola aortica a cuore aperto senza altre OP al cuore, mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	5	391	1.278772	
+	1999	10	424	2.358491	
+	2000	11	616	1.785714	
+	2001	17	730	2.328767	
+	2002	34	829	4.101327	
+	2003	26	794	3.274559	
+	2004	24	926	2.591793	
+	2005	26	842	3.087886	
+	2006	32	893	3.583427	
+	2007	21	1109	1.893598	
+	2008	35	1133	3.089144	
+	2009	26	1183	2.197802	
+	2010	25	1185	2.109705	
+	2011	17	901	1.886792	
+	2012	20	901	2.219756	
+	2013	18	996	1.807229	
+

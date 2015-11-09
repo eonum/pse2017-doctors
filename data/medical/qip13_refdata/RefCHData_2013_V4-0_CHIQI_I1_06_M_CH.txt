@@ -1,5 +1,5 @@
 
-	I.1.6.M Unikondyl√§re Schlittenprothese des Kniegelenks, Mortalit√§t // Proth√®se unicondylaire (unicompartimentale) de genou, mortalit√© // Protesi a slitta unicondilare del ginocchio, mortalit√†
+	I.1.6.M Unikondyl‰re Schlittenprothese des Kniegelenks, Mortalit‰t // ProthËse unicondylaire (unicompartimentale) de genou, mortalitÈ // Protesi a slitta unicondilare del ginocchio, mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	DeathCH	CasesCH	pCH	

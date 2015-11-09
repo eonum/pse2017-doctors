@@ -127,7 +127,7 @@ namespace :db do
       file_name = folder.join(file_name)
       next if File.directory? file_name
       # get the second line with the description.
-      file = File.new(file_name, 'r')
+      file = File.new(file_name, 'r', :encoding => 'iso-8859-15')
       file.gets
       line = file.gets
       next if line.blank? || line.strip.blank?
@@ -137,7 +137,7 @@ namespace :db do
         d.rank = index
         d.import_rank = index
         sub_row = row[0].split(' ')
-        d.field_name = sub_row[0].strip
+        d.field_name = sub_row[0].strip.gsub('.', '_')
         type = d.field_name[d.field_name.length - 1]
         d.variable_type = 'percentage' if('M' == type || 'P' == type)
         d.variable_type = 'number' if('F' == type)
@@ -170,14 +170,28 @@ namespace :db do
       count = `wc -l #{file}`.to_i
       qip_file = IO.readlines(file)
 
+      var_not_found = 0
+      hop_not_found = 0
+
       pg = ProgressBar.create(total: count, title: "Importing QIP data from year #{year}")
       qip_file.each_with_index do |line, index|
         next if line.blank?
         row = line.split(';')
-        var_name = row[1].split(' ')[0]
+        next if row.length < 2
+        var_name = row[1].split(' ')[0].gsub('.', '_')
         var = variables[var_name]
-        next if var == nil
+        if var == nil
+          var_not_found = var_not_found + 1
+          puts "Variable #{var_name} could not be found!"
+          next
+        end
+
         hop = hospitals[row[0].strip]
+        if hop == nil
+          hop_not_found = hop_not_found + 1
+          puts "Hospital #{row[0].strip} could not be found!"
+          next
+        end
 
         qip = {}
         qip['observed'] = (row[6]||'').strip.to_f unless (row[6]||'').blank?
@@ -191,6 +205,9 @@ namespace :db do
 
         pg.increment
       end
+
+      puts "#{var_not_found} variables not found."
+      puts "#{hop_not_found} hospitals not found."
     end
   end
 
@@ -237,7 +254,7 @@ namespace :db do
       Rake::Task['db:seed_hospitals'].execute
       Rake::Task['db:seed_qip_variables'].execute
       Rake::Task['db:seed_qip_data'].execute
-      Rake::Task['db:link_hospitals'].execute
+    #  Rake::Task['db:link_hospitals'].execute
       Rake::Task['db:seed_admin_user'].execute
       Rake::Task['db:mongoid:create_indexes'].execute
     end

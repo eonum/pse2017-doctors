@@ -1,5 +1,5 @@
 
-	E.1.1.M Cholezystektomie bei Gallensteinen und Cholezystitis, ohne Tumor, Mortalit√§t // Chol√©cystectomie en cas de calculs biliaires et chol√©cystite, sans tumeur, mortalit√© // Colecistectomia in caso di calcoli biliari e colecistite, senza tumore, mortalit√†
+	E.1.1.M Cholezystektomie bei Gallensteinen und Cholezystitis, ohne Tumor, Mortalit‰t // CholÈcystectomie en cas de calculs biliaires et cholÈcystite, sans tumeur, mortalitÈ // Colecistectomia in caso di calcoli biliari e colecistite, senza tumore, mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	AltEGrp	Sex	DeathCH	CasesCH	pCH	

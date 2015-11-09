@@ -1,0 +1,22 @@
+
+	E.5.5.M HD Ulcus von Magen, Duodenum oder Jejunum, ohne Tumor, Mortalität // DP ulcère de l’estomac, du duodénum ou du jéjunum, sans tumeur, mortalité // DP ulcera gastrica, duodenale o digiunale, senza tumore, mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	55	1678	3.277712	
+	1999	88	2074	4.243009	
+	2000	120	2145	5.594406	
+	2001	125	2248	5.560498	
+	2002	116	2313	5.015132	
+	2003	107	2200	4.863636	
+	2004	115	2264	5.079505	
+	2005	124	2374	5.223252	
+	2006	133	2306	5.767563	
+	2007	114	2431	4.689428	
+	2008	112	2471	4.532578	
+	2009	115	2380	4.831933	
+	2010	107	2561	4.178055	
+	2011	104	2601	3.998462	
+	2012	111	2778	3.99568	
+	2013	114	2538	4.491726	
+

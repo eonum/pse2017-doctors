@@ -1,0 +1,22 @@
+
+	I.1.4.M Knie­TEP­Wechsel und Komponentenwechsel, Mortalität // Changement d’EPT de genou et changement de composants, mortalité // Sostituzione dell’endoprotesi totale del ginocchio e sostituzione dei componenti, mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	NA	NA	NA	
+	1999	NA	NA	NA	
+	2000	NA	NA	NA	
+	2001	NA	NA	NA	
+	2002	NA	NA	NA	
+	2003	NA	NA	NA	
+	2004	NA	NA	NA	
+	2005	NA	NA	NA	
+	2006	NA	NA	NA	
+	2007	NA	363	NA	
+	2008	2	828	0.2415459	
+	2009	3	921	0.3257329	
+	2010	2	1113	0.1796945	
+	2011	2	1492	0.1340483	
+	2012	5	1528	0.3272251	
+	2013	7	1593	0.4394225	
+

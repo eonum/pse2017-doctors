@@ -1,5 +1,5 @@
 
-	H.1.2.P Anteil laparoskopische OP bei vollst√§ndiger Nephrektomie // OP laparoscopique en cas de n√©phrectomie totale, pourcentage // OP laparoscopica in caso di nefrectomia completa, percentuale
+	H.1.2.P Anteil laparoskopische OP bei vollst‰ndiger Nephrektomie // OP laparoscopique en cas de nÈphrectomie totale, pourcentage // OP laparoscopica in caso di nefrectomia completa, percentuale
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	CasesCHDen	pCH	

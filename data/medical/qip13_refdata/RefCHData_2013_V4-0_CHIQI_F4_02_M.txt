@@ -1,5 +1,5 @@
 
-	F.4.2.M Amputation untere Extremit√§t, kein Trauma, Mortalit√§t // Amputation non traumatique de membre inf√©rieur, mortalit√© // Amputazione non traumatica delle estremit√† inferiori, mortalit√†
+	F.4.2.M Amputation untere Extremit‰t, kein Trauma, Mortalit‰t // Amputation non traumatique de membre infÈrieur, mortalitÈ // Amputazione non traumatica delle estremit‡ inferiori, mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	AltEGrp	Sex	DeathCH	CasesCH	pCH	

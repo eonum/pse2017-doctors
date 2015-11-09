@@ -1,0 +1,22 @@
+
+	F.3.7.M OP an Becken­/Beinarterien bei Aneurysma/Dissektion, Mortalität // OP des artères du bassin/des jambes en cas d’anévrisme/de dissection, mortalité // OP alle arterie del bacino/delle gambe in caso di aneurisma/dissecazione, mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	1	59	1.694915	
+	1999	2	82	2.439024	
+	2000	4	98	4.081633	
+	2001	2	109	1.834862	
+	2002	4	128	3.125	
+	2003	2	101	1.980198	
+	2004	3	118	2.542373	
+	2005	4	144	2.777778	
+	2006	1	140	0.7142857	
+	2007	4	161	2.484472	
+	2008	4	185	2.162162	
+	2009	5	219	2.283105	
+	2010	1	186	0.5376344	
+	2011	3	287	1.045296	
+	2012	6	305	1.967213	
+	2013	1	264	0.3787879	
+

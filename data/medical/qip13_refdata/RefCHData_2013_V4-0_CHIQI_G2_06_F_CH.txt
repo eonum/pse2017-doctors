@@ -1,5 +1,5 @@
 
-	G.2.6.F Neugeborene 1000-1249 g // NouveauÂ­nÃ©s 1000-1249 g // Neonati 1000-1249 g
+	G.2.6.F Neugeborene 1000-1249 g // Nouveau­nés 1000-1249 g // Neonati 1000-1249 g
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	

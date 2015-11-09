@@ -1,5 +1,5 @@
 
-	A.2.4.M HD Herzinsuffizienz, Alter 65-84, Mortalit√§t // DP insuffisance cardiaque, √¢ge 65-84, mortalit√© // DP insufficienza cardiaca, et√† 65-84, mortalit√†
+	A.2.4.M HD Herzinsuffizienz, Alter 65-84, Mortalit‰t // DP insuffisance cardiaque, ‚ge 65-84, mortalitÈ // DP insufficienza cardiaca, et‡ 65-84, mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	AltEGrp	Sex	DeathCH	CasesCH	pCH	

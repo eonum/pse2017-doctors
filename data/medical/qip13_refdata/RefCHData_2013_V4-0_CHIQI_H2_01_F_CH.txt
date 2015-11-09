@@ -1,5 +1,5 @@
 
-	H.2.1.F HD Nierensteine // DP calculs rÃ©naux // DP calcoli ai reni
+	H.2.1.F HD Nierensteine // DP calculs rénaux // DP calcoli ai reni
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	

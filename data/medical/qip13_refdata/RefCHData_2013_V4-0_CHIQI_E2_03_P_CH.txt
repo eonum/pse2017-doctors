@@ -1,5 +1,5 @@
 
-	E.2.3.P Anteil alloplastische OP bei Inguinalhernie, Alter 0-19 // OP alloplastique de hernie inguinale, √¢ge 0-19, pourcentage // OP di alloplastica per ernia inguinale, et√† 0-19, percentuale
+	E.2.3.P Anteil alloplastische OP bei Inguinalhernie, Alter 0-19 // OP alloplastique de hernie inguinale, ‚ge 0-19, pourcentage // OP di alloplastica per ernia inguinale, et‡ 0-19, percentuale
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	CasesCHDen	pCH	

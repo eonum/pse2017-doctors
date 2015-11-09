@@ -1,5 +1,5 @@
 
-	L.3.1.F Lebertransplantation insgesamt // Total des transplantations hÃ©patiques // Numero totale di trapianti di fegato
+	L.3.1.F Lebertransplantation insgesamt // Total des transplantations hépatiques // Numero totale di trapianti di fegato
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	

@@ -1,5 +1,5 @@
 
-	L.3.3.F Lebertransplantation, partiell/auxili√§r/andere // Transplantation h√©patique, foie partiel/auxiliaire/autre // Trapianto di fegato parziale/ausiliario/altro
+	L.3.3.F Lebertransplantation, partiell/auxili‰r/andere // Transplantation hÈpatique, foie partiel/auxiliaire/autre // Trapianto di fegato parziale/ausiliario/altro
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	

@@ -1,0 +1,22 @@
+
+	B.1.6.P Anteil Schlaganfälle mit Stroke Unit Behandlung (Alter >19) // DP d’accident vasculaire cérébral (âge >19) avec traitement en unité cérébro­vasculaire, pourcentage // DP colpo apoplettico (età >19) con trattamento in unità Stroke, percentuale
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	CasesCHDen	pCH	
+	1998	NA	6648	NA	
+	1999	NA	8158	NA	
+	2000	NA	8760	NA	
+	2001	NA	9565	NA	
+	2002	NA	9840	NA	
+	2003	NA	10106	NA	
+	2004	NA	9931	NA	
+	2005	NA	10018	NA	
+	2006	NA	10785	NA	
+	2007	NA	10931	NA	
+	2008	NA	11449	NA	
+	2009	927	11803	7.853935	
+	2010	1379	13305	10.36452	
+	2011	1759	13960	12.60029	
+	2012	3070	14726	20.84748	
+	2013	3695	15307	24.13928	
+

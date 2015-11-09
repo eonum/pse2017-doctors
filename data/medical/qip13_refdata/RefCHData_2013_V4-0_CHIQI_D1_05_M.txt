@@ -1,5 +1,5 @@
 
-	D.1.5.M HD Pneumonie, Alter 65-84, Mortalit√§t // DP de pneumonie, √¢ge 65-84, mortalit√© // DP polmonite, et√† 65-84, mortalit√†
+	D.1.5.M HD Pneumonie, Alter 65-84, Mortalit‰t // DP de pneumonie, ‚ge 65-84, mortalitÈ // DP polmonite, et‡ 65-84, mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	AltEGrp	Sex	DeathCH	CasesCH	pCH	

@@ -1,5 +1,5 @@
 
-	A.7.16.M OP nur an Koronargef√§ssen ohne HD Herzinfarkt, Alter 70-79, Mortalit√§t // OP des vaisseaux coronaires uniquement, sans DP infarctus du myocarde, √¢ge 70-79, mortalit√© // OP solo ai vasi coronarici senza DP infarto miocardico, et√† 70-79, mortalit√†
+	A.7.16.M OP nur an Koronargef‰ssen ohne HD Herzinfarkt, Alter 70-79, Mortalit‰t // OP des vaisseaux coronaires uniquement, sans DP infarctus du myocarde, ‚ge 70-79, mortalitÈ // OP solo ai vasi coronarici senza DP infarto miocardico, et‡ 70-79, mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	DeathCH	CasesCH	pCH	

@@ -1,0 +1,11 @@
+
+	J.1.3.P Anteil Beatmungsdauer oberhalb DRG Stufen (ohne Neugeborene) // Durée de ventilation au­dessus des niveaux DRG (à l’exclusion des nouveau­nés), pourcentage // Durata di ventilazione sopra i livelli DRG (neonati esclusi), percentuale
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	CasesCHDen	pCH	
+	2009	663	1542	42.99611	
+	2010	1030	2414	42.66777	
+	2011	1158	2621	44.18161	
+	2012	1174	2757	42.58252	
+	2013	1312	3032	43.27177	
+

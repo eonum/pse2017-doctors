@@ -1,5 +1,5 @@
 
-	H.5.2.M Radikale Prostatovesikulektomie, Mortalit√§t // Prostatov√©siculectomie radicale, mortalit√© // Prostatovescicolectomia radicale, mortalit√†
+	H.5.2.M Radikale Prostatovesikulektomie, Mortalit‰t // ProstatovÈsiculectomie radicale, mortalitÈ // Prostatovescicolectomia radicale, mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	AltEGrp	Sex	DeathCH	CasesCH	pCH	

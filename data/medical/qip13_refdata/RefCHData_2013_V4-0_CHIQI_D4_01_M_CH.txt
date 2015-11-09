@@ -1,5 +1,5 @@
 
-	D.4.1.M Gr√∂ssere Resektionen von Lunge oder Bronchien insgesamt, Mortalit√§t // Total des r√©sections pulmonaires ou bronchiques majeures, mortalit√© // Resezioni maggiori di polmone o bronchi, totale, mortalit√†
+	D.4.1.M Grˆssere Resektionen von Lunge oder Bronchien insgesamt, Mortalit‰t // Total des rÈsections pulmonaires ou bronchiques majeures, mortalitÈ // Resezioni maggiori di polmone o bronchi, totale, mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	DeathCH	CasesCH	pCH	

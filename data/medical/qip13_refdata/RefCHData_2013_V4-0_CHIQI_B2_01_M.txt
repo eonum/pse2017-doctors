@@ -1,5 +1,5 @@
 
-	B.2.1.M TIA, Mortalit√§t // AIT, mortalit√© // TIA, mortalit√†
+	B.2.1.M TIA, Mortalit‰t // AIT, mortalitÈ // TIA, mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	AltEGrp	Sex	DeathCH	CasesCH	pCH	

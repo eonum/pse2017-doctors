@@ -1,0 +1,22 @@
+
+	F.5.7.F PTA iliacal/an Becken­/Beinarterien bei anderen Diagnosen oder OP an Aorta // ATP des artères iliaques/du bassin/des jambes en cas d’autre diagnostic ou d'une OP de l’aorte // PTA di arterie iliache/del bacino/delle gambe in caso di altre diagnosi o di OP aortica
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	419	
+	1999	642	
+	2000	1337	
+	2001	2182	
+	2002	3110	
+	2003	3062	
+	2004	3656	
+	2005	4449	
+	2006	5012	
+	2007	6054	
+	2008	6504	
+	2009	2611	
+	2010	2480	
+	2011	2772	
+	2012	3236	
+	2013	3437	
+

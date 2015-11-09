@@ -1,5 +1,5 @@
 
-	E.1.2.P Anteil laparoskopische OP bei Cholezystektomie bei Gallensteinen und Cholezystitis, ohne Tumor // Laparoscopie avec cholÃ©cystectomie en cas de calculs biliaires et cholÃ©cystite, sans tumeur, pourcentage // OP laparoscopica per colecistectomia in caso di calcoli biliari e colecistite, senza tumore, percentuale
+	E.1.2.P Anteil laparoskopische OP bei Cholezystektomie bei Gallensteinen und Cholezystitis, ohne Tumor // Laparoscopie avec cholécystectomie en cas de calculs biliaires et cholécystite, sans tumeur, pourcentage // OP laparoscopica per colecistectomia in caso di calcoli biliari e colecistite, senza tumore, percentuale
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	CasesCHDen	pCH	

@@ -1,5 +1,5 @@
 
-	H.1.4.P Anteil laparoskopische OP bei partieller Nephrektomie // OP laparoscopique en cas de nÃ©phrectomie partielle, pourcentage // OP laparoscopica in caso di nefrectomia parziale, percentuale
+	H.1.4.P Anteil laparoskopische OP bei partieller Nephrektomie // OP laparoscopique en cas de néphrectomie partielle, pourcentage // OP laparoscopica in caso di nefrectomia parziale, percentuale
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	CasesCHDen	pCH	

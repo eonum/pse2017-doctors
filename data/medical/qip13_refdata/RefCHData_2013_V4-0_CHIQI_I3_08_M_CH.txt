@@ -1,5 +1,5 @@
 
-	I.3.8.M PertrochantÃ¤re Fraktur (Alter >19), MortalitÃ¤t // Fracture du trochanter (Ã¢ge >19), mortalitÃ© // Frattura pertrocanterica (etÃ  >19), mortalitÃ 
+	I.3.8.M Pertrochantäre Fraktur (Alter >19), Mortalität // Fracture du trochanter (âge >19), mortalité // Frattura pertrocanterica (età >19), mortalità
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	DeathCH	CasesCH	pCH	

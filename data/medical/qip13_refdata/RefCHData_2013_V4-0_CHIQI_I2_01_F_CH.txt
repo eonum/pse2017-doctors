@@ -1,5 +1,5 @@
 
-	I.2.1.F OP an der Wirbels√§ule insgesamt // Total des OP de la colonne vert√©brale // OP alla colonna vertebrale, totale
+	I.2.1.F OP an der Wirbels‰ule insgesamt // Total des OP de la colonne vertÈbrale // OP alla colonna vertebrale, totale
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	

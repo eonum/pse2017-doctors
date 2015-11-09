@@ -1,0 +1,22 @@
+
+	A.1.8.M HD Herzinfarkt (Alter >19), Zuverlegungen, Mortalität // DP infarctus du myocarde (âge >19), transféré d’un autre hôpital, mortalité // DP infarto miocardico (età >19), trasferito da un altro ospedale, mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	39	498	7.831325	
+	1999	33	801	4.11985	
+	2000	54	868	6.221198	
+	2001	53	1179	4.495335	
+	2002	50	1429	3.49895	
+	2003	61	1564	3.900256	
+	2004	77	1843	4.177971	
+	2005	80	2098	3.813155	
+	2006	86	2817	3.052893	
+	2007	93	2802	3.319058	
+	2008	122	3119	3.91151	
+	2009	106	3491	3.036379	
+	2010	137	4472	3.063506	
+	2011	133	4575	2.907104	
+	2012	152	4326	3.513638	
+	2013	161	4101	3.925872	
+

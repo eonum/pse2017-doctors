@@ -1,5 +1,5 @@
 
-	K.1.1.F Station√§re Behandlungen bei Melanom (als HD oder ND) // Traitements hospitaliers en cas de m√©lanome (DP ou DS) // Ospedalizzazioni in caso di melanoma (DP o DS)
+	K.1.1.F Station‰re Behandlungen bei Melanom (als HD oder ND) // Traitements hospitaliers en cas de mÈlanome (DP ou DS) // Ospedalizzazioni in caso di melanoma (DP o DS)
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	

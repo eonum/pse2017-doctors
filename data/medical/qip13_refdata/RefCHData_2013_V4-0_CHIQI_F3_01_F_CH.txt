@@ -1,5 +1,5 @@
 
-	F.3.1.F OP an BeckenÂ­/Beinarterien insgesamt // Total des OP des artÃ¨res du bassin/des jambes // OP alle arterie del bacino/delle gambe totale
+	F.3.1.F OP an Becken­/Beinarterien insgesamt // Total des OP des artères du bassin/des jambes // OP alle arterie del bacino/delle gambe totale
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	

@@ -1,5 +1,5 @@
 
-	E.4.1.M Kolorektale Resektionen insgesamt, Mortalit√§t // Total des r√©sections colorectales, mortalit√© // Numero totale di resezioni colorettali, mortalit√†
+	E.4.1.M Kolorektale Resektionen insgesamt, Mortalit‰t // Total des rÈsections colorectales, mortalitÈ // Numero totale di resezioni colorettali, mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	DeathCH	CasesCH	pCH	

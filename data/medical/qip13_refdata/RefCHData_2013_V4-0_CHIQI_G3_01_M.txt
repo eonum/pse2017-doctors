@@ -1,5 +1,5 @@
 
-	G.3.1.M Hysterektomie bei gutartigen Erkrankungen (Alter >14), MortalitÃ¤t // HystÃ©rectomie pour affections bÃ©nignes (Ã¢ge >14), mortalitÃ© // Isterectomia per malattie benigne (etÃ  >14), mortalitÃ 
+	G.3.1.M Hysterektomie bei gutartigen Erkrankungen (Alter >14), Mortalität // Hystérectomie pour affections bénignes (âge >14), mortalité // Isterectomia per malattie benigne (età >14), mortalità
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	AltEGrp	Sex	DeathCH	CasesCH	pCH	

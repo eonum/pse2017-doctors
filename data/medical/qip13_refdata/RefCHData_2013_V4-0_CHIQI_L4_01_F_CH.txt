@@ -1,5 +1,5 @@
 
-	L.4.1.F Transplantation von Pankreas oder Â­gewebe insgesamt // Total des transplantations du pancrÃ©as ou de tissu pancrÃ©atique // Numero totale di trapienti di pancreas o di tessuto pancreatico
+	L.4.1.F Transplantation von Pankreas oder ­gewebe insgesamt // Total des transplantations du pancréas ou de tissu pancréatique // Numero totale di trapienti di pancreas o di tessuto pancreatico
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	

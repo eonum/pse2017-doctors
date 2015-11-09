@@ -1,5 +1,5 @@
 
-	G.1.1.P Anteil Todesfall der Mutter bei station√§ren Geburten // Accouchements hospitaliers contribuant au d√©c√®s de la m√®re, poucentage // Parti ospedalieri con decesso della madre, percentuale
+	G.1.1.P Anteil Todesfall der Mutter bei station‰ren Geburten // Accouchements hospitaliers contribuant au dÈcËs de la mËre, poucentage // Parti ospedalieri con decesso della madre, percentuale
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	CasesCHDen	pCH	

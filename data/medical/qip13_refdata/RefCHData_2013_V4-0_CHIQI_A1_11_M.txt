@@ -1,5 +1,5 @@
 
-	A.1.11.M Nichttransmuraler Infarkt/NSTEMI (Alter >19), MortalitÃ¤t // Infarctus non transmural/NSTEMI (Ã¢ge >19), mortalitÃ© // Infarto non transmurale/NSTEMI (etÃ  >19), mortalitÃ 
+	A.1.11.M Nichttransmuraler Infarkt/NSTEMI (Alter >19), Mortalität // Infarctus non transmural/NSTEMI (âge >19), mortalité // Infarto non transmurale/NSTEMI (età >19), mortalità
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	AltEGrp	Sex	DeathCH	CasesCH	pCH	

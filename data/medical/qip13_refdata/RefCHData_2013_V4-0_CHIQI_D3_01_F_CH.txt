@@ -1,5 +1,5 @@
 
-	D.3.1.F Station√§re Behandlungen bei Lungenkrebs // Traitements hospitaliers en cas de cancer du poumon // Ospedalizzazioni in caso di cancro polmonare
+	D.3.1.F Station‰re Behandlungen bei Lungenkrebs // Traitements hospitaliers en cas de cancer du poumon // Ospedalizzazioni in caso di cancro polmonare
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	

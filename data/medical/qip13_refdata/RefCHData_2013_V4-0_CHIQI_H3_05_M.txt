@@ -1,5 +1,5 @@
 
-	H.3.5.M Entfernung der Harnblase (Zystektomie), Mortalit√§t // Ablation de la vessie (cystectomie), mortalit√© // Asportazione della vescica (cistectomia), mortalit√†
+	H.3.5.M Entfernung der Harnblase (Zystektomie), Mortalit‰t // Ablation de la vessie (cystectomie), mortalitÈ // Asportazione della vescica (cistectomia), mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	AltEGrp	Sex	DeathCH	CasesCH	pCH	

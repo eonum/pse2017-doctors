@@ -1,5 +1,5 @@
 
-	E.4.8.F Kolorektale Resektionen bei anderer Diagnose // RÃ©sections du cÃ´lon pour autre diagnostic // Resezioni colorettali per altra diagnosi
+	E.4.8.F Kolorektale Resektionen bei anderer Diagnose // Résections du côlon pour autre diagnostic // Resezioni colorettali per altra diagnosi
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	

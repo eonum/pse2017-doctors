@@ -1,5 +1,5 @@
 
-	H.4.1.M Prostata¬≠TUR, Mortalit√§t // RTU de prostate, mortalit√© // TUR della prostata, mortalit√†
+	H.4.1.M Prostata≠TUR, Mortalit‰t // RTU de prostate, mortalitÈ // TUR della prostata, mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	AltEGrp	Sex	DeathCH	CasesCH	pCH	

@@ -1,0 +1,22 @@
+
+	I.1.7.M Hüft­ oder Knie­TEP bei anderer Indikation oder Alter < 20, Mortalität // EPT de hanche ou de genou pour autre indication ou âge < 20, mortalité // Endoprotesi totale dell’anca o del ginocchio per altra indicazione o età < 20, mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	NA	NA	NA	
+	1999	NA	NA	NA	
+	2000	NA	NA	NA	
+	2001	NA	NA	NA	
+	2002	NA	NA	NA	
+	2003	NA	NA	NA	
+	2004	170	3629	4.684486	
+	2005	158	3604	4.384018	
+	2006	185	3930	4.707379	
+	2007	202	3925	5.146497	
+	2008	178	3951	4.505189	
+	2009	181	4178	4.332216	
+	2010	195	4265	4.572098	
+	2011	161	4397	3.661587	
+	2012	230	4545	5.060506	
+	2013	200	4392	4.553734	
+

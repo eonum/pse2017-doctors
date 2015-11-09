@@ -1,5 +1,5 @@
 
-	F.3.6.M OP an BeckenÂ­/Beinarterien bei Komplikationen durch Prothesen/Implantate, MortalitÃ¤t // OP des artÃ¨res du bassin/des jambes en cas de complications dues Ã  des prothÃ¨ses/implants, mortalitÃ© // OP alle arterie del bacino/delle gambe in caso di complicanze duvute a protesi/impianti, mortalitÃ 
+	F.3.6.M OP an Becken­/Beinarterien bei Komplikationen durch Prothesen/Implantate, Mortalität // OP des artères du bassin/des jambes en cas de complications dues à des prothèses/implants, mortalité // OP alle arterie del bacino/delle gambe in caso di complicanze duvute a protesi/impianti, mortalità
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	AltEGrp	Sex	DeathCH	CasesCH	pCH	

@@ -1,5 +1,5 @@
 
-	I.3.5.M Schenkelhalsfraktur, Alter 80-84, Mortalit√§t // Fractures du col du f√©mur, √¢ge 80-84, mortalit√© // Frattura del collo del femore, et√† 80-84, mortalit√†
+	I.3.5.M Schenkelhalsfraktur, Alter 80-84, Mortalit‰t // Fractures du col du fÈmur, ‚ge 80-84, mortalitÈ // Frattura del collo del femore, et‡ 80-84, mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	DeathCH	CasesCH	pCH	

@@ -1,5 +1,5 @@
 
-	G.5.3.P Anteil brusterhaltende Resektionen bei Brustkrebs // RÃ©sections partielles en cas de cancer du sein, pourcentage // Resezione mammaria a scopo conservativo in caso di cancro al seno, percentuale
+	G.5.3.P Anteil brusterhaltende Resektionen bei Brustkrebs // Résections partielles en cas de cancer du sein, pourcentage // Resezione mammaria a scopo conservativo in caso di cancro al seno, percentuale
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	CasesCHDen	pCH	

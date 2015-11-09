@@ -1,5 +1,5 @@
 
-	A.2.6.P Anteil NYHA IV bei HD Linksherzinsuffizienz (Alter >19) // NYHA IV en cas de DP insuffisance ventriculaire gauche (Ã¢ge >19), pourcentage // NYHA IV in caso di DP insufficienza cardiaca sinistra (etÃ  >19), percentuale
+	A.2.6.P Anteil NYHA IV bei HD Linksherzinsuffizienz (Alter >19) // NYHA IV en cas de DP insuffisance ventriculaire gauche (âge >19), pourcentage // NYHA IV in caso di DP insufficienza cardiaca sinistra (età >19), percentuale
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	CasesCHDen	pCH	

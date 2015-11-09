@@ -1,5 +1,5 @@
 
-	G.2.3.F Neugeborene <500 g // NouveauÂ­nÃ©s <500 g // Neonati <500 g
+	G.2.3.F Neugeborene <500 g // Nouveau­nés <500 g // Neonati <500 g
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	

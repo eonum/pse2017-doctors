@@ -1,5 +1,5 @@
 
-	G.1.3.P Anteil vaginale Geburten mit Episiotomie // Accouchements par voie vaginale avec Ã©pisiotomie, pourcentage // Parti vaginali con episiotomia, percentuale
+	G.1.3.P Anteil vaginale Geburten mit Episiotomie // Accouchements par voie vaginale avec épisiotomie, pourcentage // Parti vaginali con episiotomia, percentuale
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	CasesCHDen	pCH	

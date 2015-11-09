@@ -1,5 +1,5 @@
 
-	L.6.2.F Transplantation von h√§matopoetischen Stammzellen aus Knochenmark insgesamt // Total des transplantations de cellules souches h√©matopo√Ø√©tiques de moelle osseuse // Numero totale di trapianti di cellule staminali ematopoietiche di midollo osseo
+	L.6.2.F Transplantation von h‰matopoetischen Stammzellen aus Knochenmark insgesamt // Total des transplantations de cellules souches hÈmatopoÔÈtiques de moelle osseuse // Numero totale di trapianti di cellule staminali ematopoietiche di midollo osseo
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	

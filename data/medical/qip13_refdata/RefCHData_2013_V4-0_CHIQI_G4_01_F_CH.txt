@@ -1,5 +1,5 @@
 
-	G.4.1.F Station√§re Behandlungen bei Brustkrebs // Traitements hospitaliers en cas de cancer du sein // Ospedalizzazioni in caso di cancro al seno
+	G.4.1.F Station‰re Behandlungen bei Brustkrebs // Traitements hospitaliers en cas de cancer du sein // Ospedalizzazioni in caso di cancro al seno
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	

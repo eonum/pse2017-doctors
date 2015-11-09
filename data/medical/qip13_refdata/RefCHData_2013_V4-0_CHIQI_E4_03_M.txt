@@ -1,5 +1,5 @@
 
-	E.4.3.M Kolonresektionen bei kolorektalem Karzinom mit komplizierender Diagnose, Mortalit√§t // R√©sections du c√¥lon pour cancer colorectal avec diagnostic compliquant, mortalit√© // Resezioni del colon per carcinoma colorettale con diagnosi complicante, mortalit√†
+	E.4.3.M Kolonresektionen bei kolorektalem Karzinom mit komplizierender Diagnose, Mortalit‰t // RÈsections du cÙlon pour cancer colorectal avec diagnostic compliquant, mortalitÈ // Resezioni del colon per carcinoma colorettale con diagnosi complicante, mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	AltEGrp	Sex	DeathCH	CasesCH	pCH	

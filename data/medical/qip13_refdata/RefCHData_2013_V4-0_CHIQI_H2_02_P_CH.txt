@@ -1,5 +1,5 @@
 
-	H.2.2.P Anteil FÃ¤lle mit Intervention zur Steinentfernung bei HD Nierensteine // Cas avec intervention pour extraction des calculs en cas de DP calculs rÃ©naux, pourcentage // Casi con intervento di asportazione dei calcoli in caso di DP calcoli renali, percentuale
+	H.2.2.P Anteil Fälle mit Intervention zur Steinentfernung bei HD Nierensteine // Cas avec intervention pour extraction des calculs en cas de DP calculs rénaux, pourcentage // Casi con intervento di asportazione dei calcoli in caso di DP calcoli renali, percentuale
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	CasesCHDen	pCH	

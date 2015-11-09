@@ -1,5 +1,5 @@
 
-	D.4.2.M Pneumonektomie bei Bronchialkarzinom, Mortalit√§t // Pneumonectomie en cas de carcinome bronchique, mortalit√© // Pneumonectomia in caso di carcinoma bronchiale, mortalit√†
+	D.4.2.M Pneumonektomie bei Bronchialkarzinom, Mortalit‰t // Pneumonectomie en cas de carcinome bronchique, mortalitÈ // Pneumonectomia in caso di carcinoma bronchiale, mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	AltEGrp	Sex	DeathCH	CasesCH	pCH	

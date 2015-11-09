@@ -1,5 +1,5 @@
 
-	A.1.9.P Anteil akute Infarktformen n.n.bez. (Alter >19) // Infarctus aigu du myocarde non prÃ©cisÃ© (Ã¢ge >19), pourcentage // Forme acute di infarto al miocardio NAS (etÃ  >19), percentuale
+	A.1.9.P Anteil akute Infarktformen n.n.bez. (Alter >19) // Infarctus aigu du myocarde non précisé (âge >19), pourcentage // Forme acute di infarto al miocardio NAS (età >19), percentuale
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	CasesCHDen	pCH	

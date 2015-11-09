@@ -1,5 +1,5 @@
 
-	E.3.2.P Anteil BeatmungsfÃ¤lle >24 h bei Resektion der SchilddrÃ¼se // Cas de respiration artificielle >24 h en cas de rÃ©sections thyroÃ¯diennes, pourcentage // Casi totali di ventilazione meccanica >24 h in caso di resezione della tiroide, percentuale
+	E.3.2.P Anteil Beatmungsfälle >24 h bei Resektion der Schilddrüse // Cas de respiration artificielle >24 h en cas de résections thyroïdiennes, pourcentage // Casi totali di ventilazione meccanica >24 h in caso di resezione della tiroide, percentuale
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	CasesCHDen	pCH	

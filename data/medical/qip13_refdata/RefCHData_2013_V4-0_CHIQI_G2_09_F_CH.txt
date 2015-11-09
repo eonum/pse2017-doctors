@@ -1,5 +1,5 @@
 
-	G.2.9.F Neugeborene >2499 g oder ohne Gewichtsangabe // NouveauÂ­nÃ©s >2499 g ou sans indication de poids // Neonati >2499 g o senza indicazione del peso
+	G.2.9.F Neugeborene >2499 g oder ohne Gewichtsangabe // Nouveau­nés >2499 g ou sans indication de poids // Neonati >2499 g o senza indicazione del peso
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	

@@ -1,5 +1,5 @@
 
-	G.1.4.P Anteil Kaiserschnitt (Sectio) // CÃ©sariennes, pourcentage // Parti cesarei, percentuale
+	G.1.4.P Anteil Kaiserschnitt (Sectio) // Césariennes, pourcentage // Parti cesarei, percentuale
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	CasesCHDen	pCH	

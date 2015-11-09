@@ -1,0 +1,22 @@
+
+	A.7.21.P Anteil OP an Carotis bei isoliertem offenem Aortenklappenersatz ohne weitere OP am Herzen // OP des carotides en cas de remplacement isolé de valve aortique à cœur ouvert sans autre OP du cœur, pourcentage // OP alla carotide in caso di sostituzione isolata della valvola aortica a cuore aperto senza altre OP al cuore, percentuale
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	CasesCHDen	pCH	
+	1998	1	391	0.2557545	
+	1999	1	424	0.2358491	
+	2000	5	616	0.8116883	
+	2001	7	730	0.9589041	
+	2002	6	829	0.7237636	
+	2003	1	794	0.1259446	
+	2004	7	926	0.7559395	
+	2005	5	842	0.5938242	
+	2006	4	893	0.4479283	
+	2007	8	1109	0.7213706	
+	2008	3	1133	0.2647838	
+	2009	3	1183	0.2535926	
+	2010	4	1185	0.3375527	
+	2011	5	901	0.554939	
+	2012	5	901	0.554939	
+	2013	5	996	0.502008	
+

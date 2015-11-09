@@ -1,5 +1,5 @@
 
-	D.1.1.M HD Pneumonie, Mortalit√§t // DP de pneumonie, mortalit√© // DP polmonite, mortalit√†
+	D.1.1.M HD Pneumonie, Mortalit‰t // DP de pneumonie, mortalitÈ // DP polmonite, mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	AltEGrp	Sex	DeathCH	CasesCH	pCH	

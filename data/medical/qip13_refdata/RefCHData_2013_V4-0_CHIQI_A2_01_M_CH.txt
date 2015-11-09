@@ -1,5 +1,5 @@
 
-	A.2.1.M HD Herzinsuffizienz (Alter >19), MortalitÃ¤t // DP insuffisance cardiaque (Ã¢ge >19), mortalitÃ© // DP insufficienza cardiaca (etÃ  >19), mortalitÃ 
+	A.2.1.M HD Herzinsuffizienz (Alter >19), Mortalität // DP insuffisance cardiaque (âge >19), mortalité // DP insufficienza cardiaca (età >19), mortalità
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	DeathCH	CasesCH	pCH	

@@ -1,5 +1,5 @@
 
-	E.4.6.M Kolorektale Resektionen bei Divertikel mit Abszess/Perforation, Mortalit√§t // R√©sections colorectales pour diverticule avec abc√®s/perforation, mortalit√© // Resezioni colorettali per diverticolo con ascesso/perforazione, mortalit√†
+	E.4.6.M Kolorektale Resektionen bei Divertikel mit Abszess/Perforation, Mortalit‰t // RÈsections colorectales pour diverticule avec abcËs/perforation, mortalitÈ // Resezioni colorettali per diverticolo con ascesso/perforazione, mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	AltEGrp	Sex	DeathCH	CasesCH	pCH	

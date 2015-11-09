@@ -1,0 +1,22 @@
+
+	F.2.4.F OP bei thorakalem oder thorakoabdominalem Aneurysma (ohne Aortenklappe) // OP en cas d’anévrisme de l’aorte thoracique ou thoraco­abdominale (sans valve aortique) // OP in caso di aneurisma toracico o toracicoaddominale (senza valvola aortica)
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	NA	
+	1999	NA	
+	2000	NA	
+	2001	NA	
+	2002	NA	
+	2003	NA	
+	2004	NA	
+	2005	NA	
+	2006	NA	
+	2007	45	
+	2008	57	
+	2009	100	
+	2010	109	
+	2011	628	
+	2012	720	
+	2013	799	
+

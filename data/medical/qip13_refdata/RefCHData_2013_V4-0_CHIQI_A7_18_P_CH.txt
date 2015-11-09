@@ -1,0 +1,22 @@
+
+	A.7.18.P Anteil Beatmungsfälle >24 h bei OP nur an Koronargefässen ohne HD Herzinfarkt (Alter >19) // Cas de respiration artificielle >24 h en cas d’OP des vaisseaux coronaires uniquement, sans DP infarctus du myocarde (âge >19), pourcentage // Casi totali di ventilazione meccanica >24 h in caso di OP solo ai vasi coronarici senza DP infarto miocardico (età >19), percentuale
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	CasesCHDen	pCH	
+	1998	NA	2096	NA	
+	1999	NA	2629	NA	
+	2000	NA	2476	NA	
+	2001	NA	2986	NA	
+	2002	NA	3086	NA	
+	2003	NA	2623	NA	
+	2004	NA	2401	NA	
+	2005	NA	2365	NA	
+	2006	NA	2132	NA	
+	2007	NA	2131	NA	
+	2008	NA	2108	NA	
+	2009	251	1948	12.88501	
+	2010	316	1951	16.19682	
+	2011	329	2024	16.25494	
+	2012	274	1997	13.72058	
+	2013	213	1950	10.92308	
+

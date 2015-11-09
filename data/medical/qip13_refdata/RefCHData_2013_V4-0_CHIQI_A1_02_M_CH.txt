@@ -1,5 +1,5 @@
 
-	A.1.2.M HD Herzinfarkt, Alter 20-44, Mortalit√§t // DP infarctus du myocarde, √¢ge 20-44, mortalit√© // DP infarto miocardico, et√† 20-44, mortalit√†
+	A.1.2.M HD Herzinfarkt, Alter 20-44, Mortalit‰t // DP infarctus du myocarde, ‚ge 20-44, mortalitÈ // DP infarto miocardico, et‡ 20-44, mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	DeathCH	CasesCH	pCH	

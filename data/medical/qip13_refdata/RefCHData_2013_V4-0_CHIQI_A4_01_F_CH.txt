@@ -1,5 +1,5 @@
 
-	A.4.1.F HD HerzrhythmusstÃ¶rungen // DP troubles du rythme cardiaque // DP disturbi del ritmo cardiaco
+	A.4.1.F HD Herzrhythmusstörungen // DP troubles du rythme cardiaque // DP disturbi del ritmo cardiaco
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	

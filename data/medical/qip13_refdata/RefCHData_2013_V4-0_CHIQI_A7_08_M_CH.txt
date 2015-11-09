@@ -1,5 +1,5 @@
 
-	A.7.8.M Minimalinvasive Implantation einer Aortenklappe, Mortalit√§t // Implantation mini¬≠invasive de valve aortique, mortalit√© // Applicazione minimamente invasiva di valvola aortica, mortalit√†
+	A.7.8.M Minimalinvasive Implantation einer Aortenklappe, Mortalit‰t // Implantation mini≠invasive de valve aortique, mortalitÈ // Applicazione minimamente invasiva di valvola aortica, mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	DeathCH	CasesCH	pCH	

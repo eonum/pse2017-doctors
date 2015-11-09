@@ -1,5 +1,5 @@
 
-	E.3.3.F Radiojodtherapie // RadiothÃ©rapie par iode radioactif // Radioiodioterapia
+	E.3.3.F Radiojodtherapie // Radiothérapie par iode radioactif // Radioiodioterapia
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	

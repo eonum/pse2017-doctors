@@ -1,0 +1,22 @@
+
+	E.2.2.M Herniotomie mit OP am Darm, Mortalität // Herniotomie avec OP de l’intestin, mortalité // Erniotomia con OP all’intestino, mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	6	110	5.454545	
+	1999	7	141	4.964539	
+	2000	8	168	4.761905	
+	2001	2	151	1.324503	
+	2002	12	182	6.593407	
+	2003	10	174	5.747126	
+	2004	15	225	6.666667	
+	2005	9	231	3.896104	
+	2006	18	281	6.405694	
+	2007	13	272	4.779412	
+	2008	20	323	6.19195	
+	2009	22	301	7.30897	
+	2010	17	318	5.345912	
+	2011	24	378	6.349206	
+	2012	25	390	6.410256	
+	2013	26	419	6.205251	
+

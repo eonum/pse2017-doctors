@@ -1,0 +1,22 @@
+
+	A.7.1.F OP am Herzen insgesamt // Total des OP du cœur // OP al cuore, totale
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	3929	
+	1999	4558	
+	2000	4966	
+	2001	5869	
+	2002	6258	
+	2003	6111	
+	2004	6231	
+	2005	6279	
+	2006	6350	
+	2007	6782	
+	2008	7015	
+	2009	7322	
+	2010	7579	
+	2011	7860	
+	2012	8300	
+	2013	8580	
+

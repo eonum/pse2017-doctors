@@ -1,5 +1,5 @@
 
-	D.2.6.P Anteil COPD ohne Tumor mit FEV1 n.n.bez. (Alter >19) // BPCO sans tumeur avec VEF1 non prÃ©cisÃ© (Ã¢ge >19), pourcentage // BPCO senza tumore con VEMS1 NAS (etÃ  >19), percentuale
+	D.2.6.P Anteil COPD ohne Tumor mit FEV1 n.n.bez. (Alter >19) // BPCO sans tumeur avec VEF1 non précisé (âge >19), pourcentage // BPCO senza tumore con VEMS1 NAS (età >19), percentuale
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	CasesCHDen	pCH	

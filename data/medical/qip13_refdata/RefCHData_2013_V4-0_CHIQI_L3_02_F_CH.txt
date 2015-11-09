@@ -1,5 +1,5 @@
 
-	L.3.2.F Lebertransplantation, komplett // Transplantation hÃ©patique, foie entier // Trapianto di fegato, organo intero
+	L.3.2.F Lebertransplantation, komplett // Transplantation hépatique, foie entier // Trapianto di fegato, organo intero
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	

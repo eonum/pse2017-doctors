@@ -1,5 +1,5 @@
 
-	D.1.8.M HD Pneumonie, Alter >19, ohne Tumor oder Mukoviszidose, Direktaufnahmen, MortalitÃ¤t // DP de pneumonie, Ã¢ge >19, sans tumeur ni mucoviscidose, admissions directes, mortalitÃ© // DP polmonite, etÃ  >19, senza tumore o mucoviscidosi, ammissioni dirette, mortalitÃ 
+	D.1.8.M HD Pneumonie, Alter >19, ohne Tumor oder Mukoviszidose, Direktaufnahmen, Mortalität // DP de pneumonie, âge >19, sans tumeur ni mucoviscidose, admissions directes, mortalité // DP polmonite, età >19, senza tumore o mucoviscidosi, ammissioni dirette, mortalità
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	DeathCH	CasesCH	pCH	

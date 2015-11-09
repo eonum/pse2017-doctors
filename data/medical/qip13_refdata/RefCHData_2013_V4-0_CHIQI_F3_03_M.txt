@@ -1,5 +1,5 @@
 
-	F.3.3.M OP an Becken¬≠/Beinarterien bei Ruheschmerz, Mortalit√§t // OP des art√®res du bassin/des jambes en cas de douleurs au repos, mortalit√© // OP alle arterie del bacino/delle gambe in caso di dolore a riposo, mortalit√†
+	F.3.3.M OP an Becken≠/Beinarterien bei Ruheschmerz, Mortalit‰t // OP des artËres du bassin/des jambes en cas de douleurs au repos, mortalitÈ // OP alle arterie del bacino/delle gambe in caso di dolore a riposo, mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	AltEGrp	Sex	DeathCH	CasesCH	pCH	

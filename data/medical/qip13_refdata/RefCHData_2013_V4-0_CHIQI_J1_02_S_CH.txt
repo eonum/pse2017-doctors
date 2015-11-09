@@ -1,0 +1,22 @@
+
+	J.1.2.S Mittlere Beatmungsdauer bei Beatmungsfällen >24 h (ohne Neugeborene) // Durée moyenne de ventilation en cas de respiration artificielle >24 h (à l’exclusion des nouveau­nés) // Durata media di ventilazione nei casi totali di ventilazione meccanica >24 h (neonati esclusi)
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	NA	
+	1999	NA	
+	2000	NA	
+	2001	NA	
+	2002	NA	
+	2003	NA	
+	2004	NA	
+	2005	NA	
+	2006	NA	
+	2007	NA	
+	2008	NA	
+	2009	6676	
+	2010	9953	
+	2011	11059	
+	2012	11552	
+	2013	12041	
+

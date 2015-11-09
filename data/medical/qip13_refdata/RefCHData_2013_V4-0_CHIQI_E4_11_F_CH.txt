@@ -1,5 +1,5 @@
 
-	E.4.11.F Station√§re Behandlungen bei kolorektalem Karzinom (als HD oder ND) // Traitements hospitaliers en cas de carcinome colorectal (DP ou DS) // Ospedalizzazioni in caso di carcinoma colorettale (DP o DS)
+	E.4.11.F Station‰re Behandlungen bei kolorektalem Karzinom (als HD oder ND) // Traitements hospitaliers en cas de carcinome colorectal (DP ou DS) // Ospedalizzazioni in caso di carcinoma colorettale (DP o DS)
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	CasesCH	

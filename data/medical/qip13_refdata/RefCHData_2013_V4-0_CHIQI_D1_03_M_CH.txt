@@ -1,5 +1,5 @@
 
-	D.1.3.M HD Pneumonie, Alter 20-44, Mortalit√§t // DP de pneumonie, √¢ge 20-44, mortalit√© // DP polmonite, et√† 20-44, mortalit√†
+	D.1.3.M HD Pneumonie, Alter 20-44, Mortalit‰t // DP de pneumonie, ‚ge 20-44, mortalitÈ // DP polmonite, et‡ 20-44, mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	DeathCH	CasesCH	pCH	

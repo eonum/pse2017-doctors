@@ -1,0 +1,22 @@
+
+	B.1.1.M HD Schlaganfall alle Formen (Alter >19), Mortalität // DP d’accident vasculaire cérébral, toutes les formes (âge >19), mortalité // DP colpo apoplettico, tutte le forme (età >19), mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	935	6648	14.06438	
+	1999	1112	8158	13.63079	
+	2000	1288	8760	14.7032	
+	2001	1376	9565	14.38578	
+	2002	1328	9840	13.49593	
+	2003	1390	10106	13.75421	
+	2004	1351	9931	13.60387	
+	2005	1376	10018	13.73528	
+	2006	1445	10785	13.39824	
+	2007	1461	10931	13.36566	
+	2008	1476	11449	12.89196	
+	2009	1442	11803	12.21723	
+	2010	1550	13305	11.64976	
+	2011	1436	13960	10.28653	
+	2012	1503	14726	10.20644	
+	2013	1599	15307	10.4462	
+

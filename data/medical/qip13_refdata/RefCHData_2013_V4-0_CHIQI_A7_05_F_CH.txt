@@ -1,0 +1,22 @@
+
+	A.7.5.F Kombinierte OP am Herzen // OP combinée du cœur // OP combinata al cuore
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	351	
+	1999	471	
+	2000	623	
+	2001	789	
+	2002	851	
+	2003	896	
+	2004	1006	
+	2005	1112	
+	2006	1164	
+	2007	1243	
+	2008	1347	
+	2009	1505	
+	2010	1571	
+	2011	1671	
+	2012	1961	
+	2013	2093	
+

@@ -1,5 +1,5 @@
 
-	F.1.1.M Extrakranielle GefÃ¤ssÂ­OP, MortalitÃ¤t // OP des vaisseaux extraÂ­crÃ¢niens, mortalitÃ© // Interventi sui vasi extracranici, mortalitÃ 
+	F.1.1.M Extrakranielle Gefäss­OP, Mortalität // OP des vaisseaux extra­crâniens, mortalité // Interventi sui vasi extracranici, mortalità
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	AltEGrp	Sex	DeathCH	CasesCH	pCH	

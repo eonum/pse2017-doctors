@@ -1,0 +1,22 @@
+
+	I.1.1.M Hüft­Endoprothese­Erstimplantation (nicht bei Frakturen), Mortalität // Première implantation d’endoprothèse de hanche (pas en cas de fracture), mortalité // Prima applicazione dell’endoprotesi dell’anca (non per fratture), mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	38	6778	0.5606374	
+	1999	26	8778	0.296195	
+	2000	24	9615	0.24961	
+	2001	28	10951	0.2556844	
+	2002	31	11808	0.2625339	
+	2003	23	12763	0.1802084	
+	2004	27	13641	0.1979327	
+	2005	24	14217	0.168812	
+	2006	18	14628	0.1230517	
+	2007	33	15815	0.2086627	
+	2008	20	16059	0.1245408	
+	2009	25	16553	0.15103	
+	2010	39	17211	0.2265993	
+	2011	42	17563	0.2391391	
+	2012	39	17557	0.2221336	
+	2013	34	17328	0.1962142	
+

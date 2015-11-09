@@ -1,5 +1,5 @@
 
-	E.4.13.M Kolorektale Resektionen bei Colitis ulcerosa oder Morbus Crohn, Mortalit√§t // R√©sections colorectales pour colite ulc√©reuse ou maladie de Crohn, mortalit√© // Resezione colorettale in caso di colite ulcerosa o morbo di Crohn, mortalit√†
+	E.4.13.M Kolorektale Resektionen bei Colitis ulcerosa oder Morbus Crohn, Mortalit‰t // RÈsections colorectales pour colite ulcÈreuse ou maladie de Crohn, mortalitÈ // Resezione colorettale in caso di colite ulcerosa o morbo di Crohn, mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	AltEGrp	Sex	DeathCH	CasesCH	pCH	

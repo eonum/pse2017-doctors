@@ -1,5 +1,5 @@
 
-	A.7.10.M Minimalinvasive Implantation einer Aortenklappe transapikal, Mortalit√§t // Implantation mini¬≠invasive de valve aortique par voie transapicale, mortalit√© // Applicazione minimamente invasiva di valvola aortica transapicale, mortalit√†
+	A.7.10.M Minimalinvasive Implantation einer Aortenklappe transapikal, Mortalit‰t // Implantation mini≠invasive de valve aortique par voie transapicale, mortalitÈ // Applicazione minimamente invasiva di valvola aortica transapicale, mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	DeathCH	CasesCH	pCH	

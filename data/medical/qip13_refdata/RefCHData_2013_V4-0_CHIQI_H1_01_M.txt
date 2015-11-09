@@ -1,5 +1,5 @@
 
-	H.1.1.M Vollst√§ndige Nephrektomie, Mortalit√§t // N√©phrectomie totale, mortalit√© // Nefrectomia completa, mortalit√†
+	H.1.1.M Vollst‰ndige Nephrektomie, Mortalit‰t // NÈphrectomie totale, mortalitÈ // Nefrectomia completa, mortalit‡
 	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
 
 	Jahr	AltEGrp	Sex	DeathCH	CasesCH	pCH	

@@ -1,0 +1,22 @@
+
+	F.2.2.M Offene abdominale OP bei Aortenaneurysma nicht rupturiert, Mortalität // OP abdominale à ciel ouvert en cas d’anévrisme de l’aorte sans rupture, mortalité // OP addominale a cielo aperto in caso di aneurisma aortico senza lacerazione, mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	3	115	2.608696	
+	1999	3	198	1.515152	
+	2000	12	256	4.6875	
+	2001	13	303	4.290429	
+	2002	18	275	6.545455	
+	2003	15	344	4.360465	
+	2004	23	385	5.974026	
+	2005	15	469	3.198294	
+	2006	11	438	2.511416	
+	2007	14	406	3.448276	
+	2008	14	406	3.448276	
+	2009	17	415	4.096386	
+	2010	28	461	6.073753	
+	2011	16	426	3.755869	
+	2012	12	364	3.296703	
+	2013	15	341	4.398827	
+
