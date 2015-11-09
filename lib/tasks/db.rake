@@ -110,6 +110,12 @@ namespace :db do
       pg.increment
     end
 
+    # dummy hospital CH
+    Hospital.create do |d|
+      d.name = 'CH'
+      d.canton = 'CH'
+    end
+
     HospitalLocation.create_indexes
   end
 
@@ -179,6 +185,10 @@ namespace :db do
         row = line.split(';')
         next if row.length < 2
         var_name = row[1].split(' ')[0].gsub('.', '_')
+
+        # non terminal
+        next if var_name.length < 7
+
         var = variables[var_name]
         if var == nil
           var_not_found = var_not_found + 1
@@ -188,6 +198,7 @@ namespace :db do
 
         hop = hospitals[row[0].strip]
         if hop == nil
+          next if row[0].strip.include? 'Spezialklinik'
           hop_not_found = hop_not_found + 1
           puts "Hospital #{row[0].strip} could not be found!"
           next
