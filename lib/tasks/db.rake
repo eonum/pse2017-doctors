@@ -120,6 +120,7 @@ namespace :db do
     task all: :environment do
       Rake::Task['db:mongoid:remove_indexes'].execute
       Rake::Task['db:seed_hospital_locations'].execute
+
       Rake::Task['db:seed_hospitals'].execute
       Rake::Task['db:link_hospitals'].execute
       Rake::Task['db:seed_admin_user'].execute
