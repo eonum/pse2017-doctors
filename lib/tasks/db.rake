@@ -63,6 +63,7 @@ namespace :db do
     pg = ProgressBar.create(total: count, title: 'Importing Hospitals')
     hop_file.each_with_index do |line, index|
       row = line.split(';')
+      next if row[1].strip.blank?
       Hospital.create do |d|
         d.canton = row[0].strip
         d.name = row[1].strip
@@ -71,12 +72,41 @@ namespace :db do
         d.bfs_typo  = (row[4]||'').strip
         d.legal_status  = (row[5]||'').strip
         d.num_locations  = (row[9]||'').strip.to_i
+        d.hospital_location_ids = []
       end
 
       pg.increment
     end
 
     HospitalLocation.create_indexes
+  end
+
+  desc 'Link hospitals and their locations'
+  task link_hospitals: :environment do
+    count =  HospitalLocation.count()
+    hop_names = Hospital.all.map {|h| h.name.downcase}
+    not_found = 0
+
+  #  pg = ProgressBar.create(total: count, title: 'Linking hospitals and their locations')
+    HospitalLocation.all.each do |location|
+      hop = Hospital.where(name: /#{location.name}/i).first
+      if(hop == nil)
+        # search with string edit distance
+        hop_name = nearest_name(location.name.downcase, hop_names)
+        hop = Hospital.where(name: /#{hop_name}/i).first
+        if(hop_name == nil || hop == nil)
+          not_found = not_found + 1
+          puts "No mapping found for #{location.name}"
+          next
+        end
+        puts "#{location.name} => #{hop.name}"
+      end
+      location.hospital = hop
+      location.save!
+#      pg.increment
+    end
+
+    puts "No mapping found for #{not_found} locations."
   end
 
   desc 'Create admin user'
@@ -91,6 +121,7 @@ namespace :db do
       Rake::Task['db:mongoid:remove_indexes'].execute
       Rake::Task['db:seed_hospital_locations'].execute
       Rake::Task['db:seed_hospitals'].execute
+      Rake::Task['db:link_hospitals'].execute
       Rake::Task['db:seed_admin_user'].execute
       Rake::Task['db:mongoid:create_indexes'].execute
     end

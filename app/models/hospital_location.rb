@@ -2,7 +2,7 @@ class HospitalLocation
   include Mongoid::Document
   include Geocoder::Model::Mongoid
 
-  has_one :hospital
+  belongs_to :hospital
 
   field :doc_id, type: Integer
   field :name
