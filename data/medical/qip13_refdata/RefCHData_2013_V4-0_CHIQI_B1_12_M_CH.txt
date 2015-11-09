@@ -1,0 +1,22 @@
+
+	B.1.12.M Schlaganfall n.n.bez. (ICD­10 I64, Alter >19), Mortalität // Accident vasculaire cérébral, sans précision (CIM­10 I64, âge >19), mortalité // Colpo apoplettico, non altrimenti specificato (ICD­10 I64, età >19), mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	279	2032	13.73031	
+	1999	371	2492	14.88764	
+	2000	399	2584	15.44118	
+	2001	386	2648	14.57704	
+	2002	345	2553	13.51351	
+	2003	366	2626	13.93755	
+	2004	328	2609	12.57187	
+	2005	305	2272	13.4243	
+	2006	278	2150	12.93023	
+	2007	263	2092	12.5717	
+	2008	214	1794	11.92865	
+	2009	192	1634	11.75031	
+	2010	192	1598	12.01502	
+	2011	126	1390	9.064748	
+	2012	135	1184	11.40203	
+	2013	125	1148	10.8885	
+

@@ -1,0 +1,22 @@
+
+	D.4.1.M Grössere Resektionen von Lunge oder Bronchien insgesamt, Mortalität // Total des résections pulmonaires ou bronchiques majeures, mortalité // Resezioni maggiori di polmone o bronchi, totale, mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	24	912	2.631579	
+	1999	29	1000	2.9	
+	2000	35	1201	2.914238	
+	2001	40	1267	3.157064	
+	2002	53	1443	3.672904	
+	2003	51	1435	3.554007	
+	2004	30	1512	1.984127	
+	2005	46	1576	2.918782	
+	2006	56	1679	3.335319	
+	2007	56	1921	2.915148	
+	2008	63	2274	2.770449	
+	2009	63	2253	2.796272	
+	2010	64	2516	2.54372	
+	2011	69	2634	2.61959	
+	2012	55	2847	1.931858	
+	2013	77	2935	2.623509	
+

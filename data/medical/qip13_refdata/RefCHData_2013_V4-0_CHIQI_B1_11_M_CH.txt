@@ -1,0 +1,22 @@
+
+	B.1.11.M Subarachnoidalblutung (ICD­10 I60, Alter >19), Mortalität // Hémorragie sous­arachnoïdienne (CIM­10 I60, âge >19), mortalité // Emorragia subaracnoidea (ICD­10 I60, età >19), mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	78	647	12.05564	
+	1999	81	701	11.55492	
+	2000	101	747	13.52075	
+	2001	98	708	13.84181	
+	2002	88	757	11.62483	
+	2003	113	731	15.45828	
+	2004	132	752	17.55319	
+	2005	141	819	17.21612	
+	2006	150	840	17.85714	
+	2007	140	815	17.17791	
+	2008	116	835	13.89222	
+	2009	120	846	14.1844	
+	2010	137	955	14.34555	
+	2011	147	1027	14.31353	
+	2012	128	913	14.01972	
+	2013	143	891	16.04938	
+

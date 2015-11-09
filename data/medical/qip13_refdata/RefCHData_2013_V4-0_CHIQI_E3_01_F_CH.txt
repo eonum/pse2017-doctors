@@ -1,0 +1,22 @@
+
+	E.3.1.F Resektion der Schilddrüse // Résections thyroïdiennes // Resezione della tiroide
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	1291	
+	1999	1631	
+	2000	2022	
+	2001	2313	
+	2002	2458	
+	2003	2499	
+	2004	2815	
+	2005	2860	
+	2006	2778	
+	2007	2813	
+	2008	3012	
+	2009	3079	
+	2010	3218	
+	2011	3443	
+	2012	3562	
+	2013	3589	
+

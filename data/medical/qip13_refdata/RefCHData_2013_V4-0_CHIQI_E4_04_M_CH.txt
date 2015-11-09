@@ -1,0 +1,22 @@
+
+	E.4.4.M Rektumresektionen bei kolorektalem Karzinom, Mortalität // Résections du rectum pour cancer colorectal, mortalité // Resezioni del retto per carcinoma colorettale, mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	16	559	2.862254	
+	1999	12	823	1.45808	
+	2000	32	950	3.368421	
+	2001	23	1135	2.026432	
+	2002	25	1126	2.220249	
+	2003	29	1135	2.555066	
+	2004	53	1248	4.246795	
+	2005	32	1333	2.4006	
+	2006	41	1349	3.039288	
+	2007	30	1455	2.061856	
+	2008	47	1448	3.245856	
+	2009	42	1365	3.076923	
+	2010	32	1435	2.229965	
+	2011	33	1492	2.211796	
+	2012	49	1462	3.351573	
+	2013	55	1566	3.512133	
+

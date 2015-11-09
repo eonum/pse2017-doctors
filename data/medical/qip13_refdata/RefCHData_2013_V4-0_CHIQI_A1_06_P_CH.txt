@@ -1,0 +1,22 @@
+
+	A.1.6.P Anteil HD Herzinfarkt mit Herzkatheter oder OP an Koronargefässen (Alter >19) // DP infarctus du myocarde avec cathétérisme cardiaque ou OP coronarienne (âge >19), pourcentage // DP infarto miocardico con cateterismo cardiaco o OP ai vasi coronarici (età >19), percentuale
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	CasesCHDen	pCH	
+	1998	526	5284	9.95458	
+	1999	1039	6552	15.85775	
+	2000	1232	6898	17.86025	
+	2001	2072	7674	27.00026	
+	2002	2786	8633	32.27152	
+	2003	2809	8523	32.95788	
+	2004	3341	8656	38.5975	
+	2005	4157	9078	45.79202	
+	2006	5402	10821	49.92145	
+	2007	6127	11613	52.75984	
+	2008	6589	12801	51.47254	
+	2009	7076	13545	52.24068	
+	2010	8436	15388	54.82194	
+	2011	9013	16188	55.67704	
+	2012	9521	15999	59.50997	
+	2013	9868	16065	61.42546	
+

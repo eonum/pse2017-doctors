@@ -1,0 +1,22 @@
+
+	B.1.13.M Hirninfarkt (ICD­10 I63, Alter >19), nur Zuverlegungen, Mortalität // Infarctus cérébral (CIM­10 I63, âge >19), admissions directes pas transféré, mortalité // Infarto cerebrale (ICD­10 I63, età >19), trasferito da un altro ospedale, mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	17	221	7.692308	
+	1999	35	399	8.77193	
+	2000	44	433	10.16166	
+	2001	47	455	10.32967	
+	2002	32	414	7.729469	
+	2003	36	458	7.860262	
+	2004	47	447	10.51454	
+	2005	53	466	11.37339	
+	2006	50	544	9.191176	
+	2007	51	567	8.994709	
+	2008	40	611	6.546645	
+	2009	83	770	10.77922	
+	2010	108	1560	6.923077	
+	2011	127	1912	6.642259	
+	2012	161	2121	7.590759	
+	2013	154	2102	7.326356	
+

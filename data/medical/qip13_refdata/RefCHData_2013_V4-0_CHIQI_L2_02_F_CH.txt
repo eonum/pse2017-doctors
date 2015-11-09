@@ -1,0 +1,22 @@
+
+	L.2.2.F Lungentransplantation // Transplantation pulmonaire // Trapianto di polmone
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	20	
+	1999	24	
+	2000	22	
+	2001	26	
+	2002	34	
+	2003	25	
+	2004	29	
+	2005	35	
+	2006	31	
+	2007	29	
+	2008	40	
+	2009	39	
+	2010	49	
+	2011	52	
+	2012	51	
+	2013	50	
+

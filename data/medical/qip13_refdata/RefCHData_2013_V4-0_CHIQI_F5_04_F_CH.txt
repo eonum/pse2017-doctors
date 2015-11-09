@@ -1,0 +1,22 @@
+
+	F.5.4.F PTA iliacal/an Becken­/Beinarterien bei Claudicatio // ATP des artères iliaques/du bassin/des jambes en cas de claudication // PTA di arterie iliache/del bacino/delle gambe in caso di claudicatio
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	NA	
+	1999	NA	
+	2000	NA	
+	2001	NA	
+	2002	NA	
+	2003	NA	
+	2004	NA	
+	2005	NA	
+	2006	NA	
+	2007	NA	
+	2008	NA	
+	2009	2963	
+	2010	3114	
+	2011	2984	
+	2012	3019	
+	2013	3289	
+

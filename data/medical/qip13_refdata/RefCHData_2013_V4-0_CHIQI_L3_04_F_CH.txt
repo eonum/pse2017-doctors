@@ -1,0 +1,22 @@
+
+	L.3.4.F Leber­Retransplantation im gleichen Aufenthalt, alle Formen // Retransplantation de foie durant la même hospitalisation, toutes les formes // Ritrapianto di fegato nella stessa degenza ospedaliera, tutte le forme
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	NA	
+	1999	NA	
+	2000	NA	
+	2001	NA	
+	2002	NA	
+	2003	NA	
+	2004	NA	
+	2005	NA	
+	2006	NA	
+	2007	NA	
+	2008	NA	
+	2009	NA	
+	2010	NA	
+	2011	5	
+	2012	1	
+	2013	2	
+

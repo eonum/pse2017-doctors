@@ -1,0 +1,22 @@
+
+	G.4.1.F Stationäre Behandlungen bei Brustkrebs // Traitements hospitaliers en cas de cancer du sein // Ospedalizzazioni in caso di cancro al seno
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	6913	
+	1999	9319	
+	2000	9591	
+	2001	10219	
+	2002	10513	
+	2003	10770	
+	2004	10751	
+	2005	10393	
+	2006	10128	
+	2007	10009	
+	2008	10219	
+	2009	13726	
+	2010	15032	
+	2011	15272	
+	2012	15588	
+	2013	16400	
+

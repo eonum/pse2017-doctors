@@ -5,7 +5,7 @@ class VariablesController < ApplicationController
     @sets = []
     @sets = params['hidden-sets'.to_sym].split(',') unless params['hidden-sets'.to_sym].blank?
     @sets << params[:sets] unless params[:sets].blank?
-    @variables = @sets.empty? ? Variable : Variable.where({ 'variable_sets' => { '$in' => @sets }})
+    @variables = @sets.empty? ? Variable : Variable.where({ 'variable_sets' => { '$in' => @sets }}).order_by([[ :rank, :asc ]])
     query = escape_query(params[:q])
     query = /#{Regexp.escape(query)}/i
     lang = locale.to_s

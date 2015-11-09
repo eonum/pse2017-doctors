@@ -1,0 +1,22 @@
+
+	H.5.1.F Prostatakarzinom (als HD oder ND) // Carcinome de la prostate (DP ou DS) // Carcinoma prostatico (DP o DS)
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	4930	
+	1999	6665	
+	2000	6630	
+	2001	8158	
+	2002	8900	
+	2003	8979	
+	2004	9580	
+	2005	9678	
+	2006	10002	
+	2007	10505	
+	2008	10163	
+	2009	11399	
+	2010	11693	
+	2011	11990	
+	2012	11523	
+	2013	11701	
+

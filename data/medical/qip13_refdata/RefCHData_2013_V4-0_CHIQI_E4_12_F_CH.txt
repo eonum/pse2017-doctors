@@ -1,0 +1,22 @@
+
+	E.4.12.F Stationäre Behandlungen bei Colitis ulcerosa oder Morbus Crohn // Traitements hospitaliers en cas de colite ulcéreuse ou maladie de Crohn // Ospedalizzazioni in caso di colite ulcerosa o morbo di Crohn
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	1494	
+	1999	2061	
+	2000	2306	
+	2001	2685	
+	2002	2856	
+	2003	3023	
+	2004	3549	
+	2005	3789	
+	2006	4084	
+	2007	4080	
+	2008	3890	
+	2009	4078	
+	2010	4117	
+	2011	4338	
+	2012	4518	
+	2013	4536	
+

@@ -1,0 +1,22 @@
+
+	F.1.2.M Perkutane Stentimplantation in extrakranielle Gefässe, Mortalität // Implantation percutanée de stents dans des vaisseaux extra­crâniens, mortalité // Impianto percutaneo di stent in vasi extracranici, mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	NA	NA	NA	
+	1999	NA	NA	NA	
+	2000	NA	NA	NA	
+	2001	NA	NA	NA	
+	2002	NA	NA	NA	
+	2003	NA	NA	NA	
+	2004	NA	NA	NA	
+	2005	NA	2	NA	
+	2006	6	174	3.448276	
+	2007	3	169	1.775148	
+	2008	7	255	2.745098	
+	2009	5	256	1.953125	
+	2010	13	268	4.850746	
+	2011	16	278	5.755396	
+	2012	7	292	2.39726	
+	2013	14	293	4.778157	
+

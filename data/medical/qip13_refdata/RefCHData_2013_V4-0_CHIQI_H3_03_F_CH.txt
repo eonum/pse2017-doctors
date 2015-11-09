@@ -1,0 +1,22 @@
+
+	H.3.3.F TUR der Blase bei Malignom // RTU de vessie en cas de tumeur maligne // TUR della vescica in caso di tumore maligno
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	2094	
+	1999	2380	
+	2000	2592	
+	2001	3185	
+	2002	3428	
+	2003	3425	
+	2004	3722	
+	2005	4205	
+	2006	4364	
+	2007	4359	
+	2008	4287	
+	2009	4589	
+	2010	4957	
+	2011	5081	
+	2012	5343	
+	2013	5546	
+

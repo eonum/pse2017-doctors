@@ -1,0 +1,22 @@
+
+	A.7.3.F OP an Koronargefässen // OP des vaisseaux coronaires // OP ai vasi coronarici
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	2588	
+	1999	3121	
+	2000	3084	
+	2001	3770	
+	2002	3999	
+	2003	3548	
+	2004	3404	
+	2005	3438	
+	2006	3312	
+	2007	3304	
+	2008	3392	
+	2009	3330	
+	2010	3506	
+	2011	3694	
+	2012	3706	
+	2013	3752	
+

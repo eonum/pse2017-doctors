@@ -53,7 +53,7 @@ namespace :db do
 
   desc 'Import KZP variables'
   task seed_hospital_variables: :environment do
-    Variable.delete_all
+    Variable.where({ 'variable_sets' => { '$in' => ['kzp'] }}).delete
 
     file = Rails.root.join('data', 'medical', 'kzp12_daten_hospital_variables.csv')
     count = `wc -l #{file}`.to_i
@@ -72,6 +72,7 @@ namespace :db do
         d.name_fr = row[2].strip
         d.name_it = row[3].strip
         d.variable_sets = ['kzp']
+        # TODO determine variable type: number, array, ..
       end
 
       pg.increment
@@ -102,6 +103,7 @@ namespace :db do
 
       next if row[1].strip.blank?
       Hospital.create do |d|
+        # TODO parse values (numbers, arrays, ..)
         variables.each {|index, field_name| d[field_name] = (row[index]||'').strip}
       end
 
@@ -109,6 +111,45 @@ namespace :db do
     end
 
     HospitalLocation.create_indexes
+  end
+
+  desc 'Import QIP variables'
+  task seed_qip_variables: :environment do
+    Variable.where({ 'variable_sets' => { '$in' => ['qip'] }}).delete
+
+    folder = Rails.root.join('data', 'medical', 'qip13_refdata')
+    files = Dir.entries(folder)
+    files.sort!
+    count = files.length
+    pg = ProgressBar.create(total: count, title: 'Importing hospital variables')
+
+    files.each_with_index do |file_name, index|
+      file_name = folder.join(file_name)
+      next if File.directory? file_name
+      # get the second line with the description.
+      file = File.new(file_name, 'r')
+      file.gets
+      line = file.gets
+      next if line.blank? || line.strip.blank?
+
+      Variable.create do |d|
+        row = line.split('//')
+        d.rank = index
+        d.import_rank = index
+        sub_row = row[0].split(' ')
+        d.field_name = sub_row[0].strip
+        d.name_de = row[0].gsub(d.field_name, '').strip
+        d.name_fr = row[1].strip
+        d.name_it = row[2].strip
+        d.variable_sets = ['qip', d.field_name[d.field_name.length - 1]]
+      end
+
+      file.close
+
+      pg.increment
+    end
+
+    Variable.create_indexes
   end
 
   desc 'Link hospitals and their locations'
@@ -152,6 +193,7 @@ namespace :db do
       Rake::Task['db:seed_hospital_locations'].execute
       Rake::Task['db:seed_hospital_variables'].execute
       Rake::Task['db:seed_hospitals'].execute
+      Rake::Task['db:seed_qip_variables'].execute
       Rake::Task['db:link_hospitals'].execute
       Rake::Task['db:seed_admin_user'].execute
       Rake::Task['db:mongoid:create_indexes'].execute

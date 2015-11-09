@@ -1,0 +1,22 @@
+
+	E.4.1.M Kolorektale Resektionen insgesamt, Mortalität // Total des résections colorectales, mortalité // Numero totale di resezioni colorettali, mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	169	4286	3.94307	
+	1999	208	5641	3.687289	
+	2000	260	6391	4.068221	
+	2001	287	7427	3.864279	
+	2002	346	7750	4.464516	
+	2003	393	8603	4.568174	
+	2004	431	9060	4.757174	
+	2005	431	9550	4.513089	
+	2006	458	9441	4.851181	
+	2007	439	10101	4.346104	
+	2008	448	10092	4.43916	
+	2009	509	9885	5.149216	
+	2010	440	9688	4.541701	
+	2011	500	10002	4.999	
+	2012	487	9892	4.92317	
+	2013	485	9879	4.909404	
+

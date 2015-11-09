@@ -1,0 +1,22 @@
+
+	L.6.1.F Transplantation oder Transfusion von hämatopoetischen Stammzellen insgesamt // Total des transplantations ou transfusions de cellules souches hématopoïétiques // Numero totale di trapianti o trasfusioni di cellule staminali ematopoietiche
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	39	
+	1999	87	
+	2000	112	
+	2001	285	
+	2002	281	
+	2003	349	
+	2004	349	
+	2005	392	
+	2006	395	
+	2007	451	
+	2008	450	
+	2009	507	
+	2010	531	
+	2011	565	
+	2012	527	
+	2013	603	
+

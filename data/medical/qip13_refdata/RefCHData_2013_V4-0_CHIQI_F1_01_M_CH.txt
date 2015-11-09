@@ -1,0 +1,22 @@
+
+	F.1.1.M Extrakranielle Gefäss­OP, Mortalität // OP des vaisseaux extra­crâniens, mortalité // Interventi sui vasi extracranici, mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	1	357	0.280112	
+	1999	4	568	0.7042254	
+	2000	4	664	0.6024096	
+	2001	5	737	0.6784261	
+	2002	8	786	1.017812	
+	2003	6	838	0.7159905	
+	2004	12	866	1.385681	
+	2005	5	886	0.5643341	
+	2006	2	935	0.2139037	
+	2007	8	939	0.8519702	
+	2008	3	940	0.3191489	
+	2009	5	948	0.5274262	
+	2010	3	981	0.3058104	
+	2011	5	958	0.5219207	
+	2012	8	929	0.861141	
+	2013	6	1005	0.5970149	
+

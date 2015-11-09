@@ -1,0 +1,22 @@
+
+	L.3.1.F Lebertransplantation insgesamt // Total des transplantations hépatiques // Numero totale di trapianti di fegato
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	56	
+	1999	65	
+	2000	67	
+	2001	93	
+	2002	77	
+	2003	97	
+	2004	81	
+	2005	92	
+	2006	86	
+	2007	88	
+	2008	98	
+	2009	100	
+	2010	100	
+	2011	94	
+	2012	105	
+	2013	103	
+

@@ -1,0 +1,22 @@
+
+	D.4.3.M Teilresektion der Lunge bei Bronchialkarzinom, Mortalität // Résections pulmonaires partielles en cas de carcinome bronchique, mortalité // Resezione parziale del polmone in caso di carcinoma bronchiale, mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	5	369	1.355014	
+	1999	12	460	2.608696	
+	2000	12	514	2.33463	
+	2001	19	585	3.247863	
+	2002	14	623	2.247191	
+	2003	20	665	3.007519	
+	2004	8	681	1.174743	
+	2005	17	716	2.374302	
+	2006	17	744	2.284946	
+	2007	18	842	2.137767	
+	2008	27	949	2.8451	
+	2009	25	951	2.628812	
+	2010	23	1046	2.198853	
+	2011	25	1152	2.170139	
+	2012	20	1232	1.623377	
+	2013	33	1284	2.570093	
+

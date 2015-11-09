@@ -1,0 +1,22 @@
+
+	Z.1.1.F Tonsillektomie, ohne Tumor // Amygdalectomie, sans tumeur // Tonsillectomia, senza tumore
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	7263	
+	1999	7882	
+	2000	8065	
+	2001	8862	
+	2002	8757	
+	2003	8651	
+	2004	9029	
+	2005	8311	
+	2006	8773	
+	2007	9013	
+	2008	8907	
+	2009	8455	
+	2010	8175	
+	2011	7722	
+	2012	7728	
+	2013	8141	
+

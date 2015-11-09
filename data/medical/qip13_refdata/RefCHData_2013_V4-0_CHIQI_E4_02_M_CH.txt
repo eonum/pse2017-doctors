@@ -1,0 +1,22 @@
+
+	E.4.2.M Kolonresektionen bei kolorektalem Karzinom ohne komplizierende Diagnose, Mortalität // Résections du côlon pour cancer colorectal sans diagnostic compliquant, mortalité // Resezioni del colon per carcinoma colorettale senza diagnosi complicante, mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	34	1125	3.022222	
+	1999	43	1392	3.08908	
+	2000	59	1486	3.97039	
+	2001	59	1731	3.408434	
+	2002	68	1830	3.715847	
+	2003	73	1872	3.899573	
+	2004	70	1863	3.757381	
+	2005	63	1901	3.314045	
+	2006	60	1846	3.250271	
+	2007	72	2042	3.525955	
+	2008	79	2016	3.918651	
+	2009	86	2087	4.120747	
+	2010	79	2009	3.932305	
+	2011	70	2083	3.360538	
+	2012	73	1913	3.815996	
+	2013	69	1910	3.612565	
+

@@ -1,0 +1,22 @@
+
+	H.1.3.M Partielle Nephrektomie, Mortalität // Néphrectomie partielle, mortalité // Nefrectomia parziale, mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	1	62	1.612903	
+	1999	NA	82	NA	
+	2000	NA	102	NA	
+	2001	NA	132	NA	
+	2002	1	123	0.8130081	
+	2003	1	172	0.5813953	
+	2004	NA	186	NA	
+	2005	2	211	0.9478673	
+	2006	NA	228	NA	
+	2007	NA	266	NA	
+	2008	4	318	1.257862	
+	2009	2	358	0.5586592	
+	2010	NA	367	NA	
+	2011	2	389	0.5141388	
+	2012	2	456	0.4385965	
+	2013	1	445	0.2247191	
+

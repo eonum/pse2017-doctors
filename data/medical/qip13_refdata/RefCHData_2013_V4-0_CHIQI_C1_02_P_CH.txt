@@ -1,0 +1,22 @@
+
+	C.1.2.P Anteil geriatrische Frührehabilitation mit Barthel­Index // Rééducation gériatrique précoce avec index de Barthel, pourcentage // Riabilitazione geriatrica precoce con indice di Barthel, percentuale
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	CasesCHDen	pCH	
+	1998	NA	NA	NA	
+	1999	NA	NA	NA	
+	2000	NA	NA	NA	
+	2001	NA	NA	NA	
+	2002	NA	NA	NA	
+	2003	NA	NA	NA	
+	2004	NA	NA	NA	
+	2005	NA	NA	NA	
+	2006	NA	NA	NA	
+	2007	NA	NA	NA	
+	2008	NA	NA	NA	
+	2009	NA	140	NA	
+	2010	26	575	4.521739	
+	2011	271	1298	20.87827	
+	2012	2523	4313	58.49757	
+	2013	3848	5246	73.35112	
+

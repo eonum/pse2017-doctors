@@ -1,0 +1,22 @@
+
+	L.5.4.F Nierentransplantation, Autotransplantation und andere // Transplantation rénale, autogreffe et autre // Trapianto di rene, autotrapianto e altro
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	5	
+	1999	8	
+	2000	7	
+	2001	5	
+	2002	1	
+	2003	3	
+	2004	4	
+	2005	3	
+	2006	1	
+	2007	8	
+	2008	3	
+	2009	1	
+	2010	2	
+	2011	20	
+	2012	7	
+	2013	16	
+

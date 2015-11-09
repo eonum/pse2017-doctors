@@ -1,0 +1,22 @@
+
+	I.2.1.F OP an der Wirbelsäule insgesamt // Total des OP de la colonne vertébrale // OP alla colonna vertebrale, totale
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	6703	
+	1999	7974	
+	2000	9514	
+	2001	10607	
+	2002	13095	
+	2003	14150	
+	2004	13929	
+	2005	15712	
+	2006	16717	
+	2007	18465	
+	2008	19470	
+	2009	20613	
+	2010	21935	
+	2011	23761	
+	2012	23841	
+	2013	25650	
+

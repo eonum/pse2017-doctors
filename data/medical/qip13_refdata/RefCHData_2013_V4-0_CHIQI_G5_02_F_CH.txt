@@ -1,0 +1,22 @@
+
+	G.5.2.F Resektionen der Mamma bei Brustkrebs // Résections mammaires en cas de cancer du sein // Resezione mammaria in caso di cancro al seno
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	2667	
+	1999	3661	
+	2000	4112	
+	2001	4649	
+	2002	5031	
+	2003	5237	
+	2004	5555	
+	2005	5741	
+	2006	5734	
+	2007	6072	
+	2008	6396	
+	2009	6856	
+	2010	7315	
+	2011	7520	
+	2012	7528	
+	2013	8171	
+

@@ -1,0 +1,22 @@
+
+	E.5.1.F Magenresektionen insgesamt // Total des gastrectomies // Resezione gastrica, totale
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	446	
+	1999	527	
+	2000	583	
+	2001	635	
+	2002	643	
+	2003	720	
+	2004	773	
+	2005	788	
+	2006	796	
+	2007	774	
+	2008	851	
+	2009	981	
+	2010	1187	
+	2011	1372	
+	2012	1348	
+	2013	1474	
+

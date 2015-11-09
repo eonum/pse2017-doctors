@@ -1,0 +1,22 @@
+
+	H.3.1.F HD Malignom der Blase // DP tumeur maligne de la vessie // DP tumore maligno alla vescica
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	3153	
+	1999	3690	
+	2000	3947	
+	2001	4535	
+	2002	5037	
+	2003	4976	
+	2004	5145	
+	2005	5440	
+	2006	5655	
+	2007	5594	
+	2008	5390	
+	2009	6177	
+	2010	6563	
+	2011	6733	
+	2012	6844	
+	2013	7185	
+

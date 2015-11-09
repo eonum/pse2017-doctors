@@ -1,0 +1,22 @@
+
+	F.3.2.M OP an Becken­/Beinarterien bei Claudicatio, Mortalität // OP des artères du bassin/des jambes en cas de claudication, mortalité // OP alle arterie del bacino/delle gambe in caso di claudicatio, mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	NA	NA	NA	
+	1999	NA	NA	NA	
+	2000	NA	NA	NA	
+	2001	NA	NA	NA	
+	2002	NA	NA	NA	
+	2003	NA	NA	NA	
+	2004	NA	NA	NA	
+	2005	NA	NA	NA	
+	2006	NA	NA	NA	
+	2007	NA	NA	NA	
+	2008	NA	NA	NA	
+	2009	5	372	1.344086	
+	2010	4	452	0.8849558	
+	2011	3	710	0.4225352	
+	2012	5	655	0.7633588	
+	2013	6	667	0.8995502	
+

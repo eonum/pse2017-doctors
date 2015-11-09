@@ -1,0 +1,22 @@
+
+	E.4.8.F Kolorektale Resektionen bei anderer Diagnose // Résections du côlon pour autre diagnostic // Resezioni colorettali per altra diagnosi
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	1216	
+	1999	1442	
+	2000	1663	
+	2001	1829	
+	2002	1961	
+	2003	2210	
+	2004	2291	
+	2005	2463	
+	2006	2350	
+	2007	2494	
+	2008	2598	
+	2009	2442	
+	2010	2458	
+	2011	2492	
+	2012	2423	
+	2013	2426	
+

@@ -1,0 +1,22 @@
+
+	H.3.4.P Anteil Malignom­TUR mit Instillation von Chemotherapeutika in die Harnblase // RTU en cas de tumeur maligne avec instillation de médicaments chimiothérapeutiques dans la vessie, pourcentage // TUR del tumore maligno con instillazione chemioterapica nella vescica, percentuale
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	CasesCHDen	pCH	
+	1998	NA	2094	NA	
+	1999	NA	2380	NA	
+	2000	NA	2592	NA	
+	2001	NA	3185	NA	
+	2002	NA	3428	NA	
+	2003	NA	3425	NA	
+	2004	NA	3722	NA	
+	2005	NA	4205	NA	
+	2006	NA	4364	NA	
+	2007	NA	4359	NA	
+	2008	NA	4287	NA	
+	2009	183	4589	3.987797	
+	2010	325	4957	6.556385	
+	2011	526	5081	10.35229	
+	2012	660	5343	12.35261	
+	2013	678	5546	12.22503	
+

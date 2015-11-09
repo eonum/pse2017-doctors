@@ -1,0 +1,22 @@
+
+	G.5.1.F Eingriffe an der Brust insgesamt (Mammaresektionen und ­plastiken) // Total des interventions sur le sein (résections et plasties mammaires) // Numero totale di interventi al seno (resezioni e plastiche mammarie)
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	5394	
+	1999	7462	
+	2000	8417	
+	2001	9671	
+	2002	9945	
+	2003	10478	
+	2004	10969	
+	2005	10870	
+	2006	10859	
+	2007	11393	
+	2008	11971	
+	2009	12550	
+	2010	13190	
+	2011	13520	
+	2012	13562	
+	2013	13946	
+

@@ -1,0 +1,22 @@
+
+	E.3.2.P Anteil Beatmungsfälle >24 h bei Resektion der Schilddrüse // Cas de respiration artificielle >24 h en cas de résections thyroïdiennes, pourcentage // Casi totali di ventilazione meccanica >24 h in caso di resezione della tiroide, percentuale
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	CasesCHDen	pCH	
+	1998	NA	1291	NA	
+	1999	NA	1631	NA	
+	2000	NA	2022	NA	
+	2001	NA	2313	NA	
+	2002	NA	2458	NA	
+	2003	NA	2499	NA	
+	2004	NA	2815	NA	
+	2005	NA	2860	NA	
+	2006	NA	2778	NA	
+	2007	NA	2813	NA	
+	2008	NA	3012	NA	
+	2009	18	3079	0.5846054	
+	2010	29	3218	0.9011809	
+	2011	24	3443	0.6970665	
+	2012	24	3562	0.6737788	
+	2013	30	3589	0.8358874	
+

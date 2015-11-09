@@ -1,0 +1,22 @@
+
+	G.5.3.P Anteil brusterhaltende Resektionen bei Brustkrebs // Résections partielles en cas de cancer du sein, pourcentage // Resezione mammaria a scopo conservativo in caso di cancro al seno, percentuale
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	CasesCHDen	pCH	
+	1998	1349	2667	50.58118	
+	1999	1846	3661	50.42338	
+	2000	2256	4112	54.86381	
+	2001	2683	4649	57.71134	
+	2002	2989	5031	59.41165	
+	2003	3195	5237	61.00821	
+	2004	3488	5555	62.79028	
+	2005	3723	5741	64.84933	
+	2006	3733	5734	65.1029	
+	2007	3869	6072	63.71871	
+	2008	4139	6396	64.71232	
+	2009	4624	6856	67.44457	
+	2010	5060	7315	69.17293	
+	2011	5369	7520	71.39628	
+	2012	5420	7528	71.99787	
+	2013	6011	8171	73.56505	
+

@@ -1,0 +1,22 @@
+
+	G.1.1.P Anteil Todesfall der Mutter bei stationären Geburten // Accouchements hospitaliers contribuant au décès de la mère, poucentage // Parti ospedalieri con decesso della madre, percentuale
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	CasesCHDen	pCH	
+	1998	1	40685	0.002457908	
+	1999	3	54576	0.005496922	
+	2000	22	59859	0.03675304	
+	2001	1	65864	0.00151828	
+	2002	29	69201	0.04190691	
+	2003	12	69545	0.01725501	
+	2004	4	71446	0.005598634	
+	2005	5	72225	0.006922811	
+	2006	5	72829	0.006865397	
+	2007	9	73419	0.01225841	
+	2008	5	76064	0.006573412	
+	2009	NA	77476	NA	
+	2010	1	79991	0.001250141	
+	2011	1	80335	0.001244787	
+	2012	3	81988	0.003659072	
+	2013	2	82676	0.002419082	
+

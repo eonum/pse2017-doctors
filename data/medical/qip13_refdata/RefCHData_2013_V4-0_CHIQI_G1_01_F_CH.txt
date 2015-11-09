@@ -1,0 +1,22 @@
+
+	G.1.1.F Stationäre Geburten // Accouchements hospitaliers // Parti ospedalieri
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	40685	
+	1999	54576	
+	2000	59859	
+	2001	65864	
+	2002	69201	
+	2003	69545	
+	2004	71446	
+	2005	72225	
+	2006	72829	
+	2007	73419	
+	2008	76064	
+	2009	77476	
+	2010	79991	
+	2011	80335	
+	2012	81988	
+	2013	82676	
+

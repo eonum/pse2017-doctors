@@ -1,0 +1,22 @@
+
+	F.4.2.M Amputation untere Extremität, kein Trauma, Mortalität // Amputation non traumatique de membre inférieur, mortalité // Amputazione non traumatica delle estremità inferiori, mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	44	421	10.45131	
+	1999	68	556	12.23022	
+	2000	58	606	9.570957	
+	2001	78	694	11.23919	
+	2002	69	678	10.17699	
+	2003	63	698	9.025788	
+	2004	75	700	10.71429	
+	2005	59	688	8.575581	
+	2006	52	620	8.387097	
+	2007	64	603	10.6136	
+	2008	74	596	12.41611	
+	2009	74	568	13.02817	
+	2010	76	548	13.86861	
+	2011	65	496	13.10484	
+	2012	60	544	11.02941	
+	2013	64	476	13.44538	
+

@@ -1,0 +1,22 @@
+
+	E.2.3.P Anteil alloplastische OP bei Inguinalhernie, Alter 0-19 // OP alloplastique de hernie inguinale, âge 0-19, pourcentage // OP di alloplastica per ernia inguinale, età 0-19, percentuale
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	CasesCHDen	pCH	
+	1998	17	916	1.855895	
+	1999	23	846	2.718676	
+	2000	34	834	4.076739	
+	2001	24	806	2.977667	
+	2002	42	624	6.730769	
+	2003	53	824	6.432039	
+	2004	66	882	7.482993	
+	2005	71	915	7.759563	
+	2006	88	735	11.97279	
+	2007	83	744	11.15591	
+	2008	119	750	15.86667	
+	2009	152	743	20.4576	
+	2010	122	697	17.50359	
+	2011	145	679	21.35493	
+	2012	160	695	23.02158	
+	2013	142	636	22.32704	
+

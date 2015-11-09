@@ -1,0 +1,22 @@
+
+	D.4.4.P Anteil bronchoangioplastische OP bei Bronchialkarzinom // Bronchoplastie et angioplastie en cas de carcinome bronchique, pourcentage // OP bronchioangioplastica in caso di carcinoma bronchiale, percentuale
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	CasesCHDen	pCH	
+	1998	NA	493	NA	
+	1999	NA	585	NA	
+	2000	NA	668	NA	
+	2001	NA	726	NA	
+	2002	NA	787	NA	
+	2003	NA	806	NA	
+	2004	NA	808	NA	
+	2005	NA	852	NA	
+	2006	NA	873	NA	
+	2007	NA	979	NA	
+	2008	NA	1099	NA	
+	2009	NA	1046	NA	
+	2010	NA	1174	NA	
+	2011	108	1279	8.444097	
+	2012	86	1332	6.456456	
+	2013	81	1375	5.890909	
+

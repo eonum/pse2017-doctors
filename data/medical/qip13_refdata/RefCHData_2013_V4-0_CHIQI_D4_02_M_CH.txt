@@ -1,0 +1,22 @@
+
+	D.4.2.M Pneumonektomie bei Bronchialkarzinom, Mortalität // Pneumonectomie en cas de carcinome bronchique, mortalité // Pneumonectomia in caso di carcinoma bronchiale, mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	5	124	4.032258	
+	1999	8	125	6.4	
+	2000	5	154	3.246753	
+	2001	5	141	3.546099	
+	2002	12	164	7.317073	
+	2003	10	141	7.092199	
+	2004	5	127	3.937008	
+	2005	6	136	4.411765	
+	2006	13	129	10.07752	
+	2007	11	137	8.029197	
+	2008	9	150	6	
+	2009	6	95	6.315789	
+	2010	8	128	6.25	
+	2011	10	127	7.874016	
+	2012	5	100	5	
+	2013	6	91	6.593407	
+

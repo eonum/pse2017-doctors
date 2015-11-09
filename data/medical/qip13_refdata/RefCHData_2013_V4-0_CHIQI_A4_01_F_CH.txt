@@ -1,0 +1,22 @@
+
+	A.4.1.F HD Herzrhythmusstörungen // DP troubles du rythme cardiaque // DP disturbi del ritmo cardiaco
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	4814	
+	1999	5892	
+	2000	6362	
+	2001	7182	
+	2002	8136	
+	2003	8179	
+	2004	9162	
+	2005	9682	
+	2006	10444	
+	2007	11656	
+	2008	11954	
+	2009	12241	
+	2010	13406	
+	2011	14033	
+	2012	13888	
+	2013	13782	
+

@@ -1,0 +1,22 @@
+
+	A.6.1.F Kathetergestützte ablative Therapie // Ablation par cathéter // Terapia ablativa supportata da catetere
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	40	
+	1999	231	
+	2000	280	
+	2001	533	
+	2002	790	
+	2003	732	
+	2004	1055	
+	2005	1222	
+	2006	1419	
+	2007	1955	
+	2008	2355	
+	2009	2570	
+	2010	2794	
+	2011	3216	
+	2012	3108	
+	2013	3288	
+

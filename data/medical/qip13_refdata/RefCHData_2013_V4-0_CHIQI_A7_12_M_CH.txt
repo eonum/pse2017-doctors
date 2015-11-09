@@ -1,0 +1,22 @@
+
+	A.7.12.M OP nur an Koronargefässen ohne HD Herzinfarkt (Alter >19), Mortalität // OP des vaisseaux coronaires uniquement, sans DP infarctus du myocarde (âge >19), mortalité // OP solo ai vasi coronarici senza DP infarto miocardico (età >19), mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	34	2096	1.622137	
+	1999	46	2629	1.749715	
+	2000	58	2476	2.342488	
+	2001	65	2986	2.176825	
+	2002	63	3086	2.041478	
+	2003	47	2623	1.791841	
+	2004	45	2401	1.874219	
+	2005	50	2365	2.114165	
+	2006	48	2132	2.251407	
+	2007	49	2131	2.29939	
+	2008	32	2108	1.518027	
+	2009	36	1948	1.848049	
+	2010	27	1951	1.383906	
+	2011	28	2024	1.383399	
+	2012	21	1997	1.051577	
+	2013	23	1950	1.179487	
+

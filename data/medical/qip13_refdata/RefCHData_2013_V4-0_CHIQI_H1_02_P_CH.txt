@@ -1,0 +1,22 @@
+
+	H.1.2.P Anteil laparoskopische OP bei vollständiger Nephrektomie // OP laparoscopique en cas de néphrectomie totale, pourcentage // OP laparoscopica in caso di nefrectomia completa, percentuale
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	CasesCHDen	pCH	
+	1998	6	616	0.974026	
+	1999	9	684	1.315789	
+	2000	18	740	2.432432	
+	2001	33	887	3.720406	
+	2002	90	954	9.433962	
+	2003	59	931	6.337272	
+	2004	106	940	11.2766	
+	2005	141	1037	13.59691	
+	2006	189	1060	17.83019	
+	2007	196	1069	18.33489	
+	2008	273	1092	25	
+	2009	146	894	16.3311	
+	2010	172	989	17.3913	
+	2011	214	984	21.74797	
+	2012	222	971	22.86303	
+	2013	228	950	24	
+

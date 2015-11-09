@@ -1,0 +1,22 @@
+
+	G.3.4.P Anteil Hysterektomie bei gutartigen Erkrankungen ohne Endometriose (Alter >49), mit Ovarektomie // Hystérectomie pour affections bénignes sans endométriose (âge >49), avec ovariectomie, pourcentage // Isterectomia per malattie benigne senza endometriosi (età >49), con ovariectomia, percentuale
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	CasesCHDen	pCH	
+	1998	876	2550	34.35294	
+	1999	1139	3411	33.39197	
+	2000	1127	3646	30.91059	
+	2001	1069	3788	28.2207	
+	2002	1052	3971	26.49207	
+	2003	911	3735	24.3909	
+	2004	956	3734	25.60257	
+	2005	875	3569	24.51667	
+	2006	854	3569	23.92827	
+	2007	837	3572	23.43225	
+	2008	697	3447	20.22048	
+	2009	780	3823	20.40283	
+	2010	887	3786	23.42842	
+	2011	910	3701	24.58795	
+	2012	1039	3712	27.9903	
+	2013	1070	3498	30.58891	
+

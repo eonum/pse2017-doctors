@@ -1,0 +1,22 @@
+
+	E.1.2.P Anteil laparoskopische OP bei Cholezystektomie bei Gallensteinen und Cholezystitis, ohne Tumor // Laparoscopie avec cholécystectomie en cas de calculs biliaires et cholécystite, sans tumeur, pourcentage // OP laparoscopica per colecistectomia in caso di calcoli biliari e colecistite, senza tumore, percentuale
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	CasesCHDen	pCH	
+	1998	4982	5878	84.75672	
+	1999	6855	8058	85.07074	
+	2000	7144	8509	83.95816	
+	2001	8125	9452	85.96064	
+	2002	9190	10473	87.74945	
+	2003	9184	10386	88.42673	
+	2004	9295	10608	87.62255	
+	2005	10100	11265	89.65823	
+	2006	9976	10983	90.83128	
+	2007	10578	11631	90.94661	
+	2008	11051	12014	91.98435	
+	2009	11210	12047	93.05221	
+	2010	11581	12370	93.62167	
+	2011	11294	12081	93.48564	
+	2012	11586	12264	94.47162	
+	2013	11993	12595	95.22033	
+

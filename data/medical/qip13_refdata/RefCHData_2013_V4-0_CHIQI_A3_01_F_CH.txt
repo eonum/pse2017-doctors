@@ -1,0 +1,22 @@
+
+	A.3.1.F Fälle mit Katheter der Koronargefässe (Alter >19) // Cas avec cathétérisme des vaisseaux coronaires (âge >19) // Casi con catetere dei vasi coronarici (età >19)
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	CasesCH	
+	1998	4957	
+	1999	10311	
+	2000	12357	
+	2001	16262	
+	2002	19695	
+	2003	20443	
+	2004	22679	
+	2005	25821	
+	2006	27176	
+	2007	28741	
+	2008	30816	
+	2009	30957	
+	2010	34184	
+	2011	33804	
+	2012	32737	
+	2013	33145	
+

@@ -1,0 +1,22 @@
+
+	E.7.1.M Pankreasresektionen insgesamt (ohne Transplantation, Alter >19), Mortalität // Total des résections du pancréas (sans transplantation, âge >19), mortalité // Numero totale di resezioni del pancreas (senza trapianto, età >19), mortalità
+	BAG/OFSP/UFSP - CH-IQI Version V4.0 - Daten 2013 - 27. Juli 2015
+
+	Jahr	DeathCH	CasesCH	pCH	
+	1998	14	255	5.490196	
+	1999	19	404	4.70297	
+	2000	20	408	4.901961	
+	2001	21	427	4.918033	
+	2002	23	455	5.054945	
+	2003	42	542	7.749077	
+	2004	32	537	5.959032	
+	2005	29	587	4.940375	
+	2006	39	633	6.161137	
+	2007	45	621	7.246377	
+	2008	38	680	5.588235	
+	2009	47	712	6.601124	
+	2010	58	740	7.837838	
+	2011	43	693	6.204906	
+	2012	49	772	6.34715	
+	2013	53	779	6.803594	
+
