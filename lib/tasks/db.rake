@@ -121,7 +121,7 @@ namespace :db do
     files = Dir.entries(folder)
     files.sort!
     count = files.length
-    pg = ProgressBar.create(total: count, title: 'Importing hospital variables')
+    pg = ProgressBar.create(total: count, title: 'Importing QIP variables')
 
     files.each_with_index do |file_name, index|
       file_name = folder.join(file_name)
@@ -138,10 +138,13 @@ namespace :db do
         d.import_rank = index
         sub_row = row[0].split(' ')
         d.field_name = sub_row[0].strip
+        type = d.field_name[d.field_name.length - 1]
+        d.variable_type = 'percentage' if('M' == type || 'P' == type)
+        d.variable_type = 'number' if('F' == type)
         d.name_de = row[0].gsub(d.field_name, '').strip
         d.name_fr = row[1].strip
         d.name_it = row[2].strip
-        d.variable_sets = ['qip', d.field_name[d.field_name.length - 1]]
+        d.variable_sets = ['qip', type]
       end
 
       file.close
