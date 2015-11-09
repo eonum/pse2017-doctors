@@ -1,6 +1,7 @@
 class Speciality
   include Mongoid::Document
   include MultiLanguageText
+
   has_many :variables
 
   field :name, localize: true

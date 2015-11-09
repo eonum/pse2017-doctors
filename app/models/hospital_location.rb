@@ -1,4 +1,4 @@
-class Hospital
+class HospitalLocation
   include Mongoid::Document
   include Geocoder::Model::Mongoid
 

@@ -2,13 +2,13 @@ require_relative 'seed_helpers.rb'
 
 namespace :db do
   desc 'Import Hospitals'
-  task seed_hospitals: :environment do
-    Hospital.delete_all
+  task seed_hospital_locations: :environment do
+    HospitalLocation.delete_all
 
-    file = Rails.root.join('data', 'medical', 'hospitals.csv')
+    file = Rails.root.join('data', 'medical', 'hospital_locations.csv')
     count = `wc -l #{file}`.to_i
 
-    pg = ProgressBar.create(total: count, title: 'Indexing Hospital Fields')
+    pg = ProgressBar.create(total: count, title: 'Indexing HospitalLocation Fields')
 
     doc_file = IO.readlines(file)
 
@@ -30,10 +30,10 @@ namespace :db do
       pg.increment
     end
 
-    pg = ProgressBar.create(total: d_hash.size, title: 'Importing Hospitals')
+    pg = ProgressBar.create(total: d_hash.size, title: 'Importing Hospital Locations')
     d_hash.each do |k, v|
       row = doc_file[v[:line]].split(';')
-      Hospital.create do |d|
+      HospitalLocation.create do |d|
         d.doc_id = row[0].strip.to_i
         d.name = row[1].strip
         d.title = (row[2]||'').strip
@@ -48,7 +48,7 @@ namespace :db do
       pg.increment
     end
 
-    Hospital.create_indexes
+    HospitalLocation.create_indexes
   end
 
   desc 'Create admin user'
@@ -61,7 +61,7 @@ namespace :db do
   namespace :seed do
     task all: :environment do
       Rake::Task['db:mongoid:remove_indexes'].execute
-      Rake::Task['db:seed_hospitals'].execute
+      Rake::Task['db:seed_hospital_locations'].execute
       Rake::Task['db:seed_admin_user'].execute
       Rake::Task['db:mongoid:create_indexes'].execute
     end

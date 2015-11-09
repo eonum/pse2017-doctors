@@ -31,7 +31,7 @@
               %p= s.address
           - when 'hospital'
             %a.list-group-item{href: hospital_path(s, q: params['q']), class: params['id'].to_i==s.doc_id ? 'active' : ''}
-              %span.label.label-hospital Hospital
+              %span.label.label-hospital HospitalLocation
               = progress_bar(s._score * 20, 'progress-xs')
               %p
                 %em.title= s.title

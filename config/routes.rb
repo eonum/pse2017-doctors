@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   scope '/:locale', :locale => /de|fr|it|en/, :format => /json|html/ do
     devise_for :users
 
-    resources :hospitals, only: [:index, :show]
+    resources :hospital_locations, only: [:index, :show]
     resources :specialities, only: [:index, :show]
 
     resources :variables do
