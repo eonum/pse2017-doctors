@@ -10,6 +10,7 @@ Rails.application.routes.draw do
         post :set_variable_sets, :on => :member
       end
       resources :hospitals
+      resources :hospital_locations
     end
 
     get '/entry', to: 'home#entry', as: 'entry'

@@ -1,0 +1,33 @@
+%p#notice= notice
+
+%p
+  %b Doc:
+  = @hospital_location.doc_id
+%p
+  %b Name:
+  = @hospital_location.name
+%p
+  %b Title:
+  = @hospital_location.title
+%p
+  %b Address:
+  = @hospital_location.address
+%p
+  %b Email:
+  = @hospital_location.email
+%p
+  %b Phone1:
+  = @hospital_location.phone1
+%p
+  %b Phone2:
+  = @hospital_location.phone2
+%p
+  %b Canton:
+  = @hospital_location.canton
+%p
+  %b Location:
+  = @hospital_location.location
+
+= link_to 'Edit', edit_admin_hospital_location_path(@hospital_location)
+\|
+= link_to 'Back', admin_hospital_locations_path

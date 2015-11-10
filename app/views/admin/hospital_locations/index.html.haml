@@ -1,0 +1,37 @@
+%h2 Liste der Spitalstandorte
+
+%table
+  %thead
+    %tr
+      %th Doc
+      %th Name
+      %th Title
+      %th Address
+      %th Email
+      %th Phone1
+      %th Phone2
+      %th Canton
+      %th Location
+      %th
+      %th
+      %th
+
+  %tbody
+    - @hospital_locations.each do |hospital_location|
+      %tr
+        %td= hospital_location.doc_id
+        %td= hospital_location.name
+        %td= hospital_location.title
+        %td= hospital_location.address
+        %td= hospital_location.email
+        %td= hospital_location.phone1
+        %td= hospital_location.phone2
+        %td= hospital_location.canton
+        %td= hospital_location.location
+        %td= link_to 'Show', [:admin, hospital_location]
+        %td= link_to 'Edit', edit_admin_hospital_location_path(hospital_location)
+        %td= link_to 'Destroy', [:admin, hospital_location], :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Hospital location', new_admin_hospital_location_path

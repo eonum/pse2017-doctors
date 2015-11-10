@@ -1,0 +1,37 @@
+= form_for [:admin, @hospital_location] do |f|
+  - if @hospital_location.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@hospital_location.errors.count, "error")} prohibited this admin_hospital_location from being saved:"
+      %ul
+        - @hospital_location.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :doc_id
+    = f.number_field :doc_id
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :address
+    = f.text_field :address
+  .field
+    = f.label :email
+    = f.text_field :email
+  .field
+    = f.label :phone1
+    = f.text_field :phone1
+  .field
+    = f.label :phone2
+    = f.text_field :phone2
+  .field
+    = f.label :canton
+    = f.text_field :canton
+  .field
+    = f.label :location
+    = f.text_field :location
+  .actions
+    = f.submit 'Save'
