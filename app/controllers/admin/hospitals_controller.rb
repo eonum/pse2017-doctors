@@ -1,5 +1,5 @@
 class Admin::HospitalsController < Admin::AdminController
-  before_action :set_admin_hospital, only: [:show, :edit, :update, :destroy]
+  before_action :set_hospital, only: [:show, :edit, :update, :destroy]
 
   # GET /admin/hospitals
   # GET /admin/hospitals.json
@@ -24,7 +24,7 @@ class Admin::HospitalsController < Admin::AdminController
   # POST /admin/hospitals
   # POST /admin/hospitals.json
   def create
-    @hospital = Hospital.new(admin_hospital_params)
+    @hospital = Hospital.new(hospital_params)
 
     respond_to do |format|
       if @hospital.save
@@ -41,7 +41,7 @@ class Admin::HospitalsController < Admin::AdminController
   # PATCH/PUT /admin/hospitals/1.json
   def update
     respond_to do |format|
-      if @admin_hospital.update(admin_hospital_params)
+      if @hospital.update(hospital_params)
         format.html { redirect_to @hospital, notice: 'Hospital was successfully updated.' }
         format.json { render :show, status: :ok, location: @hospital }
       else
@@ -63,12 +63,12 @@ class Admin::HospitalsController < Admin::AdminController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_admin_hospital
+    def set_hospital
       @hospital = Hospital.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def admin_hospital_params
+    def hospital_params
       params.require(:hospital).permit(:name, :address1, :address2, :bfs_typo, :canton)
     end
 end

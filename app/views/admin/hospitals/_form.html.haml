@@ -1,4 +1,4 @@
-= form_for admin_hospital_path(@hospital) do |f|
+= form_for [:admin, @hospital] do |f|
   - if @hospital.errors.any?
     #error_explanation
       %h2= "#{pluralize(@hospital.errors.count, "error")} prohibited this admin_hospital from being saved:"
