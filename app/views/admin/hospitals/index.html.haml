@@ -1,5 +1,7 @@
 %h2 Spitalliste
 
+= link_to 'Neues Spital', new_admin_hospital_path
+
 %table.table-striped.table
   %thead
     %tr
@@ -15,15 +17,11 @@
   %tbody
     - @hospitals.each do |hospital|
       %tr
-        %td= hospital.name
+        %td= link_to hospital.name, [:admin, hospital]
         %td= hospital.address1
         %td= hospital.address2
         %td= hospital.bfs_typo
         %td= hospital.canton
-        %td= link_to 'Show', admin_hospital_path(hospital)
-        %td= link_to 'Edit', edit_admin_hospital_path(hospital)
-        %td= link_to 'Destroy', admin_hospital_path(hospital), :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'Bearbeiten', edit_admin_hospital_path(hospital)
+        %td= link_to 'Löschen', admin_hospital_path(hospital), :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-%br
-
-= link_to 'New Hospital', new_admin_hospital_path

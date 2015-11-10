@@ -16,7 +16,7 @@
   %tbody
     - @hospital_locations.each do |hospital_location|
       %tr
-        %td= hospital_location.name
+        %td= link_to hospital_location.name, [:admin, hospital_location]
         %td= hospital_location.title
         %td
           -if hospital_location.hospital == nil
@@ -26,9 +26,8 @@
         %td= hospital_location.address
         %td= hospital_location.canton
         %td= hospital_location.location
-        %td= link_to 'Show', [:admin, hospital_location]
-        %td= link_to 'Edit', edit_admin_hospital_location_path(hospital_location)
-        %td= link_to 'Destroy', [:admin, hospital_location], :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'Bearbeiten', edit_admin_hospital_location_path(hospital_location)
+        %td= link_to 'Löschen', [:admin, hospital_location], :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
