@@ -30,8 +30,8 @@ class Admin::HospitalsController < Admin::AdminController
 
     respond_to do |format|
       if @hospital.save
-        format.html { redirect_to @hospital, notice: 'Hospital was successfully created.' }
-        format.json { render :show, status: :created, location: @hospital }
+        format.html { redirect_to [:admin, @hospital], notice: 'Hospital was successfully created.' }
+        format.json { render :show, status: :created, location: [:admin, @hospital] }
       else
         format.html { render :new }
         format.json { render json: @hospital.errors, status: :unprocessable_entity }
@@ -44,8 +44,8 @@ class Admin::HospitalsController < Admin::AdminController
   def update
     respond_to do |format|
       if @hospital.update(hospital_params)
-        format.html { redirect_to @hospital, notice: 'Hospital was successfully updated.' }
-        format.json { render :show, status: :ok, location: @hospital }
+        format.html { redirect_to [:admin, @hospital], notice: 'Hospital was successfully updated.' }
+        format.json { render :show, status: :ok, location: [:admin, @hospital] }
       else
         format.html { render :edit }
         format.json { render json: @hospital.errors, status: :unprocessable_entity }
