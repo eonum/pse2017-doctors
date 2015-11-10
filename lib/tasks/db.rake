@@ -62,6 +62,7 @@ namespace :db do
 
     pg = ProgressBar.create(total: count, title: 'Importing hospital variables')
     var_file.each_with_index do |line, index|
+      pg.increment
       row = line.split(';')
       next if row[0].strip.blank? || index == 0
       Variable.create do |d|
@@ -74,8 +75,6 @@ namespace :db do
         d.variable_sets = ['kzp']
         # TODO determine variable type: number, array, ..
       end
-
-      pg.increment
     end
 
     Variable.create_indexes
@@ -94,6 +93,8 @@ namespace :db do
 
     pg = ProgressBar.create(total: count, title: 'Importing Hospitals')
     hop_file.each_with_index do |line, index|
+      pg.increment
+
       next if line.blank?
       row = line.split(';')
       if(index == 0)
@@ -106,8 +107,6 @@ namespace :db do
         # TODO parse values (numbers, arrays, ..)
         variables.each {|index, field_name| d[field_name] = (row[index]||'').strip}
       end
-
-      pg.increment
     end
 
     # dummy hospital CH
@@ -130,6 +129,7 @@ namespace :db do
     pg = ProgressBar.create(total: count, title: 'Importing QIP variables')
 
     files.each_with_index do |file_name, index|
+      pg.increment
       file_name = folder.join(file_name)
       next if File.directory? file_name
       # get the second line with the description.
@@ -153,8 +153,6 @@ namespace :db do
         d.variable_sets = ['qip', type]
       end
       file.close
-
-      pg.increment
     end
 
     Variable.create_indexes
@@ -176,11 +174,13 @@ namespace :db do
       count = `wc -l #{file}`.to_i
       qip_file = IO.readlines(file)
 
-      var_not_found = 0
-      hop_not_found = 0
+      var_not_found = {}
+      hop_not_found = {}
 
       pg = ProgressBar.create(total: count, title: "Importing QIP data from year #{year}")
       qip_file.each_with_index do |line, index|
+        pg.increment
+
         next if line.blank?
         row = line.split(';')
         next if row.length < 2
@@ -191,16 +191,13 @@ namespace :db do
 
         var = variables[var_name]
         if var == nil
-          var_not_found = var_not_found + 1
-          puts "Variable #{var_name} could not be found!"
+          var_not_found[var_name] = 1
           next
         end
 
         hop = hospitals[row[0].strip]
         if hop == nil
-          next if row[0].strip.include? 'Spezialklinik'
-          hop_not_found = hop_not_found + 1
-          puts "Hospital #{row[0].strip} could not be found!"
+          hop_not_found[row[0].strip] = 1
           next
         end
 
@@ -213,12 +210,15 @@ namespace :db do
         hop[var.field_name] = {} if hop[var.field_name] == nil
         hop[var.field_name][year] = qip
         hop.save!
-
-        pg.increment
       end
 
-      puts "#{var_not_found} variables not found."
-      puts "#{hop_not_found} hospitals not found."
+      puts
+      puts "#{var_not_found.length} variables not found:"
+      puts var_not_found.keys
+      puts
+      puts "#{hop_not_found.length} hospitals not found:"
+      puts hop_not_found.keys
+      puts
     end
   end
 
