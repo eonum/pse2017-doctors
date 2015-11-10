@@ -18,10 +18,14 @@
 \|
 = link_to 'Back', admin_hospitals_path
 
+%h3 Standorte
+- @hospital.hospital_locations.each do |location|
+  %p
+    = link_to(location.name + ' - ' + location.title + ' - ' + location.address, [:admin, location])
 
 %h3 KZP Variablen
 
-%table
+%table.table-striped.table
   %thead
     %th
       %td
@@ -37,7 +41,7 @@
 
 %h3 QIP Variablen
 
-%table
+%table.table-striped.table
   %thead
     %th
       %td

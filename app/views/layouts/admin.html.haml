@@ -23,17 +23,13 @@
           %span.icon-bar
         %a.navbar-brand(href="#{home_path}")
           %i.fa.fa-user-md
-          QM Hospitals
+          QM Hospitals Admin
         .navbar-collapse.collapse.navbar-responsive-collapse
           %ul.nav.navbar-nav
-            %li= link_to fa_icon('home', 'Home'), home_url
-            %li= link_to fa_icon('exclamation-circle', 'About'), about_url
+            %li= link_to fa_icon('exclamation-circle', 'Spitäler'), admin_hospitals_url
+            %li= link_to fa_icon('exclamation-circle', 'Standorte'), admin_hospital_locations_url
+            %li= link_to fa_icon('exclamation-circle', 'Variable / Kennzahlen'), admin_variables_url
           %ul.nav.navbar-nav.navbar-right
-            %li
-              %button#location-btn.btn.btn-default.navbar-btn.has-popover{"data-target" => ".bs-example-modal-lg", "data-toggle" => "modal",
-               :type => 'button', :title => 'Change Location', 'data-content' => 'Change Your location here'}
-                %i.fa.fa-location-arrow
-                = current_address
             %li= link_to fa_icon('question-circle', 'Help'), help_url
             %li.dropdown
               %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
@@ -47,20 +43,7 @@
 
     .container
       .row
-        .col-lg-4
-          #search.well.well-sm
-            #search-bar
-              = form_tag({}, method: 'get', turboboost: true) do
-                .input-group
-                  %input.form-control{type: 'text', name: 'q', value: "#{params[:q]}", placeholder: 'Enter your search query'}
-                  %span.input-group-btn
-                    %button.btn.btn-primary{type: 'submit'}
-                      %span.fa.fa-search
-                      Search
-            #search-results
-              = yield(:search)
-
-        .col-lg-8
+        .col-lg-12
           = bootstrap_flash
           = yield
 

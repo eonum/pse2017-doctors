@@ -1,4 +1,4 @@
-%h1 Variablen
+%h3 Variablen
 = link_to 'Neue Variable', new_admin_variable_path
 %div
   :javascript
@@ -19,7 +19,7 @@
   = label_tag(:q, 'Suche')
   = text_field_tag(:q, params[:q])
   = submit_tag('Suche')
-%table
+%table.table-striped.table
   %tr
     %th= 'Variablenname'
     %th= 'Beschrieb'

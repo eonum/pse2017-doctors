@@ -1,15 +1,12 @@
 %h2 Liste der Spitalstandorte
 
-%table
+%table.table-striped.table
   %thead
     %tr
       %th Name
       %th Title
       %th Gehört zu
       %th Address
-      %th Email
-      %th Phone1
-      %th Phone2
       %th Canton
       %th Location
       %th
@@ -27,9 +24,6 @@
           -else
             =link_to(hospital_location.hospital.name, [:admin, hospital_location.hospital])
         %td= hospital_location.address
-        %td= hospital_location.email
-        %td= hospital_location.phone1
-        %td= hospital_location.phone2
         %td= hospital_location.canton
         %td= hospital_location.location
         %td= link_to 'Show', [:admin, hospital_location]
