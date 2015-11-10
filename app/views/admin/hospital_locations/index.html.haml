@@ -1,5 +1,7 @@
 %h2 Liste der Spitalstandorte
 
+= link_to 'Neuer Standort', new_admin_hospital_location_path
+
 %table.table-striped.table
   %thead
     %tr
@@ -28,7 +30,3 @@
         %td= hospital_location.location
         %td= link_to 'Bearbeiten', edit_admin_hospital_location_path(hospital_location)
         %td= link_to 'Löschen', [:admin, hospital_location], :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Hospital location', new_admin_hospital_location_path

@@ -20,38 +20,40 @@
   = text_field_tag(:q, params[:q])
   = submit_tag('Suche')
 %table.table-striped.table
-  %tr
-    %th= 'Variablenname'
-    %th= 'Beschrieb'
-    %th Typ
-    %th{width: "300px"} Sets
-    %th{width: "80px"}
-  - @variables.each do |variable|
+  %thead
     %tr
-      %td
-        %b
-          = variable.field_name
-          \:
-          %br
-          = variable.localized_field('name', locale)
-      %td= variable.localized_field('description', locale)
-      %td= variable.variable_type
-      %td
-        :javascript
-          $(function () {
-              $('#tag_field_#{variable.field_name}').tagsManager({
-                  prefilled: #{raw (variable.variable_sets)},
-                  deleteTagsOnBackspace: false,
-                  tagClass: 'tm-tag-mini'
-              });
-              $('#tag_field_#{variable.field_name}').autocomplete({
-                  source:#{raw Variable.all.distinct(:variable_sets)}
-              });
-          });
-        = form_for variable, :url => set_variable_sets_admin_variable_path(variable), :method => 'post' do |f|
-          %input.tm-tag{id: "tag_field_#{variable.field_name}", name: "sets", placeholder: "Sets", style: "width:5em;", type: "text"}
-          = submit_tag('Speichern', :class => 'tm-tag', :style => 'margin-top: 0px; padding: 3px;')
-      %td
-        = link_to image_tag('application_view_list.png', :style => 'border-style:none'), admin_variable_path(variable)
-        = link_to image_tag('note_edit.png', :style => 'border-style:none'), edit_admin_variable_path(variable)
-        = link_to image_tag('delete.png', :style => 'border-style:none'), admin_variable_path(variable), method: :delete, :title => 'Löschen', :data => {:confirm => 'Möchten Sie diese Kennzahl wirklich löschen?'}
+      %th= 'Variablenname'
+      %th= 'Beschrieb'
+      %th Typ
+      %th{width: "300px"} Sets
+      %th{width: "80px"}
+  %tbody
+    - @variables.each do |variable|
+      %tr
+        %td
+          %b
+            = variable.field_name
+            \:
+            %br
+            = variable.localized_field('name', locale)
+        %td= variable.localized_field('description', locale)
+        %td= variable.variable_type
+        %td
+          :javascript
+            $(function () {
+                $('#tag_field_#{variable.field_name}').tagsManager({
+                    prefilled: #{raw (variable.variable_sets)},
+                    deleteTagsOnBackspace: false,
+                    tagClass: 'tm-tag-mini'
+                });
+                $('#tag_field_#{variable.field_name}').autocomplete({
+                    source:#{raw Variable.all.distinct(:variable_sets)}
+                });
+            });
+          = form_for variable, :url => set_variable_sets_admin_variable_path(variable), :method => 'post' do |f|
+            %input.tm-tag{id: "tag_field_#{variable.field_name}", name: "sets", placeholder: "Sets", style: "width:5em;", type: "text"}
+            = submit_tag('Speichern', :class => 'tm-tag', :style => 'margin-top: 0px; padding: 3px;')
+        %td
+          = link_to image_tag('application_view_list.png', :style => 'border-style:none'), admin_variable_path(variable)
+          = link_to image_tag('note_edit.png', :style => 'border-style:none'), edit_admin_variable_path(variable)
+          = link_to image_tag('delete.png', :style => 'border-style:none'), admin_variable_path(variable), method: :delete, :title => 'Löschen', :data => {:confirm => 'Möchten Sie diese Kennzahl wirklich löschen?'}

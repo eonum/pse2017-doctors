@@ -36,8 +36,9 @@
         2012
       %td
         2013
-  - @variables_kzp.each do |var|
-    = render 'var', :var => var, :hop => @hospital, :years => ['2011', '2012', '2013']
+  %tbody
+    - @variables_kzp.each do |var|
+      = render 'var', :var => var, :hop => @hospital, :years => ['2011', '2012', '2013']
 
 %h3 QIP Variablen
 
@@ -52,5 +53,6 @@
         2012
       %td
         2013
-  - @variables_qip.each do |var|
-    = render 'var', :var => var, :hop => @hospital, :years => ['2011', '2012', '2013']
+  %tbody
+    - @variables_qip.each do |var|
+      = render 'var', :var => var, :hop => @hospital, :years => ['2011', '2012', '2013']
