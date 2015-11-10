@@ -84,29 +84,83 @@ namespace :db do
   task seed_hospitals: :environment do
     Hospital.delete_all
 
-    file = Rails.root.join('data', 'medical', 'kzp13_daten.csv')
-    count = `wc -l #{file}`.to_i
-    hop_file = IO.readlines(file)
-    variables = {}
+    # configuration
+    master = 2013
+    files = {
+        2013 => Rails.root.join('data', 'medical', 'kzp13_daten.csv'),
+        2012 => Rails.root.join('data', 'medical', 'kzp12_daten.csv')
+    }
+
     # Use only the variables described in the KZP variable set.
+    variables = {}
     valid_field_names = Variable.where({ 'variable_sets' => { '$in' => ['kzp'] }}).map {|var| var.field_name }
 
-    pg = ProgressBar.create(total: count, title: 'Importing Hospitals 2013')
+    # read master hospitals and their addresses
+    count = `wc -l #{files[master]}`.to_i
+    hop_file = IO.readlines(files[master])
+    hop_by_name = {}
+    hop_by_address = {}
+
+    pg = ProgressBar.create(total: count, title: 'Importing Hospitals Master')
     hop_file.each_with_index do |line, index|
       pg.increment
 
       next if line.blank?
       row = line.split(';')
-      if(index == 0)
-        row.each_with_index { |var_name, index| variables[index] = var_name if(valid_field_names.include? var_name) }
-        next
-      end
+      next if(index == 0)
 
       next if row[1].strip.blank?
       Hospital.create do |d|
-        # TODO parse values (numbers, arrays, ..)
-        variables.each {|index, field_name| d[field_name] = (row[index]||'').strip}
+        d.canton = row[0].strip
+        d.name = row[1].strip
+        d.address1 = row[2].strip
+        d.address2 = row[3].strip
+        d.bfs_typo = row[4].strip
+        hop_by_name[d.name] = d
+        hop_by_address[d.address1] = d
       end
+    end
+
+    hop_not_found = {}
+
+    files.each do |year, file|
+      count = `wc -l #{file}`.to_i
+      hop_file = IO.readlines(file)
+
+      pg = ProgressBar.create(total: count, title: "Importing Hospitals #{year}")
+      hop_file.each_with_index do |line, index|
+        pg.increment
+
+        next if line.blank?
+        row = line.split(';')
+        if(index == 0)
+          row.each_with_index { |var_name, index| variables[index] = var_name if(valid_field_names.include? var_name) }
+          next
+        end
+
+        next if row[1].strip.blank?
+
+        hop = hop_by_name[row[1].strip]
+        hop = hop_by_address[row[2].strip] if hop == nil
+        if(hop == nil)
+          hop_not_found[row[1]] = 1
+          next
+        end
+
+        # TODO parse values (numbers, arrays, ..)
+        variables.each do |index, field_name|
+          indicator = hop[field_name] == nil ? {} : hop[field_name].clone
+          indicator[year] = (row[index]||'').strip
+          hop[field_name] = indicator
+          hop.save!
+        end
+
+      end
+
+      puts
+      puts "#{hop_not_found.length} hospitals not found in master:"
+      puts hop_not_found.keys
+      puts
     end
 
     # dummy hospital CH

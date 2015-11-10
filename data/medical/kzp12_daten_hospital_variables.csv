@@ -1,9 +1,9 @@
 Code;Text_DE;Text_FR;Text_IT
-canton;Kanton;Canton;Cantone
-name;Betrieb;Etablissement;Stabilimento
-address1;Adresse;adresse;indirizzo
-address2;Ort;Lieu;posto
-bfs_typo;Spitaltyp, gemäss BFS Spitaltypologie;Type de l’établissement selon la typologie de l’OFS;Tipo di ospedale secondo la tipologia ospedaliera UST
+KT;Kanton;Canton;Cantone
+Inst;Betrieb;Etablissement;Stabilimento
+Adr;Adresse;adresse;indirizzo
+Ort;Ort;Lieu;posto
+Typ;Spitaltyp, gemäss BFS Spitaltypologie;Type de l’établissement selon la typologie de l’OFS;Tipo di ospedale secondo la tipologia ospedaliera UST
 RWStatus;Rechtlich­wirtschaftlicher Status;Statut juridico­économique des établissements;Statuto giuridico­economico
 Akt;Aktivitätstyp;Type d‘activité;Tipo di attività
 SL;Spezifische Leistungen;Prestations spécifiques;Prestazioni specifiche
