@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-
   scope '/:locale', :locale => /de|fr|it|en/, :format => /json|html/ do
     devise_for :users
 
@@ -11,6 +9,7 @@ Rails.application.routes.draw do
       resources :variables do
         post :set_variable_sets, :on => :member
       end
+      resources :hospitals
     end
 
     get '/entry', to: 'home#entry', as: 'entry'

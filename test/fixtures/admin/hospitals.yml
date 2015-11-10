@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  address1: MyString
+  address2: MyString
+  bfs_typo: MyString
+  canton: MyString
+
+two:
+  name: MyString
+  address1: MyString
+  address2: MyString
+  bfs_typo: MyString
+  canton: MyString

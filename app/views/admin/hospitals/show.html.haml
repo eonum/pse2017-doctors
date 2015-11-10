@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @hospital.name
+%p
+  %b Address1:
+  = @hospital.address1
+%p
+  %b Address2:
+  = @hospital.address2
+%p
+  %b Bfs typo:
+  = @hospital.bfs_typo
+%p
+  %b Canton:
+  = @hospital.canton
+
+= link_to 'Edit', edit_admin_hospital_path(@hospital)
+\|
+= link_to 'Back', admin_hospitals_path
