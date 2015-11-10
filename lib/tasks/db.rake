@@ -217,7 +217,12 @@ namespace :db do
     variables = {}
     Variable.where({ 'variable_sets' => { '$in' => ['qip'] }}).each {|var| variables[var.field_name] = var}
     hospitals = {}
-    Hospital.all.each {|hop| hospitals[hop.name] = hop}
+    Hospital.all.each do |hop|
+      hospitals[hop.name] = hop
+      # aliases from other years
+      next if(hop['Inst'] == nil)
+      hop['Inst'].each { |year, inst| hospitals[inst] = hop }
+    end
 
     files = {
         2012 => Rails.root.join('data', 'medical', 'qip12_tabdaten.csv'),
