@@ -7,8 +7,10 @@ Rails.application.routes.draw do
     resources :hospital_locations, only: [:index, :show]
     resources :specialities, only: [:index, :show]
 
-    resources :variables do
-      post :set_variable_sets, :on => :member
+    namespace :admin do
+      resources :variables do
+        post :set_variable_sets, :on => :member
+      end
     end
 
     get '/entry', to: 'home#entry', as: 'entry'
