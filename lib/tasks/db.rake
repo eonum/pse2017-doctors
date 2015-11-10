@@ -60,7 +60,7 @@ namespace :db do
 
     var_file = IO.readlines(file)
 
-    pg = ProgressBar.create(total: count, title: 'Importing hospital variables')
+    pg = ProgressBar.create(total: count, title: 'Importing hospital variables 2013')
     var_file.each_with_index do |line, index|
       pg.increment
       row = line.split(';')
@@ -84,14 +84,14 @@ namespace :db do
   task seed_hospitals: :environment do
     Hospital.delete_all
 
-    file = Rails.root.join('data', 'medical', 'kzp12_daten.csv')
+    file = Rails.root.join('data', 'medical', 'kzp13_daten.csv')
     count = `wc -l #{file}`.to_i
     hop_file = IO.readlines(file)
     variables = {}
     # Use only the variables described in the KZP variable set.
     valid_field_names = Variable.where({ 'variable_sets' => { '$in' => ['kzp'] }}).map {|var| var.field_name }
 
-    pg = ProgressBar.create(total: count, title: 'Importing Hospitals')
+    pg = ProgressBar.create(total: count, title: 'Importing Hospitals 2013')
     hop_file.each_with_index do |line, index|
       pg.increment
 
@@ -146,7 +146,7 @@ namespace :db do
         d.field_name = sub_row[0].strip.gsub('.', '_')
         type = d.field_name[d.field_name.length - 1]
         d.variable_type = 'percentage' if('M' == type || 'P' == type)
-        d.variable_type = 'number' if('F' == type)
+        d.variable_type = 'number' if('F' == type || 'X' == type)
         d.name_de = row[0].gsub(d.field_name, '').strip
         d.name_fr = row[1].strip
         d.name_it = row[2].strip
