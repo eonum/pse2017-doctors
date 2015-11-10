@@ -188,6 +188,8 @@ namespace :db do
 
         # non terminal
         next if var_name.length < 7
+        # Indikator, indicator or indicatore
+        next if var_name.include? 'ndi'
 
         var = variables[var_name]
         if var == nil
@@ -195,9 +197,10 @@ namespace :db do
           next
         end
 
-        hop = hospitals[row[0].strip]
+        hop_name = row[0].strip
+        hop = hospitals[hop_name]
         if hop == nil
-          hop_not_found[row[0].strip] = 1
+          hop_not_found[hop_name] = 1
           next
         end
 
@@ -207,8 +210,10 @@ namespace :db do
         qip['SMR'] = (row[8]||'').strip.to_f  unless (row[8]||'').blank?
         qip['num_cases'] = (row[9]||'').strip.to_i  unless (row[9]||'').blank?
 
-        hop[var.field_name] = {} if hop[var.field_name] == nil
-        hop[var.field_name][year] = qip
+        # we need to make a deep copy in order for mongoid to realize the field has changed.
+        indicator = hop[var.field_name] == nil ? {} : hop[var.field_name].clone
+        indicator[year] = qip
+        hop[var.field_name] = indicator
         hop.save!
       end
 
