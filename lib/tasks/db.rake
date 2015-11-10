@@ -88,7 +88,8 @@ namespace :db do
     master = 2013
     files = {
         2013 => Rails.root.join('data', 'medical', 'kzp13_daten.csv'),
-        2012 => Rails.root.join('data', 'medical', 'kzp12_daten.csv')
+        2012 => Rails.root.join('data', 'medical', 'kzp12_daten.csv'),
+        2011 => Rails.root.join('data', 'medical', 'kzp11_daten.csv')
     }
 
     # Use only the variables described in the KZP variable set.
