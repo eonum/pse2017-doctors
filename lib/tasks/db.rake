@@ -205,10 +205,10 @@ namespace :db do
         end
 
         qip = {}
-        qip['observed'] = (row[6]||'').strip.to_f unless (row[6]||'').blank?
-        qip['expected'] = (row[7]||'').strip.to_f unless (row[7]||'').blank?
-        qip['SMR'] = (row[8]||'').strip.to_f  unless (row[8]||'').blank?
-        qip['num_cases'] = (row[9]||'').strip.to_i  unless (row[9]||'').blank?
+        qip['observed'] = (row[6]||'').to_f if is_numeric?(row[6]||'')
+        qip['expected'] = (row[7]||'').to_f if is_numeric?(row[7]||'')
+        qip['SMR'] = (row[8]||'').to_f  if is_numeric?(row[8]||'')
+        qip['num_cases'] = (row[9]||'').to_i if is_numeric?(row[9]||'')
 
         # we need to make a deep copy in order for mongoid to realize the field has changed.
         indicator = hop[var.field_name] == nil ? {} : hop[var.field_name].clone

@@ -75,3 +75,8 @@ def levenshtein_distance(s, t)
   end
   d[m][n]
 end
+
+def is_numeric? string
+  string = string.strip
+  string.to_i.to_s == string || string.to_f.to_s == string
+end
