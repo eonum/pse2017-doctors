@@ -64,7 +64,7 @@ class Admin::HospitalLocationsController < Admin::AdminController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_hospital_location
-      @hospital_location = HospitalLocation.find(params[:id])
+      @hospital_location = HospitalLocation.find_by(doc_id: params['id'])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -3,9 +3,9 @@
 %table
   %thead
     %tr
-      %th Doc
       %th Name
       %th Title
+      %th Gehört zu
       %th Address
       %th Email
       %th Phone1
@@ -19,9 +19,13 @@
   %tbody
     - @hospital_locations.each do |hospital_location|
       %tr
-        %td= hospital_location.doc_id
         %td= hospital_location.name
         %td= hospital_location.title
+        %td
+          -if hospital_location.hospital == nil
+            %span{:style => "color: red;"} Undefined
+          -else
+            =link_to(hospital_location.hospital.name, [:admin, hospital_location.hospital])
         %td= hospital_location.address
         %td= hospital_location.email
         %td= hospital_location.phone1
