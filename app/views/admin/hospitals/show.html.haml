@@ -1,8 +1,6 @@
 %p#notice= notice
 
-%p
-  %b Name:
-  = @hospital.name
+%h2= @hospital.name
 %p
   %b Address1:
   = @hospital.address1
@@ -19,3 +17,36 @@
 = link_to 'Edit', edit_admin_hospital_path(@hospital)
 \|
 = link_to 'Back', admin_hospitals_path
+
+
+%h3 KZP Variablen
+
+%table
+  %thead
+    %th
+      %td
+        Name
+      %td
+        2011
+      %td
+        2012
+      %td
+        2013
+  - @variables_kzp.each do |var|
+    = render 'var', :var => var, :hop => @hospital, :years => ['2011', '2012', '2013']
+
+%h3 QIP Variablen
+
+%table
+  %thead
+    %th
+      %td
+        Name
+      %td
+        2011
+      %td
+        2012
+      %td
+        2013
+  - @variables_qip.each do |var|
+    = render 'var', :var => var, :hop => @hospital, :years => ['2011', '2012', '2013']

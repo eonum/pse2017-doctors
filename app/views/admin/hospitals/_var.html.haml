@@ -1,0 +1,8 @@
+%tr
+  %td
+    = var.localized_field 'name',locale
+  %td
+    - if hop[var.field_name] != nil
+      - years.each do |key|
+        %td
+          =  hop[var.field_name][key]

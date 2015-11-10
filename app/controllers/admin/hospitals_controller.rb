@@ -10,6 +10,8 @@ class Admin::HospitalsController < Admin::AdminController
   # GET /admin/hospitals/1
   # GET /admin/hospitals/1.json
   def show
+    @variables_qip = Variable.where({ 'variable_sets' => { '$in' => ['qip'] }})
+    @variables_kzp = Variable.where({ 'variable_sets' => { '$in' => ['kzp'] }})
   end
 
   # GET /admin/hospitals/new
