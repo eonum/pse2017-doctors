@@ -290,29 +290,41 @@ namespace :db do
   desc 'Link hospitals and their locations'
   task link_hospitals: :environment do
     count =  HospitalLocation.count()
-    hop_names = Hospital.all.map {|h| h.name.downcase}
-    not_found = 0
+    hospitals = {}
+    Hospital.all.each do |hop|
+      hospitals[hop.name.downcase] = hop
+      # aliases from other years
+      next if(hop['Inst'] == nil)
+      hop['Inst'].each { |year, inst| hospitals[inst.downcase] = hop }
+      # addresses
+      hop['Adr'].each { |year, adr| hospitals[adr.downcase] = hop }
+    end
+    hop_not_found = {}
 
-  #  pg = ProgressBar.create(total: count, title: 'Linking hospitals and their locations')
+    #pg = ProgressBar.create(total: count, title: 'Linking hospitals and their locations')
     HospitalLocation.all.each do |location|
-      hop = Hospital.where(name: /#{location.name}/i).first
+      #pg.increment
+      hop = hospitals[location.name.downcase.strip]
+      hop = hospitals[location.address.split(',')[0].strip.downcase] if hop == nil
       if(hop == nil)
         # search with string edit distance
-        hop_name = nearest_name(location.name.downcase, hop_names)
-        hop = Hospital.where(name: /#{hop_name}/i).first
-        if(hop_name == nil || hop == nil)
-          not_found = not_found + 1
-          puts "No mapping found for #{location.name}"
+        hop_name = nearest_name(location.name.downcase, hospitals.keys)
+        hop_name = nearest_name(location.address.split(',')[0].strip.downcase, hospitals.keys) if hop_name == nil
+        if(hop_name == nil)
+          hop_not_found[location.name] = 1
           next
         end
+        hop = hospitals[hop_name]
         puts "#{location.name} => #{hop.name}"
       end
       location.hospital = hop
       location.save!
-#      pg.increment
     end
 
-    puts "No mapping found for #{not_found} locations."
+    puts
+    puts "No mapping found for #{hop_not_found.length} locations:"
+    puts hop_not_found.keys
+    puts
   end
 
   desc 'Create admin user'
@@ -330,7 +342,7 @@ namespace :db do
       Rake::Task['db:seed_hospitals'].execute
       Rake::Task['db:seed_qip_variables'].execute
       Rake::Task['db:seed_qip_data'].execute
-    #  Rake::Task['db:link_hospitals'].execute
+      Rake::Task['db:link_hospitals'].execute
       Rake::Task['db:seed_admin_user'].execute
       Rake::Task['db:mongoid:create_indexes'].execute
     end
