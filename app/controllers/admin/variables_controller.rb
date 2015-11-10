@@ -1,4 +1,4 @@
-class Admin::VariablesController < ApplicationController
+class Admin::VariablesController < Admin::AdminController
   before_filter :authenticate_user!
 
   def index
