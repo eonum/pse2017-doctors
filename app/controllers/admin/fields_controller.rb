@@ -1,5 +1,5 @@
 # Modify fields in hospitals
-class Admin::FieldsController < ApplicationController
+class Admin::FieldsController < Admin::AdminController
   before_action :set_hospital
   before_action :set_field, only: [:show, :edit, :update, :destroy]
 

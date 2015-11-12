@@ -23,34 +23,6 @@
   %p
     = link_to(location.name + ' - ' + location.title + ' - ' + location.address, [:admin, location])
 
-%h3 KZP Variablen
+%h3= link_to 'Alle Felder anzeigen', admin_hospital_fields_path(@hospital)
 
-%table.table-striped.table
-  %thead
-    %th
-      %td
-        Name
-      %td
-        2011
-      %td
-        2012
-      %td
-        2013
-  %tbody
-    = render partial: 'var', :collection => @variables_kzp, locals: {:hop => @hospital, :years => ['2011', '2012', '2013'] }
 
-%h3 QIP Variablen
-
-%table.table-striped.table
-  %thead
-    %th
-      %td
-        Name
-      %td
-        2011
-      %td
-        2012
-      %td
-        2013
-  %tbody
-    = render partial: 'var', :collection => @variables_qip, locals: {:hop => @hospital, :years => ['2011', '2012', '2013'] }

@@ -1,6 +1,6 @@
 %h2= @hospital.name
 
-%table.table
+%table.table.table-striped
   %thead
     %tr
       %th Name
@@ -12,11 +12,13 @@
       %tr
         %td= var.localized_field 'name', locale
         - @years.each do |year, value|
-          %td= @hospital[var.field_name] == nil ? 'NA' : @hospital[var.field_name][year]
-        %td= link_to 'Show', admin_hospital_field_path(@hospital, var.field_name)
-        %td= link_to 'Edit', edit_admin_hospital_field_path(@hospital, var.field_name)
-        %td= link_to 'Destroy', admin_hospital_field_path(@hospital, var.field_name), :method => :delete, :data => { :confirm => 'Are you sure?' }
-
+          %td= render partial: 'field_year_entry', locals: {:field => @hospital[var.field_name], :year => year}
+        - unless @hospital[var.field_name] == nil
+          %td= link_to 'Anzeigen', admin_hospital_field_path(@hospital, var.field_name)
+          %td= link_to 'Bearbeiten', edit_admin_hospital_field_path(@hospital, var.field_name)
+          %td= link_to 'Löschen', admin_hospital_field_path(@hospital, var.field_name), :method => :delete, :data => { :confirm => 'Are you sure?' }
+        - else
+          %td= link_to 'Neu erstellen', new_admin_hospital_field_path(@hospital, {:id => var.field_name})
 %br
 
 = link_to 'Neues Feld', new_admin_hospital_field_path

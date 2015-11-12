@@ -2,6 +2,9 @@
 
 %p#notice= notice
 
+%ul
+  - @field.each do |year, value|
+    %li=year + ': ' + render(partial: 'field_year_entry', locals: {:field => @field, :year => year})
 
 = link_to 'Edit', edit_admin_hospital_field_path(@hospital, params[:id])
 \|
