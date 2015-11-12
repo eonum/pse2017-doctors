@@ -3,9 +3,11 @@ Rails.application.routes.draw do
     devise_for :users
 
     resources :hospital_locations, only: [:index, :show]
-    resources :specialities, only: [:index, :show]
+    resources :comparisons, only: [:index, :show]
 
     namespace :admin do
+      get '', to: 'hospitals#index', as: 'home'
+
       resources :variables do
         post :set_variable_sets, :on => :member
       end

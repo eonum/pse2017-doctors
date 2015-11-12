@@ -5,7 +5,7 @@ class Variable
   include Mongoid::Document
   include MultiLanguageText
 
-  has_and_belongs_to_many :specialities
+  has_and_belongs_to_many :comparisons
 
   # Corresponds to the field name
   field :field_name

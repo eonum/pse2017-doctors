@@ -1,4 +1,4 @@
-class Speciality
+class Comparison
   include Mongoid::Document
   include MultiLanguageText
 

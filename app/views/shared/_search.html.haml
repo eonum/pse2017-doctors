@@ -18,7 +18,7 @@
               %h4.list-group-item-heading= s.text
           - when 'speciality'
             %a.list-group-item{href: speciality_path(s, q: params['q']), class: params['id'].to_i==s.code ? 'active' : ''}
-              %span.label.label-speciality Speciality
+              %span.label.label-speciality Comparison
               = progress_bar(s._score * 20, 'progress-xs')
               %h4.list-group-item-heading= s.name
           - when 'doctor'
