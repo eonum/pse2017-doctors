@@ -5,36 +5,36 @@
       %ul
         - @hospital_location.errors.full_messages.each do |msg|
           %li= msg
+  %table.table
+    %tr
+      %td= f.label :doc_id
+      %td= f.number_field :doc_id
+    %tr
+      %td= f.label :name
+      %td= f.text_field :name
+    %tr
+      %td= f.label :title
+      %td= f.text_field :title
+    %tr
+      %td= f.label :address
+      %td= f.text_field :address
+    %tr
+      %td= f.label :email
+      %td= f.text_field :email
+    %tr
+      %td= f.label :phone1
+      %td= f.text_field :phone1
+    %tr
+      %td= f.label :phone2
+      %td= f.text_field :phone2
+    %tr
+      %td= f.label :canton
+      %td= f.text_field :canton
 
-  .field
-    = f.label :doc_id
-    = f.number_field :doc_id
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :address
-    = f.text_field :address
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :phone1
-    = f.text_field :phone1
-  .field
-    = f.label :phone2
-    = f.text_field :phone2
-  .field
-    = f.label :canton
-    = f.text_field :canton
-
-  .field
-    = f.label 'Spitalverbund'
-    = f.select :hospital, options_for_select(Hospital.all.map { |h| [h.name, h.id]}, @hospital_location.hospital == nil ? nil : @hospital_location.hospital.id)
+    %tr
+      %td= f.label 'Spitalverbund'
+      %td= f.select :hospital, options_for_select(Hospital.all.order_by(:name.asc).map { |h| [h.name, h.id]}, @hospital_location.hospital == nil ? nil : @hospital_location.hospital.id)
 
 
   .actions
-    = f.submit 'Save'
+    = f.submit 'Speichern'
