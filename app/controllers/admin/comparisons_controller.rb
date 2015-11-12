@@ -25,7 +25,7 @@ class Admin::ComparisonsController < Admin::AdminController
   # POST /admin/comparisons.json
   def create
     @comparison = Comparison.new(comparison_params)
-
+    set_variables
     respond_to do |format|
       if @comparison.save
         format.html { redirect_to [:admin, @comparison], notice: 'Comparison was successfully created.' }
@@ -40,6 +40,7 @@ class Admin::ComparisonsController < Admin::AdminController
   # PATCH/PUT /admin/comparisons/1
   # PATCH/PUT /admin/comparisons/1.json
   def update
+    set_variables
     respond_to do |format|
       if @comparison.update(comparison_params)
         format.html { redirect_to [:admin, @comparison], notice: 'Comparison was successfully updated.' }
@@ -69,6 +70,13 @@ class Admin::ComparisonsController < Admin::AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comparison_params
-      params.require(:comparison).permit(:name, :name_de, :name_fr, :name_it, :description_de, :description_fr, :description_it, :variables)
+      params.require(:comparison).permit(:name, :name_de, :name_fr, :name_it, :description_de, :description_fr, :description_it)
+    end
+
+    def set_variables
+      @comparison.variables = []
+      params['comparison']['variable_ids'].each do |var_id|
+        @comparison.variables << Variable.find(var_id)
+      end
     end
 end

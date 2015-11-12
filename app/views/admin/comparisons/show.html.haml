@@ -21,6 +21,11 @@
 %p
   %b Description it:
   = @comparison.description_it
+%p
+  Kennzahlen
+  %ul
+    - @comparison.variables.each do |var|
+      %li= var.localized_field 'name', locale
 
 
 = link_to 'Bearbeiten', edit_admin_comparison_path(@comparison)

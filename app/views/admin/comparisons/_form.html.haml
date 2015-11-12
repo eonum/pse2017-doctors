@@ -1,3 +1,7 @@
+:javascript
+  var listEntry = "<div>#{j select_tag('comparison[variable_ids][]', options_for_select(Variable.all.map { |v| [v.localized_field('name', locale), v.id]}))}"
+  + "#{j image_tag '/bullet_toggle_minus.png', :title =>'delete', :onclick => '$(this).closest(\'span\').remove()', :class => 'delete_button_array_list'}</div>";
+
 = form_for [:admin, @comparison] do |f|
   - if @comparison.errors.any?
     #error_explanation
@@ -27,5 +31,17 @@
   .field
     = f.label :description_it
     = f.text_field :description_it
+
+  %div
+    %span
+      Kennzahlen
+      %br
+      - (@comparison['variable_ids'] || []).each do |var|
+        %div
+          = select_tag('comparison[variable_ids][]', options_for_select(Variable.all.map { |v| [v.localized_field('name', locale), v.id]}, var))
+          = image_tag '/bullet_toggle_minus.png', :title => 'delete', :onclick => '$(this).closest(\'span\').remove()', :class => 'delete_button_array_list'
+    %span.pseudoLink{onclick: "$(this).prev().append(listEntry);", title: ""} Kennzahl hinzufügen
+
+  %br
   .actions
     = f.submit 'Save'
