@@ -30,5 +30,11 @@
   .field
     = f.label :canton
     = f.text_field :canton
+
+  .field
+    = f.label 'Spitalverbund'
+    = f.select :hospital, options_for_select(Hospital.all.map { |h| [h.name, h.id]}, @hospital_location.hospital == nil ? nil : @hospital_location.hospital.id)
+
+
   .actions
     = f.submit 'Save'

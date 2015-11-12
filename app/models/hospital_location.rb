@@ -4,6 +4,9 @@ class HospitalLocation
 
   belongs_to :hospital
 
+  validates :doc_id, presence: true
+  validates :doc_id, uniqueness: true
+
   field :doc_id, type: Integer
   field :name
   field :title

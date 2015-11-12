@@ -69,6 +69,6 @@ class Admin::HospitalLocationsController < Admin::AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hospital_location_params
-      params.require(:hospital_location).permit(:doc_id, :name, :title, :address, :email, :phone1, :phone2, :canton, :location)
+      params.require(:hospital_location).permit(:doc_id, :name, :title, :address, :email, :phone1, :phone2, :canton, :location, :hospital)
     end
 end
