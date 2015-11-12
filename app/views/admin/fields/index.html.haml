@@ -1,0 +1,19 @@
+%h1 Listing admin_fields
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+
+  %tbody
+    - @admin_fields.each do |admin_field|
+      %tr
+        %td= link_to 'Show', admin_field
+        %td= link_to 'Edit', edit_admin_field_path(admin_field)
+        %td= link_to 'Destroy', admin_field, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Field', new_admin_field_path

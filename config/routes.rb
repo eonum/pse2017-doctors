@@ -11,7 +11,9 @@ Rails.application.routes.draw do
       resources :variables do
         post :set_variable_sets, :on => :member
       end
-      resources :hospitals
+      resources :hospitals do
+        resources :fields
+      end
       resources :hospital_locations
       resources :comparisons
     end
