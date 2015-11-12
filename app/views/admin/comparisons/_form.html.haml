@@ -9,28 +9,29 @@
       %ul
         - @comparison.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :name_de
-    = f.text_field :name_de
-  .field
-    = f.label :name_fr
-    = f.text_field :name_fr
-  .field
-    = f.label :name_it
-    = f.text_field :name_it
-  .field
-    = f.label :description_de
-    = f.text_field :description_de
-  .field
-    = f.label :description_fr
-    = f.text_field :description_fr
-  .field
-    = f.label :description_it
-    = f.text_field :description_it
+  %table.table
+    %tr
+      %td= f.label :name
+      %td= f.text_field :name
+    %tr
+      %td= f.label :name_de
+      %td= f.text_field :name_de
+    %tr
+      %td= f.label :name_fr
+      %td= f.text_field :name_fr
+    %tr
+      %td= f.label :name_it
+      %td= f.text_field :name_it
+    %tr
+      %td= f.label :description_de
+      %td= f.text_field :description_de
+    %tr
+      %td= f.label :description_fr
+      %td= f.text_field :description_fr
+    %tr
+      %td= f.label :description_it
+      %td= f.text_field :description_it
+    %tr
 
   %div
     %span
@@ -42,6 +43,7 @@
           = image_tag '/bullet_toggle_minus.png', :title => 'delete', :onclick => '$(this).closest(\'span\').remove()', :class => 'delete_button_array_list'
     %span.pseudoLink{onclick: "$(this).prev().append(listEntry);", title: ""} Kennzahl hinzufügen
 
-  %br
-  .actions
-    = f.submit 'Save'
+    %br
+    %br
+    .actions
+      = f.submit 'Speichern'
