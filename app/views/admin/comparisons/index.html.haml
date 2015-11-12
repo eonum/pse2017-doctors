@@ -1,0 +1,34 @@
+%h2 Alle Vergleiche
+
+%table.table-striped.table
+  %thead
+    %tr
+      %th Name
+      %th Name de
+      %th Name fr
+      %th Name it
+      %th Description de
+      %th Description fr
+      %th Description it
+      %th Anzahl Kennwerte
+      %th
+      %th
+      %th
+
+  %tbody
+    - @comparisons.each do |comparison|
+      %tr
+        %td= link_to comparison.name, [:admin, comparison]
+        %td= comparison.name_de
+        %td= comparison.name_fr
+        %td= comparison.name_it
+        %td= comparison.description_de
+        %td= comparison.description_fr
+        %td= comparison.description_it
+        %td= comparison.variables.length
+        %td= link_to 'Edit', edit_admin_comparison_path(comparison)
+        %td= link_to 'Destroy', [:admin, comparison], :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'Neuen Vergleich erstellen', new_admin_comparison_path

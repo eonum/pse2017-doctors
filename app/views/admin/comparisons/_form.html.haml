@@ -1,0 +1,31 @@
+= form_for [:admin, @comparison] do |f|
+  - if @comparison.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@comparison.errors.count, "error")} prohibited this admin_comparison from being saved:"
+      %ul
+        - @comparison.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :name_de
+    = f.text_field :name_de
+  .field
+    = f.label :name_fr
+    = f.text_field :name_fr
+  .field
+    = f.label :name_it
+    = f.text_field :name_it
+  .field
+    = f.label :description_de
+    = f.text_field :description_de
+  .field
+    = f.label :description_fr
+    = f.text_field :description_fr
+  .field
+    = f.label :description_it
+    = f.text_field :description_it
+  .actions
+    = f.submit 'Save'

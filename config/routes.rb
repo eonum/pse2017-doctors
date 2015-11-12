@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       end
       resources :hospitals
       resources :hospital_locations
+      resources :comparisons
     end
 
     get '/entry', to: 'home#entry', as: 'entry'

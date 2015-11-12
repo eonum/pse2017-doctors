@@ -1,0 +1,28 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @comparison.name
+%p
+  %b Name de:
+  = @comparison.name_de
+%p
+  %b Name fr:
+  = @comparison.name_fr
+%p
+  %b Name it:
+  = @comparison.name_it
+%p
+  %b Description de:
+  = @comparison.description_de
+%p
+  %b Description fr:
+  = @comparison.description_fr
+%p
+  %b Description it:
+  = @comparison.description_it
+
+
+= link_to 'Bearbeiten', edit_admin_comparison_path(@comparison)
+\|
+= link_to 'Back', admin_comparisons_path
