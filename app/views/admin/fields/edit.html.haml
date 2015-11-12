@@ -1,7 +1,7 @@
-%h1 Editing admin_field
+%h2= @hospital.name + ' - ' + params[:id]
 
 = render 'form'
 
-= link_to 'Show', @admin_field
+= link_to 'Show', admin_hospital_field_path(@hospital, params[:id])
 \|
-= link_to 'Back', admin_fields_path
+= link_to 'Back', admin_hospital_fields_path

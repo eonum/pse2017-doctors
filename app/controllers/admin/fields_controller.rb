@@ -7,6 +7,13 @@ class Admin::FieldsController < ApplicationController
   # GET /admin/fields.json
   def index
     @variables = Variable.all
+    @years = {}
+    @variables.each do |var|
+      next if @hospital[var.field_name] == nil
+      @hospital[var.field_name].each do |key, value|
+        @years[key] = 1
+      end
+    end
   end
 
   # GET /admin/fields/1
@@ -58,8 +65,9 @@ class Admin::FieldsController < ApplicationController
   # DELETE /admin/fields/1.json
   def destroy
     @hospital[params[:id]] = nil
+    @hospital.save
     respond_to do |format|
-      format.html { redirect_to admin_fields_url, notice: 'Field was successfully destroyed.' }
+      format.html { redirect_to admin_hospital_fields_url, notice: 'Field was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
