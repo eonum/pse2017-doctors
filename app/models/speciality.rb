@@ -2,7 +2,7 @@ class Speciality
   include Mongoid::Document
   include MultiLanguageText
 
-  has_many :variables
+  has_and_belongs_to_many :variables
 
   field :name, localize: true
 

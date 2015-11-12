@@ -5,7 +5,9 @@ class Variable
   include Mongoid::Document
   include MultiLanguageText
 
-  # Corresponds to the unique field name
+  has_and_belongs_to_many :specialities
+
+  # Corresponds to the field name
   field :field_name
   # rank is used to order variables
   field :rank, :type => Integer, :default => 0
