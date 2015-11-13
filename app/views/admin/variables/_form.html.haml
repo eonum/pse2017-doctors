@@ -15,6 +15,9 @@
     = f.text_field :field_name
     Rank:#{f.number_field :rank, :style => 'width: 40px;'}
     Import Rank:#{f.number_field :import_rank, :style => 'width: 40px;'}
+  .field
+    = f.label 'Zeitreihe'
+    = f.check_box :is_time_series
   %div
     %span
       Sets
@@ -23,7 +26,7 @@
         %span
           = text_field_tag 'variable[variable_sets][]', entry, :style => 'width: 100px;', :class => 'inputText'
           = image_tag '/bullet_toggle_minus.png', :title => 'delete', :onclick => '$(this).closest(\'span\').remove()', :class => 'delete_button_array_list'
-    %span.pseudoLink{onclick: "$(this).prev().append(listEntry.replace(\"@@variable@@\", \"variable[variable_sets][]\"));", title: ""} Add value
+    %span.pseudoLink{onclick: "$(this).prev().append(listEntry.replace(\"@@variable@@\", \"variable[variable_sets][]\"));", title: ""} Wert hinzufügen
   .field
     = f.label 'Name'
     %br
@@ -49,7 +52,7 @@
           %span
             = text_field_tag 'variable[values][]', entry, :style => 'width: 100px;', :class => 'inputText'
             = image_tag '/bullet_toggle_minus.png', :title => 'delete', :onclick => '$(this).closest(\'span\').remove()', :class => 'delete_button_array_list'
-      %span.pseudoLink{onclick: "$(this).prev().append(listEntry.replace(\"@@variable@@\", \"variable[values][]\"));", title: ""} Add value
+      %span.pseudoLink{onclick: "$(this).prev().append(listEntry.replace(\"@@variable@@\", \"variable[values][]\"));", title: ""} Wert hinzufügen
       %br
       %span
         Beschreibungen Deutsch
@@ -58,7 +61,7 @@
           %span
             = text_field_tag 'variable[values_de][]', entry, :style => 'width: 100px;', :class => 'inputText'
             = image_tag '/bullet_toggle_minus.png', :title => 'delete', :onclick => '$(this).closest(\'span\').remove()', :class => 'delete_button_array_list'
-      %span.pseudoLink{onclick: "$(this).prev().append(listEntry.replace(\"@@variable@@\", \"variable[values_de][]\"));", title: ""} Add value
+      %span.pseudoLink{onclick: "$(this).prev().append(listEntry.replace(\"@@variable@@\", \"variable[values_de][]\"));", title: ""} Wert hinzufügen
       %br
       %span
         Beschreibungen Französisch
@@ -67,6 +70,6 @@
           %span
             = text_field_tag 'variable[values_fr][]', entry, :style => 'width: 100px;', :class => 'inputText'
             = image_tag '/bullet_toggle_minus.png', :title => 'delete', :onclick => '$(this).closest(\'span\').remove()', :class => 'delete_button_array_list'
-      %span.pseudoLink{onclick: "$(this).prev().append(listEntry.replace(\"@@variable@@\", \"variable[values_fr][]\"));", title: ""} Add value
+      %span.pseudoLink{onclick: "$(this).prev().append(listEntry.replace(\"@@variable@@\", \"variable[values_fr][]\"));", title: ""} Wert hinzufügen
   .actions
     = f.submit 'Speichern'

@@ -1,6 +1,1 @@
-- if field != nil && (field[year].class == Hash || field[year].class == BSON::Document)
-  %ul
-    - field[year].each do |key, value|
-      %li= key.to_s + ': ' + value.to_s
-- else
-  = field == nil ? 'NA' : field[year]
+= field == nil ? 'NA' : field[year]

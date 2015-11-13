@@ -25,6 +25,9 @@ class Variable
 
   field :variable_type, :type => Symbol, :default => :string # can be one of :percentage, :string, :boolean, :number,
 
+  # Is this a time series variable
+  field :is_time_series, :type => Boolean, :default => false
+
   # possible values if enum string, null, empty => free text or numeric
   field :values, :type => Array, :default => []
   field :values_de, :type => Array, :default => []

@@ -9,6 +9,7 @@ class Admin::FieldsController < Admin::AdminController
     @variables = Variable.all
     @years = {}
     @variables.each do |var|
+      next unless var.is_time_series
       next if @hospital[var.field_name] == nil
       @hospital[var.field_name].each do |key, value|
         @years[key] = 1
@@ -19,6 +20,7 @@ class Admin::FieldsController < Admin::AdminController
   # GET /admin/fields/1
   # GET /admin/fields/1.json
   def show
+    @variable = Variable.find_by(field_name: params[:id])
   end
 
   # GET /admin/fields/new
@@ -26,13 +28,8 @@ class Admin::FieldsController < Admin::AdminController
   def new
     @variable = Variable.find_by(field_name: params[:id])
     @field = ''
-    if(@variable.variable_sets.include? 'kzp')
+    if(@variable.is_time_series)
       @field = {'2011' => '', '2012' => '', '2013' => ''}
-    end
-    if(@variable.variable_sets.include? 'qip')
-      @field = {'2011' => {observed: 0, expected: 0, SMR: 0, num_cases:0},
-                '2012' => {observed: 0, expected: 0, SMR: 0, num_cases:0},
-                '2013' => {observed: 0, expected: 0, SMR: 0, num_cases:0}}
     end
   end
 

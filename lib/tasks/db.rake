@@ -73,6 +73,7 @@ namespace :db do
         d.name_fr = row[2].strip
         d.name_it = row[3].strip
         d.variable_sets = ['kzp']
+        d.is_time_series = true
         # TODO determine variable type: number, array, ..
       end
     end
@@ -199,19 +200,22 @@ namespace :db do
       sub_row = row[0].split(' ')
       field_name = sub_row[0].strip.gsub('.', '_')
       next if already_processed[field_name] == 1
+      already_processed[field_name] = 1
+      type = field_name[field_name.length - 1]
 
-      Variable.create do |d|
-        d.rank = index
-        d.import_rank = index
-        d.field_name = field_name
-        already_processed[d.field_name] = 1
-        type = d.field_name[d.field_name.length - 1]
-        d.variable_type = 'percentage' if('M' == type || 'P' == type)
-        d.variable_type = 'number' if('F' == type || 'X' == type)
-        d.name_de = row[0].gsub(d.field_name, '').strip
-        d.name_fr = row[1].strip
-        d.name_it = row[2].strip
-        d.variable_sets = ['qip', type]
+      ['observed', 'expected', 'SMR', 'num_cases'].each do |sub_var|
+        Variable.create do |d|
+          d.rank = index
+          d.import_rank = index
+          d.field_name = field_name + '_' + sub_var
+          d.variable_type = 'percentage' if('M' == type || 'P' == type)
+          d.variable_type = 'number' if('F' == type || 'X' == type || sub_var == 'num_cases')
+          d.name_de = row[0].gsub(d.field_name, '').strip
+          d.name_fr = row[1].strip
+          d.name_it = row[2].strip
+          d.variable_sets = ['qip', type]
+          d.is_time_series = true
+        end
       end
       file.close
     end
@@ -257,11 +261,13 @@ namespace :db do
         # Indikator, indicator or indicatore
         next if var_name.include? 'ndi'
 
-        var = variables[var_name]
+        var = variables[var_name + '_observed']
         if var == nil
           var_not_found[var_name] = 1
           next
         end
+
+        field_name_base = var.field_name.gsub('_observed', '')
 
         hop_name = row[0].strip
         hop = hospitals[hop_name]
@@ -270,16 +276,30 @@ namespace :db do
           next
         end
 
-        qip = {}
-        qip['observed'] = (row[6]||'').to_f if is_numeric?(row[6]||'')
-        qip['expected'] = (row[7]||'').to_f if is_numeric?(row[7]||'')
-        qip['SMR'] = (row[8]||'').to_f  if is_numeric?(row[8]||'')
-        qip['num_cases'] = (row[9]||'').to_i if is_numeric?(row[9]||'')
+        if is_numeric?(row[6]||'')
+          qip = hop[field_name_base + '_observed'] == nil ? {} : hop[field_name_base + '_observed'].clone
+          qip[year] = (row[6]||'').to_f
+          hop[field_name_base + '_observed'] = qip
+        end
 
-        # we need to make a deep copy in order for mongoid to realize the field has changed.
-        indicator = hop[var.field_name] == nil ? {} : hop[var.field_name].clone
-        indicator[year] = qip
-        hop[var.field_name] = indicator
+        if is_numeric?(row[7]||'')
+          qip = hop[field_name_base + '_expected'] == nil ? {} : hop[field_name_base + '_expected'].clone
+          qip[year] = (row[7]||'').to_f
+          hop[field_name_base + '_expected'] = qip
+        end
+
+        if is_numeric?(row[8]||'')
+          qip = hop[field_name_base + '_SMR'] == nil ? {} : hop[field_name_base + '_SMR'].clone
+          qip[year] = (row[8]||'').to_f
+          hop[field_name_base + '_SMR'] = qip
+        end
+
+        if is_numeric?(row[9]||'')
+          qip = hop[field_name_base + '_num_cases'] == nil ? {} : hop[field_name_base + '_num_cases'].clone
+          qip[year] = (row[9]||'').to_f
+          hop[field_name_base + '_num_cases'] = qip
+        end
+
         hop.save!
       end
 

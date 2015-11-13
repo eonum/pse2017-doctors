@@ -9,7 +9,7 @@
     - if(@variable.variable_type == :string && !@variable.is_enum)
       = text_field_tag name, value, size: 75
     - if(@variable.variable_type == :string && @variable.is_enum)
-      = select_tag name, options_for_select(variable.values_option_list(locale), value)
+      = select_tag name, options_for_select(@variable.values_option_list(locale), value)
     - if(@variable.variable_type == :percentage)
       = number_field_tag name, value
     - if(@variable.variable_type == :boolean)

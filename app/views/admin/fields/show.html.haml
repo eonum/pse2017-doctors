@@ -2,9 +2,12 @@
 
 %p#notice= notice
 
-%ul
-  - @field.each do |year, value|
-    %li=year + ': ' + render(partial: 'field_year_entry', locals: {:field => @field, :year => year})
+- if @variable.is_time_series
+  %ul
+    - @field.each do |year, value|
+      %li=year + ': ' + render(partial: 'field_year_entry', locals: {:field => @field, :year => year})
+- else
+  %div= @field
 
 = link_to 'Edit', edit_admin_hospital_field_path(@hospital, params[:id])
 \|
