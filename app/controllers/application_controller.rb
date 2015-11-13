@@ -6,7 +6,6 @@ class ApplicationController < ActionController::Base
   rescue_from Mongoid::Errors::DocumentNotFound, with: :error_method
 
   before_action :set_language
-  before_action :set_search
 
   before_filter :update_sanitized_params, if: :devise_controller?
 
@@ -24,11 +23,6 @@ class ApplicationController < ActionController::Base
   end
 
   private
-
-    def set_search
-      @search = (params['q'] and not params['q'].blank?) ? Search.search(params['q']) : []
-    end
-
     def set_language
       I18n.locale = params['locale']
       session[:locale] = I18n.locale

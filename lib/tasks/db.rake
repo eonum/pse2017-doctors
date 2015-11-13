@@ -183,6 +183,8 @@ namespace :db do
     count = files.length
     pg = ProgressBar.create(total: count, title: 'Importing QIP variables')
 
+    already_processed = {}
+
     files.each_with_index do |file_name, index|
       pg.increment
       file_name = folder.join(file_name)
@@ -193,12 +195,16 @@ namespace :db do
       line = file.gets
       next if line.blank? || line.strip.blank?
 
+      row = line.split('//')
+      sub_row = row[0].split(' ')
+      field_name = sub_row[0].strip.gsub('.', '_')
+      next if already_processed[field_name] == 1
+
       Variable.create do |d|
-        row = line.split('//')
         d.rank = index
         d.import_rank = index
-        sub_row = row[0].split(' ')
-        d.field_name = sub_row[0].strip.gsub('.', '_')
+        d.field_name = field_name
+        already_processed[d.field_name] = 1
         type = d.field_name[d.field_name.length - 1]
         d.variable_type = 'percentage' if('M' == type || 'P' == type)
         d.variable_type = 'number' if('F' == type || 'X' == type)
