@@ -25,7 +25,15 @@ class Admin::FieldsController < Admin::AdminController
   # params[:id] has always to be provided and the corresponding variable must exist
   def new
     @variable = Variable.find_by(field_name: params[:id])
-    @field = {'2011' => '', '2012' => '', '2013' => ''}
+    @field = ''
+    if(@variable.variable_sets.include? 'kzp')
+      @field = {'2011' => '', '2012' => '', '2013' => ''}
+    end
+    if(@variable.variable_sets.include? 'qip')
+      @field = {'2011' => {observed: 0, expected: 0, SMR: 0, num_cases:0},
+                '2012' => {observed: 0, expected: 0, SMR: 0, num_cases:0},
+                '2013' => {observed: 0, expected: 0, SMR: 0, num_cases:0}}
+    end
   end
 
   # GET /admin/fields/1/edit

@@ -32,7 +32,7 @@ class Admin::VariablesController < Admin::AdminController
 
     respond_to do |format|
       if @variable.save
-        format.html { redirect_to @variable, notice: 'Variable was successfully created.' }
+        format.html { redirect_to [:admin, @variable], notice: 'Variable was successfully created.' }
       else
         format.html { render action: "new" }
       end
@@ -45,7 +45,7 @@ class Admin::VariablesController < Admin::AdminController
 
     respond_to do |format|
       if @variable.update_attributes(variable_params)
-        format.html { redirect_to @variable, notice: 'Variable was successfully updated.' }
+        format.html { redirect_to [:admin, @variable], notice: 'Variable was successfully updated.' }
       else
         format.html { render action: "edit" }
       end

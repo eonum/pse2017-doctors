@@ -1,7 +1,7 @@
 :javascript
   var listEntry = "<span>#{j text_field_tag '@@variable@@', '', :style => 'width: 100px; margin-right: 2px', :class => 'inputText listsOnly'}"
   + "#{j image_tag '/bullet_toggle_minus.png', :title =>'delete', :onclick => '$(this).closest(\'span\').remove()', :class => 'delete_button_array_list'}</span>";
-= form_for(admin_variable_path(@variable)) do |f|
+= form_for [:admin, @variable] do |f|
   - if @variable.errors.any?
     #error_explanation
       %h2
