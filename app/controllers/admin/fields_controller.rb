@@ -7,14 +7,7 @@ class Admin::FieldsController < Admin::AdminController
   # GET /admin/fields.json
   def index
     @variables = Variable.all
-    @years = {}
-    @variables.each do |var|
-      next unless var.is_time_series
-      next if @hospital[var.field_name] == nil
-      @hospital[var.field_name].each do |key, value|
-        @years[key] = 1
-      end
-    end
+    @years = {'2011' => '', '2012' => '', '2013' => ''}
   end
 
   # GET /admin/fields/1

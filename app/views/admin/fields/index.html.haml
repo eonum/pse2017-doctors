@@ -15,7 +15,7 @@
           - @years.each do |year, value|
             %td= render partial: 'field_year_entry', locals: {:field => @hospital[var.field_name], :year => year}
         - else
-          %td= @hospital[var.field_name]
+          %td{colspan: 3}= @hospital[var.field_name]
         - unless @hospital[var.field_name] == nil
           %td= link_to 'Anzeigen', admin_hospital_field_path(@hospital, var.field_name)
           %td= link_to 'Bearbeiten', edit_admin_hospital_field_path(@hospital, var.field_name)
