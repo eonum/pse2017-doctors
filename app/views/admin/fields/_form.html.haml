@@ -1,5 +1,5 @@
-= fields_for 'field' do |f|
-
-
-  .actions
-    = f.submit 'Save'
+= form_tag(admin_hospital_field_path(@hospital, params[:id]), method: :patch) do
+  .row
+    = render partial: 'form_element', locals: {:value => @field, :name => 'field', :short_name => 'Wert'}
+  .row
+    = submit_tag 'Speichern'

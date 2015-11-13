@@ -1,4 +1,4 @@
-%h2= @hospital.name + ' - ' + params[:id]
+%h2= "Bearbeiten von Feld #{params[:id]} (#{@variable.localized_field 'name', locale}) für #{@hospital.name}"
 
 = render 'form'
 

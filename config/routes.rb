@@ -12,7 +12,7 @@ Rails.application.routes.draw do
         post :set_variable_sets, :on => :member
       end
       resources :hospitals do
-        resources :fields
+        resources :fields, except: [:create]
       end
       resources :hospital_locations
       resources :comparisons

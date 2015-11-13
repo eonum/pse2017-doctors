@@ -19,6 +19,3 @@
           %td= link_to 'Löschen', admin_hospital_field_path(@hospital, var.field_name), :method => :delete, :data => { :confirm => 'Are you sure?' }
         - else
           %td= link_to 'Neu erstellen', new_admin_hospital_field_path(@hospital, {:id => var.field_name})
-%br
-
-= link_to 'Neues Feld', new_admin_hospital_field_path

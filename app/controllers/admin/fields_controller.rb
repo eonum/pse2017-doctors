@@ -22,28 +22,16 @@ class Admin::FieldsController < Admin::AdminController
   end
 
   # GET /admin/fields/new
+  # params[:id] has always to be provided and the corresponding variable must exist
   def new
+    @variable = Variable.find_by(field_name: params[:id])
     @field = {'2011' => '', '2012' => '', '2013' => ''}
   end
 
   # GET /admin/fields/1/edit
+  # the corresponding variable must exist
   def edit
-  end
-
-  # POST /admin/fields
-  # POST /admin/fields.json
-  def create
-    @hospital[params[:id]] = params[:field]
-
-    respond_to do |format|
-      if @hospital.save
-        format.html { redirect_to admin_hospital_field_path(@hospital, params[:id]), notice: 'Field was successfully created.' }
-        format.json { render :show, status: :created, location: @admin_field }
-      else
-        format.html { render :new }
-        format.json { render json: @hospital.errors, status: :unprocessable_entity }
-      end
-    end
+    @variable = Variable.find_by(field_name: params[:id])
   end
 
   # PATCH/PUT /admin/fields/1
@@ -52,8 +40,8 @@ class Admin::FieldsController < Admin::AdminController
     @hospital[params[:id]] = params[:field]
     respond_to do |format|
       if @hospital.save
-        format.html { redirect_to @admin_field, notice: 'Field was successfully updated.' }
-        format.json { render :show, status: :ok, location: @admin_field }
+        format.html { redirect_to admin_hospital_field_path(@hospital, params[:id]), notice: 'Field was successfully updated.' }
+        format.json { render :show, status: :ok, location: admin_hospital_fields_path(@hospital, params[:id]) }
       else
         format.html { render :edit }
         format.json { render json: @hospital.errors, status: :unprocessable_entity }
