@@ -351,4 +351,42 @@ namespace :db do
       Rake::Task['db:mongoid:create_indexes'].execute
     end
   end
+
+  desc "Load a CSV file with additional information by hosptial"
+  task :load_csv, [:file_name] => :environment do  |t, args|
+    hop_cache = hospital_cache()
+    hop_not_found = {}
+
+    count = `wc -l #{args.file_name}`.to_i
+
+    file = File.new(args.file_name, 'r')
+    header = file.gets.split(';')
+    header.shift
+
+    pg = ProgressBar.create(total: count, title: "Load #{args.file_name}")
+    while line = file.gets
+      pg.increment
+
+      vars = line.split(';')
+      hop = get_hospital hop_cache, vars[0]
+      if(hop == nil)
+        hop_not_found[vars[0]] = 1
+        next
+      end
+      
+      header.each_with_index do |field_name, index|
+        hop[field_name.strip] = vars[index + 1].strip
+      end
+      hop.save
+    end
+
+    pg.finish
+    file.close
+
+    puts
+    puts "#{hop_not_found.length} hospitals not found in master:"
+    puts hop_not_found.keys
+    puts
+
+  end
 end
