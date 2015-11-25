@@ -12,4 +12,31 @@ class Comparison
   field :description_de, :type => String, :default => ''
   field :description_fr, :type => String, :default => ''
   field :description_it, :type => String, :default => ''
+
+  # only hospitals that meet the following limitations are considered for this comparison
+
+  # field name of the limit field
+  field :limit_field, :type => String, :default => nil
+  # limit operator, one of '>', '<', 'exists', '='
+  field :limit_operator, :type => String, :default => '>'
+  # limit value if '>', '<' or '='
+  field :limit_value, :type => String, :default => ''
+
+  # get all hostpials that meet the limitiations.
+  def hospitals
+    var = Variable.where(:field_name => limit_field).first
+    value = limit_value
+    value = value.to_f if var.variable_type == 'number'
+
+    return Hospital.where(limit_field => mongo_operator(limit_operator, value))
+  end
+
+  def mongo_operator op, value
+    ops = {'$gt' => value} if op == '>'
+    ops = {'$lt' => value} if op == '<'
+    ops = {'$exists' => true, '$ne' => value} if op == '<>'
+    ops = {'$exists' => true} if op == 'exists'
+    ops = value if op == '=' || op == nil
+    return ops
+  end
 end
