@@ -20,60 +20,30 @@ def docfield_to_fmh
   d_to_fmh
 end
 
-def nearest_name name, names
-  name = clean(name)
-  min = name.length.to_f * 0.3
-  min_name = nil
-
-  names.each do |n|
-    n_clean = clean(n)
-    d = levenshtein_distance(name, n_clean)
-    if(d < min)
-      min = d
-      min_name = n
-    end
+def hospital_cache
+  cache = {}
+  Hospital.all.each do |h|
+    cache[clean_string h.name] = h unless h.name.blank?
+    cache[clean_string h.address1] = h unless h.address1.blank?
+    cache[clean_string h.address2] = h unless h.address2.blank?
+    h['Inst'].each { |year, inst| cache[clean_string inst] = h unless inst.blank? } unless (h['Inst'] == nil)
+    h['Adr'].each { |year, adr| cache[clean_string adr] = h unless adr.blank? } unless (h['Adr'] == nil)
   end
-  min_name
+  cache
 end
 
-def clean name
-  name = name.gsub('klinik', '')
-  name = name.gsub('spital', '')
-  name = name.gsub('gruppe', '')
-  name = name.gsub('dienst', '')
-  name = name.gsub('kanton', '')
-  name = name.gsub('geburtshaus', '')
-  name = name.gsub('clinique', '')
-  name = name.gsub('hôpital', '')
-  name = name.gsub('clinica', '')
-  name = name.gsub('ag', '')
-  name = name.gsub('sa', '')
-  name = name.gsub('  ', ' ')
-  name.strip
+def clean_string string
+  string.strip.downcase
 end
 
-def levenshtein_distance(s, t)
-  m = s.length
-  n = t.length
-  return m if n == 0
-  return n if m == 0
-  d = Array.new(m+1) {Array.new(n+1)}
-
-  (0..m).each {|i| d[i][0] = i}
-  (0..n).each {|j| d[0][j] = j}
-  (1..n).each do |j|
-    (1..m).each do |i|
-      d[i][j] = if s[i-1] == t[j-1]  # adjust index into string
-                  d[i-1][j-1]       # no operation required
-                else
-                  [ d[i-1][j]+1,    # deletion
-                    d[i][j-1]+1,    # insertion
-                    d[i-1][j-1]+1,  # substitution
-                  ].min
-                end
-    end
-  end
-  d[m][n]
+# find the corresponding hospital by exact matching of one of the provided fields.
+def get_hospital hospital_cache, name, address1 = '', address2 = '', name2 = ''
+  h = nil
+  h = hospital_cache[clean_string name] if !name.blank?
+  h = hospital_cache[clean_string address1] if h.nil? && !address1.blank?
+  h = hospital_cache[clean_string address2] if h.nil? && !address2.blank?
+  h = hospital_cache[clean_string name2] if h.nil? && !name2.blank?
+  h
 end
 
 def is_numeric? string

@@ -100,8 +100,6 @@ namespace :db do
     # read master hospitals and their addresses
     count = `wc -l #{files[master]}`.to_i
     hop_file = IO.readlines(files[master])
-    hop_by_name = {}
-    hop_by_address = {}
 
     pg = ProgressBar.create(total: count, title: 'Importing Hospitals Master')
     hop_file.each_with_index do |line, index|
@@ -118,11 +116,10 @@ namespace :db do
         d.address1 = row[2].strip
         d.address2 = row[3].strip
         d.bfs_typo = row[4].strip
-        hop_by_name[d.name] = d
-        hop_by_address[d.address1] = d
       end
     end
 
+    hop_cache = hospital_cache()
     hop_not_found = {}
 
     files.each do |year, file|
@@ -142,8 +139,8 @@ namespace :db do
 
         next if row[1].strip.blank?
 
-        hop = hop_by_name[row[1].strip]
-        hop = hop_by_address[row[2].strip] if hop == nil
+        hop = get_hospital(hop_cache, row[1], row[2])
+
         if(hop == nil)
           hop_not_found[row[1]] = 1
           next
@@ -227,13 +224,8 @@ namespace :db do
   task seed_qip_data: :environment do
     variables = {}
     Variable.where({ 'variable_sets' => { '$in' => ['qip'] }}).each {|var| variables[var.field_name] = var}
-    hospitals = {}
-    Hospital.all.each do |hop|
-      hospitals[hop.name] = hop
-      # aliases from other years
-      next if(hop['Inst'] == nil)
-      hop['Inst'].each { |year, inst| hospitals[inst] = hop }
-    end
+
+    hop_cache = hospital_cache()
 
     files = {
         2012 => Rails.root.join('data', 'medical', 'qip12_tabdaten.csv'),
@@ -270,7 +262,7 @@ namespace :db do
         field_name_base = var.field_name.gsub('_observed', '')
 
         hop_name = row[0].strip
-        hop = hospitals[hop_name]
+        hop = get_hospital(hop_cache, hop_name)
         if hop == nil
           hop_not_found[hop_name] = 1
           next
@@ -316,33 +308,19 @@ namespace :db do
   desc 'Link hospitals and their locations'
   task link_hospitals: :environment do
     count =  HospitalLocation.count()
-    hospitals = {}
-    Hospital.all.each do |hop|
-      hospitals[hop.name.downcase] = hop
-      # aliases from other years
-      next if(hop['Inst'] == nil)
-      hop['Inst'].each { |year, inst| hospitals[inst.downcase] = hop }
-      # addresses
-      hop['Adr'].each { |year, adr| hospitals[adr.downcase] = hop }
-    end
+    hop_cache = hospital_cache()
     hop_not_found = {}
 
     #pg = ProgressBar.create(total: count, title: 'Linking hospitals and their locations')
     HospitalLocation.all.each do |location|
       #pg.increment
-      hop = hospitals[location.name.downcase.strip]
-      hop = hospitals[location.address.split(',')[0].strip.downcase] if hop == nil
+      hop = get_hospital(hop_cache, location.name, location.address.split(',')[0])
+
       if(hop == nil)
-        # search with string edit distance
-        hop_name = nearest_name(location.name.downcase, hospitals.keys)
-        hop_name = nearest_name(location.address.split(',')[0].strip.downcase, hospitals.keys) if hop_name == nil
-        if(hop_name == nil)
-          hop_not_found[location.name] = 1
-          next
-        end
-        hop = hospitals[hop_name]
-        puts "#{location.name} => #{hop.name}"
+        hop_not_found[location.name] = 1
+        next
       end
+
       location.hospital = hop
       location.save!
     end
