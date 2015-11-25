@@ -32,6 +32,11 @@
       %td= f.label :description_it
       %td= f.text_field :description_it
     %tr
+      %td Bedingung
+      %td= f.text_field :limit_field
+      %td= f.select :limit_operator, options_for_select([['>', '>'], ['<', '<'], ['=', '='], ['≠', '<>'], ['existiert', 'exists']], @comparison.limit_operator)
+      %td= f.text_field :limit_value
+
 
   %div
     %span

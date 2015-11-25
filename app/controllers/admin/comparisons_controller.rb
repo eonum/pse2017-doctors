@@ -70,7 +70,8 @@ class Admin::ComparisonsController < Admin::AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comparison_params
-      params.require(:comparison).permit(:name, :name_de, :name_fr, :name_it, :description_de, :description_fr, :description_it)
+      params.require(:comparison).permit(:name, :name_de, :name_fr, :name_it, :description_de,
+                                         :description_fr, :description_it, :limit_field, :limit_operator, :limit_value)
     end
 
     def set_variables
