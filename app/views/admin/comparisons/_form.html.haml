@@ -24,13 +24,16 @@
       %td= f.text_field :name_it
     %tr
       %td= f.label :description_de
-      %td= f.text_field :description_de
+      %td= f.text_area :description_de
     %tr
       %td= f.label :description_fr
-      %td= f.text_field :description_fr
+      %td= f.text_area :description_fr
     %tr
       %td= f.label :description_it
-      %td= f.text_field :description_it
+      %td= f.text_area :description_it
+    %tr
+      %td= f.label :base_year
+      %td= f.text_field :base_year
     %tr
       %td Bedingung
       %td= f.text_field :limit_field

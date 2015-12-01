@@ -13,6 +13,8 @@ class Comparison
   field :description_fr, :type => String, :default => ''
   field :description_it, :type => String, :default => ''
 
+  field :base_year, :type => String, :default => '2013'
+
   # only hospitals that meet the following limitations are considered for this comparison
 
   # field name of the limit field
