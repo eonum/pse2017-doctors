@@ -21,3 +21,5 @@
 
 en:
   hello: "Hello world"
+  name: "Name"
+  description: "Description"
