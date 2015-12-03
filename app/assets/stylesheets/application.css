@@ -16,3 +16,10 @@
  *= require nprogress_and_overrides
  *= require tagmanager
  */
+
+
+.pseudoLink {
+    cursor: hand;
+    cursor: pointer;
+    color: rgb(59, 114, 184);
+}

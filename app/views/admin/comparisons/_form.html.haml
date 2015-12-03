@@ -11,29 +11,29 @@
           %li= msg
   %table.table
     %tr
-      %td= f.label :name
+      %td= f.label 'Default Name'
       %td= f.text_field :name
     %tr
-      %td= f.label :name_de
+      %td= f.label 'Name Deutsch'
       %td= f.text_field :name_de
     %tr
-      %td= f.label :name_fr
+      %td= f.label 'Name Französisch'
       %td= f.text_field :name_fr
     %tr
-      %td= f.label :name_it
+      %td= f.label 'Name Italienisch'
       %td= f.text_field :name_it
     %tr
-      %td= f.label :description_de
+      %td= f.label 'Beschrieb Deutsch'
       %td= f.text_area :description_de
     %tr
-      %td= f.label :description_fr
+      %td= f.label 'Beschrieb Französisch'
       %td= f.text_area :description_fr
     %tr
-      %td= f.label :description_it
+      %td= f.label 'Beschrieb Italienisch'
       %td= f.text_area :description_it
     %tr
-      %td= f.label :base_year
-      %td= f.text_field :base_year
+      %td= f.label 'Basisjahr'
+      %td= f.number_field :base_year
     %tr
       %td Bedingung
       %td= f.text_field :limit_field
@@ -46,7 +46,7 @@
       Kennzahlen
       %br
       - (@comparison['variable_ids'] || []).each do |var|
-        %div
+        %div.top-buffer
           = select_tag('comparison[variable_ids][]', options_for_select(Variable.all.map { |v| [v.localized_field('name', locale), v.id]}, var))
           = image_tag '/bullet_toggle_minus.png', :title => 'delete', :onclick => '$(this).closest(\'span\').remove()', :class => 'delete_button_array_list'
     %span.pseudoLink{onclick: "$(this).prev().append(listEntry);", title: ""} Kennzahl hinzufügen
