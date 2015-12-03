@@ -6,6 +6,6 @@ class ComparisonsController < ApplicationController
   end
 
   def show
-    @comparison = Comparison.find_by(code: params['id'])
+    @comparison = Comparison.find(params['id'])
   end
 end

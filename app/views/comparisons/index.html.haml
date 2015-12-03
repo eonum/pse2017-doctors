@@ -1,0 +1,12 @@
+%table.table-striped.table
+  %thead
+    %tr
+      %th= t('name')
+      %th= t('description')
+
+  %tbody
+    - @comparisons.each do |comparison|
+      %tr
+        %td= link_to comparison.localized_field('name', locale), comparison
+        %td= comparison.localized_field('description', locale)
+
