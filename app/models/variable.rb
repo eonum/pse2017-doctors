@@ -34,6 +34,9 @@ class Variable
   field :values_fr, :type => Array, :default => []
   field :values_it, :type => Array, :default => []
 
+  # highlight level for percentages: values above this threshold will be highlighted
+  field :highlight_threshold, :type => Float, :default => 100
+
   def is_enum
     return values != nil && !values.empty?
   end
