@@ -47,6 +47,10 @@ def get_hospital hospital_cache, name, address1 = '', address2 = '', name2 = ''
 end
 
 def is_numeric? string
-  string = string.strip
+  string = escape_numeric(string)
   string.to_i.to_s == string || string.to_f.to_s == string
+end
+
+def escape_numeric(string)
+  string.strip.gsub('%', '').gsub("'", '')
 end

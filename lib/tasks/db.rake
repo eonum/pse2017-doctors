@@ -270,25 +270,25 @@ namespace :db do
 
         if is_numeric?(row[6]||'')
           qip = hop[field_name_base + '_observed'] == nil ? {} : hop[field_name_base + '_observed'].clone
-          qip[year] = (row[6]||'').to_f
+          qip[year] = escape_numeric(row[6]||'').to_f
           hop[field_name_base + '_observed'] = qip
         end
 
         if is_numeric?(row[7]||'')
           qip = hop[field_name_base + '_expected'] == nil ? {} : hop[field_name_base + '_expected'].clone
-          qip[year] = (row[7]||'').to_f
+          qip[year] = escape_numeric(row[7]||'').to_f
           hop[field_name_base + '_expected'] = qip
         end
 
         if is_numeric?(row[8]||'')
           qip = hop[field_name_base + '_SMR'] == nil ? {} : hop[field_name_base + '_SMR'].clone
-          qip[year] = (row[8]||'').to_f
+          qip[year] = escape_numeric(row[8]||'').to_f
           hop[field_name_base + '_SMR'] = qip
         end
 
         if is_numeric?(row[9]||'')
           qip = hop[field_name_base + '_num_cases'] == nil ? {} : hop[field_name_base + '_num_cases'].clone
-          qip[year] = (row[9]||'').to_f
+          qip[year] = escape_numeric(row[9]||'').to_f
           hop[field_name_base + '_num_cases'] = qip
         end
 
