@@ -18,11 +18,10 @@ Rails.application.routes.draw do
       resources :comparisons
     end
 
-    get '/entry', to: 'home#entry', as: 'entry'
-    get '/about', to: 'home#home', as: 'about'
-    get '/help', to: 'home#home', as: 'help'
+    get '/about', to: 'home#about', as: 'about'
+    get '/help', to: 'home#help', as: 'help'
 
-    get '', to: 'home#home', as: 'home'
+    get '', to: 'comparisons#index', as: 'home'
   end
 
   root to: 'home#redirect'

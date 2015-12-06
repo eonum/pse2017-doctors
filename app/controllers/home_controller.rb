@@ -3,8 +3,12 @@ class HomeController < ApplicationController
     render layout: 'home'
   end
 
-  def entry
-    render layout: 'application'
+  def about
+    render layout: 'home'
+  end
+
+  def help
+    render layout: 'home'
   end
 
   def redirect
