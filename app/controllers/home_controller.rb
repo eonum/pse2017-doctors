@@ -1,14 +1,14 @@
 class HomeController < ApplicationController
   def home
-    render layout: 'home'
+    render layout: 'empty'
   end
 
   def about
-    render layout: 'home'
+    render layout: 'empty'
   end
 
   def help
-    render layout: 'home'
+    render layout: 'empty'
   end
 
   def redirect
