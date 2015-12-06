@@ -43,9 +43,9 @@
     %p
       = f.label 'Variablentyp'
       %br
-      = f.select :variable_type, options_for_select([['Freitext', :string], ['Prozentzahl', :percentage], ['Fallzahl', :number], ['Flag', :boolean]], @variable['variable_type'])
+      = f.select :variable_type, options_for_select([['Freitext oder Aufzählung', :string], ['Prozentzahl', :percentage], ['Fallzahl', :number], ['Flag', :boolean], ['Link', :link]], @variable['variable_type'])
     %p
-      = f.label 'Mögliche Werte: Kein Eintrag => Freitext'
+      = f.label 'Mögliche Werte falls Aufzählung: Kein Eintrag => Freitext'
       %br
       %span
         - @variable['values'].each do |entry|
@@ -73,6 +73,6 @@
       %span.pseudoLink{onclick: "$(this).prev().append(listEntry.replace(\"@@variable@@\", \"variable[values_fr][]\"));", title: ""} Wert hinzufügen
   .field
     = f.label 'Highlight Limit (nur bei Prozentangaben)'
-    = f.number_field :highlight_threshold
+    = f.number_field :highlight_threshold, :step => 0.1
   .actions
     = f.submit 'Speichern'
