@@ -22,4 +22,3 @@
 //= require gmaps
 //= require tagmanager
 //= require_tree .
-

@@ -42,15 +42,16 @@
       .row
         .col-lg-4
           #search.well.well-sm
-            %button#location-btn.btn.btn-default.navbar-btn.has-popover{"data-target" => ".bs-example-modal-lg", "data-toggle" => "modal",
-               :type => 'button', :title => 'Change Location', 'data-content' => 'Change Your location here'}
-              %i.fa.fa-location-arrow
-              = current_address
-            %div.dropdown
-              = label_tag t('speciality')
-              = select_tag('comparison', options_for_select(Comparison.all.map { |v| [v.localized_field('name', locale), v.id]}, @comparison.nil? ? nil : @comparison.id))
+            %form
+              %button#location-btn.btn.btn-default.navbar-btn.has-popover{"data-target" => ".bs-example-modal-lg", "data-toggle" => "modal",
+                 :type => 'button', :title => 'Change Location', 'data-content' => 'Change Your location here'}
+                %i.fa.fa-location-arrow.comparison-selection
+                = current_address
+              %div.dropdown
+                = label_tag t('speciality')
+                = select_tag('comparison', options_for_select(Comparison.all.map { |v| [v.localized_field('name', locale), comparison_path(v, :format => :json)]}, @comparison.nil? ? nil : @comparison.id), class: 'comparison-selection')
 
-        .col-lg-8
+        #main-content.col-lg-8
           = bootstrap_flash
           = yield
 

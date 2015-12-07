@@ -5,6 +5,7 @@ json.base_year @comparison.base_year
 json.variables @variables do |v|
   json.name v.localized_field 'name', locale
   json.description v.localized_field 'description', locale
+  json.field_name v.field_name
   json.vartype v.variable_type
   json.highlight_threshold v.highlight_threshold
   json.is_time_series v.is_time_series
