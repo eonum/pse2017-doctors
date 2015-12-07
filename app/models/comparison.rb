@@ -28,9 +28,11 @@ class Comparison
   def hospitals
     var = Variable.where(:field_name => limit_field).first
     value = limit_value
-    value = value.to_f if var.variable_type == 'number'
+    value = value.to_f if var.variable_type == :number || var.variable_type == :percentage
+    field = limit_field
+    field = "#{field}.#{base_year}" if var.is_time_series
 
-    return Hospital.where(limit_field => mongo_operator(limit_operator, value))
+    return Hospital.where(field => mongo_operator(limit_operator, value))
   end
 
   def mongo_operator op, value
