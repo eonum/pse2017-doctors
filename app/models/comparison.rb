@@ -27,6 +27,7 @@ class Comparison
   # get all hostpials that meet the limitiations.
   def hospitals
     var = Variable.where(:field_name => limit_field).first
+    return Hospital.all if var.nil?
     value = limit_value
     value = value.to_f if var.variable_type == :number || var.variable_type == :percentage
     field = limit_field
