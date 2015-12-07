@@ -16,6 +16,8 @@ json.hospitals @hospitals do |h|
   json.name h.name
   json.address2 h.address2
 
+  json.url hospital_url(h, format: :json)
+
   field_names.each do |field|
     json.set! field, h[field]
   end

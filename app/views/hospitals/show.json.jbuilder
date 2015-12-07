@@ -1,4 +1,4 @@
 json.hospital do
-  json.extract! @hospital, :name, :title, :address, :phone1, :phone2, :location
+  json.extract! @hospital, :name, :address1, :address2, :bfs_typo, :canton, :location
 end
 
