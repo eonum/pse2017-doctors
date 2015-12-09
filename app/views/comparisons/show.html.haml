@@ -5,6 +5,10 @@
 %table.table.table-striped
   %thead
     %tr
+      %th{ width: "25%" }
+        = t('institution')
+        %h5
+          %small= t('institution-description')
       - @variables.each do |var|
         %th
           = var.localized_field 'name', locale
@@ -13,5 +17,9 @@
   %tbody
     - @hospitals.each do |h|
       %tr
+        %td
+          = link_to h.name, h
+          %h6.blue
+            %small= h.address2
         - @variables.each do |var|
           %td= format_hospital_variable(var, h, @comparison)

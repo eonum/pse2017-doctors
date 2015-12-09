@@ -51,7 +51,7 @@
       - (@comparison['variable_ids'] || []).each do |var|
         %div.top-buffer
           = select_tag('comparison[variable_ids][]', options_for_select(Variable.all.map { |v| [v.localized_field('name', locale), v.id]}, var))
-          = image_tag '/bullet_toggle_minus.png', :title => 'delete', :onclick => '$(this).closest(\'span\').remove()', :class => 'delete_button_array_list'
+          = image_tag '/bullet_toggle_minus.png', :title => 'delete', :onclick => '$(this).closest(\'div\').remove()', :class => 'delete_button_array_list'
     %span.pseudoLink{onclick: "$(this).prev().append(listEntry);", title: ""} Kennzahl hinzufügen
 
     %br

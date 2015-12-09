@@ -2,3 +2,5 @@ de:
   name: "Name"
   description: "Beschrieb"
   speciality: "Fachbereich"
+  institution: "Spital"
+  institution-description: "Dies kann auch mehrere Standorte beeinhalten. Sortierung nach Distanz."
