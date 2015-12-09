@@ -49,7 +49,7 @@
                 = current_address
               %div.dropdown
                 = label_tag t('speciality')
-                = select_tag('comparison', options_for_select(Comparison.all.map { |v| [v.localized_field('name', locale), comparison_path(v, :format => :json)]}, @comparison.nil? ? nil : @comparison.id), class: 'comparison-selection')
+                = select_tag('comparison', options_for_select(Comparison.order_by(:rank => 'asc').map { |v| [v.localized_field('name', locale), comparison_path(v, :format => :json)]}, @comparison.nil? ? nil : @comparison.id), class: 'comparison-selection')
 
         #main-content.col-lg-8
           = bootstrap_flash

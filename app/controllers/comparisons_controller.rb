@@ -2,7 +2,7 @@ class ComparisonsController < ApplicationController
   include Locatable
 
   def index
-   @comparisons = Comparison.all
+   @comparisons = Comparison.order_by(:rank => 'asc')
   end
 
   def show

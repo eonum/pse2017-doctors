@@ -34,6 +34,9 @@
     %tr
       %td= f.label 'Basisjahr'
       %td= f.number_field :base_year
+      %tr
+      %td= f.label 'Sortierrang'
+      %td= f.number_field :rank
     %tr
       %td Bedingung
       %td= f.text_field :limit_field

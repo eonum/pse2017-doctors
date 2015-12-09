@@ -24,6 +24,9 @@ class Comparison
   # limit value if '>', '<' or '='
   field :limit_value, :type => String, :default => ''
 
+  # sort comparisons according rank
+  field :rank, :type => Integer
+
   # get all hostpials that meet the limitiations.
   def hospitals
     var = Variable.where(:field_name => limit_field).first

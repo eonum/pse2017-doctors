@@ -4,7 +4,7 @@ class Admin::ComparisonsController < Admin::AdminController
   # GET /admin/comparisons
   # GET /admin/comparisons.json
   def index
-    @comparisons = Comparison.all
+    @comparisons = Comparison.order_by(:rank => 'asc')
   end
 
   # GET /admin/comparisons/1
@@ -72,7 +72,7 @@ class Admin::ComparisonsController < Admin::AdminController
     def comparison_params
       params.require(:comparison).permit(:name, :name_de, :name_fr, :name_it, :description_de,
                                          :description_fr, :description_it, :limit_field,
-                                         :limit_operator, :limit_value, :base_year)
+                                         :limit_operator, :limit_value, :base_year, :rank)
     end
 
     def set_variables

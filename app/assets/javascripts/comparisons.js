@@ -41,7 +41,8 @@ function updateComparison(comparison) {
             if(variable.is_time_series && value != null) {
                 value = value[comparison.base_year];
             }
-            body += value;
+            if(value != null)
+                body += value;
             body += '</td>';
         }
         body += '</tr>';
