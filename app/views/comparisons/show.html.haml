@@ -1,3 +1,17 @@
 %h2= @comparison.localized_field 'name', locale
 
 %p= @comparison.localized_field 'description', locale
+
+%table.table.table-striped
+  %thead
+    %tr
+      - @variables.each do |var|
+        %th
+          = var.localized_field 'name', locale
+          %h5
+            %small= var.localized_field 'description', locale
+  %tbody
+    - @hospitals.each do |h|
+      %tr
+        - @variables.each do |var|
+          %td= format_hospital_variable(var, h, @comparison)
