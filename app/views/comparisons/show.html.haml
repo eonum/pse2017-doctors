@@ -22,4 +22,7 @@
           %h6.blue
             %small= h.address2
         - @variables.each do |var|
-          %td{ :class => hospital_variable_class(var, h, @comparison) }= format_hospital_variable(var, h, @comparison)
+          %td{ :class => hospital_variable_class(var, h) }= format_hospital_variable(var, h)
+
+:javascript
+  var numcase_data = #{numcase_data(@hospitals, @variables).to_json};

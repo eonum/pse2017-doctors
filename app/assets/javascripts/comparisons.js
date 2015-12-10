@@ -1,6 +1,9 @@
 
 var ready = function() {
     $(".orange-highlight").animate({backgroundColor: 'rgb(250, 234, 120)'}, 2500);
+    Object.keys(numcase_data).forEach(function (id) {
+        $(id).animate({width: numcase_data[id] + '%'}, 2500);
+    })
 };
 
 $(document).ready(ready);
