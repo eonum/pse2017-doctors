@@ -39,6 +39,7 @@ module ComparisonsHelper
         next if num.blank?
         num = num[@comparison.base_year] if var.is_time_series
         next if num.blank?
+        num = num.to_f
         max = [num, max].max unless num.nil? || num.nan?
       end
       hospitals.each do |h|
@@ -46,6 +47,7 @@ module ComparisonsHelper
         next if num.blank?
         num = num[@comparison.base_year] if var.is_time_series
         next if num.blank?
+        num = num.to_f
         data["#numcase-#{h.id}-#{var.field_name}"] =  (num / max) * 100.0
       end
     end
