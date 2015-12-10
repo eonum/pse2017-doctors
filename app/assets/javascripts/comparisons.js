@@ -37,7 +37,9 @@ function updateComparison(comparison) {
     var body = $('<tbody>');
     for(var hi in comparison.hospitals) {
         var h = comparison.hospitals[hi];
-        body += '<tr>';
+        body += '<tr><td>';
+        body += '<a href="' + h.url + '">' + h.name + '</a>'
+        body += '<h6><small>' + h.address2 + '</small></h6></td>';
         for(var i in comparison.variables) {
             var variable = comparison.variables[i];
             body += '<td>';
