@@ -38,4 +38,5 @@ gem 'less-rails'
 gem 'jquery-cookie-rails'
 gem 'nprogress-rails'   # Fancy async loading bar at the top of page, Youtube style
 gem 'turboboost'        # Turbolinks for forms
+gem "i18n-js"
 

@@ -19,6 +19,10 @@ function updateComparison(comparison) {
     table.addClass('table table-striped');
     var header = $('<thead>');
     var row = '<tr>';
+    row += '<th>';
+    row += I18n.t('institution');
+    row += '<h5><small>' + I18n.t('institution-description') + '</small></h5>';
+    row += '</th>';
     for(var i in comparison.variables) {
         var variable = comparison.variables[i];
         row += '<th>';
