@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.cookie
 //= require jquery-ui/autocomplete
+//= require jquery-ui/effect.all
 //= require twitter/bootstrap
 //= require turbolinks
 //= require nprogress

@@ -1,3 +1,11 @@
+
+var ready = function() {
+    $(".orange-highlight").animate({backgroundColor: 'rgb(250, 234, 120)'}, 2500);
+};
+
+$(document).ready(ready);
+
+
 $( function() {
     $(document).on('change', '.comparison-selection', function() {
         var comparison_link = $('#comparison').find(":selected").val();

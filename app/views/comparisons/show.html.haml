@@ -3,14 +3,14 @@
 %p= @comparison.localized_field 'description', locale
 
 %table.table.table-striped
-  %thead
+  %thead#comparison-head
     %tr
-      %th{ width: "25%" }
+      %th.qim-header-cell{ width: "25%" }
         = t('institution')
         %h5
           %small= t('institution-description')
       - @variables.each do |var|
-        %th
+        %th.qim-header-cell
           = var.localized_field 'name', locale
           %h5
             %small= var.localized_field 'description', locale
@@ -22,4 +22,4 @@
           %h6.blue
             %small= h.address2
         - @variables.each do |var|
-          %td= format_hospital_variable(var, h, @comparison)
+          %td{ :class => hospital_variable_class(var, h, @comparison) }= format_hospital_variable(var, h, @comparison)
