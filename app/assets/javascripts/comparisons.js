@@ -11,15 +11,14 @@ $(document).on('page:load', ready)
 
 
 $( function() {
-    $(document).on('change', '.comparison-selection', function() {
-        var comparison_link = $('#comparison').find(":selected").val();
-        // TODO get location
-        $.getJSON(comparison_link, function(data) {
-            updateComparison(data);
-        });
+    $(document).on('change', '#comparison-selection-form button, select', function() {
+        var comparison_url = $('#comparison').find(":selected").val();
+        // TODO get location and submit
+        Turbolinks.visit(comparison_url, { change: ['main-content'] });
     });
 });
 
+/*
 
 function updateComparison(comparison) {
     var container =  $('#main-content');
@@ -68,4 +67,4 @@ function updateComparison(comparison) {
 
     table.append(body);
     container.append(table);
-}
+}*/
