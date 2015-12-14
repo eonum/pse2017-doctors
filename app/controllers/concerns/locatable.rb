@@ -4,6 +4,8 @@ module Locatable
   included do
     attr_accessor :location
     before_action :set_location
+
+    helper_method :cantons
   end
 
   def set_location
