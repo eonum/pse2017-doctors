@@ -22,6 +22,7 @@
 //= require turboboost
 //= require gmaps
 //= require tagmanager
+//= require shadowbox
 //= require i18n
 //= require i18n/translations
 //= require_tree .

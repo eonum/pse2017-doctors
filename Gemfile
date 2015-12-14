@@ -40,3 +40,5 @@ gem 'nprogress-rails'   # Fancy async loading bar at the top of page, Youtube st
 gem 'turboboost'        # Turbolinks for forms
 gem "i18n-js"
 
+gem 'shadowbox-rails'
+

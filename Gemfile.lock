@@ -162,6 +162,8 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     sexp_processor (4.6.0)
+    shadowbox-rails (0.0.4)
+      sass-rails
     spring (1.4.0)
     sprockets (3.4.0)
       rack (> 1, < 3)
@@ -217,6 +219,7 @@ DEPENDENCIES
   ruby-progressbar
   sass-rails
   sdoc (~> 0.4.0)
+  shadowbox-rails
   spring
   tagmanager-rails
   therubyracer
