@@ -8,6 +8,7 @@ class HospitalsController < ApplicationController
   end
 
   def field
+    @variable =
     render :json => { 'response' => @hospital[params['field_name']]}
   end
 

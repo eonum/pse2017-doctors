@@ -54,7 +54,7 @@
               %div.dropdown
                 = label_tag t('speciality')
                 = select_tag('comparison', options_for_select(Comparison.order_by(:rank => 'asc').map { |c| [c.localized_field('name', locale), comparison_path(c)]}, @comparison.nil? ? nil : comparison_path(@comparison)))
-
+          %div#field-info-box
         #main-content.col-lg-8
           = bootstrap_flash
           = yield
