@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   scope '/:locale', :locale => /de|fr|it|en/, :format => /json|html/ do
     devise_for :users
 
-    resources :hospitals, only: [:show]
+    resources :hospitals, only: [:show] do
+      get :field, :on => :member
+    end
     resources :comparisons, only: [:index, :show]
 
     namespace :admin do
