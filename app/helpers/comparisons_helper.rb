@@ -25,7 +25,7 @@ module ComparisonsHelper
     limit = variable.highlight_threshold
     classes << 'orange-highlight' if(limit > 0 && limit < 100 && limit <= value)
     classes << 'text-center' if variable.variable_type == :boolean
-    classes << 'time-series' if variable.is_time_series
+    classes << 'time-series' if variable.is_time_series && hospital[variable.field_name].length > 1
 
     return classes.join(' ')
   end

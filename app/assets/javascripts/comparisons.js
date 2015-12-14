@@ -19,12 +19,13 @@ $( function() {
         Turbolinks.visit(comparison_url, { change: ['main-content'] });
     });
 
+    $('.time-series').prop('title', I18n.t('show_time_series'));
     $(document).on('click', '.time-series', function() {
         var field_name = $(this).closest('td').attr("data-fieldname");
         var hopid = $(this).closest('tr').attr("data-hopid");
         // Is there a way of using a rails url helper here.
         $.getJSON('../hospitals/' + hopid + '/field?field_name=' + field_name, function(data) {
-            $('#field-info-box').html(data.response['2013']);
+            $('#field-info-box').html(JSON.stringify(data.response));
         })
     });
 });

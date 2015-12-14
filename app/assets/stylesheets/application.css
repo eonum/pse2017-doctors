@@ -19,7 +19,7 @@
  */
 
 
-.pseudoLink {
+.pseudoLink, .time-series {
     cursor: hand;
     cursor: pointer;
     color: rgb(59, 114, 184);
