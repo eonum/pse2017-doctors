@@ -18,7 +18,7 @@
     - @hospitals.each do |h|
       %tr
         %td
-          = link_to h.name, h, rel: 'shadowbox'
+          = link_to h.name, h, rel: 'shadowbox;width=700;height=600;'
           %h6.blue
             %small= h.address2
         - @variables.each do |var|
