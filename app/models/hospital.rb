@@ -12,8 +12,12 @@ class Hospital
 
   field :location, type: Array, default: [7.43, 46.96] # Close to Berne
 
-  geocoded_by :address2, coordinates: :location
+  geocoded_by :full_address, coordinates: :location
   reverse_geocoded_by :location
 
   index({ name: 1 }, { unique: true })
+
+  def full_address
+    [address1, address2].join(', ')
+  end
 end
