@@ -389,4 +389,20 @@ namespace :db do
     puts
 
   end
+
+  desc 'Geocode Hospitals by full address'
+  task :geocode_hospitals => :environment do
+
+    pg = ProgressBar.create(total: Hospital.count, title: 'Geocoding Hospitals:')
+
+    Hospital.all.each do |h|
+      h.geocode
+      h.save
+
+      # TODO: Maybe add timeout so Google is happy
+
+      pg.increment
+    end
+  end
+
 end

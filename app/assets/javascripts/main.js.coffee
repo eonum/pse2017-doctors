@@ -30,10 +30,14 @@ ready = (geolocate = true) =>
       height: '100%',
       width: '100%'
 
-    @app.map.addMarker
+    marker = @app.map.addMarker
       lat: @app.location[0],
       lng: @app.location[1],
       draggable: true
+
+    google.maps.event.addListener marker, 'dragend',  =>
+      @app.location = [marker.position.lat(), marker.position.lng()]
+      console.log @app.location
 
     @app.map.setCenter(@app.location[0], @app.location[1])
 
@@ -62,3 +66,4 @@ $(document).ready ready
 $(window).on 'resize', ->
   console.log 'resizing'
   $('#search-bar').parent().height($(window).height()-131)
+
