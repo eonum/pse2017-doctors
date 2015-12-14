@@ -29,4 +29,9 @@ module ApplicationHelper
       end
     end
   end
+
+  def tel_to(text)
+    groups = text.to_s.scan(/(?:^\+)?\d+/)
+    link_to fa_icon('phone', text), "tel:#{groups.join '-'}"
+  end
 end
