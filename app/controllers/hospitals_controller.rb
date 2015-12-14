@@ -4,7 +4,7 @@ class HospitalsController < ApplicationController
   # GET /admin/hospitals/1
   # GET /admin/hospitals/1.json
   def show
-    render layout: 'empty'
+    #render layout: 'empty'
   end
 
   private
