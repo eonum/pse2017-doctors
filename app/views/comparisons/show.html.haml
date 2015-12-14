@@ -1,4 +1,5 @@
 %h2= @comparison.localized_field 'name', locale
+%p= "#{t('data_year')}: #{@comparison.base_year}"
 
 %p= @comparison.localized_field 'description', locale
 
@@ -16,13 +17,13 @@
             %small= var.localized_field 'description', locale
   %tbody
     - @hospitals.each do |h|
-      %tr
+      %tr{ 'data-hopid' => h.id }
         %td
           = link_to h.name, h, rel: 'shadowbox;width=700;height=600;'
           %h6.blue
             %small= h.address2
         - @variables.each do |var|
-          %td{ :class => hospital_variable_class(var, h) }= format_hospital_variable(var, h)
+          %td{ :class => hospital_variable_class(var, h), 'data-fieldname' => var.field_name }= format_hospital_variable(var, h)
 
 :javascript
   var numcase_data = #{numcase_data(@hospitals, @variables).to_json};

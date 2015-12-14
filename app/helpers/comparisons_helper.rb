@@ -25,6 +25,7 @@ module ComparisonsHelper
     limit = variable.highlight_threshold
     classes << 'orange-highlight' if(limit > 0 && limit < 100 && limit <= value)
     classes << 'text-center' if variable.variable_type == :boolean
+    classes << 'time-series' if variable.is_time_series
 
     return classes.join(' ')
   end
