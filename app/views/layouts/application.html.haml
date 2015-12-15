@@ -48,7 +48,7 @@
         .col-lg-4
           #search.well.well-sm
             %form#comparison-selection-form
-              %button#location-btn.btn.btn-default.navbar-btn.has-popover{"data-target" => ".bs-example-modal-lg", "data-toggle" => "modal",
+              %button#location-btn.btn.btn-default.navbar-btn.has-popover{"data-target" => "#map-modal", "data-toggle" => "modal",
                  :type => 'button', :title => 'Change Location', 'data-content' => 'Change Your location here'}
                 %i.fa.fa-location-arrow.comparison-selection
                 = current_address

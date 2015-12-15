@@ -24,6 +24,7 @@ var ready = function() {
 
     $(document).on('click', '.hopmodal', function() {
         console.log($(this).attr('data-modalhref'));
+        $('#hop-modal').removeData("bs.modal").find(".modal-content").empty();
         $('#hop-modal').modal({
             show: true,
             remote: $(this).attr('data-modalhref')
@@ -33,6 +34,10 @@ var ready = function() {
 
 $(document).ready(ready);
 $(document).on('page:load', ready)
+
+/*$(document).on("hidden.bs.modal", '#hop-modal', function (e) {
+    $(e.target).removeData("bs.modal").find(".modal-content").empty();
+});*/
 
 
 $( function() {
