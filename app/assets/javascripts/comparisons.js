@@ -9,14 +9,21 @@ var ready = function() {
 
 
     $('.time-series').prop('title', I18n.t('show_time_series'));
-    $(document).on('click', '.time-series', function() {
+    $(document).on('click', '.time-series', function () {
         var field_name = $(this).closest('td').attr("data-fieldname");
         var hopid = $(this).closest('tr').attr("data-hopid");
-        // Is there a way of using a rails url helper here.
-        $.getJSON('../hospitals/' + hopid + '/field?field_name=' + field_name, function(data) {
+        // Is there a way of using a rails url helper here?
+        $.getJSON('../hospitals/' + hopid + '/field?field_name=' + field_name, function (data) {
+            // TODO visualize
             $('#field-info-box').html(JSON.stringify(data.response));
         })
     });
+
+    $(".cantons").removeClass("highlight", 150);
+    var canton = getUrlParameter('canton');
+    if (canton != undefined) {
+        $("#canton-" + canton).addClass("highlight", 250);
+    }
 };
 
 $(document).ready(ready);
@@ -32,53 +39,18 @@ $( function() {
     $(document).on('change', '#comparison-selection-form button a, select', change_comparison);
 });
 
-/*
 
-function updateComparison(comparison) {
-    var container =  $('#main-content');
-    container.empty();
-    container.append($('<h2>').append(comparison.name));
-    container.append($('<p>').append(comparison.description));
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
 
-    var table = $('<table>');
-    table.addClass('table table-striped');
-    var header = $('<thead>');
-    var row = '<tr>';
-    row += '<th>';
-    row += I18n.t('institution');
-    row += '<h5><small>' + I18n.t('institution-description') + '</small></h5>';
-    row += '</th>';
-    for(var i in comparison.variables) {
-        var variable = comparison.variables[i];
-        row += '<th>';
-        row += variable.name;
-        row += '<h5><small>' + variable.description + '</small></h5>';
-        row += '</th>';
-    }
-    row += '</tr>';
-    header.append(row);
-    table.append(header);
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
 
-    var body = $('<tbody>');
-    for(var hi in comparison.hospitals) {
-        var h = comparison.hospitals[hi];
-        body += '<tr><td>';
-        body += '<a href="' + h.url + '">' + h.name + '</a>'
-        body += '<h6><small>' + h.address2 + '</small></h6></td>';
-        for(var i in comparison.variables) {
-            var variable = comparison.variables[i];
-            body += '<td>';
-            var value = h[variable.field_name];
-            if(variable.is_time_series && value != null) {
-                value = value[comparison.base_year];
-            }
-            if(value != null)
-                body += value;
-            body += '</td>';
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
         }
-        body += '</tr>';
     }
-
-    table.append(body);
-    container.append(table);
-}*/
+};
