@@ -1,5 +1,5 @@
 class Admin::HospitalsController < Admin::AdminController
-  before_action :set_hospital, only: [:show, :edit, :update, :destroy]
+  before_action :set_hospital, only: [:show, :edit, :update, :destroy, :create_location]
 
   # GET /admin/hospitals
   # GET /admin/hospitals.json
@@ -17,6 +17,24 @@ class Admin::HospitalsController < Admin::AdminController
   def show
     @variables_qip = Variable.where({ 'variable_sets' => { '$in' => ['qip'] }})
     @variables_kzp = Variable.where({ 'variable_sets' => { '$in' => ['kzp'] }})
+  end
+
+  def create_location
+    @location = HospitalLocation.new
+    @location.name = @hospital.name
+    @location.address = "#{@hospital.address1}, #{@hospital.address2}"
+    @location.hospital_id = @hospital.id
+    @location.canton = @hospital.canton
+    @location.location = @hospital.location
+    @location.title = ''
+    @location.doc_id = Random.rand(10000)
+
+    if @location.save
+      redirect_to :back, notice: 'Hauptsitz für dieses Spital wurde erfolgreich erstellt.'
+    else
+      redirect_to :back, alert: "Fehler beim Erstellen des Hauptsitzes für dieses Spital. #{@location.errors.full_messages.each{|msg| msg}}"
+    end
+
   end
 
   # GET /admin/hospitals/new

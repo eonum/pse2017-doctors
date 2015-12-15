@@ -13,10 +13,11 @@
   %thead
     %tr
       %th Name
-      %th Address1
-      %th Address2
-      %th Bfs typo
-      %th Canton
+      %th Strasse, Nr.
+      %th PLZ Ort
+      %th BFS Typologie
+      %th Kanton
+      %th Anzahl Standorte
       %th
       %th
       %th
@@ -29,6 +30,7 @@
         %td= hospital.address2
         %td= hospital.bfs_typo
         %td= hospital.canton
+        %td= hospital.hospital_locations.length
         %td= link_to 'Bearbeiten', edit_admin_hospital_path(hospital)
         %td= link_to 'Löschen', admin_hospital_path(hospital), :method => :delete, :data => { :confirm => 'Are you sure?' }
 

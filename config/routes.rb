@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       end
       resources :hospitals do
         resources :fields, except: [:create]
+        post :create_location, :on => :member
       end
       resources :hospital_locations
       resources :comparisons

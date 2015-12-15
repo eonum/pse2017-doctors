@@ -23,6 +23,10 @@
   %p
     = link_to(location.name + ' - ' + location.title + ' - ' + location.address, [:admin, location])
 
+- if @hospital.hospital_locations.empty?
+  %p Noch keine Standort verknüpft mit diesem Spital.
+  = link_to 'Erstelle Standort mit identischer Adresse - Hauptsitz', create_location_admin_hospital_path(@hospital), method: :post
+
 %h3= link_to 'Alle Felder anzeigen', admin_hospital_fields_path(@hospital)
 
 
