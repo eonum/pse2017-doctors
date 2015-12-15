@@ -4,7 +4,12 @@ class Admin::HospitalLocationsController < Admin::AdminController
   # GET /admin/hospital_locations
   # GET /admin/hospital_locations.json
   def index
-    @hospital_locations = HospitalLocation.all
+    query = escape_query(params[:q])
+    query = /#{Regexp.escape(query)}/i
+    @hospital_locations = HospitalLocation.where({'$or' => [{'title' => query},
+                                             {'name'=> query}]})
+                     .order_by([[ :rank, :asc ]])
+    @hospital_locations = @hospital_locations.paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /admin/hospital_locations/1

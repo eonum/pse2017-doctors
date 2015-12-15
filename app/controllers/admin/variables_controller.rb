@@ -12,7 +12,7 @@ class Admin::VariablesController < Admin::AdminController
     @variables = @variables.where({'$or' => [{'field_name' => query},
                                              {"name_#{lang}" => query}]})
                      .order_by([[ :rank, :asc ]])
-    @variables = @variables.paginate(:page => params[:page])
+    @variables = @variables.paginate(:page => params[:page], :per_page => 10)
   end
 
   def show

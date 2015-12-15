@@ -1,7 +1,14 @@
 %h2 Liste der Spitalstandorte
 
 = link_to 'Neuer Standort', new_admin_hospital_location_path
+%br
+%br
+= form_tag(admin_hospital_locations_path, :method => "get") do
+  = label_tag(:q, 'Suche')
+  = text_field_tag(:q, params[:q])
+  = submit_tag('Suche')
 
+= will_paginate @hospital_locations, renderer: BootstrapPagination::Rails
 %table.table-striped.table
   %thead
     %tr
@@ -30,3 +37,5 @@
         %td= hospital_location.location
         %td= link_to 'Bearbeiten', edit_admin_hospital_location_path(hospital_location)
         %td= link_to 'Löschen', [:admin, hospital_location], :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+= will_paginate @hospital_locations, renderer: BootstrapPagination::Rails
