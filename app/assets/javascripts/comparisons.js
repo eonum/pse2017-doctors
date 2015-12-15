@@ -10,14 +10,10 @@ var ready = function() {
 
     $('.time-series').prop('title', I18n.t('show_time_series'));
     $(document).on('click', '.time-series', function () {
-        var field_name = $(this).closest('td').attr("data-fieldname");
+        var varid = $(this).closest('td').attr("data-varid");
         var hopid = $(this).closest('tr').attr("data-hopid");
         // Is there a way of using a rails url helper here?
-        $.getJSON('../hospitals/' + hopid + '/field?field_name=' + field_name, function (data) {
-            // TODO visualize
-            visualize_time_series(data);
-
-        })
+        $.getJSON('../hospitals/' + hopid + '/field?varid=' + varid,  visualize_time_series)
     });
 
     $(".cantons").removeClass("highlight", 150);
@@ -58,7 +54,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
 var visualize_time_series = function visualize_time_series(time_series) {
     var data_array = [];
-    data_array.push(['Jahr', 'Indikator']);
+    data_array.push([I18n.t('year'), time_series.var_name]);
     Object.keys(time_series.response).forEach(function (year) {
         var value = parseFloat(time_series.response[year]);
         data_array.push([year, value]);
@@ -67,9 +63,9 @@ var visualize_time_series = function visualize_time_series(time_series) {
     var data = google.visualization.arrayToDataTable(data_array);
 
     var options = {
-        title: 'asdflkj',
-        hAxis: {title: 'Jahr',  titleTextStyle: {color: '#333'}},
-        vAxis: {minValue: 0}
+        title: time_series.hop_name,
+        hAxis: {title: I18n.t('year'),  titleTextStyle: {color: '#333'}},
+        legend: {position: 'top'}
     };
 
     var chart = new google.visualization.AreaChart(document.getElementById('field-info-box'));

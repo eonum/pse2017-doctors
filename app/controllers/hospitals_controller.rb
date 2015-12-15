@@ -8,8 +8,8 @@ class HospitalsController < ApplicationController
   end
 
   def field
-    @variable =
-    render :json => { 'response' => @hospital[params['field_name']]}
+    @variable = Variable.find(params['varid'])
+    render :json => { 'response' => @hospital[@variable['field_name']], 'hop_name' => @hospital.name, 'var_name' => @variable.localized_field('name', locale)}
   end
 
   private
