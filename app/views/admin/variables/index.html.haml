@@ -19,6 +19,8 @@
   = label_tag(:q, 'Suche')
   = text_field_tag(:q, params[:q])
   = submit_tag('Suche')
+
+= will_paginate @variables, renderer: BootstrapPagination::Rails
 %table.table-striped.table
   %thead
     %tr
@@ -57,3 +59,5 @@
           = link_to image_tag('application_view_list.png', :style => 'border-style:none'), admin_variable_path(variable)
           = link_to image_tag('note_edit.png', :style => 'border-style:none'), edit_admin_variable_path(variable)
           = link_to image_tag('delete.png', :style => 'border-style:none'), admin_variable_path(variable), method: :delete, :title => 'Löschen', :data => {:confirm => 'Möchten Sie diese Kennzahl wirklich löschen?'}
+
+= will_paginate @variables, renderer: BootstrapPagination::Rails

@@ -40,3 +40,7 @@ gem 'nprogress-rails'   # Fancy async loading bar at the top of page, Youtube st
 gem 'turboboost'        # Turbolinks for forms
 gem "i18n-js"
 
+gem 'will_paginate'
+gem 'will_paginate_mongoid'
+gem 'will_paginate-bootstrap'
+
