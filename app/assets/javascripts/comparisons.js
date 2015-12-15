@@ -15,7 +15,8 @@ var ready = function() {
         // Is there a way of using a rails url helper here?
         $.getJSON('../hospitals/' + hopid + '/field?field_name=' + field_name, function (data) {
             // TODO visualize
-            $('#field-info-box').html(JSON.stringify(data.response));
+            visualize_time_series(data);
+
         })
     });
 
@@ -54,3 +55,23 @@ var getUrlParameter = function getUrlParameter(sParam) {
         }
     }
 };
+
+var visualize_time_series = function visualize_time_series(time_series) {
+    var data_array = [];
+    data_array.push(['Jahr', 'Indikator']);
+    Object.keys(time_series.response).forEach(function (year) {
+        var value = parseFloat(time_series.response[year]);
+        data_array.push([year, value]);
+    })
+
+    var data = google.visualization.arrayToDataTable(data_array);
+
+    var options = {
+        title: 'asdflkj',
+        hAxis: {title: 'Jahr',  titleTextStyle: {color: '#333'}},
+        vAxis: {minValue: 0}
+    };
+
+    var chart = new google.visualization.AreaChart(document.getElementById('field-info-box'));
+    chart.draw(data, options);
+}
