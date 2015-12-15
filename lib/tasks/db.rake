@@ -398,8 +398,8 @@ namespace :db do
     Hospital.all.each do |h|
       h.geocode
       h.save
-
-      # TODO: Maybe add timeout so Google is happy
+      # add timeout so Google is happy
+      sleep(1)
 
       pg.increment
     end
