@@ -63,7 +63,7 @@
           = bootstrap_flash
           = yield
 
-    .modal.fade.bs-example-modal-lg{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel", :role => "dialog", :tabindex => "-1"}
+    #map-modal.modal.fade.bs-example-modal-lg{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel", :role => "dialog", :tabindex => "-1"}
       .modal-dialog.modal-lg
         .modal-content
           .modal-header.text-center
@@ -76,3 +76,6 @@
           .modal-footer
             %a.btn{"data-dismiss" => "modal"} Close
             %a.btn.btn-primary.save Save changes
+    #hop-modal.modal.bs-example-modal-lg{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel2", :role => "dialog", :tabindex => "-2"}
+      .modal-dialog.modal-lg
+        .modal-content

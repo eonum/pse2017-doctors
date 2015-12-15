@@ -19,7 +19,7 @@
     - @hospitals.each do |h|
       %tr{ 'data-hopid' => h.id }
         %td
-          = link_to h.name, h, rel: 'prettyPhoto', 'data-lightbox' => h.id, 'data-title' => 'My caption'
+          .hopmodal.pseudoLink{'data-modalhref' => hospital_path(h)}= h.name
           %h6.blue
             %small= h.address2
         - @variables.each do |var|

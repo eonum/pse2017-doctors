@@ -21,6 +21,14 @@ var ready = function() {
     if (canton != undefined) {
         $("#canton-" + canton).addClass("highlight", 250);
     }
+
+    $(document).on('click', '.hopmodal', function() {
+        console.log($(this).attr('data-modalhref'));
+        $('#hop-modal').modal({
+            show: true,
+            remote: $(this).attr('data-modalhref')
+        });
+    });
 };
 
 $(document).ready(ready);

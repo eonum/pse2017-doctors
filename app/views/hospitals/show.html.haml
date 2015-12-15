@@ -1,25 +1,27 @@
-%div{ :style => 'padding: 30px;'}
-  %h2= @hospital.name
+.modal-body
+  %div{ :style => 'padding: 30px;'}
+    %h2= @hospital.name
 
-  %address.blue
-    %small= raw "#{@hospital.address1}<br/>#{@hospital.canton} - #{@hospital.address2}"
+    %address.blue
+      %small= raw "#{@hospital.address1}<br/>#{@hospital.canton} - #{@hospital.address2}"
 
-  - unless @hospital.hospital_locations.empty?
-    %h4= t('locations')
-    - @hospital.hospital_locations.each do  |location|
-      .panel.panel-default
-        .panel-body
-          %address
-            %strong= location.name + ' - ' + (location.title.blank? ? t('headquarter') : location.title)
-            %br
-            = fa_icon 'map-marker', location.address
+    - unless @hospital.hospital_locations.empty?
+      %h4= t('locations')
+      - @hospital.hospital_locations.each do  |location|
+        .panel.panel-default
+          .panel-body
+            %address
+              %strong= location.name + ' - ' + (location.title.blank? ? t('headquarter') : location.title)
+              %br
+              = fa_icon 'map-marker', location.address
 
-            - unless location.email.blank?
-              %br
-              = mail_to(location.email, fa_icon('envelope-o', location.email))
-            - unless location.phone1.blank?
-              %br
-              = tel_to location.phone1
-            - unless location.phone2.blank?
-              %br
-              = tel_to location.phone2
+              - unless location.email.blank?
+                %br
+                = mail_to(location.email, fa_icon('envelope-o', location.email))
+              - unless location.phone1.blank?
+                %br
+                = tel_to location.phone1
+              - unless location.phone2.blank?
+                %br
+                = tel_to location.phone2
+

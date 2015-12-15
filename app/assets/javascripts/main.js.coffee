@@ -21,7 +21,7 @@ ready = (geolocate = true) =>
           target = target + '&location=' + @app.location
           $(e).attr('href', target)
 
-  $('.modal').on 'show.bs.modal', =>
+  $('#map-modal').on 'show.bs.modal', =>
     console.log 'Showing map...'
     @app.map = new GMaps
       div: '#map',
@@ -43,7 +43,7 @@ ready = (geolocate = true) =>
 
   $(window).trigger 'resize'
 
-  $('.modal').on 'shown.bs.modal', =>
+  $('#map-modal').on 'shown.bs.modal', =>
     console.log 'refreshing map'
     @app.map.refresh()
     @app.map.setCenter(@app.location[0], @app.location[1])
