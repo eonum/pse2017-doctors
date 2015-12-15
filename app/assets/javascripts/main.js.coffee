@@ -1,25 +1,30 @@
 @app = {}
 
+geoloc = () =>
+  GMaps.geolocate
+    success: (position) =>
+      @app.location = [position.coords.latitude, position.coords.longitude]
+      GMaps.geocode
+        lat: @app.location[0],
+        lng: @app.location[1],
+        callback: (results, status) =>
+          if status is 'OK'
+            @app.address = results[0].formatted_address
+            console.log @app.address
+            console.log @app.location
+            $('#location-btn').html('<i class="fa fa-location-arrow"></i> ' + @app.address)
+            $.cookie 'location', @app.address,
+              expires: 1,
+              path: '/'
+      $('a.locatable').each (i,e) =>
+        target = $(e).attr('href')
+        target = target + '&location=' + @app.location
+        $(e).attr('href', target)
+
 ready = (geolocate = true) =>
   if geolocate
     console.log 'Geolocating...'
-    GMaps.geolocate
-      success: (position) =>
-        @app.location = [position.coords.latitude, position.coords.longitude]
-        GMaps.geocode
-          lat: @app.location[0],
-          lng: @app.location[1],
-          callback: (results, status) =>
-            if status is 'OK'
-              @app.address = results[0].formatted_address
-              $('#location-btn').html('<i class="fa fa-location-arrow"></i> ' + @app.address)
-              $.cookie 'location', @app.address,
-                expires: 1,
-                path: '/'
-        $('a.locatable').each (i,e) =>
-          target = $(e).attr('href')
-          target = target + '&location=' + @app.location
-          $(e).attr('href', target)
+    geoloc()
 
   $('#map-modal').on 'show.bs.modal', =>
     console.log 'Showing map...'
@@ -41,24 +46,26 @@ ready = (geolocate = true) =>
 
     @app.map.setCenter(@app.location[0], @app.location[1])
 
-  $(window).trigger 'resize'
+  console.log 'Displaying address'
+  $('#location-btn').html('<i class="fa fa-location-arrow"></i> ' + @app.address) if @app.address?
 
   $('#map-modal').on 'shown.bs.modal', =>
     console.log 'refreshing map'
     @app.map.refresh()
     @app.map.setCenter(@app.location[0], @app.location[1])
 
-  console.log 'Displaying address'
-  $('#location-btn').html('<i class="fa fa-location-arrow"></i> ' + @app.address) if @app.address?
+  $(window).trigger 'resize'
+
+
+  $('#map-modal').on 'hidden.bs.modal', =>
+    console.log 'Geolocate after close..'
+    geoloc()
+    comparison_url = $('#comparison').find(":selected").val()
+    Turbolinks.visit(comparison_url + '?location=' + @app.location, { change: ['main-content'] })
 
 # Do not geolocate on turbolink refresh
 $(document).on 'page:load', =>
   ready(false)
-
-  $('a.locatable').each (i,e) =>
-    target = $(e).attr('href')
-    target = target + '&location=' + @app.location
-    $(e).attr('href', target)
 
 # Do geolocate only on hard refresh
 $(document).ready ready
@@ -66,4 +73,3 @@ $(document).ready ready
 $(window).on 'resize', ->
   console.log 'resizing'
   $('#search-bar').parent().height($(window).height()-131)
-
