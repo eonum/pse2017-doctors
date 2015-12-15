@@ -5,6 +5,11 @@ class Admin::HospitalsController < Admin::AdminController
   # GET /admin/hospitals.json
   def index
     @hospitals = Hospital.all
+
+    query = escape_query(params[:q])
+    query = /#{Regexp.escape(query)}/i
+    @hospitals = Hospital.where({'name'=> query}).order_by([[ :rank, :asc ]])
+    @hospitals = @hospitals.paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /admin/hospitals/1
