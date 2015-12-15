@@ -31,6 +31,8 @@
             %li= link_to fa_icon('wrench', 'Kennzahlen'), admin_variables_url
             %li= link_to fa_icon('wrench', 'Vergleiche'), admin_comparisons_url
           %ul.nav.navbar-nav.navbar-right
+            - if user_signed_in?
+              %li= link_to fa_icon('sign-out', 'Logout'), destroy_user_session_path, :method => :delete
             %li= link_to fa_icon('question-circle', 'Help'), help_url
             %li.dropdown
               %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
