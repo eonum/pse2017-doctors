@@ -24,14 +24,13 @@ $(document).on('page:load', ready)
 
 
 $( function() {
-    $(document).on('change', '#comparison-selection-form button, select', function() {
+    var change_comparison = function() {
         var comparison_url = $('#comparison').find(":selected").val();
-        // TODO get location and submit
-        Turbolinks.visit(comparison_url, { change: ['main-content'] });
-    });
+        Turbolinks.visit(comparison_url + '?location=' + app.location, { change: ['main-content'] });
+    }
+
+    $(document).on('change', '#comparison-selection-form button a, select', change_comparison);
 });
-
-
 
 /*
 
