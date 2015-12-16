@@ -3,7 +3,7 @@
 geoloc = () =>
   GMaps.geolocate
     success: (position) =>
-      @app.location = [position.coords.latitude, position.coords.longitude]
+      @app.location = [position.coords.latitude, position.coords.longitude] if @app.location == undefined
       GMaps.geocode
         lat: @app.location[0],
         lng: @app.location[1],

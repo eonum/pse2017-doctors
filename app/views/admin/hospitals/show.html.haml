@@ -2,21 +2,25 @@
 
 %h2= @hospital.name
 %p
-  %b Address1:
+  %b Strasse, Nr.:
   = @hospital.address1
 %p
-  %b Address2:
+  %b PLZ Ort:
   = @hospital.address2
 %p
-  %b Bfs typo:
+  %b BFS Typologie:
   = @hospital.bfs_typo
 %p
-  %b Canton:
+  %b Kanton:
   = @hospital.canton
 
-= link_to 'Edit', edit_admin_hospital_path(@hospital)
+%p
+  %b Karte / Koordinaten
+  = @hospital.location
+
+= link_to 'Bearbeiten', edit_admin_hospital_path(@hospital)
 \|
-= link_to 'Back', admin_hospitals_path
+= link_to 'Zurück', admin_hospitals_path
 
 %h3 Standorte
 - @hospital.hospital_locations.each do |location|
