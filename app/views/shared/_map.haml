@@ -13,12 +13,22 @@
 
     var map = new google.maps.Map(document.getElementById("map_#{@hospital.id}"), settings);
 
-    var hop_location = new google.maps.LatLng(#{@hospital.location[1]}, #{@hospital.location[0]});
-    var hop_marker = new google.maps.Marker({
-      position: hop_location,
-      map: map,
-      title:"#{t('headquarter')} #{@hospital.name}"
-    });
+    function addMarker(location, name){
+      var hop_location = new google.maps.LatLng(location[1], location[0]);
+      var hop_marker = new google.maps.Marker({
+        position: hop_location,
+        map: map,
+        title: name,
+      });
+    }
+
+    addMarker(#{@hospital.location}, "#{t('headquarter')} #{@hospital.name}");
+
+    #{@hospital.hospital_locations.reject{|loc| loc.location == @hospital.location}.map { |loc|
+          "addMarker(#{loc.location}, '#{loc.title}');"
+        }.join(' ')
+      }
+
   }
 
   $(document).ready(initialize);

@@ -4,7 +4,7 @@
 
     %address.blue
       %small= raw "#{@hospital.address1}<br/>#{@hospital.canton} - #{@hospital.address2}"
-
+    = render :partial => 'shared/map'
     - unless @hospital.hospital_locations.empty?
       %h4= t('locations')
       - @hospital.hospital_locations.each do  |location|
