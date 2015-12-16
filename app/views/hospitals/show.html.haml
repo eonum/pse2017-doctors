@@ -2,8 +2,6 @@
   %div{ :style => 'padding: 30px;'}
     %h2= @hospital.name
 
-    %address.blue
-      %small= raw "#{@hospital.address1}<br/>#{@hospital.canton} - #{@hospital.address2}"
     = render :partial => 'shared/map'
     - unless @hospital.hospital_locations.empty?
       %h4= t('locations')

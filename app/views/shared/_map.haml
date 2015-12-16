@@ -13,19 +13,24 @@
 
     var map = new google.maps.Map(document.getElementById("map_#{@hospital.id}"), settings);
 
-    function addMarker(location, name){
+    function addMarker(location, name, info_text){
       var hop_location = new google.maps.LatLng(location[1], location[0]);
+      var infowindow = new google.maps.InfoWindow({
+        content: info_text
+      });
       var hop_marker = new google.maps.Marker({
         position: hop_location,
         map: map,
         title: name,
       });
+
+      infowindow.open(map, hop_marker);
     }
 
-    addMarker(#{@hospital.location}, "#{t('headquarter')} #{@hospital.name}");
+    #{"addMarker(#{@hospital.location}, \"#{t('headquarter')} #{@hospital.name}\", '#{j render :partial => 'shared/hospital_address'}');" if @hospital.hospital_locations.empty?}
 
-    #{@hospital.hospital_locations.reject{|loc| loc.location == @hospital.location}.map { |loc|
-          "addMarker(#{loc.location}, '#{loc.title}');"
+    #{@hospital.hospital_locations.map { |loc|
+          "addMarker(#{loc.location}, '#{loc.name} - #{loc.title}', '#{j render :partial => 'shared/location_address', :locals => { :location => loc }}');"
         }.join(' ')
       }
 
@@ -35,4 +40,4 @@
   $(document).on('page:load', initialize)
 
 
-%div{ id:  "map_#{@hospital.id}", style: "width:800px; height:500px" }
+%div{ id:  "map_#{@hospital.id}", style: "width:600px; height:500px" }

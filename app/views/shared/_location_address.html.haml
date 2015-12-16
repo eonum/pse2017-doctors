@@ -1,0 +1,14 @@
+%address
+  %strong= location.name + ' - ' + (location.title.blank? ? t('headquarter') : location.title)
+  %br
+  = fa_icon 'map-marker', location.address
+
+  - unless location.email.blank?
+    %br
+    = mail_to(location.email, fa_icon('envelope-o', location.email), target: '_blank')
+  - unless location.phone1.blank?
+    %br
+    = tel_to location.phone1
+  - unless location.phone2.blank?
+    %br
+    = tel_to location.phone2
