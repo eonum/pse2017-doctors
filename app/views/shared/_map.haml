@@ -1,8 +1,8 @@
 :javascript
-  function initialize() {
-    var latlng = new google.maps.LatLng(#{@hospital.location[0]}, #{@hospital.location[1]});
+  var initialize = function () {
+    var latlng = new google.maps.LatLng(#{@hospital.location[1]}, #{@hospital.location[0]});
     var settings = {
-      zoom: 15,
+      zoom: 12,
       center: latlng,
       mapTypeControl: true,
       mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
@@ -14,7 +14,8 @@
     var map = new google.maps.Map(document.getElementById("map_#{@hospital.id}"), settings);
   }
 
-  initialize();
+  $(document).ready(initialize);
+  $(document).on('page:load', initialize)
 
 
-%div{ id:  "map_#{@hospital.id}" }
+%div{ id:  "map_#{@hospital.id}", style: "width:800px; height:500px" }
