@@ -1,28 +1,32 @@
-@app = {}
+@app = {'location' : [46.950745, 7.440618]}
 
 geoloc = () =>
   GMaps.geolocate
     success: (position) =>
-      @app.location = [position.coords.latitude, position.coords.longitude] if @app.location == undefined
-      GMaps.geocode
-        lat: @app.location[0],
-        lng: @app.location[1],
-        callback: (results, status) =>
-          if status is 'OK'
-            @app.address = results[0].formatted_address
-            console.log @app.address
-            console.log @app.location
-            $('#location-btn').html('<i class="fa fa-location-arrow"></i> ' + @app.address)
-            $.cookie 'location', @app.address,
-              expires: 1,
-              path: '/'
-      $('a.locatable').each (i,e) =>
-        target = $(e).attr('href')
-        target = target + '&location=' + @app.location
-        $(e).attr('href', target)
+      @app.location = [position.coords.latitude, position.coords.longitude]
+      geocode()
+
+geocode = () =>
+  GMaps.geocode
+    lat: @app.location[0],
+    lng: @app.location[1],
+    callback: (results, status) =>
+      if status is 'OK'
+        @app.address = results[0].formatted_address
+        console.log @app.address
+        console.log @app.location
+        $('#location-btn').html('<i class="fa fa-location-arrow"></i> ' + @app.address)
+        $.cookie 'location', @app.address,
+          expires: 1,
+          path: '/'
+    $('a.locatable').each (i,e) =>
+      target = $(e).attr('href')
+      target = target + '&location=' + @app.location
+      $(e).attr('href', target)
 
 ready = (geolocate = true) =>
   if geolocate
+    geocode()
     console.log 'Geolocating...'
     geoloc()
 
@@ -58,8 +62,8 @@ ready = (geolocate = true) =>
 
 
   $('#map-modal').on 'hidden.bs.modal', =>
-    console.log 'Geolocate after close..'
-    geoloc()
+    console.log 'Geocode after close..'
+    geocode()
     comparison_url = $('#comparison').find(":selected").val()
     Turbolinks.visit(comparison_url + '?location=' + @app.location, { change: ['main-content'] })
 
