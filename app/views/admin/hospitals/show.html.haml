@@ -1,5 +1,3 @@
-%p#notice= notice
-
 %h2= @hospital.name
 %p
   %b Strasse, Nr.:
@@ -17,6 +15,7 @@
 %p
   %b Karte / Koordinaten
   = @hospital.location
+  = link_to 'Neu lokalisieren', geolocate_admin_hospital_path(@hospital), method: :post
   = render :partial => 'shared/map'
 
 = link_to 'Bearbeiten', edit_admin_hospital_path(@hospital)

@@ -396,7 +396,10 @@ namespace :db do
     pg = ProgressBar.create(total: Hospital.count, title: 'Geocoding Hospitals:')
 
     Hospital.all.each do |h|
-      h.geocode
+      location = Geocoder.coordinates(@hospital.full_address)
+      location = Geocoder.coordinates(@hospital.address2) if location == nil
+      location = Geocoder.coordinates(@hospital.name) if location == nil
+      h.location = [location[1], location[0]]
       h.save
       # add timeout so Google is happy
       sleep(1)

@@ -16,8 +16,11 @@ Rails.application.routes.draw do
       resources :hospitals do
         resources :fields, except: [:create]
         post :create_location, :on => :member
+        post :geolocate, :on => :member
       end
-      resources :hospital_locations
+      resources :hospital_locations do
+        post :geolocate, :on => :member
+      end
       resources :comparisons
     end
 

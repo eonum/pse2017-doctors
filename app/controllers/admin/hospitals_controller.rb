@@ -1,5 +1,5 @@
 class Admin::HospitalsController < Admin::AdminController
-  before_action :set_hospital, only: [:show, :edit, :update, :destroy, :create_location]
+  before_action :set_hospital, only: [:show, :edit, :update, :destroy, :create_location, :geolocate]
 
   # GET /admin/hospitals
   # GET /admin/hospitals.json
@@ -35,6 +35,18 @@ class Admin::HospitalsController < Admin::AdminController
       redirect_to :back, alert: "Fehler beim Erstellen des Hauptsitzes für dieses Spital. #{@location.errors.full_messages.each{|msg| msg}}"
     end
 
+  end
+
+  def geolocate
+    location = Geocoder.coordinates(@hospital.full_address)
+    location = Geocoder.coordinates(@hospital.address2) if location == nil
+    location = Geocoder.coordinates(@hospital.name) if location == nil
+    @hospital.location = [location[1], location[0]]
+    if @hospital.save
+      redirect_to :back, notice: 'Erfolgreich neu lokalisiert.'
+    else
+      redirect_to :back, alert: "Fehler bei der Lokalisation dieses Spitals. #{@location.errors.full_messages.each{|msg| msg}}"
+    end
   end
 
   # GET /admin/hospitals/new
