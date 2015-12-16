@@ -12,6 +12,13 @@
     }
 
     var map = new google.maps.Map(document.getElementById("map_#{@hospital.id}"), settings);
+
+    var hop_location = new google.maps.LatLng(#{@hospital.location[1]}, #{@hospital.location[0]});
+    var hop_marker = new google.maps.Marker({
+      position: hop_location,
+      map: map,
+      title:"#{t('headquarter')} #{@hospital.name}"
+    });
   }
 
   $(document).ready(initialize);
