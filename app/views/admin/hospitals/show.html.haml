@@ -17,6 +17,7 @@
 %p
   %b Karte / Koordinaten
   = @hospital.location
+  = render :partial => 'shared/map'
 
 = link_to 'Bearbeiten', edit_admin_hospital_path(@hospital)
 \|
