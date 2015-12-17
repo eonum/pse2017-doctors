@@ -18,9 +18,7 @@ Rails.application.routes.draw do
         post :create_location, :on => :member
         post :geolocate, :on => :member
       end
-      resources :hospital_locations do
-        post :geolocate, :on => :member
-      end
+      resources :hospital_locations
       resources :comparisons
     end
 
