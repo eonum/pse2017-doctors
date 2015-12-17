@@ -12,7 +12,7 @@ module ComparisonsHelper
     if(variable.variable_type == :number)
       return '' if value.blank?
       value = value.to_i
-      return raw "<div title='#{value}' class='meter'><span style='width: 0%' id='numcase-#{hospital.id}-#{variable.field_name}'></span></div>"
+      return raw "<div class='meter'><span style='width: 0%' id='numcase-#{hospital.id}-#{variable.field_name}'></span></div><div class='numcase_overlay'>#{value}</div>"
     end
     value
   end

@@ -29,3 +29,8 @@
     font-size: larger;
     font-weight: bolder;
 }
+
+.numcase_overlay {
+    text-align: center;
+    color: rgba(104, 1, 0, 0.43);
+}
