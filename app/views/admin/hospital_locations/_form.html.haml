@@ -10,30 +10,36 @@
       %td= f.label :doc_id
       %td= f.number_field :doc_id
     %tr
-      %td= f.label :name
+      %td
+        %strong Name des Spitals
       %td= f.text_field :name
     %tr
-      %td= f.label :title
+      %td
+        %strong Name des Standortes / der Klinik
       %td= f.text_field :title
     %tr
-      %td= f.label :address
+      %td
+        %strong Adresse
       %td= f.text_field :address
     %tr
       %td= f.label :email
       %td= f.text_field :email
     %tr
-      %td= f.label :phone1
+      %td
+        %strong Telefonnr. 1
       %td= f.text_field :phone1
     %tr
-      %td= f.label :phone2
+      %td
+        %strong Telefonr. 2
       %td= f.text_field :phone2
     %tr
-      %td= f.label :canton
+      %td
+        %strong Kanton
       %td= f.text_field :canton
 
     %tr
       %td= f.label 'Spitalverbund'
-      %td= f.select :hospital, options_for_select(Hospital.all.order_by(:name.asc).map { |h| [h.name, h.id]}, @hospital_location.hospital == nil ? nil : @hospital_location.hospital.id)
+      %td= f.select :hospital_id, options_for_select([['Keine Zurodnung', nil]] + Hospital.all.order_by(:name.asc).map { |h| [h.name, h.id]}, @hospital_location.hospital == nil ? nil : @hospital_location.hospital.id,), {}, {size: 10}
 
 
   .actions

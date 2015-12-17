@@ -46,7 +46,7 @@ $( function() {
         Turbolinks.visit(comparison_url + '?location=' + app.location, { change: ['main-content'] });
     }
 
-    $(document).on('change', '#comparison-selection-form button a, select', change_comparison);
+    $(document).on('change', '#comparison-selection-form button a, #comparison-selection-form select', change_comparison);
 });
 
 
