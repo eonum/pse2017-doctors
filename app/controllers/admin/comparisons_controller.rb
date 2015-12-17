@@ -77,6 +77,7 @@ class Admin::ComparisonsController < Admin::AdminController
 
     def set_variables
       @comparison.variables = []
+      return if params['comparison']['variable_ids'].nil?
       params['comparison']['variable_ids'].each do |var_id|
         @comparison.variables << Variable.find(var_id)
       end

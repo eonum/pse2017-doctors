@@ -65,7 +65,7 @@ class Admin::VariablesController < Admin::AdminController
     @variable.destroy
 
     respond_to do |format|
-      format.html { redirect_to variables_url }
+      format.html { redirect_to [:admin, @variable] }
     end
   end
 
