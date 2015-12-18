@@ -403,7 +403,7 @@ namespace :db do
         value = vars[index + 1].strip
         value = safe_import_integer value if header_types[index] == 'number'
         value = safe_import_float value if header_types[index] == 'percentage'
-        hop[field_name] = value
+        hop[field_name] = value unless value.nil?
       end
       hop.save
     end

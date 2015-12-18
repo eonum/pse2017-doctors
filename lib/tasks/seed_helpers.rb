@@ -55,21 +55,21 @@ def escape_numeric(string)
   string.strip.gsub('%', '').gsub("'", '')
 end
 
-def safe_import_integer string, default_value = -1
+def safe_import_integer string, default_value = nil
   return default_value if string.blank?
-  string = string.gsub('\'', '')
+  string = escape_numeric string
   string = string.split('.')[0] if string.include? '.'
   (!string.blank? && string.match(/^-?\d+$/)) ? Integer(string) : -1
 end
 
 def safe_import_float string
-  return 0.0 if string.blank?
-  string = string.gsub('\'', '')
+  return nil if string.blank?
+  string = escape_numeric string
   (!string.blank? && string.match(/^-?[\d|\.]+$/)) ? Float(string) : -1.0
 end
 
 def safe_import_boolean string
-  string == '1'
+  string == '1'  || string == 'X' || string == 'x'
 end
 
 def safe_import_date string
