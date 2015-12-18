@@ -353,7 +353,7 @@ namespace :db do
   end
 
   desc "Load a CSV file with additional information by hosptial"
-  task :load_csv, [:file_name, :data_year => nil] => :environment do  |t, args|
+  task :load_csv, [:file_name, :data_year] => :environment do  |t, args|
     hop_cache = hospital_cache()
     hop_not_found = {}
 
@@ -381,12 +381,13 @@ namespace :db do
         d.name_de = h_vars[2] unless h_vars[2].nil?
         d.name_fr = h_vars[2] unless h_vars[3].nil?
         d.name_it = h_vars[2] unless h_vars[4].nil?
-        d.variable_sets = [file_name]
-        d.is_time_series = true unless args.data_year.nil?
+        d.variable_sets = [args.file_name]
+        d.is_time_series = true unless args.data_year.blank?
       end
     end
     header.map!{|h| h.split('--')[0].strip}
 
+    year = args.data_year.to_i
 
     pg = ProgressBar.create(total: count, title: "Load #{args.file_name}")
     while line = file.gets
@@ -403,7 +404,16 @@ namespace :db do
         value = vars[index + 1].strip
         value = safe_import_integer value if header_types[index] == 'number'
         value = safe_import_float value if header_types[index] == 'percentage'
-        hop[field_name] = value unless value.nil?
+
+        next if value.blank?
+
+        if(year != 0)
+          field = hop[field_name] == nil ? {} : hop[field_name].clone
+          field[year] = value
+          hop[field_name] = field
+        else
+          hop[field_name] = value unless value.nil?
+        end
       end
       hop.save
     end
