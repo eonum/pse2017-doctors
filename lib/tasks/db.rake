@@ -353,7 +353,7 @@ namespace :db do
   end
 
   desc "Load a CSV file with additional information by hosptial"
-  task :load_csv, [:file_name] => :environment do  |t, args|
+  task :load_csv, [:file_name, :data_year => nil] => :environment do  |t, args|
     hop_cache = hospital_cache()
     hop_not_found = {}
 
@@ -362,6 +362,31 @@ namespace :db do
     file = File.new(args.file_name, 'r')
     header = file.gets.split(';')
     header.shift
+    # create variables
+    header_types = []
+    header.each_with_index do |head, index|
+      h_vars = head.split('--')
+      Variable.create do |d|
+        d.rank = index
+        d.import_rank = index
+        d.field_name = h_vars[0].strip
+        if(h_vars[1] == nil)
+          d.variable_type = 'string'
+        else
+          d.variable_type = h_vars[1]
+        end
+
+        header_types << d.variable_type
+
+        d.name_de = h_vars[2] unless h_vars[2].nil?
+        d.name_fr = h_vars[2] unless h_vars[3].nil?
+        d.name_it = h_vars[2] unless h_vars[4].nil?
+        d.variable_sets = [file_name]
+        d.is_time_series = true unless args.data_year.nil?
+      end
+    end
+    header.map!{|h| h.split('--')[0].strip}
+
 
     pg = ProgressBar.create(total: count, title: "Load #{args.file_name}")
     while line = file.gets
@@ -375,7 +400,10 @@ namespace :db do
       end
       
       header.each_with_index do |field_name, index|
-        hop[field_name.strip] = vars[index + 1].strip
+        value = vars[index + 1].strip
+        value = safe_import_integer value if header_types[index] == 'number'
+        value = safe_import_float value if header_types[index] == 'percentage'
+        hop[field_name] = value
       end
       hop.save
     end
