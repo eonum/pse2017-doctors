@@ -6,7 +6,7 @@ module ComparisonsHelper
     return '' if value.nil?
     return "#{'%.1f' % value}%" if variable.variable_type == :percentage
     return !value.blank? && value.upcase == 'X' ? image_tag('accept.png', :style => 'border-style:none') : '' if variable.variable_type == :boolean
-    return link_to(value, value) if variable.variable_type == :link
+    return link_to(value, value, target: '_blank') if variable.variable_type == :link
     return variable.value_by_key value, locale if variable.is_enum
     return raw value if variable.variable_type == :string
     if(variable.variable_type == :number)
