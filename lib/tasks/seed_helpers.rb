@@ -52,7 +52,7 @@ def is_numeric? string
 end
 
 def escape_numeric(string)
-  string.strip.gsub('%', '').gsub("'", '')
+  string.strip.gsub('%', '').gsub("'", '').gsub(',', '')
 end
 
 def safe_import_integer string, default_value = nil
