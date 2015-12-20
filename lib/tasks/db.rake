@@ -363,7 +363,7 @@ namespace :db do
     header = file.gets.split(';')
     header.shift
     # create variables
-    header_types = []
+    header_types = {}
     header.each_with_index do |head, index|
       h_vars = head.split('--')
       Variable.create do |d|
@@ -376,7 +376,7 @@ namespace :db do
           d.variable_type = h_vars[1]
         end
 
-        header_types << d.variable_type
+        header_types[d.field_name] = d.variable_type.to_sym
 
         d.name_de = h_vars[2] unless h_vars[2].nil?
         d.name_fr = h_vars[2] unless h_vars[3].nil?
@@ -402,8 +402,8 @@ namespace :db do
       
       header.each_with_index do |field_name, index|
         value = vars[index + 1].strip
-        value = safe_import_integer value if header_types[index] == 'number'
-        value = safe_import_float value if header_types[index] == 'percentage'
+        value = safe_import_integer value if header_types[field_name] == :number
+        value = safe_import_float value if header_types[field_name] == :percentage
 
         next if value.blank?
 
