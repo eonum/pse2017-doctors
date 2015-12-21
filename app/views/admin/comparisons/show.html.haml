@@ -25,9 +25,12 @@
   Kennzahlen
   %ul
     - @comparison.variables.each do |var|
-      %li= link_to(var.localized_field('name', locale), [:admin, var])
+      %li
+        = link_to(var.localized_field('name', locale), [:admin, var])
+        = " - "
+        = link_to('Bearbeiten', edit_admin_variable_path(var))
 
 
 = link_to 'Bearbeiten', edit_admin_comparison_path(@comparison)
 \|
-= link_to 'Back', admin_comparisons_path
+= link_to 'Übersicht Vergleiche', admin_comparisons_path

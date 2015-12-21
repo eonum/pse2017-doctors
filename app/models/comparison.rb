@@ -47,4 +47,11 @@ class Comparison
     ops = value if op == '=' || op == nil
     return ops
   end
+
+  def variables
+    # Unfortunately this is necessary because mongoid won't return has_many relations in the order stored in the database.
+    variables = []
+    self.variable_ids.each {|id| variables << Variable.find(id)}
+    variables
+  end
 end
