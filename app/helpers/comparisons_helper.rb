@@ -6,7 +6,7 @@ module ComparisonsHelper
     return '' if value.nil?
     return "#{'%.1f' % value}%" if variable.variable_type == :percentage
     return !value.blank? && value.upcase == 'X' ? image_tag('accept.png', :style => 'border-style:none') : '' if variable.variable_type == :boolean
-    return link_to(value, value, target: '_blank') if variable.variable_type == :link
+    return link_to(fa_icon('external-link-square'), value, target: '_blank', title: value) if variable.variable_type == :link
     return variable.value_by_key value, locale if variable.is_enum
     return raw value if variable.variable_type == :string
     if(variable.variable_type == :number)
@@ -24,7 +24,7 @@ module ComparisonsHelper
     value = value[@comparison.base_year] if variable.is_time_series
     limit = variable.highlight_threshold
     classes << 'orange-highlight' if(limit > 0 && limit < 100 && limit <= value)
-    classes << 'text-center' if variable.variable_type == :boolean
+    classes << 'text-center' if [:boolean, :link].include? variable.variable_type
     classes << 'time-series' if variable.is_time_series && hospital[variable.field_name].length > 1
 
     return classes.join(' ')
