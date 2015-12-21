@@ -64,6 +64,8 @@ end
 
 def safe_import_float string
   return nil if string.blank?
+  # TODO remove this line when we do no longer use
+  string = string.gsub(',', '.')
   string = escape_numeric string
   (!string.blank? && string.match(/^-?[\d|\.]+$/)) ? Float(string) : -1.0
 end

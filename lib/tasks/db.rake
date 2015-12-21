@@ -366,18 +366,18 @@ namespace :db do
     header_types = {}
     header.each_with_index do |head, index|
       h_vars = head.split('--')
+      field_name = h_vars[0].strip
+      variable_type = 'string'
+      variable_type = h_vars[1] unless h_vars[1].nil?
+      header_types[field_name] = variable_type.to_sym
+
+      # skip variable creation by uncommenting this line
+      # next
       Variable.create do |d|
         d.rank = index
         d.import_rank = index
-        d.field_name = h_vars[0].strip
-        if(h_vars[1] == nil)
-          d.variable_type = 'string'
-        else
-          d.variable_type = h_vars[1]
-        end
-
-        header_types[d.field_name] = d.variable_type.to_sym
-
+        d.field_name = field_name
+        d.variable_type = variable_type
         d.name_de = h_vars[2] unless h_vars[2].nil?
         d.name_fr = h_vars[2] unless h_vars[3].nil?
         d.name_it = h_vars[2] unless h_vars[4].nil?
