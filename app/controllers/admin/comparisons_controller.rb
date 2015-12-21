@@ -76,10 +76,8 @@ class Admin::ComparisonsController < Admin::AdminController
     end
 
     def set_variables
-      @comparison.variables = []
       return if params['comparison']['variable_ids'].nil?
-      params['comparison']['variable_ids'].each do |var_id|
-        @comparison.variables << Variable.find(var_id)
-      end
+      @comparison.variable_ids = params['comparison']['variable_ids'].map {|var_id|  BSON::ObjectId.from_string(var_id)}
+      params['comparison'].delete('variable_ids')
     end
 end

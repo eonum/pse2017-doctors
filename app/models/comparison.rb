@@ -49,7 +49,9 @@ class Comparison
   end
 
   def variables
-    # Unfortunately this is necessary because mongoid won't return has_many relations in the order stored in the database.
+    # Unfortunately this is necessary because mongoid won't return
+    # has_many relations in the order stored in the database. Maybe
+    # someone has a better solution for this problem?
     variables = []
     self.variable_ids.each {|id| variables << Variable.find(id)}
     variables

@@ -15,6 +15,7 @@
  *= require bootstrap_and_overrides
  *= require nprogress_and_overrides
  *= require tagmanager
+ *= require jquery-ui/sortable
  */
 
 
