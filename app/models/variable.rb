@@ -10,32 +10,32 @@ class Variable
   # Corresponds to the field name
   field :field_name
   # rank is used to order variables
-  field :rank, :type => Integer, :default => 0
+  field :rank, type: Integer, default: 0
   #  import_rank is used as a column identifier in imports. 1 is the first column
-  field :import_rank, :type => Integer, :default => 0
+  field :import_rank, type: Integer, default: 0
   # all variable sets by name containing this variable
-  field :variable_sets, :type => Array, :default => []
+  field :variable_sets, type: Array, default: []
 
-  field :name_de, :type => String, :default => 'Name Deutsch'
-  field :name_fr, :type => String, :default => 'Nom français'
-  field :name_it, :type => String, :default => 'Nome italiano'
-  field :description_de, :type => String, :default => ''
-  field :description_fr, :type => String, :default => ''
-  field :description_it, :type => String, :default => ''
+  field :name_de, type: String, default: 'Name Deutsch'
+  field :name_fr, type: String, default: 'Nom français'
+  field :name_it, type: String, default: 'Nome italiano'
+  field :description_de, type: String, default: ''
+  field :description_fr, type: String, default: ''
+  field :description_it, type: String, default: ''
 
-  field :variable_type, :type => Symbol, :default => :string # can be one of :percentage, :string, :boolean, :number, :link, :relevance,
+  field :variable_type, type: Symbol, default: :string # can be one of :percentage, :string, :boolean, :number, :link, :relevance,
 
   # Is this a time series variable
-  field :is_time_series, :type => Boolean, :default => false
+  field :is_time_series, type: Boolean, default: false
 
   # possible values if enum string, null, empty => free text or numeric
-  field :values, :type => Array, :default => []
-  field :values_de, :type => Array, :default => []
-  field :values_fr, :type => Array, :default => []
-  field :values_it, :type => Array, :default => []
+  field :values, type: Array, default: []
+  field :values_de, type: Array, default: []
+  field :values_fr, type: Array, default: []
+  field :values_it, type: Array, default: []
 
   # highlight level for percentages: values above this threshold will be highlighted
-  field :highlight_threshold, :type => Float, :default => 100
+  field :highlight_threshold, type: Float, default: 100
 
   def is_enum
     return values != nil && !values.empty?

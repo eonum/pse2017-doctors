@@ -6,30 +6,30 @@ class Comparison
 
   field :name, localize: true
 
-  field :name_de, :type => String, :default => 'Name Deutsch'
-  field :name_fr, :type => String, :default => 'Nom français'
-  field :name_it, :type => String, :default => 'Nome italiano'
-  field :description_de, :type => String, :default => ''
-  field :description_fr, :type => String, :default => ''
-  field :description_it, :type => String, :default => ''
+  field :name_de, type: String, default: 'Name Deutsch'
+  field :name_fr, type: String, default: 'Nom français'
+  field :name_it, type: String, default: 'Nome italiano'
+  field :description_de, type: String, default: ''
+  field :description_fr, type: String, default: ''
+  field :description_it, type: String, default: ''
 
-  field :base_year, :type => String, :default => '2013'
+  field :base_year, type: String, default: '2013'
 
   # only hospitals that meet the following limitations are considered for this comparison
 
   # field name of the limit field
-  field :limit_field, :type => String, :default => nil
+  field :limit_field, type: String, default: nil
   # limit operator, one of '>', '<', 'exists', '='
-  field :limit_operator, :type => String, :default => '>'
+  field :limit_operator, type: String, default: '>'
   # limit value if '>', '<' or '='
-  field :limit_value, :type => String, :default => ''
+  field :limit_value, type: String, default: ''
 
   # sort comparisons according rank
-  field :rank, :type => Integer
+  field :rank, type: Integer
 
   # get all hostpials that meet the limitiations.
   def hospitals
-    var = Variable.where(:field_name => limit_field).first
+    var = Variable.where(field_name: limit_field).first
     return Hospital.all if var.nil?
     value = limit_value
     value = value.to_f if var.variable_type == :number || var.variable_type == :percentage
