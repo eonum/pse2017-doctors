@@ -6,10 +6,14 @@
         .panel-heading
           %h3 About.
         .panel-body
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
-          Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
-          dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
-          Aliquam in felis sit amet augue.
+          Qualitätsmedizin Schweiz ist eine Initiative für relevante und aussagekräftige Informationen
+          zur Qualitätsversorgung in Arztpraxen, Ärztenetzen, Spitälern und Kliniken.
+          Sie organisiert eine jährliche Veranstaltungsreihe.
+          %br
+          Die Initiative wird unterstützt von der
+          = link_to 'Schweizerischen Gesellschaft für Medizincontrolling', 'http://www.medizincontroller.ch', target: '_blank'
+          = '.'
+          = button_to t('back'), :back, class: 'btn top-buffer'
   .row
     .col-lg-12
       %br/
