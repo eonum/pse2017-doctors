@@ -1,3 +1,16 @@
 fr:
   name: "Nome"
   description: "Description"
+  app-title: "Hôpitaux en comparaison "
+  # noch nicht übersetzt
+  speciality: "Fachbereich"
+  institution: "Spital"
+  institution-description: "Dies kann auch mehrere Standorte beinhalten. Sortierung nach Distanz."
+  locations: "Standorte"
+  headquarter: "Hauptsitz"
+  data_year: "Datenjahr"
+  show_time_series: "Zeitlicher Verlauf anzeigen"
+  year: "Jahr"
+  more-information: "Fordern Sie mehr Informationen an unter: "
+  location-selection: "Ortsauswahl"
+  close-location-search: "Übernehmen"

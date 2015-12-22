@@ -1,5 +1,6 @@
 de:
   name: "Name"
+  app-title: "Qualitätsmedizin Spitalvergleich"
   description: "Beschrieb"
   speciality: "Fachbereich"
   institution: "Spital"
@@ -12,3 +13,4 @@ de:
   more-information: "Fordern Sie mehr Informationen an unter: "
   location-selection: "Ortsauswahl"
   close-location-search: "Übernehmen"
+  back: "Zurück"

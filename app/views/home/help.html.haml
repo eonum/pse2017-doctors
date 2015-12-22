@@ -8,7 +8,18 @@
         .panel-heading
           %h3 Hilfe.
         .panel-body
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
-          Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
-          dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
-          Aliquam in felis sit amet augue.
+          Die Kennzahlen und Daten zu den Institutionen entstammen publizierten Angaben und aktuellsten Datenquellen. Allfällige Fehler bitten wir schriftlich zu melden an
+          = mail_to 'spital@qualitaetsmedizin.ch'
+          %ul.top-buffer
+            %li Eine erste Sortierung erfolgt nach geographischer Nähe
+            %li
+              Grüne Balken geben Hinweise auf die Relevanz pro Region und Anzahl behandelter Fälle:
+              %div.meter{ style: 'max-width: 20%'}
+                %span{ style: 'width: 40%' }
+            %li Ein Klick auf die Fallzahlen zeigt den zeitlichen Trend über die letzten Datenjahre
+            %li Orange hinterlegte Kennzahlen geben Hinweise auf Auffälligkeiten (z.B. unterdurchschnittliche Qualitätskennzahlen)
+            %li
+              Mit
+              = image_tag('accept.png', :style => 'border-style:none')
+              werden zusätzliche, positive Merkmale der Institution hervorgehoben
+          = button_to t('back'), :back, class: 'btn top-buffer'
