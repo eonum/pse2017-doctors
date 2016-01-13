@@ -4,7 +4,6 @@ class HospitalsController < ApplicationController
   # GET /admin/hospitals/1
   # GET /admin/hospitals/1.json
   def show
-    render layout: false
   end
 
   def field
