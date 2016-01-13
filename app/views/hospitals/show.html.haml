@@ -2,7 +2,7 @@
   %h2= @hospital.name
 
 .container
-  %ul.nav.nav-tabs{role: 'tablist'}
+  %ul.nav.nav-tabs.col-lg-8{role: 'tablist'}
     %li.active
       %a{href: '#home', role: 'tab', 'data-toggle' => 'tab'}
         = t('numbers')
@@ -12,10 +12,10 @@
     %li
       %a{href: '#doctors', role: 'tab', 'data-toggle' => 'tab'}
         = t('doctors')
-  .tab-content
+  .tab-content.col-lg-8
     #home.tab-pane.fade.active.in
       = 'kjnh'
-    #locations.tab-pane.fade
+    #locations.tab-pane.fade.top-buffer
       = render :partial => 'shared/map'
       - unless @hospital.hospital_locations.empty?
         %h4= t('locations')
