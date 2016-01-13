@@ -3,9 +3,11 @@
   - if @comparison.includes(@hospital)
     .panel.panel-default
       .panel-heading
-        .h4= @comparison.localized_field 'name', locale
+        .h4
+          = @comparison.localized_field 'name', locale
+          .small= link_to t('other-nearby-from-specialty'), comparison_path(@comparison, location: "#{@hospital.location[1]},#{@hospital.location[0]}")
       .panel-body
-        %table.table.table-striped
+        %table
           %thead#comparison-head
             %tr
               - comparison.variables.each do |var|
