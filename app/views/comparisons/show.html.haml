@@ -22,6 +22,7 @@
           .hopmodal.pseudoLink{'data-modalhref' => hospital_path(h)}= h.name
           %h6.blue
             %small= h.address2
+            %small.distance= ("%.2f" % h.distance_from(@location)) + ' km'
         - @variables.each do |var|
           %td{ :class => hospital_variable_class(var, h), 'data-fieldnam' => var.field_name, 'data-varid' => var.id }= format_hospital_variable(var, h)
 
