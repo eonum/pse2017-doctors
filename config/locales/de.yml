@@ -3,6 +3,7 @@ de:
   app-title: "Qualitätsmedizin Spitalvergleich"
   description: "Beschrieb"
   speciality: "Fachbereich"
+  specialities: "Fachbereiche"
   institution: "Spital"
   institution-description: "Dies kann auch mehrere Standorte beinhalten. Sortierung nach Distanz."
   locations: "Standorte"
@@ -14,3 +15,4 @@ de:
   location-selection: "Ortsauswahl"
   close-location-search: "Übernehmen"
   back: "Zurück"
+  doctors: "Ärzte"

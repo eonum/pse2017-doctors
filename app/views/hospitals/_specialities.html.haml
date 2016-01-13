@@ -1,0 +1,18 @@
+- @comparisons.each do |comparison|
+  - @comparison = comparison
+  .panel.panel-default
+    .panel-heading
+      .h4= @comparison.localized_field 'name', locale
+    .panel-body
+      %table.table.table-striped
+        %thead#comparison-head
+          %tr
+            - comparison.variables.each do |var|
+              %th.qim-header-cell
+                = var.localized_field 'name', locale
+                %h5
+                  %small= var.localized_field 'description', locale
+        %tbody
+          %tr{ 'data-hopid' => @hospital.id }
+            - comparison.variables.each do |var|
+              %td{ :class => hospital_variable_class(var, @hospital), 'data-fieldnam' => var.field_name, 'data-varid' => var.id }= format_hospital_variable(var, @hospital)

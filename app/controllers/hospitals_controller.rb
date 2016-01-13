@@ -4,6 +4,7 @@ class HospitalsController < ApplicationController
   # GET /admin/hospitals/1
   # GET /admin/hospitals/1.json
   def show
+    @comparisons = Comparison.order_by(:rank => 'asc')
   end
 
   def field

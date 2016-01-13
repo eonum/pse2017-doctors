@@ -63,7 +63,7 @@
         #main-content.col-lg-8
           = bootstrap_flash
           = yield
-          %div.text-center
+          %div.text-center.top-buffer
             = t('more-information')
             = mail_to 'spital@qualitaetsmedizin.ch', 'spital@qualitaetsmedizin.ch'
     #map-modal.modal.fade.bs-example-modal-lg{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel", :role => "dialog", :tabindex => "-1"}
