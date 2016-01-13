@@ -1,3 +1,6 @@
+:javascript
+  $.getJSON("#{field_hospital_path(@hospital, field_name: 'AustStatT')}",  visualize_time_series)
+
 %div{ :style => 'padding: 30px;'}
   %h2= @hospital.name
 

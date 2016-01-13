@@ -8,7 +8,8 @@ class HospitalsController < ApplicationController
   end
 
   def field
-    @variable = Variable.find(params['varid'])
+    @variable = Variable.find_by(field_name: params[:field_name]) if params['field_name']
+    @variable = Variable.find(params['varid']) if params['varid']
     render :json => { 'response' => @hospital[@variable['field_name']], 'hop_name' => @hospital.name, 'var_name' => @variable.localized_field('name', locale)}
   end
 
