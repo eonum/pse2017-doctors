@@ -1,8 +1,8 @@
 %div{ :style => 'padding: 30px;'}
   %h2= @hospital.name
 
-.container
-  %ul.nav.nav-tabs.col-lg-8{role: 'tablist'}
+%div
+  %ul.nav.nav-tabs{role: 'tablist'}
     %li.active
       %a{href: '#home', role: 'tab', 'data-toggle' => 'tab'}
         = t('specialities')
@@ -12,7 +12,7 @@
     %li
       %a{href: '#doctors', role: 'tab', 'data-toggle' => 'tab'}
         = t('doctors')
-  .tab-content.col-lg-8.top-buffer
+  .tab-content.top-buffer
     #home.tab-pane.fade.active.in
       = render :partial => 'specialities'
     #locations.tab-pane.fade.top-buffer
