@@ -39,6 +39,21 @@ class Comparison
     return Hospital.where(field => mongo_operator(limit_operator, value))
   end
 
+  def includes hospital
+    var = Variable.where(:field_name => limit_field).first
+    return true if var.nil?
+    value = limit_value
+    value = value.to_f if var.variable_type == :number || var.variable_type == :percentage
+    field = limit_field
+    h_value = hospital[field]
+    return false if h_value.nil?
+    h_value  =  h_value[base_year] if var.is_time_series
+    return h_value > value if limit_operator == '>'
+    return h_value < value if limit_operator == '<'
+    return !h_value.nil? && h_value != value if limit_operator == '<>'
+    return h_value == value if limit_operator == '=' || limit_operator == nil
+  end
+
   def mongo_operator op, value
     ops = {'$gt' => value} if op == '>'
     ops = {'$lt' => value} if op == '<'
