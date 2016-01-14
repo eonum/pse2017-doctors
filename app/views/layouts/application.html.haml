@@ -53,6 +53,7 @@
                  :type => 'button', 'data-content' => t('location-selection')}
                 %i.fa.fa-location-arrow.comparison-selection
                 = current_address
+              %span#regeolocate.pseudoLink{title: t('regeolocate'), style: 'font-size: 18px;'}= fa_icon('crosshairs')
               .cantons
                 - cantons.each do |k,v|
                   = link_to k, url_for(params.except(:location).merge(canton: k)), :class => 'canton', :id => "canton-#{k}"

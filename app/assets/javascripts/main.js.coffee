@@ -74,10 +74,16 @@ ready = (geolocate = true) =>
 
 
   $('#map-modal').on 'hidden.bs.modal', =>
-    console.log 'Geocode after close..'
-    geocode()
     comparison_url = $('#comparison').find(":selected").val()
     Turbolinks.visit(comparison_url + '?location=' + @app.location, { change: ['main-content'] })
+
+  $('#regeolocate').click =>
+    console.log 'Regeolocate'
+    GMaps.geolocate
+      success: (position) =>
+        @app.location = [position.coords.latitude, position.coords.longitude]
+        comparison_url = $('#comparison').find(":selected").val()
+        Turbolinks.visit(comparison_url + '?location=' + @app.location, { change: ['main-content'] })
 
 # Do not geolocate on turbolink refresh
 $(document).on 'page:load', =>

@@ -8,13 +8,13 @@
   %ul.nav.nav-tabs{role: 'tablist'}
     %li.active
       %a{href: '#home', role: 'tab', 'data-toggle' => 'tab'}
-        = t('specialities')
+        = fa_icon('medkit', t('specialities'))
     %li
       %a{href: '#locations', role: 'tab', 'data-toggle' => 'tab'}
-        = t('locations')
+        = fa_icon('hospital-o', t('locations'))
     %li
       %a{href: '#doctors', role: 'tab', 'data-toggle' => 'tab'}
-        = t('doctors')
+        = fa_icon('user-md', t('doctors'))
   .tab-content.top-buffer
     #home.tab-pane.fade.active.in
       = render :partial => 'specialities'
