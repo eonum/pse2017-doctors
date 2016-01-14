@@ -11,11 +11,11 @@
           %thead#comparison-head
             %tr
               - comparison.variables.each do |var|
-                %th.qim-header-cell
+                %th.hopcell.qim-header-cell
                   = var.localized_field 'name', locale
                   %h5
                     %small= var.localized_field 'description', locale
           %tbody
             %tr{ 'data-hopid' => @hospital.id }
               - comparison.variables.each do |var|
-                %td{ :class => hospital_variable_class(var, @hospital), 'data-fieldnam' => var.field_name, 'data-varid' => var.id }= format_hospital_variable(var, @hospital)
+                %td.hopcell{ :class => hospital_variable_class(var, @hospital), 'data-fieldnam' => var.field_name, 'data-varid' => var.id }= format_hospital_variable(var, @hospital)
