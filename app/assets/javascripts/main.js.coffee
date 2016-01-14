@@ -1,12 +1,16 @@
 @app = {'location' : [46.950745, 7.440618]}
 
+# geolocation: get current location
 geoloc = () =>
+  console.log 'Geolocating...'
   GMaps.geolocate
     success: (position) =>
       @app.location = [position.coords.latitude, position.coords.longitude]
       geocode()
 
+# reverse gecoding: get address from location
 geocode = () =>
+  console.log 'Reverse geocoding ..'
   GMaps.geocode
     lat: @app.location[0],
     lng: @app.location[1],
@@ -24,11 +28,19 @@ geocode = () =>
       target = target + '&location=' + @app.location
       $(e).attr('href', target)
 
+# show map and get location
 ready = (geolocate = true) =>
-  if geolocate
-    geocode()
-    console.log 'Geolocating...'
+  location = getUrlParameter('location')
+  if !location? && geolocate
     geoloc()
+  else
+    if location?
+      location = location.split(',')
+      @app.location[0] = parseFloat(location[0])
+      @app.location[1] = parseFloat(location[1])
+      console.log 'Set location from URL param: '
+      console.log @app.location
+    geocode()
 
   $('#map-modal').on 'show.bs.modal', =>
     console.log 'Showing map...'

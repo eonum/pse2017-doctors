@@ -22,7 +22,7 @@
           = link_to h.name, hospital_path(h), style: 'color: #3b72b8'
           %h6.blue
             %small= h.address2
-            %small.distance= ("%.2f" % h.distance_from(@location)) + ' km'
+            %small.distance= raw ("%.2f" % h.distance_from(@location)) + '&nbsp;km'
         - @variables.each do |var|
           %td{ :class => hospital_variable_class(var, h), 'data-fieldnam' => var.field_name, 'data-varid' => var.id }= format_hospital_variable(var, h)
 

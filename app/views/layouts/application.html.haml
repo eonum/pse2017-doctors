@@ -50,7 +50,7 @@
           #search.well.well-sm
             %form#comparison-selection-form
               %button#location-btn.btn.btn-default.navbar-btn.distance.has-popover{"data-target" => "#map-modal", "data-toggle" => "modal",
-                 :type => 'button', :title => 'Change Location', 'data-content' => 'Change Your location here'}
+                 :type => 'button', 'data-content' => t('location-selection')}
                 %i.fa.fa-location-arrow.comparison-selection
                 = current_address
               .cantons
