@@ -43,3 +43,7 @@
 .hopcell {
     padding: 5px;
 }
+
+a, a:visited {
+    color: rgb(59, 114, 184);
+}
