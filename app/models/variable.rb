@@ -23,7 +23,7 @@ class Variable
   field :description_fr, :type => String, :default => ''
   field :description_it, :type => String, :default => ''
 
-  field :variable_type, :type => Symbol, :default => :string # can be one of :percentage, :string, :boolean, :number, :link,
+  field :variable_type, :type => Symbol, :default => :string # can be one of :percentage, :string, :boolean, :number, :link, :relevance,
 
   # Is this a time series variable
   field :is_time_series, :type => Boolean, :default => false

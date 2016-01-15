@@ -43,7 +43,7 @@
     %p
       = f.label 'Variablentyp'
       %br
-      = f.select :variable_type, options_for_select([['Freitext oder Aufzählung', :string], ['Prozentzahl', :percentage], ['Fallzahl', :number], ['Flag', :boolean], ['Link', :link]], @variable['variable_type'])
+      = f.select :variable_type, options_for_select([['Freitext oder Aufzählung', :string], ['Prozentzahl', :percentage], ['Fallzahl', :number], ['Flag', :boolean], ['Link', :link], ['Relevanz', :relevance]], @variable['variable_type'])
     %p
       = f.label 'Mögliche Werte falls Aufzählung: Kein Eintrag => Freitext'
       %br

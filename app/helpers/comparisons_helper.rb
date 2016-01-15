@@ -20,6 +20,11 @@ module ComparisonsHelper
       value = value.to_i
       return raw "<div class='meter'><span style='width: 0%' id='numcase-#{hospital.id}-#{variable.field_name}'></span></div><div class='numcase_overlay'>#{value}</div>"
     end
+    if(variable.variable_type == :relevance)
+      return '' if value.blank?
+      value = value.to_f
+      return raw "<div class='meter relevance'><span style='width: 0%' id='numcase-#{hospital.id}-#{variable.field_name}'></span></div><div class='numcase_overlay'>#{value}%</div>"
+    end
     value
   end
 
@@ -31,7 +36,7 @@ module ComparisonsHelper
     limit = variable.highlight_threshold
     classes << 'orange-highlight' if(limit > 0 && limit < 100 && limit <= value)
     classes << 'text-center' if [:boolean, :link].include? variable.variable_type
-    classes << 'time-series' if variable.is_time_series && hospital[variable.field_name].length > 1 && [:number, :percentage].include?(variable.variable_type)
+    classes << 'time-series' if variable.is_time_series && hospital[variable.field_name].length > 1 && [:number, :percentage, :relevance].include?(variable.variable_type)
 
     return classes.join(' ')
   end
@@ -39,23 +44,33 @@ module ComparisonsHelper
   def numcase_data hospitals, variables
     data = {}
     variables.each do |var|
-      next unless var.variable_type == :number
-      max = 0
-      hospitals.each do |h|
-        num = h[var.field_name]
-        next if num.blank?
-        num = num[@comparison.base_year] if var.is_time_series
-        next if num.blank?
-        num = num.to_f
-        max = [num, max].max unless num.nil? || num.nan?
+      if var.variable_type == :number
+        max = 0
+        hospitals.each do |h|
+          num = h[var.field_name]
+          next if num.blank?
+          num = num[@comparison.base_year] if var.is_time_series
+          next if num.blank?
+          num = num.to_f
+          max = [num, max].max unless num.nil? || num.nan?
+        end
+        hospitals.each do |h|
+          num = h[var.field_name]
+          next if num.blank?
+          num = num[@comparison.base_year] if var.is_time_series
+          next if num.blank?
+          num = num.to_f
+          data["#numcase-#{h.id}-#{var.field_name}"] =  (num / max) * 100.0
+        end
       end
-      hospitals.each do |h|
-        num = h[var.field_name]
-        next if num.blank?
-        num = num[@comparison.base_year] if var.is_time_series
-        next if num.blank?
-        num = num.to_f
-        data["#numcase-#{h.id}-#{var.field_name}"] =  (num / max) * 100.0
+      if var.variable_type == :relevance
+        hospitals.each do |h|
+          num = h[var.field_name]
+          next if num.blank?
+          num = num[@comparison.base_year] if var.is_time_series
+          next if num.blank?
+          data["#numcase-#{h.id}-#{var.field_name}"] =  num.to_f
+        end
       end
     end
     data
