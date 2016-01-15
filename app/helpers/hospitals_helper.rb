@@ -18,7 +18,15 @@ module HospitalsHelper
     if(variable.variable_type == :number)
       return '' if value.blank?
       value = value.to_i
-      return value
+      if variable.is_time_series &&  @hospital[variable.field_name].length > 1
+        ret = '<script>'
+        ret += "$.getJSON('#{field_hospital_path(@hospital, varid: variable.id)}',  visualize_time_series_small)"
+        ret += '</script>'
+        ret += "<div id='time_series_#{variable.field_name}'></div>"
+        return raw ret
+      else
+        return value
+      end
     end
     if(variable.variable_type == :relevance)
       return '' if value.blank?

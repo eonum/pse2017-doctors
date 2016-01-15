@@ -7,3 +7,23 @@ var showmap = function() {
 
 $(document).ready(showmap);
 $(document).on('page:load', showmap)
+
+
+var visualize_time_series_small = function visualize_time_series_small(time_series) {
+    var data_array = [];
+    data_array.push([I18n.t('year'), time_series.var_name]);
+    Object.keys(time_series.response).forEach(function (year) {
+        var value = parseFloat(time_series.response[year]);
+        data_array.push([year, value]);
+    })
+
+    var data = google.visualization.arrayToDataTable(data_array);
+
+    var options = {
+        hAxis: {title: I18n.t('year'),  titleTextStyle: {color: '#333'}},
+        legend: {position: 'top'}
+    };
+
+    var chart = new google.visualization.AreaChart(document.getElementById('time_series_' + time_series.field_name));
+    chart.draw(data, options);
+}
