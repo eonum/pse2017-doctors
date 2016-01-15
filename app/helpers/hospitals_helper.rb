@@ -62,7 +62,7 @@ module HospitalsHelper
     value = value[comparison.base_year] if variable.is_time_series
     limit = variable.highlight_threshold
     classes << 'orange-highlight' if(limit > 0 && limit < 100 && limit <= value)
-    classes << 'time-series' if variable.is_time_series && @hospital[variable.field_name].length > 1 && [:number, :percentage, :relevance].include?(variable.variable_type)
+    classes << 'time-series' if variable.is_time_series && @hospital[variable.field_name].length > 1 && [:percentage, :relevance].include?(variable.variable_type)
 
     return classes.join(' ')
   end
