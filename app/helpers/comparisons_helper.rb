@@ -23,7 +23,7 @@ module ComparisonsHelper
     if(variable.variable_type == :relevance)
       return '' if value.blank?
       value = value.to_f
-      return raw "<div class='meter relevance'><span style='width: 0%' id='numcase-#{hospital.id}-#{variable.field_name}'></span></div><div class='numcase_overlay'>#{value}%</div>"
+      return raw "<div class='meter relevance'><span style='width: 0%' id='numcase-#{hospital.id}-#{variable.field_name}'></span></div><div class='numcase_overlay'>#{'%.1f' % value}%</div>"
     end
     value
   end
