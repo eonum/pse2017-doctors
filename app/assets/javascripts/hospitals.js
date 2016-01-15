@@ -20,8 +20,9 @@ var visualize_time_series_small = function visualize_time_series_small(time_seri
     var data = google.visualization.arrayToDataTable(data_array);
 
     var options = {
-        hAxis: {title: I18n.t('year'),  titleTextStyle: {color: '#333'}},
-        legend: {position: 'top'}
+        height: 100,
+        width: 180,
+        legend: {position: 'none'}
     };
 
     var chart = new google.visualization.AreaChart(document.getElementById('time_series_' + time_series.field_name));
