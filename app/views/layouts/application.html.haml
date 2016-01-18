@@ -56,7 +56,7 @@
               %span#regeolocate.pseudoLink{title: t('regeolocate'), style: 'font-size: 18px;'}= fa_icon('crosshairs')
               .cantons
                 - cantons.each do |k,v|
-                  = link_to k, url_for(params.except(:location).merge(canton: k)), :class => 'canton', :id => "canton-#{k}"
+                  = link_to k, url_for(params.merge(location: "#{v[:location][0]},#{v[:location][1]}").merge(canton: k)), :class => 'canton', :id => "canton-#{k}"
               %div.dropdown
                 .top-buffer= label_tag t('speciality')
                 = select_tag('comparison', options_for_select(Comparison.order_by(:rank => 'asc').map { |c| [c.localized_field('name', locale), comparison_path(c)]}, @comparison.nil? ? nil : comparison_path(@comparison)), class: 'form-control')
