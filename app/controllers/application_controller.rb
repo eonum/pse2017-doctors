@@ -55,7 +55,7 @@ class ApplicationController < ActionController::Base
           GR: { city: 'Chur',         location: [46.85078, 9.53199] },
           JU: { city: 'Delsberg',     location: [47.36612, 7.34248] },
           LU: { city: 'Luzern',       location: [47.05017, 8.30931] },
-          NE: { city: 'Neuenburg',    location: [48.84837, 8.58800] },
+          NE: { city: 'Neuenburg',    location: [46.99258, 6.91945] },
           NW: { city: 'Stans',        location: [46.95719, 8.36597] },
           OW: { city: 'Sarnen',       location: [46.89593, 8.24568] },
           SH: { city: 'Schaffhausen', location: [47.69589, 8.63805] },
