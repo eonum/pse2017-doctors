@@ -49,11 +49,12 @@
         .col-lg-4
           #search.well.well-sm
             %form#comparison-selection-form
-              %button#location-btn.btn.btn-default.navbar-btn.distance.has-popover{"data-target" => "#map-modal", "data-toggle" => "modal",
+              %span#regeolocate.pseudoLink{title: t('regeolocate'), style: 'margin: 5px;'}= image_tag '/location-small.png'
+              %button#location-btn.btn.btn-default.navbar-btn.distance.has-popover.locbutton{"data-target" => "#map-modal", "data-toggle" => "modal",
                  :type => 'button', 'data-content' => t('location-selection')}
                 %i.fa.fa-location-arrow.comparison-selection
                 = current_address
-              %span#regeolocate.pseudoLink{title: t('regeolocate'), style: 'font-size: 18px;'}= fa_icon('crosshairs')
+
               .cantons
                 - cantons.each do |k,v|
                   = link_to k, url_for(params.merge(location: "#{v[:location][0]},#{v[:location][1]}").merge(canton: k)), :class => 'canton', :id => "canton-#{k}"

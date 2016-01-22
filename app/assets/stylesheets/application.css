@@ -36,6 +36,10 @@
     color: rgba(104, 1, 0, 0.43);
 }
 
+.locbutton {
+    font-size: 1.0em;
+}
+
 .distance {
     color: #ff6a07;
 }

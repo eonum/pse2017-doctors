@@ -29,7 +29,7 @@
         %td= hospital_location.title
         %td
           -if hospital_location.hospital == nil
-            %span{:style => "color: red;"} Undefined
+            %span{:style => "color: black;"} Undefined
           -else
             =link_to(hospital_location.hospital.name, [:admin, hospital_location.hospital])
         %td= hospital_location.address
