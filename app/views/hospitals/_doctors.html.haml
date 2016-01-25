@@ -1,10 +1,11 @@
 %ul.list-group
-
+  %li.list-group-item.list-group-item-info
+    %h4 Folgende Ärzte befinden sich in der näheren Umgebung dieses Standortes:
   - @doctors.each do |d|
     %li.list-group-item
       %p= d.title
       %p= d.name
       %p= doctor_address(d)
 
-      %p= d.phone2
-      %p= d.email
+      %p= tel_to d.phone2 unless d.phone2.blank?
+      %p= d.email unless d.email.blank?

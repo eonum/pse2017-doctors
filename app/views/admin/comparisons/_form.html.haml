@@ -44,6 +44,9 @@
       %td= f.label 'Sortierrang'
       %td= f.number_field :rank
     %tr
+      %td= f.label 'Arzt Fachgebiete'
+      %td= f.text_field :doctor_fields, value: @comparison.doctor_fields.join(',')
+    %tr
       %td Bedingung
       %td= f.text_field :limit_field
       %td= f.select :limit_operator, options_for_select([['>', '>'], ['<', '<'], ['=', '='], ['≠', '<>'], ['existiert', 'exists']], @comparison.limit_operator)

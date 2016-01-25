@@ -27,6 +27,9 @@ class Comparison
   # sort comparisons according rank
   field :rank, type: Integer
 
+  # The types of doctors relevant to this comparison
+  field :doctor_fields, type: Array, default: []
+
   # get all hostpials that meet the limitiations.
   def hospitals
     var = Variable.where(field_name: limit_field).first

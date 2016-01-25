@@ -6,7 +6,20 @@ class HospitalsController < ApplicationController
   # GET /admin/hospitals/1.json
   def show
     @comparisons = Comparison.order_by(:rank => 'asc')
-    @doctors = Doctor.geo_near(@hospital.location).max_distance(10).to_a[0..9]
+
+    @doctors = if session[:last_comparison_id].present?
+                 @last_comparison = Comparison.find(session[:last_comparison_id])
+
+                 if @last_comparison.doctor_fields.any?
+                   Doctor.any_in(docfields: @last_comparison.doctor_fields)
+                 else
+                   Doctor.all
+                 end
+               else
+                 Doctor.all
+               end
+
+    @doctors = @doctors.geo_near(@hospital.location).max_distance(10)
   end
 
   def field
