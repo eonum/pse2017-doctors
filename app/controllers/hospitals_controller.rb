@@ -19,7 +19,7 @@ class HospitalsController < ApplicationController
                  Doctor.all
                end
 
-    @doctors = @doctors.geo_near(@hospital.location).max_distance(10)
+    @doctors = @doctors.geo_near(@hospital.location).max_distance(10).to_a[0..29]
   end
 
   def field

@@ -4,8 +4,8 @@
   - @doctors.each do |d|
     %li.list-group-item
       %p= d.title
-      %p= d.name
+      %strong= d.name
       %p= doctor_address(d)
 
       %p= tel_to d.phone2 unless d.phone2.blank?
-      %p= d.email unless d.email.blank?
+      %p= mail_to(d.email, fa_icon('envelope-o', d.email), target: '_blank') unless d.email.blank?
