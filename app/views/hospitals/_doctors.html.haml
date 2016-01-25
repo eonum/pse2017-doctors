@@ -1,0 +1,10 @@
+%ul.list-group
+
+  - @doctors.each do |d|
+    %li.list-group-item
+      %p= d.title
+      %p= d.name
+      %p= doctor_address(d)
+
+      %p= d.phone2
+      %p= d.email

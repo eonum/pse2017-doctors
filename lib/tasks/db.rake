@@ -446,4 +446,29 @@ namespace :db do
     end
   end
 
+  desc 'Seed Doctors'
+  task :seed_doctors => :environment do
+    Doctor.delete_all
+
+    file = Rails.root.join 'data', 'doctor', 'doctors.csv'
+    count = `wc -l #{file}`.to_i
+
+    pg = ProgressBar.create(total: count, title: 'Seeding Doctors')
+
+    IO.foreach(file) do |line|
+      row = line.split ';'
+      speciality = row[8].strip
+
+      pg.increment
+      next if speciality == 'spital'
+
+      name, title, address, email, phone1, phone2, canton = row.values_at(1,2,3,4,5,6,7)
+      location = row.values_at(9, 10).map(&:to_f)
+
+      Doctor.create! name: name, title: title, address: address, email: email,
+                     phone1: phone1, phone2: phone2, canton: canton, location: location, docfields: speciality.split(',')
+    end
+
+  end
+
 end

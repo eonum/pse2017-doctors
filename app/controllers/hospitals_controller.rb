@@ -1,10 +1,12 @@
 class HospitalsController < ApplicationController
+  include Locatable
   before_action :set_hospital, only: [:show, :field]
 
   # GET /admin/hospitals/1
   # GET /admin/hospitals/1.json
   def show
     @comparisons = Comparison.order_by(:rank => 'asc')
+    @doctors = Doctor.geo_near(@hospital.location).max_distance(10).to_a[0..9]
   end
 
   def field
