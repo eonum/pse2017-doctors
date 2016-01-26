@@ -1,0 +1,33 @@
+%p#notice= notice
+
+%p
+  %b Doc:
+  = @doctor.doc_id
+%p
+  %b Name:
+  = @doctor.name
+%p
+  %b Title:
+  = @doctor.title
+%p
+  %b Address:
+  = @doctor.address
+%p
+  %b Email:
+  = @doctor.email
+%p
+  %b Phone1:
+  = @doctor.phone1
+%p
+  %b Phone2:
+  = @doctor.phone2
+%p
+  %b Canton:
+  = @doctor.canton
+%p
+  %b Location:
+  = @doctor.location
+
+= link_to 'Bearbeiten', edit_admin_admin_doctor_path(@doctor)
+\|
+= link_to 'Back', admin_admin_doctors_path

@@ -1,0 +1,37 @@
+%h2 Arztliste
+
+= link_to 'Erfasse neuen Arzt', new_admin_doctor_path
+%br
+%br
+= form_tag(admin_doctors_path, :method => "get") do
+  = label_tag(:q, 'Suche')
+  = text_field_tag(:q, params[:q])
+  = submit_tag('Suche')
+
+= will_paginate @doctors, renderer: BootstrapPagination::Rails
+%table.table-striped.table
+  %thead
+    %tr
+      %th Name
+      %th Title
+      %th Address
+      %th Canton
+      %th Fachbereiche
+      %th Location
+      %th
+      %th
+      %th
+
+  %tbody
+    - @doctors.each do |doctor|
+      %tr
+        %td= link_to doctor.name, [:admin, doctor]
+        %td= doctor.title
+        %td= doctor.address
+        %td= doctor.canton
+        %td= doctor.docfields
+        %td= doctor.location
+        %td= link_to 'Bearbeiten', edit_admin_hospital_location_path(doctor)
+        %td= link_to 'Löschen', [:admin, doctor], :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+= will_paginate @doctors, renderer: BootstrapPagination::Rails

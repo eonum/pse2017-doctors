@@ -1,0 +1,7 @@
+%h2=@doctor.name
+
+= render 'form'
+
+= link_to 'Anzeigen', [:admin, @doctor]
+\|
+= link_to 'Zurück zur Übersicht', admin_doctors_path
