@@ -19,6 +19,7 @@ Rails.application.routes.draw do
         post :geolocate, :on => :member
       end
       resources :hospital_locations
+      resources :doctors
       resources :comparisons
     end
 
