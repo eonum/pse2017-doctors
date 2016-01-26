@@ -1,10 +1,10 @@
-class Admin::DoctorssController < Admin::AdminController
+class Admin::DoctorsController < Admin::AdminController
   before_action :set_doctor, only: [:show, :edit, :update, :destroy]
 
   def index
     query = escape_query(params[:q])
     query = /#{Regexp.escape(query)}/i
-    @doctors = Doctor.where(name: query.order_by([[ :rank, :asc ]])
+    @doctors = Doctor.where(name: query).order_by([[ :rank, :asc ]])
     @doctors = @doctors.paginate(:page => params[:page], :per_page => 10)
   end
 
