@@ -16,7 +16,7 @@ geocode = () =>
     lng: @app.location[1],
     callback: (results, status) =>
       if status is 'OK'
-        @app.address = results[0].formatted_address
+        @app.address = results[0].formatted_address.replace(', Schweiz', '')
         console.log @app.address
         console.log @app.location
         $('#location-btn').html('<i class="fa fa-location-arrow"></i> ' + @app.address)
