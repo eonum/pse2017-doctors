@@ -1,6 +1,9 @@
 %ul.list-group
   %li.list-group-item.list-group-item-info
-    %h4 Folgende Ärzte befinden sich in der näheren Umgebung dieses Standortes:
+    %h4= t('nearby-doctors')
+    %div.top-buffer
+      = t('doctor-change-request')
+      = mail_to 'spital@qualitaetsmedizin.ch', 'spital@qualitaetsmedizin.ch'
   - @doctors.each do |d|
     %li.list-group-item
       %p= d.title
