@@ -36,12 +36,17 @@
         }.join(' ')
       }
 
-    var bounds = new google.maps.LatLngBounds();
-    for (var i = 0; i < markers.length; i++) {
-      bounds.extend(markers[i].getPosition());
-    }
-
-    map.fitBounds(map.getBounds().union(bounds));
+    var only_once = true;
+    google.maps.event.addListener(map, 'bounds_changed', function() {
+      if(only_once) {
+        var bounds = new google.maps.LatLngBounds();
+        for (var i = 0; i < markers.length; i++) {
+          bounds.extend(markers[i].getPosition());
+        }
+        map.fitBounds(map.getBounds().union(bounds));
+        only_once = false;
+      }
+    });
 
   }
 
