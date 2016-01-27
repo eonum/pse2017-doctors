@@ -50,8 +50,6 @@
 
   }
 
-  $(document).ready(initialize);
-  $(document).on('page:load', initialize)
-
-
 %div{ id:  "map_#{@hospital.id}", style: "height:500px" }
+  :javascript
+    initialize();
