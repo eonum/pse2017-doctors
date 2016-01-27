@@ -1,3 +1,39 @@
+:javascript
+  var initialize = function () {
+    var latlng = new google.maps.LatLng(#{@doctor.location[1]}, #{@doctor.location[0]});
+    var settings = {
+      zoom: 12,
+      center: latlng,
+      mapTypeControl: true,
+      mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+      navigationControl: true,
+      navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+
+    var map = new google.maps.Map(document.getElementById("map"), settings);
+
+    function addMarker(location, name, info_text){
+      var hop_location = new google.maps.LatLng(location[1], location[0]);
+      var infowindow = new google.maps.InfoWindow({
+        content: info_text
+      });
+      var hop_marker = new google.maps.Marker({
+        position: hop_location,
+        map: map,
+        title: name,
+      });
+
+      infowindow.open(map, hop_marker);
+    }
+
+    addMarker(#{@doctor.location}, 'A', '#{@doctor.name} - #{@doctor.title}');
+
+  }
+
+  $(document).ready(initialize);
+  $(document).on('page:load', initialize)
+
 %p#notice= notice
 
 %p
@@ -24,6 +60,7 @@
 %p
   %b Location:
   = @doctor.location
+  = link_to 'Neu lokalisieren', geolocate_admin_doctor_path(@doctor), method: :post
 %p
   %b Fachbereiche:
   = @doctor.docfields
@@ -31,3 +68,6 @@
 = link_to 'Bearbeiten', edit_admin_doctor_path(@doctor)
 \|
 = link_to 'Back', admin_doctors_path
+
+%div{ id:  "map", style: "height:500px" }
+

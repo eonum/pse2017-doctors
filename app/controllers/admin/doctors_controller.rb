@@ -1,5 +1,5 @@
 class Admin::DoctorsController < Admin::AdminController
-  before_action :set_doctor, only: [:show, :edit, :update, :destroy]
+  before_action :set_doctor, only: [:show, :edit, :update, :destroy, :geolocate]
 
   def index
     query = escape_query(params[:q])
@@ -49,6 +49,16 @@ class Admin::DoctorsController < Admin::AdminController
     respond_to do |format|
       format.html { redirect_to admin_doctors_url, notice: "#{@doctor.name} wurde erfolgreich gelöscht." }
       format.json { head :no_content }
+    end
+  end
+
+  def geolocate
+    location = Geocoder.coordinates(@doctor.address)
+    @doctor.location = [location[1], location[0]]
+    if @doctor.save
+      redirect_to :back, notice: 'Erfolgreich neu lokalisiert.'
+    else
+      redirect_to :back, alert: "Fehler bei der Lokalisation dieses Arztes. #{@doctor.errors.full_messages.each{|msg| msg}}"
     end
   end
 

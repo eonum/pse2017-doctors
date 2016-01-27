@@ -19,7 +19,9 @@ Rails.application.routes.draw do
         post :geolocate, :on => :member
       end
       resources :hospital_locations
-      resources :doctors
+      resources :doctors do
+        post :geolocate, :on => :member
+      end
       resources :comparisons
     end
 

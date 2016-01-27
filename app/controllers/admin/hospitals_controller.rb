@@ -45,7 +45,7 @@ class Admin::HospitalsController < Admin::AdminController
     if @hospital.save
       redirect_to :back, notice: 'Erfolgreich neu lokalisiert.'
     else
-      redirect_to :back, alert: "Fehler bei der Lokalisation dieses Spitals. #{@location.errors.full_messages.each{|msg| msg}}"
+      redirect_to :back, alert: "Fehler bei der Lokalisation dieses Spitals. #{@hospital.errors.full_messages.each{|msg| msg}}"
     end
   end
 
