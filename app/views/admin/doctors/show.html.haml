@@ -24,6 +24,9 @@
 %p
   %b Location:
   = @doctor.location
+%p
+  %b Fachbereiche:
+  = @doctor.docfields
 
 = link_to 'Bearbeiten', edit_admin_doctor_path(@doctor)
 \|

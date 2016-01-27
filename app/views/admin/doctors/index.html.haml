@@ -31,7 +31,7 @@
         %td= doctor.canton
         %td= doctor.docfields
         %td= doctor.location
-        %td= link_to 'Bearbeiten', edit_admin_hospital_location_path(doctor)
+        %td= link_to 'Bearbeiten', edit_admin_doctor_path(doctor)
         %td= link_to 'Löschen', [:admin, doctor], :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 = will_paginate @doctors, renderer: BootstrapPagination::Rails

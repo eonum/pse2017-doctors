@@ -23,7 +23,7 @@ class Admin::DoctorsController < Admin::AdminController
 
     respond_to do |format|
       if @doctor.save
-        format.html { redirect_to [:admin, @doctor], notice: 'Arzt wurde erfolgreich erstellt.' }
+        format.html { redirect_to [:admin, @doctor], notice: "#{@doctor.name} wurde erfolgreich erstellt." }
         format.json { render :show, status: :created, location: [:admin, @doctor] }
       else
         format.html { render :new }
@@ -35,7 +35,7 @@ class Admin::DoctorsController < Admin::AdminController
   def update
     respond_to do |format|
       if @doctor.update(doctor_params)
-        format.html { redirect_to [:admin, @doctor], notice: 'Arzt wurde erfolgreich geändert.' }
+        format.html { redirect_to [:admin, @doctor], notice: "#{@doctor.name} wurde erfolgreich geändert." }
         format.json { render :show, status: :ok, location: [:admin, @doctor] }
       else
         format.html { render :edit }
@@ -47,7 +47,7 @@ class Admin::DoctorsController < Admin::AdminController
   def destroy
     @doctor.destroy
     respond_to do |format|
-      format.html { redirect_to admin_doctors_url, notice: 'Arzt wurde erfolgreich gelöscht.' }
+      format.html { redirect_to admin_doctors_url, notice: "#{@doctor.name} wurde erfolgreich gelöscht." }
       format.json { head :no_content }
     end
   end
@@ -60,6 +60,8 @@ class Admin::DoctorsController < Admin::AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def doctor_params
-    params.require(:doctor).permit(:name, :title, :address, :email, :phone1, :phone2, :canton, :docfields, :location)
+    p = params.require(:doctor).permit(:name, :title, :address, :email, :phone1, :phone2, :canton, :docfields, :location)
+    p[:docfields] = p[:docfields].split(',').map(&:strip) if p[:docfields]
+    p
   end
 end
