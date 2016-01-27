@@ -13,6 +13,7 @@
 
     var map = new google.maps.Map(document.getElementById("map_#{@hospital.id}"), settings);
 
+    markers = [];
     function addMarker(location, name, info_text){
       var hop_location = new google.maps.LatLng(location[1], location[0]);
       var infowindow = new google.maps.InfoWindow({
@@ -24,6 +25,7 @@
         title: name,
       });
 
+      markers.push(hop_marker);
       infowindow.open(map, hop_marker);
     }
 
@@ -33,6 +35,13 @@
           "addMarker(#{loc.location}, '#{loc.name} - #{loc.title}', '#{j render :partial => 'shared/location_address', :locals => { :location => loc }}');"
         }.join(' ')
       }
+
+    var bounds = new google.maps.LatLngBounds();
+    for (var i = 0; i < markers.length; i++) {
+      bounds.extend(markers[i].getPosition());
+    }
+
+    map.fitBounds(map.getBounds().union(bounds));
 
   }
 
