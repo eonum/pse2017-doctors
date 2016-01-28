@@ -22,13 +22,13 @@ namespace :density do
       ort = vars[8]
 
       hop = Hospital.new
-      hop.name = name
+      hop.name = name + ' ' + year
       hop.address1 = "#{street}, #{plz} #{ort}"
       # add timeout so Google is happy
       sleep(1)
       location = Geocoder.coordinates(hop.full_address)
       location = Geocoder.coordinates(hop.address2) if location == nil
-      location = Geocoder.coordinates(hop.name) if location == nil
+      location = Geocoder.coordinates(name) if location == nil
 
       puts "Error: Could not localize #{hop.full_address}" if location == nil
       next if location == nil
@@ -40,12 +40,12 @@ namespace :density do
       years[hop.name] = year
     end
 
-    out.puts "ident;year;nearby_cases_5km;nearby_hospitals_5km;nearby_cases_10km;nearby_hospitals_10km;nearby_cases_20km;nearby_hospitals_20km;coordinate_x;coordinate_y"
+    out.puts "name;ident;year;nearby_hospitals_5km;nearby_cases_5km;nearby_hospitals_10km;nearby_cases_10km;nearby_hospitals_20km;nearby_cases_20km;coordinate_x;coordinate_y"
     hops.each do |hop|
       ident = idents[hop.name]
       year = years[hop.name]
 
-      out.print "#{ident};#{year};"
+      out.print "#{hop.name.gsub(" #{year}", '')};#{ident};#{year};"
 
       [5,10,20].each do |km|
         num_nearby_cases = 0
