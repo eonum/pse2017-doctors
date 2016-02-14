@@ -1,7 +1,7 @@
 fr:
   name: "Nome"
   description: "Description"
-  app-title: "Hôpitaux en comparaison"
+  app-title: "Guide Hopitaux"
   speciality: "Spécialité médicale"
   institution: "Hôpital"
   institution-description: "Plusieurs lieux sont possibles. Trier par la distance."

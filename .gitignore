@@ -65,3 +65,4 @@ crashlytics-build.properties
 public/assets/
 data/additional
 .DS_Store
+data/doctor/parse-doctors/
