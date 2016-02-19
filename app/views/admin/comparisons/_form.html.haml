@@ -44,6 +44,9 @@
       %td= f.label 'Sortierrang'
       %td= f.number_field :rank
     %tr
+      %td= f.label 'Entwurfmodus'
+      %td= f.check_box :is_draft
+    %tr
       %td= f.label 'Arzt Fachgebiete'
       %td= f.text_field :doctor_fields, value: @comparison.doctor_fields.join(',')
     %tr

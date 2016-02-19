@@ -11,6 +11,7 @@
       %th Description fr
       %th Description it
       %th Anzahl Kennwerte
+      %th Modus
       %th
       %th
       %th
@@ -26,6 +27,7 @@
         %td= comparison.description_fr
         %td= comparison.description_it
         %td= comparison.variables.length
+        %td= comparison.is_draft ? 'Entwurf' : 'Veröffentlicht'
         %td= link_to 'Edit', edit_admin_comparison_path(comparison)
         %td= link_to 'Destroy', [:admin, comparison], :method => :delete, :data => { :confirm => 'Are you sure?' }
 

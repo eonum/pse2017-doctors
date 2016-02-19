@@ -14,6 +14,7 @@ class Comparison
   field :description_it, type: String, default: ''
 
   field :base_year, type: String, default: '2013'
+  field :is_draft, type: Boolean, default: false
 
   # only hospitals that meet the following limitations are considered for this comparison
 
