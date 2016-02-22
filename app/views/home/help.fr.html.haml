@@ -8,38 +8,39 @@
         .panel-heading
           %h3 Hilfe.
         .panel-body
-          Die Kennzahlen und Daten zu den Institutionen entstammen publizierten Angaben und aktuellen Datenquellen,
-          u.a des Bundesamtes für Gesundheit (BAG), des Nationalen Vereins für Qualitätsentwicklung in Spitälern und
-          Kliniken (ANQ) und publizierten Informationen / Jahresberichten. Allfällige Fehler bitten wir schriftlich zu melden an
+          Les indices et les données sur les institutions proviennent d’indicateurs publiés et de sources de données
+          actuelles, entre autres de l’office fédéral de la santé publique (OFSP), de l'Association nationale pour
+          le développement de la qualité dans les hôpitaux et les cliniques (ANQ) et d’informations et de rapports
+          annuels publiés. Nous vous remercions de nous signaler d’éventuelles erreurs sur
           = mail_to 'spital@qualitaetsmedizin.ch'
           %p
-          Die Zahlen zur Patientenzufriedenheit finden Sie bei Bedarf auf den Seiten des ANQ (
-          %a{ href: 'http://www.anq.ch/messergebnisse/ergebnisse-akutsomatik/', target: '_blank'} http://www.anq.ch/messergebnisse/ergebnisse-akutsomatik/
-          ). Wir erachten diese als nicht aussagekräftig und irreführend, da die Wertungen eher mit den Serviceleistungen
-          der Kliniken als mit der tatsächlichen medizinischen Qualität verbunden sind. Zudem bewegen sich die
-          Ergebnisse seit Jahren in einem Band zwischen guten und sehr guten Bewertungen, was die statistische
-          Aussagekraft beeinträchtigt. Es ist davon auszugehen, dass alle Kliniken und Spitäler aus dieser Optik
-          empfohlen werden können und die Patienten / Kunden durchweg zufrieden sind.
+          Les indicateurs qui illustrent la satisfaction des patients sont à votre disposition sur le site de l’ANQ (
+          %a{ href: 'http://www.anq.ch/fr/resultats-de-mesure/resultats-somatique-aigue/', target: '_blank'} http://www.anq.ch/fr/resultats-de-mesure/resultats-somatique-aigue/
+          ). Nous considérons toutefois que ces indicateurs sont insignifiants et peuvent être trompeurs car ce sont
+          plutôt les services des cliniques et non pas la qualité des prestations médicales qui sont évalués. De plus,
+          ces dernières années les évaluations ont toujours été bonnes voir très bonnes, ce qui compromet leur pertinence
+          statistique. D’après les évaluations actuelles, toutes les cliniques et tous les hôpitaux sont recommandables
+          et tous les patients / clients sont satisfaits.
+
           %ul.top-buffer
-            %li Eine erste Sortierung erfolgt nach geographischer Nähe
+            %li Un premier tri se fait en fonction de la proximité géographique.
             %li
-              Dunkelgrüne Balken veranschaulichen die Zahl der behandelten Patientenfälle.
+              Les barres vertes foncé représentent le nombre de patients traités.
               %div.meter{ style: 'max-width: 20%'}
                 %span{ style: 'width: 40%' }
-              Grüne Balken geben Hinweise auf die Relevanz bzw. Eignung des Spitals im nationalen Vergleich:
+              Les barres vertes donnent des indications sur la pertinence ou l’aptitude de l’hôpital dans la comparaison nationale:
               %div.meter.relevance{ style: 'max-width: 20%'}
                 %span{ style: 'width: 40%' }
-            %li Ein Klick auf die Fallzahlen zeigt den zeitlichen Trend über die letzten Datenjahre.
+            %li Un clic sur le nombre de cas démontre la tendance univoque à travers les dernières années de données.
             %li
-              %span.orange-highlight Orange
-              hinterlegte Kennzahlen geben Hinweise auf Auffälligkeiten (z.B. unterdurchschnittliche Qualitätskennzahlen)
+              %span.orange-highlight Les chiffres caractéristiques colorés en orange donnent des indications sur
+              d’éventuelles anomalies (par ex. des chiffres de qualité inférieurs à la moyenne).
             %li
-              Mit
+              Les caractères positifs supplémentaires de l’institution sont soulignés avec
               = image_tag('accept.png', :style => 'border-style:none')
-              werden zusätzliche, positive Merkmale der Institution hervorgehoben
 
           %p
-          Abkürzungen
+          Abréviations
           %dl.dl-horizontal
             %dt OFS
             %dd	Office fédéral de la statistique
