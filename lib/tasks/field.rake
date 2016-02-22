@@ -1,8 +1,9 @@
 namespace :field do
   desc 'Create a new field by combining existing fields'
   task create: :environment do
-    field_name = 'knee_relevance'
-    description_de = 'Relevanz Knie Orthopädie'
+    field_name = 'births_relevance'
+    description_de = 'Relevanz Geburten'
+    year = '2013'
 
     var = Variable.where(field_name: field_name).first
     if var.nil?
@@ -17,7 +18,14 @@ namespace :field do
     end
 
     data1 = {}
-    Hospital.all.each {|h| data1[h.id] = h['ortho_numcases'].nil? ? 0.0 : h['ortho_numcases']['2013'].to_f}
+    Hospital.all.each do |h|
+      num_births = h['G_1_1_F_num_cases'].nil? ? 0.0 : h['G_1_1_F_num_cases'][year].to_f
+      # this is appr. the Swiss average. Every 15th case is a new born.
+      num_total = h['AustStatT'].nil? ? 15.0 * num_births : h['AustStatT']['2013'].to_f
+      # avoid division by zero
+      num_total = 1.0 if num_total == 0.0
+      data1[h.id] =  num_births / num_total
+    end
     data1 = normmax data1
 
     data2 = {}
