@@ -20,3 +20,4 @@ fr:
   no_boolean: "Non"
   nearby-doctors: "Liste des médecins se trouvant dans les environs de l'hôpital:"
   doctor-change-request: "Veuillez nous indiquer s'il y a des informations à modifier à l'adresse info@qm1.ch"
+  select-hop: "Choissisez un hôpital de la liste pour des plus amples informations"

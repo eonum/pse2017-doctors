@@ -21,3 +21,4 @@ de:
   no_boolean: "Nein"
   nearby-doctors: "Folgende Ärzte befinden sich in der näheren Umgebung dieses Spitals:"
   doctor-change-request: "Falls ein Arzt fehlt oder falsch erfasst ist, melden Sie sich bitte mit der Korrektur unter "
+  select-hop: "Wählen Sie ein Spital / eine Klinik aus der Liste für Detailinformationen"

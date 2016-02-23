@@ -4,7 +4,7 @@
       .panel-heading
         .h4
           = comparison.localized_field 'name', locale
-          .small= link_to t('other-nearby-from-specialty'), comparison_path(comparison, location: "#{@hospital.location[1]},#{@hospital.location[0]}")
+          .small.top-buffer= link_to t('other-nearby-from-specialty'), comparison_path(comparison, location: "#{@hospital.location[1]},#{@hospital.location[0]}")
       .panel-body
         %table
           %thead#comparison-head
