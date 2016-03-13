@@ -1,30 +1,87 @@
+/@todo:
+/ move table making to helper (duplicated code at the moment)
+/ (in general make it better readable, really sucks at the moment)
+/ find solution if not all comlumns of a slide fit on the page
+/ because some content (title, name of a hospital) makes them to large
+/ (idea: shrink textsize, but could get unreadable...)
+/ or find at better solution in general than the slideshow...
+
 %h2= @comparison.localized_field 'name', locale
 %p= t('select-hop')
 
 %p= @comparison.localized_field 'description', locale
 
-%table.table.table-striped
-  %thead#comparison-head
-    %tr
-      %th.qim-header-cell{ width: "25%" }
-        = t('institution')
-        %h5
-          %small= t('institution-description')
-      - @variables.each do |var|
-        %th.qim-header-cell
-          = var.localized_field 'name', locale
+/normal table for large or medium screens
+.hidden-xs.hidden-sm
+  %table.table.table-striped
+    %thead#comparison-head
+      %tr
+        %th.qim-header-cell{ width: "25%" }
+          = t('institution')
           %h5
-            %small= var.localized_field 'description', locale
-  %tbody
-    - @hospitals.each do |h|
-      %tr{ 'data-hopid' => h.id }
-        %td
-          = link_to h.name, hospital_path(h), style: 'color: #3b72b8'
-          %h6.blue
-            %small= h.address2
-            %small.distance= raw ("%.2f" % h.distance_from(@location)) + '&nbsp;km'
+            %small= t('institution-description')
         - @variables.each do |var|
-          %td{ :class => hospital_variable_class(var, h), 'data-fieldnam' => var.field_name, 'data-varid' => var.id }= format_hospital_variable(var, h)
+          %th.qim-header-cell
+            = var.localized_field 'name', locale
+            %h5
+              %small= var.localized_field 'description', locale
+    %tbody
+      - @hospitals.each do |h|
+        %tr{ 'data-hopid' => h.id }
+          %td
+            = link_to h.name, hospital_path(h), style: 'color: #3b72b8'
+            %h6.blue
+              %small= h.address2
+              %small.distance= raw ("%.2f" % h.distance_from(@location)) + '&nbsp;km'
+          - @variables.each do |var|
+            %td{ :class => hospital_variable_class(var, h), 'data-fieldnam' => var.field_name, 'data-varid' => var.id }= format_hospital_variable(var, h)
+
+/2 columns per "page" (slide) on small screens (mobile)
+.hidden-lg.hidden-md
+  - columns_per_slide = 2
+  /bootstrap carousel is used to create "slideshows", here slides are table parts
+  /interval = false, otherwise slides would automatically change every 5 secs
+  #slidedTable.carousel.slide{"data-ride" => "carousel", "data-interval"=>"false"}
+    .carousel-inner{:role => "listbox"}
+      - variables_size = Array(@variables).size
+      /get the amount of slides we will need
+      - last_slide_number = (variables_size/columns_per_slide).ceil
+      / for loop over possible slide numbers to create them
+      - (0..last_slide_number).each do |slide_number|
+      /split the variabels to get the one we need for this specific slide
+      - columnvariables = @variables[(slide_number*columns_per_slide)..(slide_number*columns_per_slide)+columns_per_slide-1]
+        /first slide is active at the beginning
+        .item{:class => ("active" if slide_number == 0)}
+          %table.table.table-striped
+            %thead
+              %tr
+                %th.qim-header-cell
+                  = t('institution')
+                  %h5
+                    %small= t('institution-description')
+                - columnvariables.each do |var|
+                  %th.qim-header-cell
+                    = var.localized_field 'name', locale
+                    %h5
+                      %small= var.localized_field 'description', locale
+            %tbody
+              - @hospitals.each do |h|
+                %tr{ 'data-hopid' => h.id }
+                  %td
+                    = link_to h.name, hospital_path(h), style: 'color: #3b72b8'
+                    %h6.blue
+                      %small= h.address2
+                      %small.distance= raw ("%.2f" % h.distance_from(@location)) + '&nbsp;km'
+                  - columnvariables.each do |var|
+                    %td{ :class => hospital_variable_class(var, h), 'data-fieldnam' => var.field_name, 'data-varid' => var.id }= format_hospital_variable(var, h)
+
+    / controls (really ugly at the moment, they make the edges of the table darker)
+    / also they might prevent clicking some hospital links
+    %a.left.carousel-control{"data-slide" => "prev", :href => "#slidedTable", :role => "button"}
+    %a.right.carousel-control{"data-slide" => "next", :href => "#slidedTable", :role => "button"}
 
 :javascript
   var numcase_data = #{numcase_data(@hospitals, @variables).to_json};
+
+
+
