@@ -41,7 +41,9 @@
 }
 
 .locbutton {
-    font-size: 1.0em;
+    max-width:100%;
+    white-space: pre-line;
+    text-align: left;
 }
 
 .distance {

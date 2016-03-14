@@ -62,7 +62,7 @@
                  :type => 'button', 'data-content' => t('location-selection')}
                 %i.fa.fa-location-arrow.comparison-selection
                 = current_address
-
+                /btn-block vlt auf den location button anwenden
               .cantons
                 - cantons.each do |k,v|
                   = link_to k, url_for(params.merge(location: "#{v[:location][0]},#{v[:location][1]}").merge(canton: k)), :class => 'canton', :id => "canton-#{k}"
