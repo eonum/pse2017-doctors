@@ -5,6 +5,9 @@
 / because some content (title, name of a hospital) makes them to large
 / (idea: shrink textsize, but could get unreadable...)
 / or find at better solution in general than the slideshow...
+/ jquery mobile isn't included properly (at the right place
+/ (also fachbereich selction box gets bugged)
+%script{:src => "//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"}
 
 %h2= @comparison.localized_field 'name', locale
 %p= t('select-hop')
@@ -83,5 +86,17 @@
 :javascript
   var numcase_data = #{numcase_data(@hospitals, @variables).to_json};
 
+:javascript
+  $(function(){
+    // handlers for swipeleft/right on the slidedTable to detect swiping
+    $( "#slidedTable" ).on( "swipeleft", swipeleftHandler );
+    $( "#slidedTable" ).on( "swiperight", swiperightHandler );
 
-
+    //switch slides on swiping left/right
+    function swipeleftHandler( event ){
+      $( "#slidedTable" ).carousel( "next" );
+    }
+    function swiperightHandler( event ){
+      $( "#slidedTable" ).carousel( "prev" );
+    }
+  });
