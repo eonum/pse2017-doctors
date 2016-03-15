@@ -44,8 +44,8 @@
   #slidedTable.carousel.slide{"data-ride" => "carousel", "data-interval"=>"false"}
     .carousel-inner{:role => "listbox"}
       - variables_size = Array(@variables).size
-      /get the amount of slides we will need
-      - last_slide_number = (variables_size/columns_per_slide).ceil
+      /get the amount of slides we will need (-1 because we begin at 0)
+      - last_slide_number = ((variables_size.to_f/columns_per_slide).ceil) -1
       / for loop over possible slide numbers to create them
       - (0..last_slide_number).each do |slide_number|
       /split the variabels to get the one we need for this specific slide
