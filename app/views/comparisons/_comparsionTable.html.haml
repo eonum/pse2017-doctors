@@ -1,0 +1,25 @@
+- hospitals = [] unless local_assigns.has_key? :hospitals
+- columnvariables = [] unless local_assigns.has_key? :columnvariables
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th.qim-header-cell{ width: "25%" }
+        = t('institution')
+        %h5
+          %small= t('institution-description')
+      - columnvariables.each do |var|
+        %th.qim-header-cell
+          = var.localized_field 'name', locale
+          %h5
+            %small= var.localized_field 'description', locale
+  %tbody
+    - hospitals.each do |h|
+      %tr{ 'data-hopid' => h.id }
+        %td
+          = link_to h.name, hospital_path(h), style: 'color: #3b72b8'
+          %h6.blue
+            %small= h.address2
+            %small.distance= raw ("%.2f" % h.distance_from(@location)) + '&nbsp;km'
+        - columnvariables.each do |var|
+          %td{ :class => hospital_variable_class(var, h), 'data-fieldnam' => var.field_name, 'data-varid' => var.id }= format_hospital_variable(var, h)
