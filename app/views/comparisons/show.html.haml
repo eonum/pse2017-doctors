@@ -1,8 +1,8 @@
 /@todo:
 / in general make it better readable, really sucks at the moment
-/ jquery mobile isn't included properly (at the right place
-/ (also fachbereich selction box gets bugged)
-%script{:src => "//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"}
+/ increase reusability, slidedTable should also be used for the table in the hospital view
+/ adapt the number of columns per slide in slidedTable
+
 
 %h2= @comparison.localized_field 'name', locale
 %p= t('select-hop')
@@ -38,7 +38,7 @@
   var numcase_data = #{numcase_data(@hospitals, @variables).to_json};
 
 :javascript
-  $(function(){
+  $(document).ready((function(){
     // handlers for swipeleft/right on the slidedTable to detect swiping
     $( "#slidedTable" ).on( "swipeleft", swipeleftHandler );
     $( "#slidedTable" ).on( "swiperight", swiperightHandler );
@@ -50,4 +50,4 @@
     function swiperightHandler( event ){
       $( "#slidedTable" ).carousel( "prev" );
     }
-  });
+  }));
