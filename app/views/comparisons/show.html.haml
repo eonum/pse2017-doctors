@@ -1,30 +1,53 @@
+/@todo:
+/ in general make it better readable, really sucks at the moment
+/ increase reusability, slidedTable should also be used for the table in the hospital view
+/ adapt the number of columns per slide in slidedTable
+
+
 %h2= @comparison.localized_field 'name', locale
 %p= t('select-hop')
 
 %p= @comparison.localized_field 'description', locale
 
-%table.table.table-striped
-  %thead#comparison-head
-    %tr
-      %th.qim-header-cell{ width: "25%" }
-        = t('institution')
-        %h5
-          %small= t('institution-description')
-      - @variables.each do |var|
-        %th.qim-header-cell
-          = var.localized_field 'name', locale
-          %h5
-            %small= var.localized_field 'description', locale
-  %tbody
-    - @hospitals.each do |h|
-      %tr{ 'data-hopid' => h.id }
-        %td
-          = link_to h.name, hospital_path(h), style: 'color: #3b72b8'
-          %h6.blue
-            %small= h.address2
-            %small.distance= raw ("%.2f" % h.distance_from(@location)) + '&nbsp;km'
-        - @variables.each do |var|
-          %td{ :class => hospital_variable_class(var, h), 'data-fieldnam' => var.field_name, 'data-varid' => var.id }= format_hospital_variable(var, h)
+/normal tab le for large or medium screens
+.hidden-xs
+  = render 'comparsionTable', hospitals: @hospitals, columnvariables:@variables
+
+/1 columns per "page" (slide) on small screens (mobile)
+.hidden-lg.hidden-md.hidden-sm
+  - columns_per_slide = 1
+  /bootstrap carousel is used to create "slideshows", here slides are table parts
+  /interval = false, otherwise slides would automatically change every 5 secs
+  #slidedTable.carousel.slide{"data-ride" => "carousel", "data-interval"=>"false"}
+    .carousel-inner{:role => "listbox"}
+      - variables_size = Array(@variables).size
+      /get the amount of slides we will need (-1 because we begin at 0)
+      - last_slide_number = ((variables_size.to_f/columns_per_slide).ceil) -1
+      / for loop over possible slide numbers to create them
+      - (0..last_slide_number).each do |slide_number|
+      /split the variabels to get the one we need for this specific slide
+      - columnvariables = @variables[(slide_number*columns_per_slide)..(slide_number*columns_per_slide)+columns_per_slide-1]
+        /first slide is active at the beginning
+        .item{:class => ("active" if slide_number == 0)}
+          = render 'comparsionTable', hospitals: @hospitals, columnvariables:columnvariables
+    / might prevent clicking some hospital links
+    %a.left.carousel-control{"data-slide" => "prev", :href => "#slidedTable", :role => "button"}
+    %a.right.carousel-control{"data-slide" => "next", :href => "#slidedTable", :role => "button"}
 
 :javascript
   var numcase_data = #{numcase_data(@hospitals, @variables).to_json};
+
+:javascript
+  $(document).ready((function(){
+    // handlers for swipeleft/right on the slidedTable to detect swiping
+    $( "#slidedTable" ).on( "swipeleft", swipeleftHandler );
+    $( "#slidedTable" ).on( "swiperight", swiperightHandler );
+
+    //switch slides on swiping left/right
+    function swipeleftHandler( event ){
+      $( "#slidedTable" ).carousel( "next" );
+    }
+    function swiperightHandler( event ){
+      $( "#slidedTable" ).carousel( "prev" );
+    }
+  }));
