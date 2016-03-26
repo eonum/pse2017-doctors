@@ -554,7 +554,8 @@ if( Tablesaw.mustard ) {
 			$head = $( document.head || 'head' ),
 			tableId = $table.attr( 'id' ),
 			// TODO switch this to an nth-child feature test
-			supportsNthChild = !isIE8();
+			supportsNthChild = !isIE8(),
+			visibleNonPersistantCount;
 
 		if( !$headerCells.length ) {
 			throw new Error( "tablesaw swipe: no header cells found. Are you using <th> inside of <thead>?" );
@@ -639,38 +640,72 @@ if( Tablesaw.mustard ) {
 			}
 		}
 
-		function getNext(){
-			var next = [],
-				checkFound;
+		/**
+		 * Returns the index of the first visible column (from the right)
+		 *
+		 * @returns {Number} the index of the first visible column (from the right)
+		 * or 0 if we didn't find any visible column
+		 */
+		function getFristVisibleColumn(){
+			for(i = 0; i < $headerCellsNoPersist.length; i++)
+			{
+				var $column = $( $headerCellsNoPersist.get( i )),
+					isHidden = $column.css( "display" ) === "none" || $column.is( ".tablesaw-cell-hidden" );
 
-			$headerCellsNoPersist.each(function( i ) {
-				var $t = $( this ),
-					isHidden = $t.css( "display" ) === "none" || $t.is( ".tablesaw-cell-hidden" );
-
-				if( !isHidden && !checkFound ) {
-					checkFound = true;
-					next[ 0 ] = i;
-				} else if( isHidden && checkFound ) {
-					next[ 1 ] = i;
-
-					return false;
+				if( !isHidden ) {
+					return i;
 				}
-			});
-
-			return next;
+			}
+			return 0;
 		}
 
-		function getPrev(){
-			var next = getNext();
-			return [ next[ 1 ] - 1 , next[ 0 ] - 1 ];
+		function getLastVisibleColumn(){
+			return getFristVisibleColumn()+visibleNonPersistantCount-1;
 		}
 
-		function nextpair( fwd ){
-			return fwd ? getNext() : getPrev();
+
+
+		/**
+		 * Returns pairwise (hidden/shown) the columns that should change visibility when moving in one direction
+		 * inside the table. This always returns as many column-pairs as we can possibly move in one direction,
+		 * without skipping any column.
+		 *
+		 * @param {Boolean} forward - indicates in which direction the shown columns should change
+		 * 							  true means forward (to the right), false means back (to the left)
+		 * @returns {Array} An array of columns-pairs ($headerCellsNoPersist), the first part of the pair is
+		 * the column that should get hidden and the second one the column that should be shown instead.
+		 */
+		function changingColumnPairs( forward ){
+			var offset = forward ? 1 : -1,
+				// we must either begin after the last visible column or before the first visible column
+				firstInvisibleColumn = forward ? getLastVisibleColumn() + 1 : getFristVisibleColumn() - 1,
+				nextHiddenShownColumnPairs = [];
+
+			// add column-pairs as long as we don't reach a border of the array or changed all visible columns
+			for(i = firstInvisibleColumn; i > -1 && i < $headerCellsNoPersist.length && nextHiddenShownColumnPairs.length <  visibleNonPersistantCount; i+=offset)
+			{
+				var nextPair = [];
+				// first add the column that should get hidden to the pair
+				// we begin to hide from the last visible column in the opposite direction
+				nextPair.push($headerCellsNoPersist.get( i + (offset * -1 * visibleNonPersistantCount)) );
+				// add the column that should be shown
+				nextPair.push($headerCellsNoPersist.get( i ) );
+				nextHiddenShownColumnPairs.push(nextPair);
+			}
+
+			return nextHiddenShownColumnPairs;
 		}
 
-		function canAdvance( pair ){
-			return pair[ 1 ] > -1 && pair[ 1 ] < $headerCellsNoPersist.length;
+		function canAdvance( forward ){
+			return forward ? getLastVisibleColumn()+1 < $headerCellsNoPersist.length : getFristVisibleColumn() -1 > -1;
+		}
+
+		function canAdvanceForward(){
+			return canAdvance( true );
+		}
+
+		function canAdvanceBackward(){
+			return canAdvance( false );
 		}
 
 		function matchesMedia() {
@@ -687,7 +722,7 @@ if( Tablesaw.mustard ) {
 				containerWidth = $table.parent().width(),
 				persist = [],
 				sum = 0,
-				sums = [],
+				sums = [];
 				visibleNonPersistantCount = $headerCells.length;
 
 			$headerCells.each(function( index ) {
@@ -716,7 +751,11 @@ if( Tablesaw.mustard ) {
 				}
 
 				if( sums[ index ] <= containerWidth || needsNonPersistentColumn ) {
-					needsNonPersistentColumn = false;
+					// set the visibleNonPersistantCount correctly if we force to show a column
+					if(needsNonPersistentColumn) {
+						visibleNonPersistantCount = 1;
+						needsNonPersistentColumn = false;
+					}
 					showColumn( this );
 				} else {
 					hideColumn( this );
@@ -730,23 +769,18 @@ if( Tablesaw.mustard ) {
 		}
 
 		function advance( fwd ){
-			var pair = nextpair( fwd );
-			if( canAdvance( pair ) ){
-				if( isNaN( pair[ 0 ] ) ){
-					if( fwd ){
-						pair[0] = 0;
-					}
-					else {
-						pair[0] = $headerCellsNoPersist.length - 1;
-					}
-				}
+			var shownHiddenPairs = changingColumnPairs( fwd );
+			if( canAdvance(fwd) ){
 
 				if( supportsNthChild ) {
 					maintainWidths();
 				}
 
-				hideColumn( $headerCellsNoPersist.get( pair[ 0 ] ) );
-				showColumn( $headerCellsNoPersist.get( pair[ 1 ] ) );
+				shownHiddenPairs.forEach(function (shownHiddenPair){
+
+					hideColumn( shownHiddenPair[ 0 ]  );
+					showColumn( shownHiddenPair[ 1 ]  );
+				});
 
 				$table.trigger( 'tablesawcolumns' );
 			}
@@ -798,8 +832,8 @@ if( Tablesaw.mustard ) {
 
 			})
 			.bind( "tablesawcolumns.swipetoggle", function(){
-				$prevBtn[ canAdvance( getPrev() ) ? "removeClass" : "addClass" ]( hideBtn );
-				$nextBtn[ canAdvance( getNext() ) ? "removeClass" : "addClass" ]( hideBtn );
+				$prevBtn[ canAdvanceBackward() ? "removeClass" : "addClass" ]( hideBtn );
+				$nextBtn[ canAdvanceForward() ? "removeClass" : "addClass" ]( hideBtn );
 			})
 			.bind( "tablesawnext.swipetoggle", function(){
 				advance( true );
