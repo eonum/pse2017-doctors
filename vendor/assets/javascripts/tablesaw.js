@@ -555,6 +555,8 @@ if( Tablesaw.mustard ) {
 			tableId = $table.attr( 'id' ),
 			// TODO switch this to an nth-child feature test
 			supportsNthChild = !isIE8(),
+			// TODO make this changeable via attribute
+			wrapped = true,
 			visibleNonPersistantCount;
 
 		if( !$headerCells.length ) {
@@ -641,9 +643,9 @@ if( Tablesaw.mustard ) {
 		}
 
 		/**
-		 * Returns the index of the first visible column (from the right)
+		 * Returns the index of the first visible column (from the left to the right)
 		 *
-		 * @returns {Number} the index of the first visible column (from the right)
+		 * @returns {Number} the index of the first visible column
 		 * or 0 if we didn't find any visible column
 		 */
 		function getFristVisibleColumn(){
@@ -659,11 +661,15 @@ if( Tablesaw.mustard ) {
 			return 0;
 		}
 
+		/**
+		 * Returns the index of the last visible column (as seen from the left to the right)
+		 *
+		 * @returns {Number} the index of the last visible column
+		 * or the amount of visible columns -1
+		 */
 		function getLastVisibleColumn(){
 			return getFristVisibleColumn()+visibleNonPersistantCount-1;
 		}
-
-
 
 		/**
 		 * Returns pairwise (hidden/shown) the columns that should change visibility when moving in one direction
@@ -679,25 +685,30 @@ if( Tablesaw.mustard ) {
 			var offset = forward ? 1 : -1,
 				// we must either begin after the last visible column or before the first visible column
 				firstInvisibleColumn = forward ? getLastVisibleColumn() + 1 : getFristVisibleColumn() - 1,
-				nextHiddenShownColumnPairs = [];
+				nextHiddenShownColumnPairs = [],
+				mustWrap = !inTable(firstInvisibleColumn) && wrapped;
 
 			// add column-pairs as long as we don't reach a border of the array or changed all visible columns
-			for(i = firstInvisibleColumn; i > -1 && i < $headerCellsNoPersist.length && nextHiddenShownColumnPairs.length <  visibleNonPersistantCount; i+=offset)
+			for(i = firstInvisibleColumn; (mustWrap || inTable(i)) && nextHiddenShownColumnPairs.length <  visibleNonPersistantCount; i+=offset)
 			{
 				var nextPair = [];
 				// first add the column that should get hidden to the pair
 				// we begin to hide from the last visible column in the opposite direction
-				nextPair.push($headerCellsNoPersist.get( i + (offset * -1 * visibleNonPersistantCount)) );
+				nextPair.push($headerCellsNoPersist.get( ( i + (offset * -1 * visibleNonPersistantCount)) %$headerCellsNoPersist.length) );
 				// add the column that should be shown
-				nextPair.push($headerCellsNoPersist.get( i ) );
+				nextPair.push($headerCellsNoPersist.get( i % $headerCellsNoPersist.length ));
 				nextHiddenShownColumnPairs.push(nextPair);
 			}
 
 			return nextHiddenShownColumnPairs;
 		}
 
+		function inTable( columnIndex ){
+			return columnIndex >= 0 && columnIndex < $headerCellsNoPersist.length;
+		}
+
 		function canAdvance( forward ){
-			return forward ? getLastVisibleColumn()+1 < $headerCellsNoPersist.length : getFristVisibleColumn() -1 > -1;
+			return wrapped || (forward ? inTable(getLastVisibleColumn()+1)  : inTable(getFristVisibleColumn() -1));
 		}
 
 		function canAdvanceForward(){
