@@ -31,13 +31,14 @@
   %body
     .navbar.navbar-inverse.navbar-static-top
       .container
-        %button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse")
-          %span.icon-bar
-          %span.icon-bar
-          %span.icon-bar
-        %a.navbar-brand(href="#{home_path}")
-          %i.fa.fa-user-md
-          = t('app-title')
+        .navbar-header
+          %button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse")
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand(href="#{home_path}")
+            %i.fa.fa-user-md
+            = t('app-title')
         .navbar-collapse.collapse.navbar-responsive-collapse
           %ul.nav.navbar-nav
             %li= link_to fa_icon('home', 'Home'), home_url
