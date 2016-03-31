@@ -71,7 +71,7 @@
                 .top-buffer= label_tag t('speciality')
                 = select_tag('comparison', options_for_select(Comparison.where(:is_draft.ne => true).order_by(:rank => 'asc').map { |c| [c.localized_field('name', locale), comparison_path(c)]}, @comparison.nil? ? nil : comparison_path(@comparison)), class: 'form-control')
           %div#field-info-box
-        #main-content.col-lg-8
+        #main-content.col-lg-12
           = bootstrap_flash
           = yield
           %div.text-center.top-buffer
