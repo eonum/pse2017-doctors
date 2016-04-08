@@ -22,7 +22,7 @@ namespace :field do
       num_births = h['G_1_1_F_num_cases'].nil? ? 0.0 : h['G_1_1_F_num_cases'][year].to_f
       # this is appr. the Swiss average. Every 15th case is a new born.
       num_total = h['AustStatT'].nil? ? 15.0 * num_births : h['AustStatT']['2013'].to_f
-      if h['AustStatT'].nil? || h['AustStatT']['2013'].to_f < 150 # Geburtshaus
+      if h['AustStatT'].nil? || h['AustStatT']['2013'].to_f < 500 # Geburtshaus
          data1[h.id] =  Float::NAN
       else
         # avoid division by zero
@@ -32,13 +32,13 @@ namespace :field do
     end
     data1 = normmax data1
 
-  #  data2 = {}
-   # Hospital.all.each {|h| data2[h.id] = (h['ortho_hip_tep_numcases'].nil? ? 0.0 : h['ortho_hip_tep_numcases']['2013'].to_f) / (h['AustStatT'].nil? ? 1.0 : h['AustStatT']['2013'].to_f)}
-    #data2 = normmax data2
+    data2 = {}
+    Hospital.all.each {|h| data2[h.id] = h['G_1_1_F_num_cases'].nil? ? 0.0 : h['G_1_1_F_num_cases']['2013'].to_f}
+    data2 = normmax data2
 
-   # data1.each do |key, value|
-    #  data1[key] = value + data2[key]
-    #end
+    data1.each do |key, value|
+      data1[key] = value + data2[key]
+    end
 
     data1 = normmax data1
     data1.each do |key, value|
