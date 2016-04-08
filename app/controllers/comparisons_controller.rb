@@ -3,6 +3,7 @@ class ComparisonsController < ApplicationController
 
   def index
     @comparisons = Comparison.where(:is_draft.ne => true).order_by(:rank => 'asc')
+    render layout: 'main'
   end
 
   def show
