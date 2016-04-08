@@ -1,7 +1,29 @@
 - content_for :title, 'Help'
-
+%body
+  .navbar.navbar-inverse.navbar-static-top
+    .container
+      .navbar-header
+        %button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse")
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.navbar-brand(href="#{home_path}")
+          %i.fa.fa-user-md
+          = t('app-title')
+      .navbar-collapse.collapse.navbar-responsive-collapse
+        %ul.nav.navbar-nav
+          %li= link_to fa_icon('home', 'Home'), home_url
+          %li= link_to fa_icon('exclamation-circle', 'About'), 'http://www.qualitaetsmedizin.ch/startseite/', target: '_blank'
+        %ul.nav.navbar-nav.navbar-right
+          %li= link_to fa_icon('question-circle', 'Help'), help_url
+          %li.dropdown
+            %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+              = fa_icon('flag', current_language)
+              %span.caret
+            %ul.dropdown-menu{:role => "menu"}
+              %li= link_to 'Deutsch', params.merge({ locale: :de })
+              %li= link_to 'Francais', params.merge({ locale: :fr })
 .container
-  %hr/
   .row
     .col-md-12
       .panel.panel-default
@@ -70,4 +92,3 @@
 
 
 
-  = button_to t('back'), :back, class: 'btn top-buffer', method: 'get'
