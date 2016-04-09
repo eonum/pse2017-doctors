@@ -57,10 +57,3 @@
 a, a:visited {
     color: rgb(59, 114, 184);
 }
-.carousel-control.left, .carousel-control.right {
-    background-image: none
-}
-.right.carousel-control, .left.carousel-control {
-    opacity: 0;
-    filter:alpha(opacity=0); /* IE support */
-}

@@ -26,6 +26,3 @@
 //= require i18n
 //= require i18n/translations
 //= require_tree .
-// Only the touch events (for swiping) from jquery mobile, because its not recommended to
-// use bootstrap and complete jquery mobile together (some components would be modified strangly by jquery mobile)
-//= require jquery.mobile.onlyTouchEvents.min
