@@ -26,6 +26,7 @@
 //= require tagmanager
 //= require i18n
 //= require i18n/translations
+//= require jquery.floatThead.min
 //= require tablesaw
 //= require tablesaw-init
 //= require_tree .
