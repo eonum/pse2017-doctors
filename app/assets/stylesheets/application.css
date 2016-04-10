@@ -41,9 +41,11 @@
 }
 
 .locbutton {
-    max-width:88%;
+    max-width:84%;
     white-space: pre-line;
     text-align: left;
+    align-self: right;
+    align: right;
 }
 
 .regeolocate {
