@@ -3,10 +3,10 @@
 
 %p= @comparison.localized_field 'description', locale
 
-%table.table.table-striped
+%table.table.table-striped{:class=>"tablesaw tablesaw-swipe", "data-tablesaw-mode"=>"swipe", "data-tablesaw-minimap"=>""}
   %thead#comparison-head
     %tr
-      %th.qim-header-cell{ width: "25%" }
+      %th.qim-header-cell{ "data-tablesaw-priority"=>"persist", :style => "width: 25%" }
         = t('institution')
         %h5
           %small= t('institution-description')
