@@ -52,6 +52,9 @@
 
 .hopcell {
     padding: 5px;
+    display: inline-block; /* could use floats here instead */
+    width: 200px;
+    word-wrap:break-word;
 }
 
 a, a:visited {
