@@ -16,6 +16,7 @@
  *= require nprogress_and_overrides
  *= require tagmanager
  *= require jquery-ui/sortable
+ *= require tablesaw.bare
  */
 
 
@@ -41,9 +42,15 @@
 }
 
 .locbutton {
-    max-width:100%;
+    max-width:84%;
     white-space: pre-line;
     text-align: left;
+    align-self: right;
+    align: right;
+}
+
+.regeolocate {
+    max-width: 12%;
 }
 
 .distance {
@@ -63,11 +70,4 @@
 
 a, a:visited {
     color: rgb(59, 114, 184);
-}
-.carousel-control.left, .carousel-control.right {
-    background-image: none
-}
-.right.carousel-control, .left.carousel-control {
-    opacity: 0;
-    filter:alpha(opacity=0); /* IE support */
 }

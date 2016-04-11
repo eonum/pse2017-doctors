@@ -6,7 +6,7 @@
           = comparison.localized_field 'name', locale
           .small.top-buffer= link_to t('other-nearby-from-specialty'), comparison_path(comparison, location: "#{@hospital.location[1]},#{@hospital.location[0]}")
       .panel-body
-        %table
+        %table{:class=>"tablesaw tablesaw-swipe", "data-tablesaw-mode"=>"swipe", "data-tablesaw-minimap"=>""}
           %thead#comparison-head
             %tr{ 'data-hopid' => @hospital.id }
               - comparison.variables.each do |var|
