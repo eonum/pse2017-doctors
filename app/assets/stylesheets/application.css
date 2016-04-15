@@ -57,8 +57,15 @@
     color: #ff6a07;
 }
 
-.hopcell {
+.hopcell {/*this is now the cell within the hopcell_outer*/
+    width: 100%;
+    word-wrap:break-word;
+}
+.hopcell_outer {
     padding: 5px;
+    display: inline-block;/*with that, the cell number per row changes dynamically with the window width*/
+    vertical-align:top;
+    width: 200px;/*seemed like a reasonable number, could be changed however. It should still be absolute, though*/
 }
 
 a, a:visited {
