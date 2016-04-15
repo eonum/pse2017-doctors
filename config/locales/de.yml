@@ -22,7 +22,7 @@ de:
   nearby-doctors: "Folgende Ärzte befinden sich in der näheren Umgebung dieses Spitals:"
   doctor-change-request: "Falls ein Arzt fehlt oder falsch erfasst ist, melden Sie sich bitte mit der Korrektur unter "
   select-hop: "Wählen Sie ein Spital / eine Klinik aus der Liste für Detailinformationen"
-  welcome-title: "<a href='http://qm1.ch'>qm1.ch</a> Relevanz: Ihr Weg zum geeigneten Spital"
+  welcome-title: "<a href='http://qm1.ch'>qm1.ch</a> - Ihr Weg zum geeigneten Spital"
   welcome-text: "Das 'Beste Spital' gibt es nicht. Es lohnt sich vielmehr, nach Ihren eigenen Kriterien und zusammen mit Ihrem Arzt bzw.
       weiteren Vertrauenspersonen die Spitalwahl zu treffen. Zuvor ist zu prüfen, ob überhaupt ein stationärer Aufenthalt notwendig oder
       ein Eingriff angezeigt ist. Denn jede medizinische Dienstleistung birgt auch Risiken. Siehe auch:
@@ -32,7 +32,9 @@ de:
                  Um Chancen und Risiken besser zu verstehen und abzuwägen, stehen Ihnen auf qm1.ch die relevanten Informationen, d.h.
                  geprüfte Spital- und Qualitätskennzahlen, zur Verfügung. Kritische Kennzahlen werden hervorgehoben, als zusätzliche
                  Anhaltspunkte für Problembereiche im jeweiligen Spital.
-                 </p><p>
+                 </p>
+                 <h4><a href='http://qm1.ch'>qm1.ch</a> - Relevanz</h4>
+                 <p>
 
                  Zudem hilft Ihnen unsere zusammenfassende Beurteilung zur Relevanz des Spital. Diese spezifische Kennzahl wird
                   Ihnen pro Spital zum jeweiligen Behandlungsanlass, zum geplanten Eingriff bzw. zum Fachbereich ausgewiesen.
@@ -45,3 +47,4 @@ de:
                  </p><p>
                  Bei Fragen unterstützen wir Sie auch persönlich bei der Arzt- und Spitalwahl: <a href='mailto:arzt@qm1.ch'>arzt@qm1.ch</a>
                  "
+  no-value: "keine Angabe"

@@ -36,6 +36,11 @@
     color: rgba(104, 1, 0, 0.43);
 }
 
+.no-value {
+    text-align: center;
+    color: rgba(104, 1, 0, 0.43);
+}
+
 .locbutton {
     font-size: 1.0em;
 }
