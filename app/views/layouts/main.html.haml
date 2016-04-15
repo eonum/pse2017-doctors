@@ -69,9 +69,9 @@
                   = link_to k, url_for(params.merge(location: "#{v[:location][0]},#{v[:location][1]}").merge(canton: k)), :class => 'canton', :id => "canton-#{k}"
           %div#field-info-box
             %h3
-              %a{ href: 'http://qm1.ch/de', target: '_blank'}qm1.ch
-              Relevanz: Ihr Weg zum geeigneten Spital
-            %h4
+              %a{ href: 'http://qm1.ch/de', target: '_blank'}qm1.ch:
+              Ihr Weg zum geeigneten Spital
+            %h3
               Wählen Sie einen Vergleich aus
         #main-content.col-lg-12
           = bootstrap_flash

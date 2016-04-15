@@ -2,6 +2,10 @@
   %tbody.-align-center
     - @comparisons.each do |comparison|
       %tbody.text-center
-        =button_to comparison.localized_field('name', locale), comparison, class:'btn btn-info width-300px side-buffer', method: 'get'
+        =button_to comparison.localized_field('name', locale) +": "+ comparison.localized_field('description', locale),
+        comparison, class:'btn btn-info width-300px side-buffer', method: 'get'
 
 
+
+-#%td= link_to comparison.localized_field('name', locale), comparison
+-#%td= comparison.localized_field('description', locale)
