@@ -41,7 +41,7 @@
             = t('app-title')
         .navbar-collapse.collapse.navbar-responsive-collapse
           %ul.nav.navbar-nav
-            %li= link_to fa_icon('home', 'Home'), home_url
+            %li{ :class => "active"}= link_to fa_icon('home', 'Home'), home_url
             %li= link_to fa_icon('exclamation-circle', 'About'), about_url
           %ul.nav.navbar-nav.navbar-right
             %li

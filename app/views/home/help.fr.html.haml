@@ -15,7 +15,7 @@
           %li= link_to fa_icon('home', 'Home'), home_url
           %li= link_to fa_icon('exclamation-circle', 'About'), about_url
         %ul.nav.navbar-nav.navbar-right
-          %li
+          %li{ :class => "active"}
             %a{"data-placement" => "bottom", "data-toggle" => "tooltip", :href => help_url, :title => "Hier klicken für detaillierte Hilfe"}
               %i.fa.fa-question-circle
               = t :"Help"
