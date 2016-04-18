@@ -57,7 +57,8 @@
                 %li= link_to 'Francais', params.merge({ locale: :fr })
     :javascript
       $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip();
+        $('[data-toggle="tooltip"]').tooltip({placement: 'bottom',trigger: 'manual'}).tooltip('show');
+        $('[data-toggle="tooltip"]').hover(function(){$(this).tooltip('destroy');});
       });
     .container
       .row
