@@ -20,6 +20,14 @@ class Admin::AdminController < ApplicationController
     end
   end
 
-  layout 'admin'
+  def select_layout
+    if current_user.is_admin?
+      return 'admin'
+    else
+      return 'doctor_user'
+    end
+  end
+
+  layout :select_layout
 
 end

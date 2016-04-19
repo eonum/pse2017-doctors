@@ -6,6 +6,7 @@ class Doctor
   field :title
   field :address
   field :email
+  field :website
   field :phone1
   field :phone2
   field :canton
