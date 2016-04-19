@@ -1,11 +1,16 @@
 %table.table-striped.table
   %tbody.-align-center
+    %tbody.-align-center
     - @comparisons.each do |comparison|
       %tbody.text-center
-        =button_to comparison.localized_field('name', locale) +": "+ comparison.localized_field('description', locale),
-        comparison, class:'btn btn-info width-300px side-buffer', method: 'get'
-
+        =link_to comparison, class:'btn btn-info' do
+          %b
+            =comparison.localized_field('name', locale)
+          %br
+            %em
+              =comparison.localized_field('description', locale)
 
 
 -#%td= link_to comparison.localized_field('name', locale), comparison
 -#%td= comparison.localized_field('description', locale)
+          -#%td= method: 'get'

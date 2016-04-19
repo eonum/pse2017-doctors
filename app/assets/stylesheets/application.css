@@ -67,8 +67,4 @@
 a, a:visited {
     color: rgb(59, 114, 184);
 }
-.width-300px{
-    min-width: 280px;
-    width: 30%;
-    height: 100px;
-}
+
