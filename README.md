@@ -18,5 +18,12 @@ admin.password_confirmation = 'new_password_very_secret'
 admin.save
 ```
 
-
+### Create doctor logins or reset the database
+1. Run 'rake create_users:doctors' to create a user for every
+doctor in the database. The login-Date gets saved to the file loginData.csv
+in the qualimed_hospitals directory
+2. Run 'rake create_users:admin' to create an admin-entry to the database
+with the default password 'asdf'
+3. Run 'rake create_users:reset' to delete all users and create an admin user
+with the default password 'asdf'_
 
