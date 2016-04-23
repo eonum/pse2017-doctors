@@ -3,7 +3,7 @@
 
 %p= @comparison.localized_field 'description', locale
 
-%table.table.table-striped{:class=>"tablesaw tablesaw-swipe", "data-tablesaw-mode"=>"swipe", "data-tablesaw-minimap"=>""}
+%table.table.table-striped{:id=>"comparison-table"}
   %thead#comparison-head{:style=>"background-color: white"} 
     %tr
       %th.qim-header-cell{ "data-tablesaw-priority"=>"persist", :style => "width: 25%" }
@@ -28,5 +28,7 @@
 
 :javascript
   var numcase_data = #{numcase_data(@hospitals, @variables).to_json};
+:javascript
+  $("#comparison-table").tablesaw();
 
 
