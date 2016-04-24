@@ -1,16 +1,11 @@
 %table.table-striped.table
-  %tbody.-align-center
-    %tbody.-align-center
+  %thead
+    %tr
+      %th= t('speciality')
+      %th= t('description')
+
+  %tbody
     - @comparisons.each do |comparison|
-      %tbody.text-center
-        =link_to comparison, class:'btn btn-info' do
-          %b
-            =comparison.localized_field('name', locale)
-          %br
-            %em
-              =comparison.localized_field('description', locale)
-
-
--#%td= link_to comparison.localized_field('name', locale), comparison
--#%td= comparison.localized_field('description', locale)
-          -#%td= method: 'get'
+      %tr
+        %td= link_to comparison.localized_field('name', locale), comparison
+        %td= comparison.localized_field('description', locale)
