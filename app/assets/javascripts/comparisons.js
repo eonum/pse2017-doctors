@@ -32,7 +32,7 @@ var ready = function() {
     });
 
     // initialize tablesaw for our comparsion table
-    $('comparison-table').tablesaw();
+    $("#comparison-table").tablesaw();
 };
 
 $(document).ready(ready);
