@@ -57,8 +57,22 @@
                 %li= link_to 'Francais', params.merge({ locale: :fr })
     :javascript
       $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip({placement: 'bottom',trigger: 'manual'}).tooltip('show');
-        $('[data-toggle="tooltip"]').hover(function(){$(this).tooltip('destroy');});
+        $(window).on('resize',
+        function(){
+          if ( $(window).width() < 768 ){
+            $('[data-toggle="tooltip"]').tooltip('destroy');
+          }
+          else{
+            $('[data-toggle="tooltip"]').tooltip({placement: 'bottom',trigger: 'manual'}).tooltip('show');
+            $('[data-toggle="tooltip"]').hover(function(){$(this).tooltip('destroy');});
+         }});
+        if ( $(window).width() < 768 ){
+          $('[data-toggle="tooltip"]').tooltip('destroy');
+        }
+        else{
+          $('[data-toggle="tooltip"]').tooltip({placement: 'bottom',trigger: 'manual'}).tooltip('show');
+          $('[data-toggle="tooltip"]').hover(function(){$(this).tooltip('destroy');});
+        }
       });
     .container
       .row

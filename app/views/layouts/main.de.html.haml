@@ -45,7 +45,8 @@
             %li= link_to fa_icon('exclamation-circle', 'About'), about_url
           %ul.nav.navbar-nav.navbar-right
             %li
-              %a{"data-placement" => "bottom", "data-toggle" => "tooltip", :href => help_url, :title => "Hier klicken für detaillierte Hilfe"}
+              %a{"data-placement" => "bottom", "data-toggle" => "tooltip",  "aria-haspopup" => "true", "class" => "has-tip",
+              "data-options" => "show_on:large", :href => help_url, :title => "Hier klicken für detaillierte Hilfe"}
                 %i.fa.fa-question-circle
                 = t :"Help"
             %li.dropdown
@@ -57,8 +58,22 @@
                 %li= link_to 'Francais', params.merge({ locale: :fr })
     :javascript
       $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip({placement: 'bottom',trigger: 'manual'}).tooltip('show');
-        $('[data-toggle="tooltip"]').hover(function(){$(this).tooltip('destroy');});
+        $(window).on('resize',
+        function(){
+          if ( $(window).width() < 768 ){
+            $('[data-toggle="tooltip"]').tooltip('destroy');
+          }
+          else{
+            $('[data-toggle="tooltip"]').tooltip({placement: 'bottom',trigger: 'manual'}).tooltip('show');
+            $('[data-toggle="tooltip"]').hover(function(){$(this).tooltip('destroy');});
+         }});
+        if ( $(window).width() < 768 ){
+          $('[data-toggle="tooltip"]').tooltip('destroy');
+        }
+        else{
+          $('[data-toggle="tooltip"]').tooltip({placement: 'bottom',trigger: 'manual'}).tooltip('show');
+          $('[data-toggle="tooltip"]').hover(function(){$(this).tooltip('destroy');});
+        }
       });
     .container
       .row
