@@ -31,7 +31,7 @@ var ready = function() {
         });
     });
 
-    // initialize tablesaw for our comparsion table
+    // initialize tablesaw for our comparison table
     $("#comparison-table").tablesaw();
 };
 
