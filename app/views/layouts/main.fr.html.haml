@@ -41,7 +41,7 @@
             = t('app-title')
         .navbar-collapse.collapse.navbar-responsive-collapse
           %ul.nav.navbar-nav
-            %li= link_to fa_icon('home', 'Home'), home_url
+            %li{ :class => "active"}= link_to fa_icon('home', 'Home'), home_url
             %li= link_to fa_icon('exclamation-circle', 'About'), about_url
           %ul.nav.navbar-nav.navbar-right
             %li
@@ -74,10 +74,12 @@
               .cantons
                 - cantons.each do |k,v|
                   = link_to k, url_for(params.merge(location: "#{v[:location][0]},#{v[:location][1]}").merge(canton: k)), :class => 'canton', :id => "canton-#{k}"
-              %div.dropdown
-                .top-buffer= label_tag t('speciality')
-                = select_tag('comparison', options_for_select(Comparison.where(:is_draft.ne => true).order_by(:rank => 'asc').map { |c| [c.localized_field('name', locale), comparison_path(c)]}, @comparison.nil? ? nil : comparison_path(@comparison)), class: 'form-control')
-        -# div#field-info-box
+          %div#field-info-box
+            %h3
+              %a{ href: 'http://qm1.ch/de', target: '_blank'}qm1.ch:
+              Votre chemin à l'hôpital approprié
+            %h3
+              Choisir une comparaison
         #main-content.col-lg-12
           = bootstrap_flash
           = yield
@@ -89,7 +91,7 @@
         .modal-content
           .modal-header.text-center
             %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
-              %span{"aria-hidden" => "true"} ×
+              %span{"aria-hidden" => "true"}
             %h4#myLargeModalLabel.modal-title= t('location-selection')
           .modal-body
             .map-holder

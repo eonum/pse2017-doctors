@@ -18,8 +18,11 @@
  *= require jquery-ui/sortable
  *= require tablesaw.bare
  */
-
-
+@media only screen and (max-width: 767px) {
+    #field-info-box2 {
+        display: none;
+    }
+}
 .pseudoLink, .time-series {
     cursor: hand;
     cursor: pointer;
@@ -71,3 +74,4 @@
 a, a:visited {
     color: rgb(59, 114, 184);
 }
+
