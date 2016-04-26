@@ -58,7 +58,7 @@ a.active
     margin: 10px;
 }
 
-.regeolocate {
+#regeolocate {
     max-width: 12%;
 }
 
@@ -86,6 +86,7 @@ a, a:visited {
     text-align: left;
     width: 61%;/*experimental value so that it still looks good with 320px display width*/
     overflow: hidden;
+    margin-outside: 0px;
 }
 
 

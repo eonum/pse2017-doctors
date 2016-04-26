@@ -63,7 +63,7 @@
         .col-lg-12
           #search.well.well-sm
             %form#comparison-selection-form
-              %span#regeolocate.pseudoLink{title: t('regeolocate'), style: 'margin: 5px;'}= image_tag '/location-small.png'
+              %span#regeolocate.has-popover.pseudoLink{'data-content' => t('regeolocate'), style: 'margin: 5px;'}= image_tag '/location-small.png'
               %input#location-input.input-sm.locbutton2.btn.btn-default.distance.has-popover{value: current_address, 'data-content' => t('location-box')}
               -#locbutton2 so that it doesn't interfere with layout of locbutton on the right
               %button#location-btn.btn.btn-default.navbar-btn.distance.has-popover.locbutton{"data-target" => "#map-modal", "data-toggle" => "modal",
