@@ -21,3 +21,31 @@ fr:
   nearby-doctors: "Liste des médecins se trouvant dans les environs de l'hôpital:"
   doctor-change-request: "Veuillez nous indiquer s'il y a des informations à modifier à l'adresse info@qm1.ch"
   select-hop: "Choissisez un hôpital de la liste pour des plus amples informations"
+  welcome-title: "<a href='http://qm1.ch'>qm1.ch</a> - Votre choix pour l’hôpital approprié"
+  welcome-text: "Le 'meilleur hôpital' n’existe pas. Cela vaut la peine de choisir l’hôpital selon vos critères propres et en accord
+   avec votre médecin ou d’autres personnes de confiance. Tout d’abord il s’agit de déterminer, si une hospitalisation ou une
+   intervention s’impose. Chaque prestation médicale comporte ses risques. Voir aussi:
+                   <a href='http://www.qualitaetsmedizin.ch/fur-patienten/aerztlicher-rat-zweitmeinung/' target='_blank'>
+                   http://www.qualitaetsmedizin.ch/fur-patienten/aerztlicher-rat-zweitmeinung/</a>
+                   </p><p>
+                   Pour mieux comprendre et évaluer les chances et les risques, vous trouvez les informations pertinentes
+                    sous  <a href='http://qm1.ch'>qm1.ch</a> , c’est-à-dire des indicateurs vérifiés de l’hôpital et de la qualité. Les indicateurs
+                    critiques sont mis en évidence en tant qu’indice pour des domaines à problèmes dans l’hôpital respectif.
+
+                   </p>
+                   <h4><a href='http://qm1.ch'>qm1.ch</a> - Pertinence</h4>
+                   <p>
+
+                   Notre appréciation globale au sujet de la pertinence de l‘hôpital peut aussi vous aider. Cet indicateur spécifique
+                   porte sur le traitement respectif, l’intervention prévue ou le domaine de spécialisation par hôpital. La valeur est
+                   établie sur le plan national et peut varier entre 0% et 100%. Plus le taux est élevé, mieux c’est. Sont pris en
+                   considération divers facteurs pour le calcul, surtout le nombre de patients traités et l’importance des prestations
+                    dans l’hôpital respectif ou la clinique respective.
+                   </p><p>
+                   Les informations sur l’infrastructure, la participation aux mesures qualitatives, les prestations particulières
+                    et les priorités complètent la fiche signalétique de l’hôpital.
+                   </p><p>
+                   En cas de question, n'hésitez pas de nous contacter pour le choix du médecin ou de l’hôpital: <a href='mailto:doc@qm1.ch'>doc@qm1.ch</a>
+                   "
+  no-value: "Aucune spécification"
+  presentation-link: "Courte présentation de qm1.ch"

@@ -35,10 +35,6 @@ a.active
     color: rgb(59, 114, 184);
 }
 
-.qm1blue {
-    color: rgb(59, 114, 184);
-}
-
 .highlight {
     color: midnightblue;
     font-size: larger;
@@ -50,12 +46,15 @@ a.active
     color: rgba(104, 1, 0, 0.43);
 }
 
+.no-value {
+    text-align: center;
+    color: rgba(104, 1, 0, 0.43);
+}
+
 .locbutton {
-    max-width:84%;
-    white-space: pre-line;
-    text-align: left;
+    max-width:15%;
+    height: 30px;
     align-self: right;
-    align: right;
 }
 
 .regeolocate {
@@ -80,4 +79,12 @@ a.active
 a, a:visited {
     color: rgb(59, 114, 184);
 }
+
+
+#location-input {
+    text-align: left;
+    width: 69%;
+    overflow: hidden;
+}
+
 

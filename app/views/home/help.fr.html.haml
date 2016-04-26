@@ -36,7 +36,7 @@
           actuelles, entre autres de l’office fédéral de la santé publique (OFSP), de l'Association nationale pour
           le développement de la qualité dans les hôpitaux et les cliniques (ANQ) et d’informations et de rapports
           annuels publiés. Nous vous remercions de nous signaler d’éventuelles erreurs sur
-          = mail_to 'spital@qualitaetsmedizin.ch'
+          = mail_to 'spital@qm1.ch'
           %p
           Les indicateurs qui illustrent la satisfaction des patients sont à votre disposition sur le site de l’ANQ (
           %a{ href: 'http://www.anq.ch/fr/resultats-de-mesure/resultats-somatique-aigue/', target: '_blank'} http://www.anq.ch/fr/resultats-de-mesure/resultats-somatique-aigue/
@@ -62,6 +62,9 @@
             %li
               Les caractères positifs supplémentaires de l’institution sont soulignés avec
               = image_tag('accept.png', :style => 'border-style:none')
+
+          %p= raw t('welcome-title')
+          %p.top-buffer= raw t('welcome-text')
 
           %p
           Abréviations
