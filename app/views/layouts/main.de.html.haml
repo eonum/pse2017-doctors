@@ -36,17 +36,18 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand(href="#{home_path}")
-            %i.fa.fa-user-md
+          %a.navbar-brand{:href => "http://0.0.0.0:3000/de/comparisons/56603bcbe7ffc52d02000000"}
             = t('app-title')
         .navbar-collapse.collapse.navbar-responsive-collapse
           %ul.nav.navbar-nav
-            %li{ :class => "active"}= link_to fa_icon('home', 'Home'), home_url
+            %li{ :class => "active"}
+              %a{:href => home_url}
+                %i.fa.fa-user-md
+                =t :"Topics"
             %li= link_to fa_icon('exclamation-circle', 'About'), about_url
           %ul.nav.navbar-nav.navbar-right
             %li
-              %a{"data-placement" => "bottom", "data-toggle" => "tooltip",  "aria-haspopup" => "true", "class" => "has-tip",
-              "data-options" => "show_on:large", :href => help_url, :title => "Hier klicken für detaillierte Hilfe"}
+              %a{:href => help_url}
                 %i.fa.fa-question-circle
                 = t :"Help"
             %li.dropdown

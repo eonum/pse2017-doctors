@@ -23,6 +23,12 @@
         display: none;
     }
 }
+
+a.active
+{
+    background-color: #3b4064;!important;
+}
+
 .pseudoLink, .time-series {
     cursor: hand;
     cursor: pointer;

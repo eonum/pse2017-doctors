@@ -36,16 +36,18 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand(href="#{home_path}")
-            %i.fa.fa-user-md
-            = t('app-title')
+          %a.navbar-brand{:class => "active", :href => "http://0.0.0.0:3000/fr/comparisons/56603bcbe7ffc52d02000000"}
+            = t('app-title')#-so müssten wir die andern Strings auch handeln
         .navbar-collapse.collapse.navbar-responsive-collapse
           %ul.nav.navbar-nav
-            %li= link_to fa_icon('home', 'Home'), home_url
+            %li
+              %a{"data-placement" => "bottom", "data-toggle" => "tooltip", :href => home_url, :title => "Cliquez ici pour voir tous les spécialités médicaux"}
+                %i.fa.fa-user-md
+                =t :"Topics"
             %li= link_to fa_icon('exclamation-circle', 'About'), about_url
           %ul.nav.navbar-nav.navbar-right
             %li
-              %a{"data-placement" => "bottom", "data-toggle" => "tooltip", :href => help_url, :title => "Puyer ici pour de l'aide détaillée"}
+              %a{:href => help_url}
                 %i.fa.fa-question-circle
                 = t :"Help"
             %li.dropdown
