@@ -55,6 +55,7 @@ a.active
     max-width:15%;
     height: 30px;
     align-self: right;
+    margin: 10px;
 }
 
 .regeolocate {
@@ -83,7 +84,7 @@ a, a:visited {
 
 #location-input {
     text-align: left;
-    width: 69%;
+    width: 61%;/*experimental value so that it still looks good with 320px display width*/
     overflow: hidden;
 }
 

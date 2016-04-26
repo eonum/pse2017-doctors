@@ -64,7 +64,7 @@
           #search.well.well-sm
             %form#comparison-selection-form
               %span#regeolocate.pseudoLink{title: t('regeolocate'), style: 'margin: 5px;'}= image_tag '/location-small.png'
-              %input#location-input.input-sm.locbutton2.btn.btn-default.distance{value: current_address}
+              %input#location-input.input-sm.locbutton2.btn.btn-default.distance.has-popover{value: current_address, 'data-content' => t('location-box')}
               %button#location-btn.btn.btn-default.navbar-btn.distance.has-popover.locbutton{"data-target" => "#map-modal", "data-toggle" => "modal",
                  :type => 'button', 'data-content' => t('location-selection')}
                 %i.fa.fa-location-arrow.comparison-selection
