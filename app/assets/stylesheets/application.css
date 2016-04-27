@@ -24,13 +24,15 @@
         display: none;
     }
 }
+
+a.active
+{
+    background-color: #3b4064;!important;
+}
+
 .pseudoLink, .time-series {
     cursor: hand;
     cursor: pointer;
-    color: rgb(59, 114, 184);
-}
-
-.qm1blue {
     color: rgb(59, 114, 184);
 }
 
@@ -45,15 +47,19 @@
     color: rgba(104, 1, 0, 0.43);
 }
 
-.locbutton {
-    max-width:84%;
-    white-space: pre-line;
-    text-align: left;
-    align-self: right;
-    align: right;
+.no-value {
+    text-align: center;
+    color: rgba(104, 1, 0, 0.43);
 }
 
-.regeolocate {
+.locbutton {
+    max-width:15%;
+    height: 30px;
+    align-self: right;
+    margin: 10px;
+}
+
+#regeolocate {
     max-width: 12%;
 }
 
@@ -61,8 +67,15 @@
     color: #ff6a07;
 }
 
-.hopcell {
+.hopcell {/*this is now the cell within the hopcell_outer*/
+    width: 100%;
+    word-wrap:break-word;
+}
+.hopcell_outer {
     padding: 5px;
+    display: inline-block;/*with that, the cell number per row changes dynamically with the window width*/
+    vertical-align:top;
+    width: 200px;/*seemed like a reasonable number, could be changed however. It should still be absolute, though*/
 }
 
 a, a:visited {
@@ -118,3 +131,11 @@ a, a:visited {
 .blau{
     color: #4E5584;
 }
+
+#location-input {
+    text-align: left;
+    width: 61%;/*experimental value so that it still looks good with 320px display width*/
+    overflow: hidden;
+    margin-outside: 0px;
+}
+
