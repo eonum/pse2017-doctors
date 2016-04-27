@@ -18,6 +18,7 @@
  *= require jquery-ui/sortable
  *= require tablesaw.bare
  */
+
 @media only screen and (max-width: 767px) {
     #field-info-box2 {
         display: none;
@@ -80,7 +81,56 @@ a.active
 a, a:visited {
     color: rgb(59, 114, 184);
 }
+.btn-info2:hover{
+    background: #a6aac1;
+    /* #868686 alternative farbe*/
+}
 
+@media screen and (min-width:1200px) {
+    .btn-info2 {
+        color: #4E5584!important;
+        background-color: #FFFFFF;
+        border-color: #c7c7c7;
+        white-space: normal;
+        text-align: center;
+        text-decoration: none;
+        width: 23%;
+        margin: 5px;
+        padding: 15px;
+        height: 170px;
+    }
+}
+@media screen and (max-width:1199px) and (min-width: 645px) {
+    .btn-info2 {
+        color: #4E5584!important;
+        background-color: #FFFFFF;
+        border-color: #c7c7c7;
+        white-space: normal;
+        text-align: center;
+        text-decoration: none;
+        width: 48%;
+        margin: 5px;
+        padding: 15px;
+        height: 150px;
+    }
+}
+@media screen and (max-width:644px){
+    .btn-info2 {
+        color: #4E5584!important;
+        background-color: #FFFFFF;
+        border-color: #c7c7c7;
+        white-space: normal;
+        text-align: center;
+        text-decoration: none;
+        width: 98%;
+        margin: 5px;
+        padding: 10px;
+        height: 150px;
+    }
+}
+.blau{
+    color: #4E5584;
+}
 
 #location-input {
     text-align: left;
@@ -88,5 +138,4 @@ a, a:visited {
     overflow: hidden;
     margin-outside: 0px;
 }
-
 
