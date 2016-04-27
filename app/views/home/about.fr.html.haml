@@ -8,18 +8,16 @@
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        %a.navbar-brand{:href => "http://0.0.0.0:3000/fr/comparisons/56603bcbe7ffc52d02000000"}
+        %a.navbar-brand(href="#{home_path}")
+          %i.fa.fa-user-md
           = t('app-title')
       .navbar-collapse.collapse.navbar-responsive-collapse
         %ul.nav.navbar-nav
-          %li
-            %a{"data-placement" => "bottom", "data-toggle" => "tooltip", :href => home_url, :title => "Cliquez ici pour voir tous les spécialités médicaux"}
-              %i.fa.fa-user-md
-              =t :"Topics"
+          %li= link_to fa_icon('home', 'Home'), home_url
           %li{ :class => "active"}= link_to fa_icon('exclamation-circle', 'About'), about_url
         %ul.nav.navbar-nav.navbar-right
           %li
-            %a{:href => help_url}
+            %a{"data-placement" => "bottom", "data-toggle" => "tooltip", :href => help_url, :title => "Puyer ici pour de l'aide détaillée"}
               %i.fa.fa-question-circle
               = t :"Help"
           %li.dropdown
@@ -29,7 +27,10 @@
             %ul.dropdown-menu{:role => "menu"}
               %li= link_to 'Deutsch', params.merge({ locale: :de })
               %li= link_to 'Francais', params.merge({ locale: :fr })
-
+  :javascript
+      $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip({placement: 'bottom',trigger: 'manual'}).tooltip('show');
+        $('[data-toggle="tooltip"]').hover(function(){$(this).tooltip('destroy');});      });
 .container
   .row
     .col-md-12

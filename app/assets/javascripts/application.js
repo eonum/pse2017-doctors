@@ -29,22 +29,3 @@
 //= require tablesaw
 //= require tablesaw-init
 //= require_tree .
-
-$(document).ready(function(){
-    $(window).on('resize',
-        function(){
-            if ( $(window).width() < 768 ){
-                $('[data-toggle="tooltip"]').tooltip('destroy');
-            }
-            else{
-                $('[data-toggle="tooltip"]').tooltip({placement: 'bottom',trigger: 'manual'}).tooltip('show');
-                $('[data-toggle="tooltip"]').hover(function(){$(this).tooltip('destroy');});
-            }});
-    if ( $(window).width() < 768 ){
-        $('[data-toggle="tooltip"]').tooltip('destroy');
-    }
-    else{
-        $('[data-toggle="tooltip"]').tooltip({placement: 'bottom',trigger: 'manual'}).tooltip('show');
-        $('[data-toggle="tooltip"]').hover(function(){$(this).tooltip('destroy');});
-    }
-});
