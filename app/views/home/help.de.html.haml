@@ -7,12 +7,14 @@
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        %a.navbar-brand(href="#{home_path}")
-          %i.fa.fa-user-md
+        %a.navbar-brand{:href => "http://0.0.0.0:3000/de/comparisons/56603bcbe7ffc52d02000000"}
           = t('app-title')
       .navbar-collapse.collapse.navbar-responsive-collapse
         %ul.nav.navbar-nav
-          %li= link_to fa_icon('home', 'Home'), home_url
+          %li
+            %a{"data-placement" => "bottom", "data-toggle" => "tooltip", :href => home_url, :title => "Hier klicken, um alle Fachbereiche zu sehen"}
+              %i.fa.fa-user-md
+              =t :"Topics"
           %li= link_to fa_icon('exclamation-circle', 'About'), about_url
         %ul.nav.navbar-nav.navbar-right
           %li{ :class => "active"}= link_to fa_icon('question-circle', 'Help'), help_url
@@ -33,7 +35,7 @@
           Die Kennzahlen und Daten zu den Institutionen entstammen publizierten Angaben und aktuellen Datenquellen,
           u.a des Bundesamtes für Gesundheit (BAG), des Nationalen Vereins für Qualitätsentwicklung in Spitälern und
           Kliniken (ANQ) und publizierten Informationen / Jahresberichten. Allfällige Fehler bitten wir schriftlich zu melden an
-          = mail_to 'spital@qualitaetsmedizin.ch'
+          = mail_to 'spital@qm1.ch'
           %p
           Die Zahlen zur Patientenzufriedenheit finden Sie bei Bedarf auf den Seiten des ANQ (
           %a{ href: 'http://www.anq.ch/messergebnisse/ergebnisse-akutsomatik/', target: '_blank'} http://www.anq.ch/messergebnisse/ergebnisse-akutsomatik/
@@ -59,6 +61,9 @@
               Mit
               = image_tag('accept.png', :style => 'border-style:none')
               werden zusätzliche, positive Merkmale der Institution hervorgehoben
+
+          %p= raw t('welcome-title')
+          %p.top-buffer= raw t('welcome-text')
 
           %p
           Abkürzungen

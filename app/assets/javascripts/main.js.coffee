@@ -19,7 +19,8 @@ geocode = () =>
         @app.address = results[0].formatted_address.replace(', Schweiz', '')
         console.log @app.address
         console.log @app.location
-        $('#location-btn').html('<i class="fa fa-location-arrow"></i> ' + @app.address)
+        $('#location-input').val(@app.address)
+
         $.cookie 'location', @app.address,
           expires: 1,
           path: '/'
@@ -63,7 +64,7 @@ ready = (geolocate = true) =>
     @app.map.setCenter(@app.location[0], @app.location[1])
 
   console.log 'Displaying address'
-  $('#location-btn').html('<i class="fa fa-location-arrow"></i> ' + @app.address) if @app.address?
+  $('#location-input').val(@app.address) if @app.address?
 
   $('#map-modal').on 'shown.bs.modal', =>
     console.log 'refreshing map'
@@ -84,6 +85,25 @@ ready = (geolocate = true) =>
         @app.location = [position.coords.latitude, position.coords.longitude]
         comparison_url = $('#comparison').find(":selected").val()
         Turbolinks.visit(comparison_url + '?location=' + @app.location, { change: ['main-content'] })
+
+  # geocoding with address as input
+  $('#location-input').keydown =>
+    if (event.keyCode == 13)
+      console.log 'Geolocate using address'
+      GMaps.geocode
+        address: $('#location-input').val(),
+        region: 'ch',
+        callback: (position, status) =>
+          location = position[0].geometry.location
+          @app.location = [location.lat(), location.lng()]
+          comparison_url = $('#comparison').find(":selected").val()
+          Turbolinks.visit(comparison_url + '?location=' + @app.location, { change: ['main-content'] })
+      return false
+
+  # select all text when click on address bar
+  $('#location-input').click =>
+    $('#location-input').select()
+
 
 # Do not geolocate on turbolink refresh
 $(document).on 'page:load', =>
