@@ -27,7 +27,6 @@
 //= require i18n
 //= require i18n/translations
 //= require tablesaw
-//= require tablesaw-init
 //= require_tree .
 
 $(document).ready(function(){
