@@ -30,6 +30,9 @@ var ready = function() {
             remote: $(this).attr('data-modalhref')
         });
     });
+
+    // initialize tablesaw for our comparison table
+    $("#comparison-table").tablesaw();
 };
 
 $(document).ready(ready);
