@@ -37,7 +37,7 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{:href => "/de/comparisons/56603bcbe7ffc52d02000000"}
+          %a.navbar-brand{:href => home_url + "/comparisons/56603bcbe7ffc52d02000000"}
             = t('app-title')
         .navbar-collapse.collapse.navbar-responsive-collapse
           %ul.nav.navbar-nav
@@ -78,9 +78,9 @@
                   = select_tag('comparison', options_for_select(Comparison.where(:is_draft.ne => true).order_by(:rank => 'asc').map { |c| [c.localized_field('name', locale), comparison_path(c)]}, @comparison.nil? ? nil : comparison_path(@comparison)), class: 'form-control')
           %div#field-info-box.text-center
             %h2.blau
-              qm1.ch:Ihr Weg zum geeigneten Spital
+              =t('topics-title')
             %h3
-              Wählen Sie einen Vergleich aus
+              =t('topics-subtitle')
         #main-content.col-lg-12
           = bootstrap_flash
           = yield
