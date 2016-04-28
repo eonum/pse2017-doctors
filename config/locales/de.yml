@@ -15,7 +15,6 @@ de:
   location-selection: "Ortsauswahl mit Karte"
   location-box: "Manuelle Ortseingabe"
   topics-info: "Hier klicken, um alle Fachbereiche zu sehen"
-  topics-title: "qm1.ch: Ihr Weg zum geeigneten Spital"
   topics-subtitle: "Wählen Sie einen Vergleich aus"
   close-location-search: "Übernehmen"
   back: "Zurück"
@@ -26,7 +25,7 @@ de:
   nearby-doctors: "Folgende Ärzte befinden sich in der näheren Umgebung dieses Spitals:"
   doctor-change-request: "Falls ein Arzt fehlt oder falsch erfasst ist, melden Sie sich bitte mit der Korrektur unter "
   select-hop: "Wählen Sie ein Spital / eine Klinik aus der Liste für Detailinformationen"
-  welcome-title: "<a href='http://qm1.ch'>qm1.ch</a> - Ihr Weg zum geeigneten Spital"
+  welcome-title: "<h3><a href='http://qm1.ch'>qm1.ch</a> - Ihr Weg zum geeigneten Spital</h3>"
   welcome-text: "Das 'Beste Spital' gibt es nicht. Es lohnt sich vielmehr, nach Ihren eigenen Kriterien und zusammen mit Ihrem Arzt bzw.
       weiteren Vertrauenspersonen die Spitalwahl zu treffen. Zuvor ist zu prüfen, ob überhaupt ein stationärer Aufenthalt notwendig oder
       ein Eingriff angezeigt ist. Denn jede medizinische Dienstleistung birgt auch Risiken. Siehe auch:
