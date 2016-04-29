@@ -32,17 +32,14 @@
 // creates all tooltips in the navbar, as soon as the site gets or is bigger than 768px (changes from mobile to desktop version)
 // in the mobile-view the tooltips would get created at the wrong place
 $(document).ready(function() {
-    var tooltipCreated = false;
-
     var toggleTooltip = function () {
         var width = $(window).width();
         var mobileNavbarThreshold = 768;
-        if(width >= mobileNavbarThreshold && !tooltipCreated) {
+        if(width >= mobileNavbarThreshold) {
             $('[data-toggle="tooltip"]').tooltip({placement: 'bottom', trigger: 'manual'}).tooltip('show');
             $('[data-toggle="tooltip"]').hover(function () {
                 $(this).tooltip('destroy');
             });
-            tooltipCreated = true;
             $(window).off("resize",toggleTooltip)
         }
     }
