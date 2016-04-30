@@ -36,13 +36,17 @@
     %tr
       %td
         %strong Kanton
-      -#%td= f.select(:canton, options_for_select([['ag','ag'],['be','be']]))
-      %td= f.select(:canton, options_for_select([['AG','AG'],['AR','AR'],['AI','AI'],['BL','BL'],['BS','BS'],['BE','BE'],['FR','FR'],['GE','GE'],['GL','GL'],['GR','GR'],['JU','JU'],['LU','LU'],['NE','NE'],['NW','NW'],['OW','OW'],['SH','SH'],['SZ','SZ'],['SO','SO'],['SG','SG'],['TI','TI'],['TG','TG'],['UR','UR'],['VD','VD'],['VS','VS'],['ZG','ZG'],['ZH','ZH']], :selected => f.object.canton))
+      -#%td= f.select(:canton, options_for_select([['AG','AG'],['AR','AR'],['AI','AI'],['BL','BL'],['BS','BS'],['BE','BE'],['FR','FR'],['GE','GE'],['GL','GL'],['GR','GR'],['JU','JU'],['LU','LU'],['NE','NE'],['NW','NW'],['OW','OW'],['SH','SH'],['SZ','SZ'],['SO','SO'],['SG','SG'],['TI','TI'],['TG','TG'],['UR','UR'],['VD','VD'],['VS','VS'],['ZG','ZG'],['ZH','ZH']], :selected => f.object.canton))
+      %td= f.select(:canton, options_for_select(@cantons.map {|value| [value,value]}, :selected => f.object.canton))
+    - (0..@fieldNumber).each do |i|
+      %tr
+        %td
+          -if i == 0
+            %strong Fachbereiche
 
-    %tr
-      %td
-        %strong Fachbereiche
-      %td= f.text_field :docfields, :readonly => true
+          -#%td= f.text_field :docfields
+
+          %td= f.select :docfields, options_for_select(@fields.map {|value| [value,value]}, :selected => f.object.docfields[i], :multiple => true, :name => "docfields[]")
 
   .actions
     = f.submit 'Speichern'

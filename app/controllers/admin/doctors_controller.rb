@@ -16,8 +16,11 @@ class Admin::DoctorsController < Admin::AdminController
   end
 
   def edit
-  end
+    @cantons = ['AG','AR','AI','BL','BS','BE','FR','GE','GL','GR','JU','LU','NE','NW','OW','SH','SZ','SO','SG','TI','TG','UR','VD','VS','ZG','ZH']
+    @fields = ['Zusätzlicher Fachbereich','test1','test2','test3','test4']
+    @fieldNumber = @doctor.docfields.size()-1
 
+  end
   def create
     @doctor = Doctor.new(doctor_params)
 
