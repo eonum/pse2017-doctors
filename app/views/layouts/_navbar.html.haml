@@ -7,7 +7,7 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.navbar-brand{:href => home_url + "/comparisons/56603bcbe7ffc52d02000000" }
+      %a#header-button.navbar-brand{:href => Comparison.where(:is_draft.ne => true).order_by(:rank => 'asc').first}
         = t('app-title')
     .navbar-collapse.collapse.navbar-responsive-collapse
       %ul.nav.navbar-nav

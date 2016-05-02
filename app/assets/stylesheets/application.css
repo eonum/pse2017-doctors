@@ -67,6 +67,10 @@ a.active
     color: #ff6a07;
 }
 
+#cats{
+    white-space: pre-line;
+}
+
 .hopcell {/*this is now the cell within the hopcell_outer*/
     width: 100%;
     word-wrap:break-word;
