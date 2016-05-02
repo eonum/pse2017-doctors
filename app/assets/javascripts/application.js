@@ -40,11 +40,18 @@ $(document).ready(function() {
             $('[data-toggle="tooltip"]').hover(function () {
                 $(this).tooltip('destroy');
             });
-            $(window).off("resize",toggleTooltip)
+            $(window).off("resize", toggleTooltip)
         }
     }
 
     $(window).resize(toggleTooltip);
-
     toggleTooltip();
 });
+
+//destroy tooltip when you click anywhere on page so it's not in the way
+$(window).click(function () {
+    $('[data-toggle="tooltip"]').tooltip('destroy');
+});
+
+
+
