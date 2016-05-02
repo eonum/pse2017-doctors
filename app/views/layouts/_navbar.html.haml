@@ -7,7 +7,7 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a#header-button.navbar-brand{:href => Comparison.where(:is_draft.ne => true).order_by(:rank => 'asc').first}
+      %a.navbar-brand{:href => comparison_path(Comparison.where(:is_draft.ne => true).order_by(:rank => 'asc').first)}
         = t('app-title')
     .navbar-collapse.collapse.navbar-responsive-collapse
       %ul.nav.navbar-nav
