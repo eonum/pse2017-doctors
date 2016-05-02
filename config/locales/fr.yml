@@ -3,6 +3,7 @@ fr:
   description: "Description"
   app-title: "qm1 Guide Hopitaux"
   speciality: "Spécialité médicale"
+  specialities: "Spécialités médicaux"
   institution: "Hôpital"
   institution-description: "Plusieurs lieux sont possibles. Trier par la distance."
   locations: "lieux"
@@ -13,6 +14,8 @@ fr:
   more-information: "Veuillez trouver plus d'information ci-dessous: "
   location-selection: "Sélection du lieu"
   location-box: "Sélection du lieu à main"
+  topics-info: "Cliquez ici pour voir tous les spécialités médicaux"
+  topics-subtitle: "Choisir une comparaison"
   close-location-search: "Accepter"
   back: "Retour"
   doctors: "Médecins"
@@ -22,7 +25,7 @@ fr:
   nearby-doctors: "Liste des médecins se trouvant dans les environs de l'hôpital:"
   doctor-change-request: "Veuillez nous indiquer s'il y a des informations à modifier à l'adresse info@qm1.ch"
   select-hop: "Choissisez un hôpital de la liste pour des plus amples informations"
-  welcome-title: "<a href='http://qm1.ch'>qm1.ch</a> - Votre choix pour l’hôpital approprié"
+  welcome-title: "<h3><a href='http://qm1.ch'>qm1.ch</a> - Votre choix pour l’hôpital approprié</h3>"
   welcome-text: "Le 'meilleur hôpital' n’existe pas. Cela vaut la peine de choisir l’hôpital selon vos critères propres et en accord
    avec votre médecin ou d’autres personnes de confiance. Tout d’abord il s’agit de déterminer, si une hospitalisation ou une
    intervention s’impose. Chaque prestation médicale comporte ses risques. Voir aussi:
