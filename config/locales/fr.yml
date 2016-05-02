@@ -3,6 +3,7 @@ fr:
   description: "Description"
   app-title: "qm1 Guide Hopitaux"
   speciality: "Spécialité médicale"
+  specialities: "Spécialités médicaux"
   institution: "Hôpital"
   institution-description: "Plusieurs lieux sont possibles. Trier par la distance."
   locations: "lieux"
