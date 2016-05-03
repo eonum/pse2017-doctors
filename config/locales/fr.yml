@@ -53,3 +53,78 @@ fr:
                    "
   no-value: "Aucune spécification"
   presentation-link: "Courte présentation de qm1.ch"
+  help: "<div class='panel-heading'>
+                       <h3>Aide.</h3>
+                     </div>
+                     <div class='panel-body'>
+                       Les indices et les données sur les institutions proviennent d’indicateurs publiés et de sources de données
+                       actuelles, entre autres de l’office fédéral de la santé publique (OFSP), de l'Association nationale pour
+                       le développement de la qualité dans les hôpitaux et les cliniques (ANQ) et d’informations et de rapports
+                       annuels publiés. Nous vous remercions de nous signaler d’éventuelles erreurs sur
+                       <a href=\"mailto:spital@qm1.ch\">spital@qm1.ch</a>
+                       <p></p>
+                       Les indicateurs qui illustrent la satisfaction des patients sont à votre disposition sur le site de l’ANQ (
+                       <a href='http://www.anq.ch/fr/resultats-de-mesure/resultats-somatique-aigue/' target='_blank'>http://www.anq.ch/fr/resultats-de-mesure/resultats-somatique-aigue/</a>
+                       ). Nous considérons toutefois que ces indicateurs sont insignifiants et peuvent être trompeurs car ce sont
+                       plutôt les services des cliniques et non pas la qualité des prestations médicales qui sont évalués. De plus,
+                       ces dernières années les évaluations ont toujours été bonnes voir très bonnes, ce qui compromet leur pertinence
+                       statistique. D’après les évaluations actuelles, toutes les cliniques et tous les hôpitaux sont recommandables
+                       et tous les patients / clients sont satisfaits.
+                       <ul class='top-buffer'>
+                         <li>Un premier tri se fait en fonction de la proximité géographique.</li>
+                         <li>
+                           Les barres vertes foncé représentent le nombre de patients traités.
+                           <div class='meter' style='max-width: 20%'>
+                             <span style='width: 40%'></span>
+                           </div>
+                           Les barres vertes donnent des indications sur la pertinence ou l’aptitude de l’hôpital dans la comparaison nationale:
+                           <div class='meter relevance' style='max-width: 20%'>
+                             <span style='width: 40%'></span>
+                           </div>
+                         </li>
+                         <li>Un clic sur le nombre de cas démontre la tendance univoque à travers les dernières années de données.</li>
+                         <li>
+                           <span class='orange-highlight'>Les chiffres caractéristiques colorés en orange donnent des indications sur</span>
+                           d’éventuelles anomalies (par ex. des chiffres de qualité inférieurs à la moyenne).
+                         </li>
+                         <li>
+                           Les caractères positifs supplémentaires de l’institution sont soulignés avec
+                           <img style=\"border-style:none\" src=\"/assets/accept.png\" alt=\"Accept\" />
+                         </li>
+                       </ul>
+                       <p><h3><a href='http://qm1.ch'>qm1.ch</a> - Ihr Weg zum geeigneten Spital</h3></p>
+                       <p class='top-buffer'>
+                         Das 'Beste Spital' gibt es nicht. Es lohnt sich vielmehr, nach Ihren eigenen Kriterien und zusammen mit Ihrem Arzt bzw. weiteren Vertrauenspersonen die Spitalwahl zu treffen. Zuvor ist zu prüfen, ob überhaupt ein stationärer Aufenthalt notwendig oder ein Eingriff angezeigt ist. Denn jede medizinische Dienstleistung birgt auch Risiken. Siehe auch: <a href='http://www.qualitaetsmedizin.ch/fur-patienten/aerztlicher-rat-zweitmeinung/' target='_blank'> http://www.qualitaetsmedizin.ch/fur-patienten/aerztlicher-rat-zweitmeinung/</a> </p><p> Um Chancen und Risiken besser zu verstehen und abzuwägen, stehen Ihnen auf qm1.ch die relevanten Informationen, d.h. geprüfte Spital- und Qualitätskennzahlen, zur Verfügung. Kritische Kennzahlen werden hervorgehoben, als zusätzliche Anhaltspunkte für Problembereiche im jeweiligen Spital. </p> <h4><a href='http://qm1.ch'>qm1.ch</a> - Relevanz</h4> <p>
+                         Zudem hilft Ihnen unsere zusammenfassende Beurteilung zur Relevanz des Spital. Diese spezifische Kennzahl wird Ihnen pro Spital zum jeweiligen Behandlungsanlass, zum geplanten Eingriff bzw. zum Fachbereich ausgewiesen. Der Wert wird national, d.h. schweizweit errechnet, und kann zwischen 0% und 100% liegen. Je höher desto besser. Für die Berechnung gewichten wir verschiedene Faktoren, insbesondere die Zahl behandelter Patienten und den Stellenwert der Leistungen im jeweiligen Spital bzw. der Klinik. </p><p> Komplettiert wird der Steckbrief zum Spital mit Informationen zur Infrastruktur, der Teilnahme an qualitätssichernden Massnahmen, besonderen Leistungen und Schwerpunkten. </p><p> Bei Fragen unterstützen wir Sie auch persönlich bei der Arzt- und Spitalwahl: <a href='mailto:arzt@qm1.ch'>arzt@qm1.ch</a>
+                       </p>
+                       <p></p>
+                       Abréviations
+                       <dl class='dl-horizontal'>
+                         <dt>OFS</dt>
+                         <dd>Office fédéral de la statistique</dd>
+                         <dt>ANQ</dt>
+                         <dd>Association nationale pour le développement de la qualité dans les hôpitaux et les cliniques</dd>
+                         <dt>IRM</dt>
+                         <dd>Tomographie par résonance magnétique nucléaire: une des méthodes d'examen radiologique qui permets d'obtenir des images des structures de tissu du corps humain.</dd>
+                         <dt>CT</dt>
+                         <dd>Tomographie computerisée: une des méthodes les plus modernes d'examen radiologique, avec laquelle des images de coupes du corps humain peuvent être obtenues</dd>
+                         <dt>PET</dt>
+                         <dd>Tomographie par émission de positons, une méthode de diagnostic par l'image de la médecine nucléaire:  C’est un examen à visée diagnostique, reposant sur la détection de positons produits par une substance radioactive administrée au patient par voie intraveineuse. La TEP fournit une image précise de l'activité cellulaire à l'intérieur du tissu observé.</dd>
+                         <dt>CC</dt>
+                         <dd>Caméras gamma (incluant la scintigraphie et le scanner SPECT):ou caméras à scintillation sont des appareils qui permettent aux médecins nucléaires d'effectuer des « scintigraphies », examens qui fournissent des diagnostics détaillés sur les processus métaboliques. Un complément optimal pour d'autres examens radiologiques ou tomographies, qui ne révèlent que les structures anatomiques.</dd>
+                         <dt>LB</dt>
+                         <dd>Un accélérateur linéaire est un système qui utilise des ondes électromagnétiques de fréquences élevées  pour accélérer des électrons jusqu’à des énergies très élevées à travers un tube linéaire. Le faisceau d’électrons qui en résulte peut  être utilisé pour frapper une cible (tungstène) produisant ainsi des rayons X qui pourront traiter des tumeurs plus profondes. L'irradiation est précise au millimètre près. Le tissus sain est épargné le plus possible, les effets secondaires sont minimisés.</dd>
+                         <dt>Lito</dt>
+                         <dd>Lithotripteur: La lithotripsie ou lithotritie extracorporelle (LEC) est une technique de lithotripsie qui consiste à éliminer en fragments les calculs (rénaux ou biliaires) par le biais d'ondes de choc ultrasonores. À la suite de cette intervention, les fins débris obtenus par la désintégration du ou des calculs sont évacués par les voies naturelles. En cas de calculs rénaux on évite le plus souvent l'intervention chirurgicale.</dd>
+                         <dt>NF</dt>
+                         <dd>service d'urgence</dd>
+                         <dt>IPS</dt>
+                         <dd>Unité de soins intensifs</dd>
+                         <dt>MSt</dt>
+                         <dd>étudiants en médecine</dd>
+                         <dt>BGs</dt>
+                         <dd>Professionnels de la santé</dd>
+                         <dt>CIRS</dt>
+                         <dd>\"Critical Incident Reporting System - un critère de qualité fréquent Système de rapport pour une déclaration anonyme d'incidents critiques et quasi dommages. En suivent des formations/audits réguliers, afin d'éviter des incidents de ce genre, respectivement d'améliorer les structures et les processus de travail. Les résultats sont mesurés de façon continue, documentés et en partie publiés dans le rapport de qualité.\"</dd>
+                       </dl>
+                     </div>"
