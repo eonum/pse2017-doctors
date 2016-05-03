@@ -128,3 +128,6 @@ fr:
                          <dd>\"Critical Incident Reporting System - un critère de qualité fréquent Système de rapport pour une déclaration anonyme d'incidents critiques et quasi dommages. En suivent des formations/audits réguliers, afin d'éviter des incidents de ce genre, respectivement d'améliorer les structures et les processus de travail. Les résultats sont mesurés de façon continue, documentés et en partie publiés dans le rapport de qualité.\"</dd>
                        </dl>
                      </div>"
+  navbar-help: "Aide"
+  navbar-about: "Sur"
+  navbar-topics: "Sujets"
