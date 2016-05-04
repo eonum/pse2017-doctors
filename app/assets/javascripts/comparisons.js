@@ -87,3 +87,4 @@ var visualize_time_series = function visualize_time_series(time_series) {
     var chart = new google.visualization.AreaChart(document.getElementById('field-info-box'));
     chart.draw(data, options);
 }
+
