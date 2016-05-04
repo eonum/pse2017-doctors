@@ -11,9 +11,9 @@
         = t('app-title')
     .navbar-collapse.collapse.navbar-responsive-collapse
       %ul.nav.navbar-nav
-        %li{ :class => ("active" if current_page?(home_url)) }
+        %li{ :class => ("active" if is_comparison_selection_page?) }
           -# add the tooltip only if we aren't a the home_url yet
-          %a{(current_page?(home_url)) ? {} : {"data-placement" => "bottom", "data-toggle" => "tooltip", :title => t('topics-info')}, :href => home_url }
+          %a{is_comparison_selection_page? ? {} : {"data-placement" => "bottom", "data-toggle" => "tooltip", :title => t('topics-info')}, :href => home_url }
             %i.fa.fa-user-md
             =t('navbar-topics')
         %li{ :class => ("active" if current_page?(about_url)) }

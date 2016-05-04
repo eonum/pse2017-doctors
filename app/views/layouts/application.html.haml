@@ -46,7 +46,7 @@
               .cantons
                 - cantons.each do |k,v|
                   = link_to k, url_for(params.merge(location: "#{v[:location][0]},#{v[:location][1]}").merge(canton: k)), :class => 'canton', :id => "canton-#{k}"
-              %div#cats.dropdown
+              %div.dropdown{:style => ("display:none" if is_comparison_selection_page?)}
                 .top-buffer= label_tag t('speciality')
                 = select_tag('comparison', options_for_select(Comparison.where(:is_draft.ne => true).order_by(:rank => 'asc').map { |c| [c.localized_field('name', locale), comparison_path(c)]}, @comparison.nil? ? nil : comparison_path(@comparison)), class: 'form-control')
         -# div#field-info-box
