@@ -7,10 +7,9 @@
           .small.top-buffer= link_to t('other-nearby-from-specialty'), comparison_path(comparison, location: "#{@hospital.location[1]},#{@hospital.location[0]}")
 
       .panel-body
-        %span#arrow-span
-          %a{:href => "javascript: void(0);", :onclick => "toggle(\""+  comparison.id + "\");", :id => "anchor" + comparison.id, :class => "arrow-anchor"}
-            %i.fa.fa-chevron-down
-            =t('show')
+        %span.pseudoLink{:onclick => "toggle(\""+  comparison.id + "\");", :id => "anchor" + comparison.id, :class => "arrow-anchor"}
+          %i.fa.fa-chevron-down
+          =t('show')
 
         %table
           %thead#comparison-head
@@ -31,7 +30,7 @@
 :javascript
   var numcase_data = #{hop_numcase_data(@comparisons).to_json};
   var l = document.getElementById('anchor56603bcbe7ffc52d02000000');//id of overview comparison (maybe not general enough)
-  function toggle(id) {
+  function toggle(id) {//hide or shows table content
     if( document.getElementById(id).style.display=='none' ){
       document.getElementById(id).style.display = 'table-row'
       document.getElementById("anchor" + id).innerHTML = '<i class="fa fa-chevron-up"></i>' + I18n.t('hide');
