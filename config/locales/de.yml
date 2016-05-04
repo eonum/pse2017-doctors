@@ -130,4 +130,5 @@ de:
   navbar-help: "Hilfe"
   navbar-about: "Über"
   navbar-topics: "Home"
-  show-hide: "Zeige/Verstecke Tabelle"
+  show: " Zeige Tabelle"
+  hide: " Verstecke Tabelle"

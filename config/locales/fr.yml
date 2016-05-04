@@ -129,4 +129,5 @@ fr:
   navbar-help: "Aide"
   navbar-about: "Sur"
   navbar-topics: "Page d'Accueil"
-  show-hide: "Montre/Cache Tableau"
+  show: " Montre Tableau"
+  hide: " Cache Tableau"
