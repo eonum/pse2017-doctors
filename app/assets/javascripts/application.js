@@ -28,29 +28,5 @@
 //= require tablesaw
 //= require_tree .
 
-// creates all tooltips in the navbar, as soon as the site gets or is bigger than 768px (changes from mobile to desktop version)
-// in the mobile-view the tooltips would get created at the wrong place
-$(document).ready(function() {
-    var toggleTooltip = function () {
-        var width = $(window).width();
-        var mobileNavbarThreshold = 768;
-        if(width >= mobileNavbarThreshold) {
-            $('[data-toggle="tooltip"]').tooltip({placement: 'bottom', trigger: 'manual'}).tooltip('show');
-            $('[data-toggle="tooltip"]').hover(function () {
-                $(this).tooltip('destroy');
-            });
-            $(window).off("resize", toggleTooltip)
-        }
-    }
-
-    $(window).resize(toggleTooltip);
-    toggleTooltip();
-});
-
-//destroy tooltip when you click anywhere on page so it's not in the way
-$(window).click(function () {
-    $('[data-toggle="tooltip"]').tooltip('destroy');
-});
-
 
 

@@ -115,3 +115,27 @@ $(document).ready ready
 $(window).on 'resize', ->
   console.log 'resizing'
   $('#search-bar').parent().height($(window).height()-131)
+
+# creates all tooltips in the navbar, as soon as the site gets or is bigger than 768px (changes from mobile to desktop version)
+# in the mobile-view the tooltips would get created at the wrong place
+$(document).ready ->
+
+  toggleTooltip = ->
+    width = $(window).width()
+    mobileNavbarThreshold = 768
+    if width >= mobileNavbarThreshold
+      $('[data-toggle="tooltip"]').tooltip(
+        placement: 'bottom'
+        trigger: 'manual').tooltip 'show'
+      $('[data-toggle="tooltip"]').hover ->
+        $(this).tooltip 'destroy'
+
+      $(window).off 'resize', toggleTooltip
+
+  $(window).resize toggleTooltip
+  toggleTooltip()
+
+#destroy tooltip when you click anywhere on page so it's not in the way
+$(window).click ->
+  $('[data-toggle="tooltip"]').tooltip 'destroy'
+
