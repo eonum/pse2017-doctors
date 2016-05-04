@@ -5,9 +5,10 @@
         .h4
           = comparison.localized_field 'name', locale
           .small.top-buffer= link_to t('other-nearby-from-specialty'), comparison_path(comparison, location: "#{@hospital.location[1]},#{@hospital.location[0]}")
-        -#%span#show-hide.pseudoLink{:onClick => "toggle(\""+  @hospital.id + "\")", :style => "align:right;"} show/hide
-        %a{:href => "javascript: void(0);", :onclick => "toggle(\""+  comparison.id + "\");"} Show/Hide rows
+
       .panel-body
+        %a{:href => "javascript: void(0);", :onclick => "toggle(\""+  comparison.id + "\");"}
+          = t('show-hide')
         %table
           %thead#comparison-head
             %tr{ 'data-hopid' => @hospital.id, :style => "display:none;", :id => comparison.id}
