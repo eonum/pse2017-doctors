@@ -7,7 +7,7 @@
           .small.top-buffer= link_to t('other-nearby-from-specialty'), comparison_path(comparison, location: "#{@hospital.location[1]},#{@hospital.location[0]}")
 
       .panel-body
-        %span.pseudoLink{:onclick => "toggle(\""+  comparison.id + "\");", :id => "anchor" + comparison.id, :class => "arrow-anchor"}
+        %span.pseudoLink{:onclick => "toggle(\""+  comparison.id + "\");", :id => "anchor" + comparison.id, :class => "arrow-span"}
           %i.fa.fa-chevron-down
           =t('show')
 
@@ -29,7 +29,7 @@
 
 :javascript
   var numcase_data = #{hop_numcase_data(@comparisons).to_json};
-  var l = document.getElementById('anchor56603bcbe7ffc52d02000000');//id of overview comparison (maybe not general enough)
+  var linkToOverview = document.getElementsByClassName("arrow-span")[0];//id of overview comparison (maybe not general enough)
   function toggle(id) {//hide or shows table content
     if( document.getElementById(id).style.display=='none' ){
       document.getElementById(id).style.display = 'table-row'
@@ -40,5 +40,5 @@
       document.getElementById("anchor" + id).innerHTML = '<i class="fa fa-chevron-down"></i>' + I18n.t('show');
     }
   }
-  $(window).load(function(){ l.click();})//The overview is open by default
+  $(window).load(function(){ linkToOverview.click();})//The overview is open by default
 
