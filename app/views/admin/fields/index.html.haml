@@ -3,7 +3,7 @@
 %table.table.table-striped
   %thead
     %tr
-      %th Name
+      %th =t('name')
       - @years.each do |year, value|
         %th= year
 
@@ -17,8 +17,8 @@
         - else
           %td{colspan: 3}= @hospital[var.field_name]
         - unless @hospital[var.field_name] == nil
-          %td= link_to 'Anzeigen', admin_hospital_field_path(@hospital, var.field_name)
-          %td= link_to 'Bearbeiten', edit_admin_hospital_field_path(@hospital, var.field_name)
-          %td= link_to 'Löschen', admin_hospital_field_path(@hospital, var.field_name), :method => :delete, :data => { :confirm => 'Are you sure?' }
+          %td= link_to t('display'), admin_hospital_field_path(@hospital, var.field_name)
+          %td= link_to t('edit'), edit_admin_hospital_field_path(@hospital, var.field_name)
+          %td= link_to t('delete'), admin_hospital_field_path(@hospital, var.field_name), :method => :delete, :data => { :confirm => t('sure') }
         - else
-          %td= link_to 'Neu erstellen', new_admin_hospital_field_path(@hospital, {:id => var.field_name})
+          %td= link_to t('recreate'), new_admin_hospital_field_path(@hospital, {:id => var.field_name})

@@ -1,6 +1,6 @@
 :javascript
   var listEntry = "<div class='top-buffer'>#{j select_tag('comparison[variable_ids][]', options_for_select(Variable.all.map { |v| [v.localized_field('name', locale), v.id]}))}"
-  + " #{j image_tag '/bullet_toggle_minus.png', :title =>'delete', :onclick => '$(this).closest(\'div\').remove()', :class => 'delete_button_array_list'}"
+  + " #{j image_tag '/bullet_toggle_minus.png', :title =>t('delete'), :onclick => '$(this).closest(\'div\').remove()', :class => 'delete_button_array_list'}"
   + " <span class='pseudoLink'>#{j fa_icon('arrows-v')}</span></div>";
 
   $(function() {
@@ -11,46 +11,46 @@
 = form_for [:admin, @comparison] do |f|
   - if @comparison.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@comparison.errors.count, "error")} prohibited this admin_comparison from being saved:"
+      %h2= "#{pluralize(@comparison.errors.count, "error")} " + t('prohibition-admin')
       %ul
         - @comparison.errors.full_messages.each do |msg|
           %li= msg
   %table.table
     %tr
-      %td= f.label 'Default Name'
+      %td= f.label t('default-name')
       %td= f.text_field :name
     %tr
-      %td= f.label 'Name Deutsch'
+      %td= f.label t('german-name')
       %td= f.text_field :name_de
     %tr
-      %td= f.label 'Name Französisch'
+      %td= f.label t('french-name')
       %td= f.text_field :name_fr
     %tr
-      %td= f.label 'Name Italienisch'
+      %td= f.label t('it-name')
       %td= f.text_field :name_it
     %tr
-      %td= f.label 'Beschrieb Deutsch'
+      %td= f.label t('german-descr')
       %td= f.text_area :description_de
     %tr
-      %td= f.label 'Beschrieb Französisch'
+      %td= f.label t('frnech-descr')
       %td= f.text_area :description_fr
     %tr
-      %td= f.label 'Beschrieb Italienisch'
+      %td= f.label t('it-descr')
       %td= f.text_area :description_it
     %tr
-      %td= f.label 'Basisjahr'
+      %td= f.label t('base-year')
       %td= f.number_field :base_year
       %tr
-      %td= f.label 'Sortierrang'
+      %td= f.label t('sort-rank')
       %td= f.number_field :rank
     %tr
-      %td= f.label 'Entwurfmodus'
+      %td= f.label t('draft-mode')
       %td= f.check_box :is_draft
     %tr
-      %td= f.label 'Arzt Fachgebiete'
+      %td= f.label t('doctor-spec')
       %td= f.text_field :doctor_fields, value: @comparison.doctor_fields.join(',')
     %tr
-      %td Bedingung
+      %td =t('cond')
       %td= f.text_field :limit_field
       %td= f.select :limit_operator, options_for_select([['>', '>'], ['<', '<'], ['=', '='], ['≠', '<>'], ['existiert', 'exists']], @comparison.limit_operator)
       %td= f.text_field :limit_value
@@ -58,17 +58,17 @@
 
   %div
     %span
-      Kennzahlen
+      =t('numbers')
       %br
       #sortable
         - (@comparison['variable_ids'] || []).each do |var|
           %div.top-buffer
             = select_tag('comparison[variable_ids][]', options_for_select(Variable.all.map { |v| [v.localized_field('name', locale), v.id]}, var))
-            = image_tag '/bullet_toggle_minus.png', :title => 'delete', :onclick => '$(this).closest(\'div\').remove()', :class => 'delete_button_array_list'
+            = image_tag '/bullet_toggle_minus.png', :title => t('delete'), :onclick => '$(this).closest(\'div\').remove()', :class => 'delete_button_array_list'
             %span.pseudoLink= fa_icon('arrows-v')
-    %span.pseudoLink{onclick: "$('#sortable').append(listEntry);", title: ""} Kennzahl hinzufügen
+    %span.pseudoLink{onclick: "$('#sortable').append(listEntry);", title: ""} =t('add-number')
 
   %br
   %br
   .actions
-    = f.submit 'Speichern'
+    = f.submit t('save')

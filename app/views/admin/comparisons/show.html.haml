@@ -1,36 +1,36 @@
 %p#notice= notice
 
 %p
-  %b Name:
+  %b =t('name')
   = @comparison.name
 %p
-  %b Name de:
+  %b =t('german-name')+":"
   = @comparison.name_de
 %p
-  %b Name fr:
+  %b =t('french-name')+":"
   = @comparison.name_fr
 %p
-  %b Name it:
+  %b =t('it-name')+":"
   = @comparison.name_it
 %p
-  %b Description de:
+  %b =t('german-descr')+":"
   = @comparison.description_de
 %p
-  %b Description fr:
+  %b =t('french-descr')+":"
   = @comparison.description_fr
 %p
-  %b Description it:
+  %b =t('it-descr')+":"
   = @comparison.description_it
 %p
-  Kennzahlen
+  =t('numbers')
   %ul
     - @comparison.variables.each do |var|
       %li
-        = link_to(var.localized_field('name', locale), [:admin, var])
+        = link_to(var.localized_field(t('name'), locale), [:admin, var])
         = " - "
-        = link_to('Bearbeiten', edit_admin_variable_path(var))
+        = link_to(t('edit'), edit_admin_variable_path(var))
 
 
-= link_to 'Bearbeiten', edit_admin_comparison_path(@comparison)
+= link_to t('edit'), edit_admin_comparison_path(@comparison)
 \|
-= link_to 'Übersicht Vergleiche', admin_comparisons_path
+= link_to t('overview-comp'), admin_comparisons_path
