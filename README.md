@@ -13,7 +13,7 @@ The provided quality indicators are released by the Federal Office of Public Hea
 2. In the console:
 ```ruby
 admin = User.first
-admin.password = ´new_password_very_secret'
+admin.password = 'new_password_very_secret'
 admin.password_confirmation = 'new_password_very_secret'
 admin.save
 ```

@@ -15,10 +15,6 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) {|u| u.permit(:username, :email, :password, :password_confirmation, :current_password)}
   end
 
-  def overview_path
-    return "/de/comparisons/56603bcbe7ffc52d02000000"
-  end
-
   def default_url_options
     { :locale => I18n.locale }
   end

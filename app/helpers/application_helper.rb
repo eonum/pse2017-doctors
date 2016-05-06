@@ -21,6 +21,10 @@ module ApplicationHelper
     safe_join([content_tag(:i, nil, class: "fa fa-#{name}"), " #{text}"])
   end
 
+  def is_comparison_selection_page?
+    current_page?(controller: 'comparisons', action: 'index') || current_page?(home_url)
+  end
+
   def progress_bar(value, css_class)
     content_tag(:div, class: "progress #{css_class}") do
       content_tag(:div, class: 'progress-bar', role: 'progressbar', 'aria-valuenow' => value,

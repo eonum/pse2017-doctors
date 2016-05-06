@@ -7,22 +7,22 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.navbar-brand{:href => comparison_path(Comparison.where(:is_draft.ne => true).order_by(:rank => 'asc').first)}
+      %a.navbar-brand{is_comparison_selection_page? ? {} : {"data-placement" => "bottom", "data-toggle" => "tooltip", :title => t('topics-info')}, :href => home_url}
         = t('app-title')
     .navbar-collapse.collapse.navbar-responsive-collapse
       %ul.nav.navbar-nav
-        %li{ :class => ("active" if current_page?(home_url)) }
+        %li{ :class => ("active" if current_page?(comparison_path(Comparison.where(:is_draft.ne => true).order_by(:rank => 'asc').first))) }
           -# add the tooltip only if we aren't a the home_url yet
-          %a{(current_page?(home_url)) ? {} : {"data-placement" => "bottom", "data-toggle" => "tooltip", :title => t('topics-info')}, :href => home_url }
+          %a{ :href => comparison_path(Comparison.where(:is_draft.ne => true).order_by(:rank => 'asc').first) }
             %i.fa.fa-user-md
-            =t :"Topics"
+            =t('navbar-topics')
         %li{ :class => ("active" if current_page?(about_url)) }
-          = link_to fa_icon('exclamation-circle', 'About'), about_url
+          = link_to fa_icon('exclamation-circle', t('navbar-about')), about_url
       %ul.nav.navbar-nav.navbar-right
         %li{ :class => ("active" if current_page?(help_url)) }
           %a{:href => help_url}
             %i.fa.fa-question-circle
-            = t :"Help"
+            = t('navbar-help')
         %li.dropdown
           %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
             = fa_icon('flag', current_language)
