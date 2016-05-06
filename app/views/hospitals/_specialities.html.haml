@@ -29,15 +29,5 @@
 
 :javascript
   var numcase_data = #{hop_numcase_data(@comparisons).to_json};
-  var linkToOverview = document.getElementsByClassName("arrow-span")[0];
-  function toggle(id) {//hide or shows table content
-    if( document.getElementById(id).style.display=='none' ){
-      document.getElementById(id).style.display = 'table-row'
-      document.getElementById("span" + id).innerHTML = '<i class="fa fa-chevron-up"></i>' + I18n.t('hide');
-    }else{
-      document.getElementById(id).style.display = 'none'
-      document.getElementById("span" + id).innerHTML = '<i class="fa fa-chevron-down"></i>' + I18n.t('show');
-    }
-  }
-  $(window).load(function(){ linkToOverview.click();})//The overview is open by default
+
 
