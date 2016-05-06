@@ -17,8 +17,9 @@ var ready = function() {
 
     $(document).on('click', '.hopmodal', function() {
         console.log($(this).attr('data-modalhref'));
-        $('#hop-modal').removeData("bs.modal").find(".modal-content").empty();
-        $('#hop-modal').modal({
+        var $hopModal = $('#hop-modal');
+        $hopModal.removeData("bs.modal").find(".modal-content").empty();
+        $hopModal.modal({
             show: true,
             remote: $(this).attr('data-modalhref')
         });
@@ -29,7 +30,7 @@ var ready = function() {
 };
 
 $(document).ready(ready);
-$(document).on('page:load', ready)
+$(document).on('page:load', ready);
 
 /*$(document).on("hidden.bs.modal", '#hop-modal', function (e) {
     $(e.target).removeData("bs.modal").find(".modal-content").empty();
@@ -40,7 +41,7 @@ $( function() {
     var change_comparison = function() {
         var comparison_url = $('#comparison').find(":selected").val();
         Turbolinks.visit(comparison_url + '?location=' + app.location, { change: ['main-content'] });
-    }
+    };
 
     $(document).on('change', '#comparison-selection-form button a, #comparison-selection-form select', change_comparison);
 });

@@ -31,6 +31,9 @@ geocode = () =>
 
 # show map and get location
 ready = (geolocate = true) =>
+  $mapModal = $('#map-modal')
+  $locationInput = $('#location-input')
+
   location = getUrlParameter('location')
   if !location? && geolocate
     geoloc()
@@ -43,7 +46,7 @@ ready = (geolocate = true) =>
       console.log @app.location
     geocode()
 
-  $('#map-modal').on 'show.bs.modal', =>
+  $mapModal.on 'show.bs.modal', =>
     console.log 'Showing map...'
     @app.map = new GMaps
       div: '#map',
@@ -64,9 +67,9 @@ ready = (geolocate = true) =>
     @app.map.setCenter(@app.location[0], @app.location[1])
 
   console.log 'Displaying address'
-  $('#location-input').val(@app.address) if @app.address?
+  $locationInput.val(@app.address) if @app.address?
 
-  $('#map-modal').on 'shown.bs.modal', =>
+  $mapModal.on 'shown.bs.modal', =>
     console.log 'refreshing map'
     @app.map.refresh()
     @app.map.setCenter(@app.location[0], @app.location[1])
@@ -74,7 +77,7 @@ ready = (geolocate = true) =>
   $(window).trigger 'resize'
 
 
-  $('#map-modal').on 'hidden.bs.modal', =>
+  $mapModal.on 'hidden.bs.modal', =>
     comparison_url = $('#comparison').find(":selected").val()
     Turbolinks.visit(comparison_url + '?location=' + @app.location, { change: ['main-content'] })
 
@@ -87,7 +90,7 @@ ready = (geolocate = true) =>
         Turbolinks.visit(comparison_url + '?location=' + @app.location, { change: ['main-content'] })
 
   # geocoding with address as input
-  $('#location-input').keydown =>
+  $locationInput.keydown =>
     if (event.keyCode == 13)
       console.log 'Geolocate using address'
       GMaps.geocode
@@ -101,8 +104,8 @@ ready = (geolocate = true) =>
       return false
 
   # select all text when click on address bar
-  $('#location-input').click =>
-    $('#location-input').select()
+  $locationInput.click =>
+    $locationInput.select()
 
 
 # Do not geolocate on turbolink refresh
@@ -118,32 +121,32 @@ $(window).on 'resize', ->
 
 # creates all tooltips in the navbar, as soon as the site gets or is bigger than 768px (changes from mobile to desktop version)
 # in the mobile-view the tooltips would get created at the wrong place
-tooltipDestroyed = false
-$(document).ready ->
 
+$(document).ready ->
+  tooltipDestroyed = false
+  $tooltipHolder = $('[data-toggle="tooltip"]')
   toggleTooltip = ->
     width = $(window).width()
     mobileNavbarThreshold = 768
     if width >= mobileNavbarThreshold && !tooltipDestroyed
-      $('[data-toggle="tooltip"]').tooltip(
+      $tooltipHolder.tooltip(
         placement: 'bottom'
         trigger: 'manual').tooltip 'show'
-      $('[data-toggle="tooltip"]').hover ->
+      $tooltipHolder.hover ->
         $(this).tooltip 'destroy'
         tooltipDestroyed = true
 
     if width < mobileNavbarThreshold
-      $('[data-toggle="tooltip"]').tooltip 'destroy'
+      $tooltipHolder.tooltip 'destroy'
 
-
-
+  #destroy tooltip when you click anywhere on page so it's not in the way
+  $(window).click ->
+    $tooltipHolder.tooltip 'destroy'
+    tooltipDestroyed = true
 
   $(window).resize toggleTooltip
   toggleTooltip()
 
-#destroy tooltip when you click anywhere on page so it's not in the way
-$(window).click ->
-  $('[data-toggle="tooltip"]').tooltip 'destroy'
-  tooltipDestroyed = true
+
 
 

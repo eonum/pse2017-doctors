@@ -3,10 +3,10 @@ var showmap = function() {
     $('a[href=#locations]').on('shown.bs.tab', function (e) {
         initialize();
     });
-}
+};
 
 $(document).ready(showmap);
-$(document).on('page:load', showmap)
+$(document).on('page:load', showmap);
 
 
 var visualize_time_series_small = function visualize_time_series_small(time_series) {
@@ -15,7 +15,7 @@ var visualize_time_series_small = function visualize_time_series_small(time_seri
     Object.keys(time_series.response).forEach(function (year) {
         var value = parseFloat(time_series.response[year]);
         data_array.push([year, value]);
-    })
+    });
 
     var data = google.visualization.arrayToDataTable(data_array);
 
@@ -27,4 +27,4 @@ var visualize_time_series_small = function visualize_time_series_small(time_seri
 
     var chart = new google.visualization.AreaChart(document.getElementById('time_series_' + time_series.field_name));
     chart.draw(data, options);
-}
+};
