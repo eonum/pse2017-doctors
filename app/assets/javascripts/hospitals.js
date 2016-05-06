@@ -19,7 +19,8 @@ function ready()
 {
     // Open the overview-table by default
     var linkToOverview = document.getElementsByClassName("arrow-span")[0];
-    linkToOverview.click();
+    if(linkToOverview !== undefined)
+        linkToOverview.click();
     showmap();
 }
 
