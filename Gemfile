@@ -43,6 +43,4 @@ gem "i18n-js"
 gem 'will_paginate'
 gem 'will_paginate_mongoid'
 gem 'will_paginate-bootstrap'
-# Fixes jquery with turbolinks for diverse jquery-plugins (currently only used by tablesaw)
-gem 'jquery-turbolinks'
 
