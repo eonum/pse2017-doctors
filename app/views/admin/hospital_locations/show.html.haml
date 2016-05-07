@@ -29,9 +29,9 @@
   = @hospital_location.location
 
 %p
-  %b Spitalverbund:
-  = @hospital_location.hospital == nil ? 'Undefined' : @hospital_location.hospital.name
+  %b =t('hospital_network')
+  = @hospital_location.hospital == nil ? t('undefined') : @hospital_location.hospital.name
 
-= link_to 'Edit', edit_admin_hospital_location_path(@hospital_location)
+= link_to t('edit'), edit_admin_hospital_location_path(@hospital_location)
 \|
-= link_to 'Back', admin_hospital_locations_path
+= link_to t('back'), admin_hospital_locations_path

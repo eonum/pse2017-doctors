@@ -1,23 +1,23 @@
 %h2 Liste der Spitalstandorte
 
-= link_to 'Neuer Standort', new_admin_hospital_location_path
+= link_to t('new_loc'), new_admin_hospital_location_path
 %br
 %br
 = form_tag(admin_hospital_locations_path, :method => "get") do
-  = label_tag(:q, 'Suche')
+  = label_tag(:q, t('search'))
   = text_field_tag(:q, params[:q])
-  = submit_tag('Suche')
+  = submit_tag(t('search'))
 
 = will_paginate @hospital_locations, renderer: BootstrapPagination::Rails
 %table.table-striped.table
   %thead
     %tr
-      %th Name
-      %th Title
-      %th Gehört zu
-      %th Address
-      %th Canton
-      %th Location
+      %th =t('name')
+      %th =t('title')
+      %th= t('belongs_to')
+      %th =t('address')
+      %th =t('canton')
+      %th =t('location')
       %th
       %th
       %th
@@ -29,13 +29,13 @@
         %td= hospital_location.title
         %td
           -if hospital_location.hospital == nil
-            %span{:style => "color: black;"} Undefined
+            %span{:style => "color: black;"}= t('undefined')
           -else
             =link_to(hospital_location.hospital.name, [:admin, hospital_location.hospital])
         %td= hospital_location.address
         %td= hospital_location.canton
         %td= hospital_location.location
-        %td= link_to 'Bearbeiten', edit_admin_hospital_location_path(hospital_location)
-        %td= link_to 'Löschen', [:admin, hospital_location], :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to t('edit'), edit_admin_hospital_location_path(hospital_location)
+        %td= link_to t('delete'), [:admin, hospital_location], :method => :delete, :data => { :confirm => t('sure') }
 
 = will_paginate @hospital_locations, renderer: BootstrapPagination::Rails

@@ -82,3 +82,10 @@ en:
   for: "for"
   create-field: "Create new Field"
 
+  prohibition_admin_loc: "prohibited this admin_hospital_location from being saved:"
+  undefined: "Undefined"
+  prohibition_admin_hospital: "prohibited this admin_hospital from being saved:"
+  link: "Link"
+  flag: "Flag"
+  sets: "Sets"
+

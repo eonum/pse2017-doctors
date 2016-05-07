@@ -1,7 +1,7 @@
 = form_for [:admin, @hospital_location] do |f|
   - if @hospital_location.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@hospital_location.errors.count, "error")} prohibited this admin_hospital_location from being saved:"
+      %h2= "#{pluralize(@hospital_location.errors.count, "error")} "+t('prohibition_admin_loc')
       %ul
         - @hospital_location.errors.full_messages.each do |msg|
           %li= msg
@@ -11,36 +11,36 @@
       %td= f.number_field :doc_id
     %tr
       %td
-        %strong Name des Spitals
+        %strong= t('hospital_name')
       %td= f.text_field :name
     %tr
       %td
-        %strong Name des Standortes / der Klinik
+        %strong= t('loc_name')
       %td= f.text_field :title
     %tr
       %td
-        %strong Adresse
+        %strong= t('address')
       %td= f.text_field :address
     %tr
       %td= f.label :email
       %td= f.text_field :email
     %tr
       %td
-        %strong Telefonnr. 1
+        %strong = t('phone-no')+" 1"
       %td= f.text_field :phone1
     %tr
       %td
-        %strong Telefonr. 2
+        %strong =t('phone-no')+" 2"
       %td= f.text_field :phone2
     %tr
       %td
-        %strong Kanton
+        %strong =t('canton')
       %td= f.text_field :canton
 
     %tr
-      %td= f.label 'Spitalverbund'
-      %td= f.select :hospital_id, options_for_select([['Keine Zurodnung', nil]] + Hospital.all.order_by(:name.asc).map { |h| [h.name, h.id]}, @hospital_location.hospital == nil ? nil : @hospital_location.hospital.id,), {}, {size: 10}
+      %td= f.label t('hospital_network')
+      %td= f.select :hospital_id, options_for_select([[t('no_assignment'), nil]] + Hospital.all.order_by(:name.asc).map { |h| [h.name, h.id]}, @hospital_location.hospital == nil ? nil : @hospital_location.hospital.id,), {}, {size: 10}
 
 
   .actions
-    = f.submit 'Speichern'
+    = f.submit t('save')
