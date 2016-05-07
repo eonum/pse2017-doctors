@@ -20,12 +20,141 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  app-title: "qm1 Hospital Comparison"
+  speciality: "Speciality"
+  specialities: "Specialities"
+  institution: "Spital"
+  institution-description: "Dies kann auch mehrere Standorte beinhalten. Sortierung nach Distanz."
+  locations: "Locations"
+  headquarter: "Hauptsitz"
+  data_year: "Datenjahr"
+  show_time_series: "Zeitlicher Verlauf anzeigen"
+  year: "Jahr"
+  more-information: "Fordern Sie mehr Informationen an unter: "
+  location-selection: "Ortsauswahl mit Karte"
+  location-box: "Manuelle Ortseingabe"
+  topics-info: "Hier klicken, um alle Fachbereiche zu sehen"
+  topics-subtitle: "Wählen Sie einen Vergleich aus"
+  close-location-search: "Übernehmen"
+  other-nearby-from-specialty: "Zeige Liste mit geeigneten Spitälern in der Umgebung"
+  regeolocate: "Setze aktuellen Standort"
+  no_boolean: "No"
+  nearby-doctors: "Folgende Ärzte befinden sich in der näheren Umgebung dieses Spitals:"
+  doctor-change-request: "Falls ein Arzt fehlt oder falsch erfasst ist, melden Sie sich bitte mit der Korrektur unter "
+  select-hop: "Wählen Sie ein Spital / eine Klinik aus der Liste für Detailinformationen"
+  welcome-title: "<h3><a href='http://qm1.ch'>qm1.ch</a> - Ihr Weg zum geeigneten Spital</h3>"
+  welcome-text: "Das 'Beste Spital' gibt es nicht. Es lohnt sich vielmehr, nach Ihren eigenen Kriterien und zusammen mit Ihrem Arzt bzw.
+      weiteren Vertrauenspersonen die Spitalwahl zu treffen. Zuvor ist zu prüfen, ob überhaupt ein stationärer Aufenthalt notwendig oder
+      ein Eingriff angezeigt ist. Denn jede medizinische Dienstleistung birgt auch Risiken. Siehe auch:
+                 <a href='http://www.qualitaetsmedizin.ch/fur-patienten/aerztlicher-rat-zweitmeinung/' target='_blank'>
+                 http://www.qualitaetsmedizin.ch/fur-patienten/aerztlicher-rat-zweitmeinung/</a>
+                 </p><p>
+                 Um Chancen und Risiken besser zu verstehen und abzuwägen, stehen Ihnen auf qm1.ch die relevanten Informationen, d.h.
+                 geprüfte Spital- und Qualitätskennzahlen, zur Verfügung. Kritische Kennzahlen werden hervorgehoben, als zusätzliche
+                 Anhaltspunkte für Problembereiche im jeweiligen Spital.
+                 </p>
+                 <h4><a href='http://qm1.ch'>qm1.ch</a> - Relevanz</h4>
+                 <p>
+
+                 Zudem hilft Ihnen unsere zusammenfassende Beurteilung zur Relevanz des Spital. Diese spezifische Kennzahl wird
+                  Ihnen pro Spital zum jeweiligen Behandlungsanlass, zum geplanten Eingriff bzw. zum Fachbereich ausgewiesen.
+                  Der Wert wird national, d.h. schweizweit errechnet, und kann zwischen 0% und 100% liegen. Je höher desto besser.
+                   Für die Berechnung gewichten wir verschiedene Faktoren, insbesondere die Zahl behandelter Patienten und den
+                   Stellenwert der Leistungen im jeweiligen Spital bzw. der Klinik.
+                 </p><p>
+                 Komplettiert wird der Steckbrief zum Spital mit Informationen zur Infrastruktur, der Teilnahme an qualitätssichernden
+                  Massnahmen, besonderen Leistungen und Schwerpunkten.
+                 </p><p>
+                 Bei Fragen unterstützen wir Sie auch persönlich bei der Arzt- und Spitalwahl: <a href='mailto:arzt@qm1.ch'>arzt@qm1.ch</a>
+                 "
+  no-value: "keine Angabe"
+  presentation-link: "Kurze Präsentation zu qm1.ch"
+  help: "<div class='panel-heading'>
+                       <h3>Hilfe.</h3>
+                     </div>
+                     <div class='panel-body'>
+                       Die Kennzahlen und Daten zu den Institutionen entstammen publizierten Angaben und aktuellen Datenquellen,
+                       u.a des Bundesamtes für Gesundheit (BAG), des Nationalen Vereins für Qualitätsentwicklung in Spitälern und
+                       Kliniken (ANQ) und publizierten Informationen / Jahresberichten. Allfällige Fehler bitten wir schriftlich zu melden an
+                       <a href=\"mailto:spital@qm1.ch\">spital@qm1.ch</a>
+                       <p></p>
+                       Die Zahlen zur Patientenzufriedenheit finden Sie bei Bedarf auf den Seiten des ANQ (
+                       <a href='http://www.anq.ch/messergebnisse/ergebnisse-akutsomatik/' target='_blank'>http://www.anq.ch/messergebnisse/ergebnisse-akutsomatik/</a>
+                       ). Wir erachten diese als nicht aussagekräftig und irreführend, da die Wertungen eher mit den Serviceleistungen
+                       der Kliniken als mit der tatsächlichen medizinischen Qualität verbunden sind. Zudem bewegen sich die
+                       Ergebnisse seit Jahren in einem Band zwischen guten und sehr guten Bewertungen, was die statistische
+                       Aussagekraft beeinträchtigt. Es ist davon auszugehen, dass alle Kliniken und Spitäler aus dieser Optik
+                       empfohlen werden können und die Patienten / Kunden durchweg zufrieden sind.
+                       <ul class='top-buffer'>
+                         <li>Eine erste Sortierung erfolgt nach geographischer Nähe</li>
+                         <li>
+                           Dunkelgrüne Balken veranschaulichen die Zahl der behandelten Patientenfälle.
+                           <div class='meter' style='max-width: 20%'>
+                             <span style='width: 40%'></span>
+                           </div>
+                           Grüne Balken geben Hinweise auf die Relevanz bzw. Eignung des Spitals im nationalen Vergleich:
+                           <div class='meter relevance' style='max-width: 20%'>
+                             <span style='width: 40%'></span>
+                           </div>
+                         </li>
+                         <li>
+                           <span class='orange-highlight'>Orange</span>
+                           hinterlegte Kennzahlen geben Hinweise auf Auffälligkeiten (z.B. unterdurchschnittliche Qualitätskennzahlen)
+                         </li>
+                         <li>
+                           Mit
+                           <img style=\"border-style:none\" src=\"/assets/accept.png\" alt=\"Accept\" />
+                           werden zusätzliche, positive Merkmale der Institution hervorgehoben
+                         </li>
+                       </ul>
+                       <p><a href='http://qm1.ch'>qm1.ch</a> - Ihr Weg zum geeigneten Spital</p>
+                       <p class='top-buffer'>
+                         Das 'Beste Spital' gibt es nicht. Es lohnt sich vielmehr, nach Ihren eigenen Kriterien und zusammen mit Ihrem Arzt bzw. weiteren Vertrauenspersonen die Spitalwahl zu treffen. Zuvor ist zu prüfen, ob überhaupt ein stationärer Aufenthalt notwendig oder ein Eingriff angezeigt ist. Denn jede medizinische Dienstleistung birgt auch Risiken. Siehe auch: <a href='http://www.qualitaetsmedizin.ch/fur-patienten/aerztlicher-rat-zweitmeinung/' target='_blank'> http://www.qualitaetsmedizin.ch/fur-patienten/aerztlicher-rat-zweitmeinung/</a> </p><p> Um Chancen und Risiken besser zu verstehen und abzuwägen, stehen Ihnen auf qm1.ch die relevanten Informationen, d.h. geprüfte Spital- und Qualitätskennzahlen, zur Verfügung. Kritische Kennzahlen werden hervorgehoben, als zusätzliche Anhaltspunkte für Problembereiche im jeweiligen Spital. </p> <h4><a href='http://qm1.ch'>qm1.ch</a> - Relevanz</h4> <p>
+                         Zudem hilft Ihnen unsere zusammenfassende Beurteilung zur Relevanz des Spital. Diese spezifische Kennzahl wird Ihnen pro Spital zum jeweiligen Behandlungsanlass, zum geplanten Eingriff bzw. zum Fachbereich ausgewiesen. Der Wert wird national, d.h. schweizweit errechnet, und kann zwischen 0% und 100% liegen. Je höher desto besser. Für die Berechnung gewichten wir verschiedene Faktoren, insbesondere die Zahl behandelter Patienten und den Stellenwert der Leistungen im jeweiligen Spital bzw. der Klinik. </p><p> Komplettiert wird der Steckbrief zum Spital mit Informationen zur Infrastruktur, der Teilnahme an qualitätssichernden Massnahmen, besonderen Leistungen und Schwerpunkten. </p><p> Bei Fragen unterstützen wir Sie auch persönlich bei der Arzt- und Spitalwahl: <a href='mailto:arzt@qm1.ch'>arzt@qm1.ch</a>
+                       </p>
+                       <p></p>
+                       Abkürzungen
+                       <dl class='dl-horizontal'>
+                         <dt>BfS</dt>
+                         <dd>Bundesamt für Statistik</dd>
+                         <dt>ANQ</dt>
+                         <dd>Nationaler Verein für Qualitätsentwicklung in Spitälern und Kliniken</dd>
+                         <dt>MRI</dt>
+                         <dd>Magnetic Resonance Imaging, ein bildgebendes Verfahren zur Darstellung der Gewebestrukturen im Körperinneren</dd>
+                         <dt>CT</dt>
+                         <dd>Computertomographie ist ein Röntgenverfahren, mit dem der menschliche Körper in Querschnittbildern (Schnittbildverfahren) dargestellt wird.</dd>
+                         <dt>PET</dt>
+                         <dd>Positronen-Emissions-Tomographie, ein bildgebendes Verfahren der Nuklearmedizin, das Schnittbilder von lebenden Organismen erzeugt, indem es die Verteilung einer schwach radioaktiv markierten Substanz im Organismus sichtbar macht und damit biochemische und physiologische Funktionen abbildet.</dd>
+                         <dt>CC</dt>
+                         <dd>Gamma Camera (inkl. Szintigraphie und SPECT-Scanner); die Untersuchungen werden als Szintigraphie bezeichnet und mit einer Gamma-Kamera angefertigt. So entstehen Abbildungen verschiedenster Stoffwechselprozesse, die eine optimale Ergänzung zu anderen bildgebenden Verfahren wie beispielsweise Röntgenuntersuchungen oder Computertomographien sind, die lediglich anatomische Strukturen zeigen.</dd>
+                         <dt>LB</dt>
+                         <dd>Linearbeschleuniger (Radiotherapie); Ein Linearbeschleuniger ist ein Teilchenbeschleuniger, mit dem elektrisch geladene Teilchen beschleunigt werden. Hierbei wird eine vorher festgelegte  Energiedosis freigesetzt. Linearbeschleuniger werden zur Strahlentherapie von Krebstumoren verwendet. Bestrahlungen können auf den Millimeter genau durchgeführt werden. Das gesunde Gewebe wird dabei weitestgehend geschont, belastende Nebenwirkungen werden auf ein Minimum reduziert.</dd>
+                         <dt>Lito</dt>
+                         <dd>Lithotriptor; bei der Extrakorporalen Stoßwellenlithotripsie wird versucht, mit Hilfe von auf die betroffene Stelle gerichteten gebündelten Schallwellen den Fremdkörper ohne einen percutanen Schnitt so weit zu zerkleinern, dass er entweder natürlich oder operativ entfernt werden kann. Bei Anwendung des Verfahrens der Lithotripsie als Therapie gegen Nierensteine kann meist auf einen stationären Eingriff verzichtet werden.</dd>
+                         <dt>NF</dt>
+                         <dd>Notfall</dd>
+                         <dt>IPS</dt>
+                         <dd>zertifizierte Intensivstation</dd>
+                         <dt>MSt</dt>
+                         <dd>Medizinstudenten</dd>
+                         <dt>BGs</dt>
+                         <dd>Berufe im Gesundheitssektor</dd>
+                         <dt>CIRS</dt>
+                         <dd>\"Critical Incident Reporting System - direktes Qualitätsmerkmal Berichtssystem zur anonymisierten Meldung von kritischen Ereignissen und Beinahe-Schäden. Hierauf erfolgen regelmässige Schulungen/Audits, um Ereignisse dieser Art zukünftig zu vermeiden bzw. die Strukturen und Arbeitsabläufe zu verbessern. Die Ergebnisse werden kontinuierlich gemessen, dokumentiert und sind z.T. Bestandteil des Qualitätsberichtes. \"</dd>
+                       </dl>
+                     </div>"
+  navbar-help: "Help"
+  navbar-about: "About"
+  navbar-topics: "Home"
+  show: " Show Tabelle"
+  hide: " Hide Tabelle"
+
+
   hello: "Hello world"
   name: "Name"
   description: "Description"
-  speciality: "Departement"
+  department: "Department"
   hospitals: "Hospitals"
-  locations: "Locations"
   location: "Location"
   doctors: "Doctors"
   numbers: "Characteristic Numbers"
@@ -61,14 +190,12 @@ en:
   sure: "Are you sure?"
   draft: "Draft"
   published: "published"
-  edit: "Edit"
   overview-comp: "Overview Comoparisons"
   address-title: "Address / Title"
   name-surname: "Name Surname"
   address: "Address"
   phone-no: "Phone Number"
   canton: "Canton"
-  specialities: "Specialities"
   prohibition-doctor: "prohibited this doctor from being saved:"
   back-to-overview: "Back to Overview"
   doc-register: "Register new Doctor"
@@ -81,11 +208,43 @@ en:
   edit-field: "Edit Field"
   for: "for"
   create-field: "Create new Field"
-
   prohibition_admin_loc: "prohibited this admin_hospital_location from being saved:"
   undefined: "Undefined"
   prohibition_admin_hospital: "prohibited this admin_hospital from being saved:"
   link: "Link"
   flag: "Flag"
   sets: "Sets"
+
+
+  hospital_name: "Name of the Hospital"
+  loc_name: "Name of the location / hospital"
+  hospital_network: "Hospital Network"
+  no_assignment: "Keine Zurodnung"
+  new_loc: "Neuer Standort"
+  belongs_to: "Gehört zu"
+  new_hospital: "Neues Spital"
+  street_no: "Strasse, Nr."
+  postcode_city: "PLZ Ort"
+  bfs_typology: "BFS Typologie"
+  number_locs: "Anzahl Standorte"
+  map_coord: "Karte / Koordinaten"
+  locate_new: "Neu lokalisieren"
+  create_new_loc: "Erstelle Standort mit identischer Adresse - Hauptsitz"
+  show_all_fields: "Alle Felder anzeigen"
+  variable_name: "Variablenname"
+  timeline: "Zeitreihe"
+  add_value: "Wert hinzufügen"
+  variable_type: "Variablentyp"
+  possible_values: "Mögliche Werte falls Aufzählung: Kein Eintrag => Freitext"
+  freetext_listing: "Freitext oder Aufzählung"
+  percentnumber: "Prozentzahl"
+  number_of_cases: "Fallzahl"
+  relevance: "Relevanz"
+  descriptions_german: "Beschreibungen Deutsch"
+  descriptions_french: "Beschreibungen Französisch"
+  highlight_limit: "Highlight Limit (nur bei Prozentangaben)"
+  new_variable: "Neue Variable"
+  show_chosen_sets: "Ausgewählte Sets anzeigen"
+  really_delete_char_number: "Möchten Sie diese Kennzahl wirklich löschen?"
+  value_descr: "Wertbeschreibungen"
 
