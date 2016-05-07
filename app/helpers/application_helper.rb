@@ -22,7 +22,7 @@ module ApplicationHelper
   end
 
   def is_comparison_selection_page?
-    current_page?(controller: 'comparisons', action: 'index') || current_page?(home_url)
+    current_page?(url_for(:controller => '/comparisons', :action => 'index')) || current_page?(home_url)
   end
 
   def progress_bar(value, css_class)
