@@ -1,4 +1,4 @@
-%h3 Variablen
+%h3= t('variables')
 = link_to t('new_variable'), new_admin_variable_path
 %br
 %br
@@ -15,7 +15,7 @@
         });
     });
   = form_tag admin_variables_path(), :method => 'get' do |f|
-    %input#tag_field_all.tm-tag{name: "sets", placeholder: "Sets", style: "width:5em;", type: "text"}
+    %input#tag_field_all.tm-tag{name: "sets", placeholder: t('sets'), style: "width:5em;", type: "text"}
     = submit_tag(t('show_chosen_sets'), :class => 'tm-tag', :style => 'margin-top: 0px; padding: 3px;')
 = form_tag(admin_variables_path, :method => "get") do
   = label_tag(:q, t('search'))
@@ -28,7 +28,7 @@
     %tr
       %th= t('variable_name')
       %th= t('description')
-      %th Typ
+      %th= t('type')
       %th{width: "300px"}= t('sets')
       %th{width: "80px"}
   %tbody

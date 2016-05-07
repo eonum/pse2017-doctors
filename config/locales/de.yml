@@ -138,7 +138,7 @@ de:
   hospital_name: "Name des Spitals"
   loc_name: "Name des Standortes / der Klinik"
   hospital_network: "Spitalverbund"
-  no_assignment: "Keine Zurodnung"
+  no_assignment: "Keine Zuodnung"
   new_loc: "Neuer Standort"
   belongs_to: "Gehört zu"
   new_hospital: "Neues Spital"
@@ -184,7 +184,7 @@ de:
   german-name: "Name Deutsch"
   french-name: "Name Französisch"
   it-name: "Name Italienish"
-  german-descr: "Bschrieb Deutsch"
+  german-descr: "Beschrieb Deutsch"
   french-descr: "Beschrieb Französisch"
   it-descr: "Beschrieb Italienisch"
   base-year: "Basisjahr"
@@ -204,7 +204,7 @@ de:
   sure: "Sind Sie sicher?"
   draft: "Entwurf"
   published: "veröffentlicht"
-  overview-comp: "Overview Comoparisons"
+  overview-comp: "Übersicht Vergleiche"
   address: "Adresse"
   phone-no: "Telefonnr."
   canton: "Kanton"
@@ -227,3 +227,18 @@ de:
   link: "Link"
   flag: "Flag"
   sets: "Sets"
+  freetext: "      <br> Freitext: Darstellung als Freitext ohne Änderung.<br/>
+                   <br> Prozentzahl: Zahl zwischen 0 und 100, dargestellt als Zahl mit Hintergrundhighlighting ab Highlight limit<br/>
+                   <br> Fallzahl: Ganze Zahl. Dargestellt als Balken mit Zahl. Balken ist normiert auf den höchsten Wert auf der aktuellen Ansicht. Bei Anzeige auf Spitalvisitenkarte wird nur die Zahl angezeigt, falls mehrere Jahre vorhanden sind, wird ein Chart angezeigt<br/>
+                   <br> Flag: boolean wert, leer oder 'X'. Dargestellt als grünes Gutzeichen.<br/>
+                   <br> Link. URL, Dargestellt als Icon verlinkt mit der URL<br/>
+                   <br> Relevanz: Zahl zwischen 0 und 100 dargestellt als Balken<br/>
+                   <br><br/>"
+  create_comp: "Neuen Vergleich erstellen"
+  no_loc_linked: "Noch keine Standort verknüpft mit diesem Spital."
+  type: "Typ"
+  variables: "Variablen"
+  hospital_list: "Spitalliste"
+  list_hosp_loc: "Liste der Spitalstandorte"
+  all_comp: "Alle Vergleiche"
+  doc_list: "Arztliste"

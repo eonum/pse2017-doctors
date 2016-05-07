@@ -1,4 +1,4 @@
-%h2 Spitalliste
+%h2= t('hospital_list')
 
 = link_to t('new_hospital'), new_admin_hospital_path
 %br
@@ -12,11 +12,11 @@
 %table.table-striped.table
   %thead
     %tr
-      %th =t('name')
+      %th= t('name')
       %th= t('street_no')
       %th= t('postcode_city')
       %th= t('bfs_typology')
-      %th =t('canton')
+      %th= t('canton')
       %th= t('number_locs')
       %th
       %th

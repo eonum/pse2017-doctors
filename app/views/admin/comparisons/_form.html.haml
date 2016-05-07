@@ -17,7 +17,7 @@
           %li= msg
   %table.table
     %tr
-      %td= f.label t('default-name')
+      %td= f.label t('default-Name')
       %td= f.text_field :name
     %tr
       %td= f.label t('german-name')
@@ -32,7 +32,7 @@
       %td= f.label t('german-descr')
       %td= f.text_area :description_de
     %tr
-      %td= f.label t('frnech-descr')
+      %td= f.label t('french-descr')
       %td= f.text_area :description_fr
     %tr
       %td= f.label t('it-descr')
@@ -50,7 +50,7 @@
       %td= f.label t('doctor-spec')
       %td= f.text_field :doctor_fields, value: @comparison.doctor_fields.join(',')
     %tr
-      %td =t('cond')
+      %td= f.label t('cond')
       %td= f.text_field :limit_field
       %td= f.select :limit_operator, options_for_select([['>', '>'], ['<', '<'], ['=', '='], ['≠', '<>'], ['existiert', 'exists']], @comparison.limit_operator)
       %td= f.text_field :limit_value
@@ -66,7 +66,7 @@
             = select_tag('comparison[variable_ids][]', options_for_select(Variable.all.map { |v| [v.localized_field('name', locale), v.id]}, var))
             = image_tag '/bullet_toggle_minus.png', :title => t('delete'), :onclick => '$(this).closest(\'div\').remove()', :class => 'delete_button_array_list'
             %span.pseudoLink= fa_icon('arrows-v')
-    %span.pseudoLink{onclick: "$('#sortable').append(listEntry);", title: ""} =t('add-number')
+    %span.pseudoLink{onclick: "$('#sortable').append(listEntry);", title: ""}= t('add-number')
 
   %br
   %br

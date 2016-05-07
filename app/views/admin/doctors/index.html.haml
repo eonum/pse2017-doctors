@@ -1,4 +1,4 @@
-%h2 Arztliste
+%h2= t('doc_list')
 
 = link_to t('doc-register'), new_admin_doctor_path
 %br
@@ -12,12 +12,12 @@
 %table.table-striped.table
   %thead
     %tr
-      %th =t('name')
-      %th =t('title')
-      %th =t('address')
-      %th =t('canton')
-      %th =t('specialities')
-      %th =t('location')
+      %th= t('name')
+      %th= t('title')
+      %th= t('address')
+      %th= t('canton')
+      %th= t('specialities')
+      %th= t('location')
       %th
       %th
       %th

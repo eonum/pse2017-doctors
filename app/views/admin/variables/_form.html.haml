@@ -42,13 +42,7 @@
   .field
     %p
       = f.label t('variable_type')
-      %br Freitext: Darstellung als Freitext ohne Änderung.
-      %br Prozentzahl: Zahl zwischen 0 und 100, dargestellt als Zahl mit Hintergrundhighlighting ab Highlight limit
-      %br Fallzahl: Ganze Zahl. Dargestellt als Balken mit Zahl. Balken ist normiert auf den höchsten Wert auf der aktuellen Ansicht. Bei Anzeige auf Spitalvisitenkarte wird nur die Zahl angezeigt, falls mehrere Jahre vorhanden sind, wird ein Chart angezeigt
-      %br Flag: boolean wert, leer oder 'X'. Dargestellt als grünes Gutzeichen.
-      %br Link. URL, Dargestellt als Icon verlinkt mit der URL
-      %br Relevanz: Zahl zwischen 0 und 100 dargestellt als Balken
-      %br
+      = raw t('freetext')
       = f.select :variable_type, options_for_select([[t('freetext_listing'), :string], [t('percentnumber'), :percentage], [t('number_of_cases'), :number], [t('flag'), :boolean], [t('link'), :link], [t('relevance'), :relevance]], @variable['variable_type'])
     %p
       = f.label t('possible_values')

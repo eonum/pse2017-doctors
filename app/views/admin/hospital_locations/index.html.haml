@@ -1,4 +1,4 @@
-%h2 Liste der Spitalstandorte
+%h2= t('list_hosp_loc')
 
 = link_to t('new_loc'), new_admin_hospital_location_path
 %br
@@ -12,12 +12,12 @@
 %table.table-striped.table
   %thead
     %tr
-      %th =t('name')
-      %th =t('title')
+      %th= t('name')
+      %th= t('title')
       %th= t('belongs_to')
-      %th =t('address')
-      %th =t('canton')
-      %th =t('location')
+      %th= t('address')
+      %th= t('canton')
+      %th= t('location')
       %th
       %th
       %th

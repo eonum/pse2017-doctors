@@ -29,7 +29,7 @@
   = @hospital_location.location
 
 %p
-  %b =t('hospital_network')
+  %b= t('hospital_network')
   = @hospital_location.hospital == nil ? t('undefined') : @hospital_location.hospital.name
 
 = link_to t('edit'), edit_admin_hospital_location_path(@hospital_location)
