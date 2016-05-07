@@ -16,6 +16,9 @@
           %h5
             %small= var.localized_field 'description', locale
   %tbody
+    .tablesaw-swipe-info
+      swipe for more
+      %img(src="/assets/tactile-left-movement.png")
     - @hospitals.each do |h|
       %tr{ 'data-hopid' => h.id }
         %td
