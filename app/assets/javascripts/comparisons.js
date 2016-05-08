@@ -1,4 +1,4 @@
-
+var swipeTooltipShown = false;
 var ready = function() {
     $(".orange-highlight").animate({backgroundColor: 'rgb(250, 234, 120)'}, 2500);
     if (typeof numcase_data != "undefined") {
@@ -23,8 +23,17 @@ var ready = function() {
         });
     });
 
+    var $table = $("#comparison-table")
     // initialize tablesaw for our comparison table
-    $("#comparison-table").tablesaw();
+    $table.tablesaw();
+
+    // creates the swipeinfo once, only on mobile devices
+    var tableExists = $table !== undefined;
+    if(!swipeTooltipShown && isMobile && tableExists)
+    {
+        swipeInfo();
+        swipeTooltipShown = true;
+    }
 };
 
 $(document).ready(ready);
@@ -64,9 +73,6 @@ function isMobile() {
     return ('ontouchstart' in document.documentElement);
 }
 
-if( isMobile() ) {
-    $(document).ready(swipeInfo);
-}
 
 function swipeInfo() {
     var swipeinfo = $("#swipeinfo"),
@@ -83,10 +89,15 @@ function swipeInfo() {
 
     function timeShiftedShow(){
         setTimeout(function () {
+            var lastColumnShown = tableHead.find('th').not(".tablesaw-ignore").last().is(":visible");
+
+            if(lastColumnShown){
+                swipeinfo.remove();
+                return;
+            }
+
             toggleFloating();
             swipeinfo.fadeTo(400, 1.0);
-
-
         }, 3000);
     }
 
