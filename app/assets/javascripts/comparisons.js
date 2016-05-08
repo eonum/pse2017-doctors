@@ -7,8 +7,6 @@ var ready = function() {
         })
     }
 
-
-
     $(".cantons").removeClass("highlight", 150);
     var canton = getUrlParameter('canton');
     if (canton != undefined) {
@@ -61,6 +59,82 @@ var getUrlParameter = function getUrlParameter(sParam) {
         }
     }
 };
+
+function isMobile() {
+    return ('ontouchstart' in document.documentElement);
+}
+
+if( isMobile() ) {
+    $(document).ready(swipeInfo);
+}
+
+function swipeInfo() {
+    var swipeinfo = $("#swipeinfo"),
+        table = $("#comparison-table"),
+        tableHead = $("#comparison-head"),
+        mainContent = $("#main-content"),
+        floating = true,
+        fixedPosition = $(window).height()/2;
+        swipeinfo.css({
+            'top': fixedPosition,
+            'margin-left': -(table.offset().left+swipeinfo.width())
+        });
+
+
+    function timeShiftedShow(){
+        setTimeout(function () {
+            toggleFloating();
+            swipeinfo.fadeTo(400, 1.0);
+
+
+        }, 3000);
+    }
+
+    function toggleFloating() {
+        var scrollAreaTop = $(window).scrollTop() + fixedPosition;
+        var correction = mainContent.offset().top;
+        var tableHeaderEnd = tableHead.offset().top + tableHead.height();
+        if (scrollAreaTop <= tableHeaderEnd && floating) {
+            swipeinfo.css({
+                'position': 'absolute',
+                'top': tableHeaderEnd - correction,
+                'margin-left': -(swipeinfo.width()+15)
+            });
+            floating = false;
+        }
+        if (scrollAreaTop >= tableHeaderEnd && !floating) {
+            swipeinfo.css({
+                'position': 'fixed',
+                'top': fixedPosition,
+                'margin-left': -(table.offset().left+swipeinfo.width())
+            });
+            floating = true;
+        }
+    }
+
+    function bindEvents() {
+        $(window).scroll(toggleFloating);
+
+        swipeinfo.click(function () {
+            $(this).fadeOut("slow", function () {
+                $(this).remove();
+            });
+        });
+
+        //pass touchevents to the table
+        swipeinfo.on('touchstart touchmove touchend', function (event) {
+            table.trigger(event);
+        });
+
+        // remove the hint if advancing the table was discovered
+        table.on('tablesaw-advance tablesaw-all-visible', function () {
+            swipeinfo.remove();
+        });
+    }
+
+    timeShiftedShow();
+    bindEvents();
+}
 
 
 

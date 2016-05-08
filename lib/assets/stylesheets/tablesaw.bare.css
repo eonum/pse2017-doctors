@@ -23,11 +23,8 @@ table.tablesaw {
 .tablesaw-swipe-info {
   background-color: rgba(55, 55, 55, 0.7);
   border-radius: 10px;
-  position: absolute;
+  position: fixed;
   left: 100%;
-  top: 50%;
-  margin-left: -115px;
-  margin-top: -50px;
   width: 100px;
   height: 100px;
   text-align: center;
