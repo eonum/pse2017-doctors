@@ -31,22 +31,20 @@
       %td= f.text_field :phone1
     %tr
       %td
-        %strong Telefonr. 2
+        %strong Telefonnr. 2
       %td= f.text_field :phone2
     %tr
       %td
         %strong Kanton
-      -#%td= f.select(:canton, options_for_select([['AG','AG'],['AR','AR'],['AI','AI'],['BL','BL'],['BS','BS'],['BE','BE'],['FR','FR'],['GE','GE'],['GL','GL'],['GR','GR'],['JU','JU'],['LU','LU'],['NE','NE'],['NW','NW'],['OW','OW'],['SH','SH'],['SZ','SZ'],['SO','SO'],['SG','SG'],['TI','TI'],['TG','TG'],['UR','UR'],['VD','VD'],['VS','VS'],['ZG','ZG'],['ZH','ZH']], :selected => f.object.canton))
       %td= f.select(:canton, options_for_select(@cantons.map {|value| [value,value]}, :selected => f.object.canton))
-    - (0..@fieldNumber).each do |i|
-      %tr
-        %td
-          -if i == 0
-            %strong Fachbereiche
+    %tr
+      %td
+        %strong Fachbereiche
+        -if current_user.is_admin
+          %td= f.text_field :docfields, :disabled => false
+        -else
 
-          -#%td= f.text_field :docfields
-
-          %td= f.select :docfields, options_for_select(@fields.map {|value| [value,value]}, :selected => f.object.docfields[i], :multiple => true, :name => "docfields[]")
+          %td= f.text_field :docfields, :disabled => true
 
   .actions
     = f.submit 'Speichern'

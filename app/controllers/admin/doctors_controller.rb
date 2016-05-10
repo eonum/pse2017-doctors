@@ -17,8 +17,12 @@ class Admin::DoctorsController < Admin::AdminController
 
   def edit
     @cantons = ['AG','AR','AI','BL','BS','BE','FR','GE','GL','GR','JU','LU','NE','NW','OW','SH','SZ','SO','SG','TI','TG','UR','VD','VS','ZG','ZH']
-    @fields = ['Zusätzlicher Fachbereich','test1','test2','test3','test4']
-    @fieldNumber = @doctor.docfields.size()-1
+    @fields = ['Acupuncture', 'Aestetic Surgeons', 'Allergologists', 'Anaesthesiologits', 'Angiologists', 'Anthroposoph. Medicine', 'Cardiologists', 'Child Psychiatrists',
+               'Dentists', 'Dermatologits', 'Diabetologists', 'Endocrinologists', 'Forensic Medicine', 'Gastroenterologists', 'Geriatrists', 'Gynaecologists',
+               'General med.Practioner', 'Haematologists', 'Hand Surgery', 'Homeopathy', 'Infectiologists', 'Internists', 'Manual Medicine', 'Maxillo-Facial-Surgery',
+               'Nephrologists', 'Neurologists', 'Obstetrics', 'Occupational Medicine', 'Ophthalmologists', 'Oncologists (cancer)', 'Orthopaedic Surgery',
+               'Otorhinolaryngologists', 'Paediatrists', 'Pathologists', 'Plastic Surgeons', 'Pneumology', 'Psychiatrists', 'Rheumatologists', 'Radiology',
+               'Surgeons', 'Sports Medicine', 'Travel Medicine', 'Urologists', 'Venerology']
 
   end
   def create

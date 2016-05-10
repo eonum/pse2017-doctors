@@ -2,6 +2,8 @@ class Doctor
   include Mongoid::Document
   include Geocoder::Model::Mongoid
 
+  has_many :hospital
+
   field :name
   field :title
   field :address

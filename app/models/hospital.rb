@@ -3,6 +3,7 @@ class Hospital
   include Geocoder::Model::Mongoid
 
   has_many :hospital_locations
+  has_many :doctor
 
   field :name
   field :address1
