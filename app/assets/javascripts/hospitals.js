@@ -17,16 +17,16 @@ function toggle(id) {//hide or shows table content
 
 function ready()
 {
+    showmap();
     // Open the overview-table by default
     var linkToOverview = document.getElementsByClassName("arrow-span")[0];
     if(linkToOverview !== undefined)
         linkToOverview.click();
-    showmap();
 }
 
 
-$(document).ready(ready);
-$(document).on('page:load', ready);
+$(document).ready(showmap);
+$(document).on('page:load', showmap);
 
 
 var visualize_time_series_small = function visualize_time_series_small(time_series) {
