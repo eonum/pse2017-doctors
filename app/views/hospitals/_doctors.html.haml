@@ -12,3 +12,4 @@
 
       %p= tel_to d.phone2 unless d.phone2.blank?
       %p= mail_to(d.email, fa_icon('envelope-o', d.email), target: '_blank') unless d.email.blank?
+      %p= link_to(fa_icon('external-link',d.website), d.website) unless d.website.blank?

@@ -73,7 +73,7 @@ class Admin::DoctorsController < Admin::AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def doctor_params
-    p = params.require(:doctor).permit(:name, :title, :address, :email, :phone1, :phone2, :canton, :docfields, :location)
+    p = params.require(:doctor).permit(:name, :title, :address, :email, :website, :phone1, :phone2, :canton, :docfields, :location)
     p[:docfields] = p[:docfields].split(',').map(&:strip) if p[:docfields]
     p
   end
