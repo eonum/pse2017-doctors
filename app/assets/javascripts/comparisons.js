@@ -29,10 +29,12 @@ var ready = function() {
 
     // creates the swipeinfo once, only on mobile devices
     var tableExists = $table !== undefined;
-    if(!swipeTooltipShown && isMobile && tableExists)
-    {
+    if(!swipeTooltipShown && isMobile && tableExists) {
         swipeInfo();
         swipeTooltipShown = true;
+    }
+    else {
+        $("#swipeinfo").remove();
     }
 };
 
@@ -123,13 +125,17 @@ function swipeInfo() {
         }
     }
 
+    function vanish(){
+        swipeinfo.fadeOut("slow", function () {
+            swipeinfo.remove();
+        });
+    }
+
     function bindEvents() {
         $(window).scroll(toggleFloating);
 
         swipeinfo.click(function () {
-            $(this).fadeOut("slow", function () {
-                $(this).remove();
-            });
+            vanish();
         });
 
         //pass touchevents to the table
@@ -139,7 +145,7 @@ function swipeInfo() {
 
         // remove the hint if advancing the table was discovered
         table.on('tablesaw-advance tablesaw-all-visible', function () {
-            swipeinfo.remove();
+            vanish();
         });
     }
 
