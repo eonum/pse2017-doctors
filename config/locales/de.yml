@@ -131,4 +131,4 @@ de:
   navbar-topics: "Home"
   show: " Zeige Tabelle"
   hide: " Verstecke Tabelle"
-  swipeinfo: "Swipe um mehr zu sehen"
+  swipetooltip: "Swipe um mehr zu sehen"

@@ -51,7 +51,7 @@
   background-color: #2bc253;
 }
 
-.swipe-info {
+.swipe-tooltip {
   background-color: rgba(55, 55, 55, 0.7);
   border-radius: 10px;
   position: fixed;
@@ -61,4 +61,5 @@
   text-align: center;
   color: whitesmoke;
   z-index: 2;
+  display: none;
 }

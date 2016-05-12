@@ -1,4 +1,5 @@
-var swipeTooltipShown = false;
+//= require swipetooltip
+
 var ready = function() {
     $(".orange-highlight").animate({backgroundColor: 'rgb(250, 234, 120)'}, 2500);
     if (typeof numcase_data != "undefined") {
@@ -13,7 +14,7 @@ var ready = function() {
         $("#canton-" + canton).addClass("highlight", 250);
     }
 
-    $(document).on('click', '.hopmodal', function() {
+    $(document).on('click', '.hopmodal', function () {
         console.log($(this).attr('data-modalhref'));
         var $hopModal = $('#hop-modal');
         $hopModal.removeData("bs.modal").find(".modal-content").empty();
@@ -24,27 +25,15 @@ var ready = function() {
     });
 
     var $table = $("#comparison-table")
+
     // initialize tablesaw for our comparison table
     $table.tablesaw();
 
-    // creates the swipeinfo once, only on mobile devices
-    var tableExists = $table !== undefined;
-    if(!swipeTooltipShown && isMobile && tableExists) {
-        swipeInfo();
-        swipeTooltipShown = true;
-    }
-    else {
-        $("#swipeinfo").remove();
-    }
+    addSwipeTooltip();
 };
 
 $(document).ready(ready);
 $(document).on('page:load', ready);
-
-/*$(document).on("hidden.bs.modal", '#hop-modal', function (e) {
-    $(e.target).removeData("bs.modal").find(".modal-content").empty();
-});*/
-
 
 $( function() {
     var change_comparison = function() {
@@ -70,88 +59,6 @@ var getUrlParameter = function getUrlParameter(sParam) {
         }
     }
 };
-
-function isMobile() {
-    return ('ontouchstart' in document.documentElement);
-}
-
-
-function swipeInfo() {
-    var swipeinfo = $("#swipeinfo"),
-        table = $("#comparison-table"),
-        tableHead = $("#comparison-head"),
-        mainContent = $("#main-content"),
-        floating = true,
-        fixedPosition = $(window).height()/2;
-        swipeinfo.css({
-            'top': fixedPosition,
-            'margin-left': -(table.offset().left+swipeinfo.width())
-        });
-
-
-    function timeShiftedShow(){
-        setTimeout(function () {
-            var lastColumnShown = tableHead.find('th').not(".tablesaw-ignore").last().is(":visible");
-
-            if(lastColumnShown){
-                swipeinfo.remove();
-                return;
-            }
-
-            toggleFloating();
-            swipeinfo.fadeTo(400, 1.0);
-        }, 3000);
-    }
-
-    function toggleFloating() {
-        var scrollAreaTop = $(window).scrollTop() + fixedPosition;
-        var correction = mainContent.offset().top;
-        var tableHeaderEnd = tableHead.offset().top + tableHead.height();
-        if (scrollAreaTop <= tableHeaderEnd && floating) {
-            swipeinfo.css({
-                'position': 'absolute',
-                'top': tableHeaderEnd - correction,
-                'margin-left': -(swipeinfo.width()+15)
-            });
-            floating = false;
-        }
-        if (scrollAreaTop >= tableHeaderEnd && !floating) {
-            swipeinfo.css({
-                'position': 'fixed',
-                'top': fixedPosition,
-                'margin-left': -(table.offset().left+swipeinfo.width())
-            });
-            floating = true;
-        }
-    }
-
-    function vanish(){
-        swipeinfo.fadeOut("slow", function () {
-            swipeinfo.remove();
-        });
-    }
-
-    function bindEvents() {
-        $(window).scroll(toggleFloating);
-
-        swipeinfo.click(function () {
-            vanish();
-        });
-
-        //pass touchevents to the table
-        swipeinfo.on('touchstart touchmove touchend', function (event) {
-            table.trigger(event);
-        });
-
-        // remove the hint if advancing the table was discovered
-        table.on('tablesaw-advance tablesaw-all-visible', function () {
-            vanish();
-        });
-    }
-
-    timeShiftedShow();
-    bindEvents();
-}
 
 
 
