@@ -28,7 +28,7 @@ function addSwipeTooltip() {
     }
 
     function init(){
-        $swipeTooltip = $("<div>"+I18n.t('swipetooltip')+"</div>").addClass("swipe-tooltip");
+        $swipeTooltip = $("<div>"+I18n.t('swipetooltip')+"<br/></div>").addClass("swipe-tooltip");
         var $image = $("<img src='/assets/tactile-left-movement.png' />");
         $swipeTooltip.append($image);
         $table.append($swipeTooltip);

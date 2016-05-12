@@ -24,7 +24,7 @@ var ready = function() {
         });
     });
 
-    var $table = $("#comparison-table")
+    var $table = $("#comparison-table");
 
     // initialize tablesaw for our comparison table
     $table.tablesaw();
