@@ -7,7 +7,7 @@
         %em
           = comparison.localized_field('description', locale)
       %br
-        = comparison.image_link != "" ? image_tag(comparison.image_link, size:"30") : raw(comparison.raw_html_icon)
+        = comparison.image_link != '' ? image_tag(comparison.image_link, size:"30") : raw(comparison.raw_html_icon)
 
 %p
   =raw t('welcome-title') + t('welcome-text')

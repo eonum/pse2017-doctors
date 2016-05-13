@@ -27,7 +27,7 @@
         %td= comparison.description_de
         %td= comparison.description_fr
         %td= comparison.description_it
-        %td= image_tag comparison.image_link
+        %td= comparison.image_link != '' ? image_tag(comparison.image_link, size:"30") : raw(comparison.raw_html_icon)
         %td= comparison.variables.length
         %td= comparison.is_draft ? 'Entwurf' : 'Veröffentlicht'
         %td= link_to t('edit'), edit_admin_comparison_path(comparison)

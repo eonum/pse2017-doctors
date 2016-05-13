@@ -23,7 +23,7 @@
   = @comparison.description_it
 %p
   %b= t('icon')
-  = @comparison.image_link
+  = @comparison.image_link != '' ? image_tag(@comparison.image_link, size:"30") : raw(@comparison.raw_html_icon)
 %p
   =t('numbers')
   %ul
