@@ -59,8 +59,10 @@ var getUrlParameter = function getUrlParameter(sParam) {
         }
     }
 };
+
 $(document).ready(colourButtons);
 $(window).resize(colourButtons);
+
 function colourButtons(){
     var $buttons = $(".btn-info");
     var rowLength;

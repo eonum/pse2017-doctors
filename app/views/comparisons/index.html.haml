@@ -1,13 +1,13 @@
 %div
   - @comparisons.each_with_index do |comparison, index|
-    =link_to comparison, id: "Comparison-Button"+index.to_s, class:'btn btn-info' do
+    =link_to comparison, class:'btn btn-info' do
       %b
         = comparison.localized_field('name', locale)
       %br
         %em
           = comparison.localized_field('description', locale)
       %br
-        = comparison.image_link != '' ? image_tag(comparison.image_link, size:"30") : raw(comparison.raw_html_icon)
+        = show_icon comparison
 
 %p
   =raw t('welcome-title') + t('welcome-text')

@@ -27,9 +27,9 @@
         %td= comparison.description_de
         %td= comparison.description_fr
         %td= comparison.description_it
-        %td= comparison.image_link != '' ? image_tag(comparison.image_link, size:"30") : raw(comparison.raw_html_icon)
+        %td= show_icon comparison
         %td= comparison.variables.length
-        %td= comparison.is_draft ? 'Entwurf' : 'Veröffentlicht'
+        %td= comparison.is_draft ? t('plan') : t('released')
         %td= link_to t('edit'), edit_admin_comparison_path(comparison)
         %td= link_to t('delete'), [:admin, comparison], :method => :delete, :data => { :confirm => t('sure') }
 
