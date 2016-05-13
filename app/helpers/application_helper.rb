@@ -6,7 +6,7 @@ module ApplicationHelper
   def current_language
     case I18n.locale
       when :de then 'Deutsch'
-      when :fr then 'Francais'
+      when :fr then 'Français'
       when :it then 'Italiana'
       when :en then 'English'
       else 'No Idea'
