@@ -1,5 +1,5 @@
 class Admin::ComparisonsController < Admin::AdminController
-  before_action :set_comparison, only: [:show, :edit, :update, :destroy]
+  before_action :set_comparison, :set_images, only: [:show, :edit, :update, :destroy]
 
   # GET /admin/comparisons
   # GET /admin/comparisons.json
@@ -63,12 +63,17 @@ class Admin::ComparisonsController < Admin::AdminController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+  # Use callbacks to share common setup or constraints between actions.
     def set_comparison
       @comparison = Comparison.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+  def set_images
+    @images = Dir.glob("app/assets/images/*.png").map do |f| File.basename f end
+  end
+
+
+  # Never trust parameters from the scary internet, only allow the white list through.
     def comparison_params
       p = params.require(:comparison).permit(:name, :name_de, :name_fr, :name_it, :description_de,
                                          :description_fr, :description_it, :limit_field,

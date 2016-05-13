@@ -69,7 +69,7 @@
     %span.pseudoLink{onclick: "$('#sortable').append(listEntry);", title: ""} Kennzahl hinzufügen
   %br
     %td Icon
-    = select_tag :image_link, @images
+    =select_tag('comparison[image_link]', options_for_select(@images))
 
   %br
   %br
