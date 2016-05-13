@@ -1,17 +1,17 @@
-%h2 Alle Vergleiche
+%h2= t('all_comp')
 
 %table.table-striped.table
   %thead
     %tr
-      %th Name
-      %th Name de
-      %th Name fr
-      %th Name it
-      %th Description de
-      %th Description fr
-      %th Description it
-      %th Anzahl Kennwerte
-      %th Modus
+      %th= t('name')
+      %th= t('german-name')
+      %th= t('french-name')
+      %th= t('it-name')
+      %th= t('german-descr')
+      %th= t('french-descr')
+      %th= t('it-descr')
+      %th= t('numb-data')
+      %th= t('mode')
       %th
       %th
       %th
@@ -28,9 +28,9 @@
         %td= comparison.description_it
         %td= comparison.variables.length
         %td= comparison.is_draft ? 'Entwurf' : 'Veröffentlicht'
-        %td= link_to 'Edit', edit_admin_comparison_path(comparison)
-        %td= link_to 'Destroy', [:admin, comparison], :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to t('edit'), edit_admin_comparison_path(comparison)
+        %td= link_to t('delete'), [:admin, comparison], :method => :delete, :data => { :confirm => t('sure') }
 
 %br
 
-= link_to 'Neuen Vergleich erstellen', new_admin_comparison_path
+= link_to t('create_comp'), new_admin_comparison_path
