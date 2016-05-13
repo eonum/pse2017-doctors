@@ -146,8 +146,8 @@ en:
   navbar-help: "Help"
   navbar-about: "About"
   navbar-topics: "Home"
-  show: " Show Table"
-  hide: " Hide Table"
+  show_table: " Show Table"
+  hide_table: " Hide Table"
 
 
   hello: "Hello world"

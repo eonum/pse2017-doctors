@@ -128,8 +128,8 @@ fr:
   navbar-help: "Aide"
   navbar-about: "Sur"
   navbar-topics: "Page d'Accueil"
-  show: " Montre Tableau"
-  hide: " Cache Tableau"
+  show_table: " Montre Tableau"
+  hide_table: " Cache Tableau"
 
   address-title: "Anrede / Titel"
   name-surname: "Vorname Name"

@@ -129,8 +129,8 @@ de:
   navbar-help: "Hilfe"
   navbar-about: "Über"
   navbar-topics: "Home"
-  show: " Zeige Tabelle"
-  hide: " Verstecke Tabelle"
+  show_table: " Zeige Tabelle"
+  hide_table: " Verstecke Tabelle"
 
   address-title: "Anrede / Titel"
   name-surname: "Vorname Name"
