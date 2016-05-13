@@ -69,29 +69,9 @@ fr:
                        plutôt les services des cliniques et non pas la qualité des prestations médicales qui sont évalués. De plus,
                        ces dernières années les évaluations ont toujours été bonnes voir très bonnes, ce qui compromet leur pertinence
                        statistique. D’après les évaluations actuelles, toutes les cliniques et tous les hôpitaux sont recommandables
-                       et tous les patients / clients sont satisfaits.
-                       <ul class='top-buffer'>
-                         <li>Un premier tri se fait en fonction de la proximité géographique.</li>
-                         <li>
-                           Les barres vertes foncé représentent le nombre de patients traités.
-                           <div class='meter' style='max-width: 20%'>
-                             <span style='width: 40%'></span>
-                           </div>
-                           Les barres vertes donnent des indications sur la pertinence ou l’aptitude de l’hôpital dans la comparaison nationale:
-                           <div class='meter relevance' style='max-width: 20%'>
-                             <span style='width: 40%'></span>
-                           </div>
-                         </li>
-                         <li>
-                           <span class='orange-highlight'>Les chiffres caractéristiques colorés en orange donnent des indications sur</span>
-                           d’éventuelles anomalies (par ex. des chiffres de qualité inférieurs à la moyenne).
-                         </li>
-                         <li>
-                           Les caractères positifs supplémentaires de l’institution sont soulignés avec
-                           <img style=\"border-style:none\" src=\"/assets/accept.png\" alt=\"Accept\" />
-                         </li>
-                       </ul>
-                       <p><a href='http://qm1.ch'>qm1.ch</a> - Votre choix pour l’hôpital approprié</p>
+                       et tous les patients / clients sont satisfaits."
+
+  help2:              "<p><a href='http://qm1.ch'>qm1.ch</a> - Votre choix pour l’hôpital approprié</p>
                        <p class='top-buffer'>Le 'meilleur hôpital' n’existe pas. Cela vaut la peine de choisir l’hôpital selon vos critères propres et en accord avec votre médecin ou d’autres personnes de confiance. Tout d’abord il s’agit de déterminer, si une hospitalisation ou une intervention s’impose. Chaque prestation médicale comporte ses risques. Voir aussi: <a href='http://www.qualitaetsmedizin.ch/fur-patienten/aerztlicher-rat-zweitmeinung/' target='_blank'> http://www.qualitaetsmedizin.ch/fur-patienten/aerztlicher-rat-zweitmeinung/</a> </p><p> Pour mieux comprendre et évaluer les chances et les risques, vous trouvez les informations pertinentes sous  <a href='http://qm1.ch'>qm1.ch</a> , c’est-à-dire des indicateurs vérifiés de l’hôpital et de la qualité. Les indicateurs critiques sont mis en évidence en tant qu’indice pour des domaines à problèmes dans l’hôpital respectif.
                        </p> <h4><a href='http://qm1.ch'>qm1.ch</a> - Pertinence</h4> <p>
                        Notre appréciation globale au sujet de la pertinence de l‘hôpital peut aussi vous aider. Cet indicateur spécifique porte sur le traitement respectif, l’intervention prévue ou le domaine de spécialisation par hôpital. La valeur est établie sur le plan national et peut varier entre 0% et 100%. Plus le taux est élevé, mieux c’est. Sont pris en considération divers facteurs pour le calcul, surtout le nombre de patients traités et l’importance des prestations dans l’hôpital respectif ou la clinique respective. </p><p> Les informations sur l’infrastructure, la participation aux mesures qualitatives, les prestations particulières et les priorités complètent la fiche signalétique de l’hôpital. </p><p> En cas de question, n'hésitez pas de nous contacter pour le choix du médecin ou de l’hôpital: <a href='mailto:doc@qm1.ch'>doc@qm1.ch</a> </p>
@@ -123,8 +103,7 @@ fr:
                          <dd>Professionnels de la santé</dd>
                          <dt>CIRS</dt>
                          <dd>\"Critical Incident Reporting System - un critère de qualité fréquent Système de rapport pour une déclaration anonyme d'incidents critiques et quasi dommages. En suivent des formations/audits réguliers, afin d'éviter des incidents de ce genre, respectivement d'améliorer les structures et les processus de travail. Les résultats sont mesurés de façon continue, documentés et en partie publiés dans le rapport de qualité.\"</dd>
-                       </dl>
-                     </div>"
+                       </dl>"
   navbar-help: "Aide"
   navbar-about: "Sur"
   navbar-topics: "Page d'Accueil"
@@ -244,3 +223,13 @@ fr:
   icon: "Icon"
   raw_html: "Raw HTML code (e.g. a favicon)"
   raw: "Raw HTML code"
+
+  first_order: "Un premier tri se fait en fonction de la proximité géographique."
+  patient_cases: "Les barres vertes foncé représentent le nombre de patients traités."
+  national_comparison: "Les barres vertes donnent des indications sur la pertinence ou l’aptitude de l’hôpital dans la comparaison nationale:"
+  last_data_year: "Un clic sur le nombre de cas démontre la tendance univoque à travers les dernières années de données."
+  with: "Les caractères positifs supplémentaires de l’institution sont soulignés avec"
+  conspicuousness: "d’éventuelles anomalies (par ex. des chiffres de qualité inférieurs à la moyenne)."
+  positive_features: ""
+  orange: "Les chiffres caractéristiques colorés en orange donnent des indications sur"
+

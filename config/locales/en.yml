@@ -266,3 +266,12 @@ en:
   list_hosp_loc: "List of Hospital Locations"
   all_comp: "All Comparisons"
   doc_list: "List of Doctors"
+
+  first_order: "Eine erste Sortierung erfolgt nach geographischer Nähe"
+  patient_cases: "Dunkelgrüne Balken veranschaulichen die Zahl der behandelten Patientenfälle."
+  national_comparison: "Grüne Balken geben Hinweise auf die Relevanz bzw. Eignung des Spitals im nationalen Vergleich:"
+  last_data_year: "Ein Klick auf die Fallzahlen zeigt den zeitlichen Trend über die letzten Datenjahre."
+  with: "Mit"
+  conspicuousness: "hinterlegte Kennzahlen geben Hinweise auf Auffälligkeiten (z.B. unterdurchschnittliche Qualitätskennzahlen)"
+  positive_features: "werden zusätzliche, positive Merkmale der Institution hervorgehoben"
+  orange: "Orange"
