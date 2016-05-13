@@ -131,7 +131,6 @@ fr:
   show: " Montre Tableau"
   hide: " Cache Tableau"
 
-
   address-title: "Anrede / Titel"
   name-surname: "Vorname Name"
   hospital_name: "Name des Spitals"
@@ -241,3 +240,4 @@ fr:
   list_hosp_loc: "Liste der Spitalstandorte"
   all_comp: "Alle Vergleiche"
   doc_list: "Liste de docteurs"
+  swipetooltip: "essuie pour voir plus"

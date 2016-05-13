@@ -132,7 +132,6 @@ de:
   show: " Zeige Tabelle"
   hide: " Verstecke Tabelle"
 
-
   address-title: "Anrede / Titel"
   name-surname: "Vorname Name"
   hospital_name: "Name des Spitals"
@@ -242,3 +241,5 @@ de:
   list_hosp_loc: "Liste der Spitalstandorte"
   all_comp: "Alle Vergleiche"
   doc_list: "Arztliste"
+  swipetooltip: "Swipe um mehr zu sehen"
+

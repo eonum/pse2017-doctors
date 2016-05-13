@@ -1,3 +1,4 @@
+//= require swipetooltip
 
 var ready = function() {
     $(".orange-highlight").animate({backgroundColor: 'rgb(250, 234, 120)'}, 2500);
@@ -7,15 +8,13 @@ var ready = function() {
         })
     }
 
-
-
     $(".cantons").removeClass("highlight", 150);
     var canton = getUrlParameter('canton');
     if (canton != undefined) {
         $("#canton-" + canton).addClass("highlight", 250);
     }
 
-    $(document).on('click', '.hopmodal', function() {
+    $(document).on('click', '.hopmodal', function () {
         console.log($(this).attr('data-modalhref'));
         var $hopModal = $('#hop-modal');
         $hopModal.removeData("bs.modal").find(".modal-content").empty();
@@ -25,17 +24,16 @@ var ready = function() {
         });
     });
 
+    var $table = $("#comparison-table");
+
     // initialize tablesaw for our comparison table
-    $("#comparison-table").tablesaw();
+    $table.tablesaw();
+
+    addSwipeTooltip();
 };
 
 $(document).ready(ready);
 $(document).on('page:load', ready);
-
-/*$(document).on("hidden.bs.modal", '#hop-modal', function (e) {
-    $(e.target).removeData("bs.modal").find(".modal-content").empty();
-});*/
-
 
 $( function() {
     var change_comparison = function() {
