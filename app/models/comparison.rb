@@ -13,7 +13,7 @@ class Comparison
   field :description_fr, type: String, default: ''
   field :description_it, type: String, default: ''
   field :image_link, type: String, default:''
-  field :raw_html_icon, type: String, default:'<i class="fa fa-question-circle" style="color:black;font-size:30px"></i>'
+  field :raw_html_icon, type: String, default:''
 
   field :base_year, type: String, default: '2013'
   field :is_draft, type: Boolean, default: false
