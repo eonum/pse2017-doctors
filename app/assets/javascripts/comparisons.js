@@ -59,6 +59,36 @@ var getUrlParameter = function getUrlParameter(sParam) {
         }
     }
 };
+$(document).ready(colourButtons);
+$(window).resize(colourButtons);
+function colourButtons(){
+    var $buttons = $(".btn-info");
+    var rowLength;
+    if($(window).width() >= 1200)
+        rowLength = 4;
+    else if($(window).width() >= 645)
+        rowLength = 2;
+    else
+        rowLength = 1;
 
+    $buttons.each(function (i) {
+        var row = Math.floor(i / rowLength);
+        var rowIndex = i - (row*rowLength);
+        if(row % 2 === 0) {
+            if (rowIndex % 2 === 0) {
+                $(this).css('background-color', '#E0E0E0');
+            }
+            else
+                $(this).css('background-color', 'white');
+        }
+        else {
+            if (rowIndex % 2 === 1) {
+                $(this).css('background-color', '#E0E0E0');
+            }
+            else
+                $(this).css('background-color', 'white');
+        }
+    });
+}
 
 

@@ -67,6 +67,13 @@
             = image_tag '/bullet_toggle_minus.png', :title => t('delete'), :onclick => '$(this).closest(\'div\').remove()', :class => 'delete_button_array_list'
             %span.pseudoLink= fa_icon('arrows-v')
     %span.pseudoLink{onclick: "$('#sortable').append(listEntry);", title: ""}= t('add-number')
+  %br
+    %td= t('icon')
+    =select_tag('comparison[image_link]', options_for_select(@images, @comparison.image_link), :include_blank => t('raw'), id: 'icon-dropdown')
+  %br
+  #rawHTMLField
+    %td= t('raw_html')
+    %td= f.text_field :raw_html_icon, size: 100, id: 'rawHTMLTextBox'
 
   %br
   %br

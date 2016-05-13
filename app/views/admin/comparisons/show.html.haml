@@ -22,6 +22,9 @@
   %b= t('it-descr')+":"
   = @comparison.description_it
 %p
+  %b= t('icon')
+  = @comparison.image_link
+%p
   =t('numbers')
   %ul
     - @comparison.variables.each do |var|

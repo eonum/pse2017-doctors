@@ -12,11 +12,11 @@ function toggle(id) {
 
     if( comparison.css( "display" ) === "none" ){
         comparison.show();
-        comparisonSwitch.html('<i class="fa fa-chevron-up"></i>' + I18n.t('hide'));
+        comparisonSwitch.html('<i class="fa fa-chevron-up"></i>' + I18n.t('hide_table'));
     }
     else {
         comparison.hide();
-        comparisonSwitch.html('<i class="fa fa-chevron-down"></i>' + I18n.t('show'));
+        comparisonSwitch.html('<i class="fa fa-chevron-down"></i>' + I18n.t('show_table'));
     }
 }
 

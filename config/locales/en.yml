@@ -146,13 +146,17 @@ en:
   navbar-help: "Help"
   navbar-about: "About"
   navbar-topics: "Home"
-  show: " Show Table"
-  hide: " Hide Table"
+  show_table: " Show Table"
+  hide_table: " Hide Table"
 
 
   hello: "Hello world"
   name: "Name"
   description: "Description"
+
+  icon: "Icon"
+  raw_html: "Raw HTML code (e.g. a favicon)"
+  raw: "Raw HTML code"
   department: "Department"
   hospitals: "Hospitals"
   location: "Location"
@@ -262,4 +266,3 @@ en:
   list_hosp_loc: "List of Hospital Locations"
   all_comp: "All Comparisons"
   doc_list: "List of Doctors"
-
