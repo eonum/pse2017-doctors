@@ -132,3 +132,6 @@ de:
   show: " Zeige Tabelle"
   hide: " Verstecke Tabelle"
   swipetooltip: "Swipe um mehr zu sehen"
+  icon: "Icon"
+  raw_html: "Unkompilierter HTML-Code (z.B. für ein favicon)"
+  raw: "Unkompilierter HTML-Code"

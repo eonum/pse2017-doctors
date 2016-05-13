@@ -68,9 +68,9 @@
             %span.pseudoLink= fa_icon('arrows-v')
     %span.pseudoLink{onclick: "$('#sortable').append(listEntry);", title: ""} Kennzahl hinzufügen
   %br
-    %td Icon
-    =select_tag('comparison[image_link]', options_for_select(@images), :include_blank => 'Raw HTML')
-    %td= t('raw')
+    %td= t('icon')
+    =select_tag('comparison[image_link]', options_for_select(@images), :include_blank => t('raw'))
+    %td= t('raw_html')
     %td= f.text_field :raw_html_icon
 
   %br

@@ -24,3 +24,6 @@ en:
   name: "Name"
   description: "Description"
   speciality: "Département"
+  icon: "Icon"
+  raw_html: "Raw HTML code (e.g. a favicon)"
+  raw: "Raw HTML code"

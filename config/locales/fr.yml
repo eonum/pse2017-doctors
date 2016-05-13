@@ -131,3 +131,6 @@ fr:
   show: " Montre Tableau"
   hide: " Cache Tableau"
   swipetooltip: "essuie pour voir plus"
+  icon: "Icon"
+  raw_html: "Raw HTML code (e.g. a favicon)"
+  raw: "Raw HTML code"
