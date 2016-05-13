@@ -69,7 +69,7 @@
     %span.pseudoLink{onclick: "$('#sortable').append(listEntry);", title: ""}= t('add-number')
   %br
     %td= t('icon')
-    =select_tag('comparison[image_link]', options_for_select(@images), :include_blank => t('raw'), id: 'icon-dropdown')
+    =select_tag('comparison[image_link]', options_for_select(@images, @comparison.image_link), :include_blank => t('raw'), id: 'icon-dropdown')
   %br
   #rawHTMLField
     %td= t('raw_html')
