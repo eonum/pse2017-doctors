@@ -14,7 +14,7 @@
         %li{ :class => ("active" if current_page?(comparison_path(Comparison.where(:is_draft.ne => true).order_by(:rank => 'asc').first))) }
           -# add the tooltip only if we aren't a the home_url yet
           %a{ :href => comparison_path(Comparison.where(:is_draft.ne => true).order_by(:rank => 'asc').first) }
-            %i.fa.fa-user-md
+            %i.fa.fa-home
             =t('navbar-topics')
         %li{ :class => ("active" if current_page?(about_url)) }
           = link_to fa_icon('exclamation-circle', t('navbar-about')), about_url
