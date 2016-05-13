@@ -69,7 +69,9 @@
     %span.pseudoLink{onclick: "$('#sortable').append(listEntry);", title: ""} Kennzahl hinzufügen
   %br
     %td Icon
-    =select_tag('comparison[image_link]', options_for_select(@images))
+    =select_tag('comparison[image_link]', options_for_select(@images), :include_blank => 'Raw HTML')
+    %td= t('raw')
+    %td= f.text_field :raw_html_icon
 
   %br
   %br

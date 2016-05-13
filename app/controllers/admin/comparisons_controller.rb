@@ -78,7 +78,7 @@ class Admin::ComparisonsController < Admin::AdminController
       p = params.require(:comparison).permit(:name, :name_de, :name_fr, :name_it, :description_de,
                                          :description_fr, :description_it, :limit_field,
                                          :limit_operator, :limit_value, :base_year, :rank, :doctor_fields,
-                                          :is_draft,:image_link)
+                                          :is_draft,:image_link, :raw_html_icon)
       p[:doctor_fields] = p[:doctor_fields].split(',').map(&:strip) if p[:doctor_fields]
       p
     end
