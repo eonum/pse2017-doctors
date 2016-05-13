@@ -29,7 +29,7 @@
         %td= comparison.variables.length
         %td= comparison.is_draft ? 'Entwurf' : 'Veröffentlicht'
         %td= link_to t('edit'), edit_admin_comparison_path(comparison)
-        %td= link_to t('destroy'), [:admin, comparison], :method => :delete, :data => { :confirm => t('sure') }
+        %td= link_to t('delete'), [:admin, comparison], :method => :delete, :data => { :confirm => t('sure') }
 
 %br
 
