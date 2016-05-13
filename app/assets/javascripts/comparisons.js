@@ -1,4 +1,4 @@
-//= require swipetooltip
+//= require swipetooltip.js.erb
 
 var ready = function() {
     $(".orange-highlight").animate({backgroundColor: 'rgb(250, 234, 120)'}, 2500);

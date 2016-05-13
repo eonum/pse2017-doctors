@@ -1,7 +1,7 @@
-%h2= "Bearbeiten von Feld #{params[:id]} (#{@variable.localized_field 'name', locale}) für #{@hospital.name}"
+%h2= t('edit-field')+" #{params[:id]} (#{@variable.localized_field 'name', locale}) " +t('for')+" #{@hospital.name}"
 
 = render 'form'
 
-= link_to 'Show', admin_hospital_field_path(@hospital, params[:id])
+= link_to t('show'), admin_hospital_field_path(@hospital, params[:id])
 \|
-= link_to 'Back', admin_hospital_fields_path
+= link_to t('back'), admin_hospital_fields_path

@@ -1,5 +1,5 @@
-%h3 Variablen
-= link_to 'Neue Variable', new_admin_variable_path
+%h3= t('variables')
+= link_to t('new_variable'), new_admin_variable_path
 %br
 %br
 %div
@@ -15,21 +15,21 @@
         });
     });
   = form_tag admin_variables_path(), :method => 'get' do |f|
-    %input#tag_field_all.tm-tag{name: "sets", placeholder: "Sets", style: "width:5em;", type: "text"}
-    = submit_tag('Ausgewählte Sets anzeigen', :class => 'tm-tag', :style => 'margin-top: 0px; padding: 3px;')
+    %input#tag_field_all.tm-tag{name: "sets", placeholder: t('sets'), style: "width:5em;", type: "text"}
+    = submit_tag(t('show_chosen_sets'), :class => 'tm-tag', :style => 'margin-top: 0px; padding: 3px;')
 = form_tag(admin_variables_path, :method => "get") do
-  = label_tag(:q, 'Suche')
+  = label_tag(:q, t('search'))
   = text_field_tag(:q, params[:q])
-  = submit_tag('Suche')
+  = submit_tag(t('search'))
 
 = will_paginate @variables, renderer: BootstrapPagination::Rails
 %table.table-striped.table
   %thead
     %tr
-      %th= 'Variablenname'
-      %th= 'Beschrieb'
-      %th Typ
-      %th{width: "300px"} Sets
+      %th= t('variable_name')
+      %th= t('description')
+      %th= t('type')
+      %th{width: "300px"}= t('sets')
       %th{width: "80px"}
   %tbody
     - @variables.each do |variable|
@@ -39,8 +39,8 @@
             = variable.field_name
             \:
             %br
-            = variable.localized_field('name', locale)
-        %td= variable.localized_field('description', locale)
+            = variable.localized_field(t('name'), locale)
+        %td= variable.localized_field(t('description'), locale)
         %td= variable.variable_type
         %td
           :javascript
@@ -56,10 +56,10 @@
             });
           = form_for variable, :url => set_variable_sets_admin_variable_path(variable), :method => 'post' do |f|
             %input.tm-tag{id: "tag_field_#{variable.field_name}", name: "sets", placeholder: "Sets", style: "width:5em;", type: "text"}
-            = submit_tag('Speichern', :class => 'tm-tag', :style => 'margin-top: 0px; padding: 3px;')
+            = submit_tag(t('save'), :class => 'tm-tag', :style => 'margin-top: 0px; padding: 3px;')
         %td
           = link_to image_tag('application_view_list.png', :style => 'border-style:none'), admin_variable_path(variable)
           = link_to image_tag('note_edit.png', :style => 'border-style:none'), edit_admin_variable_path(variable)
-          = link_to image_tag('delete.png', :style => 'border-style:none'), admin_variable_path(variable), method: :delete, :title => 'Löschen', :data => {:confirm => 'Möchten Sie diese Kennzahl wirklich löschen?'}
+          = link_to image_tag('delete.png', :style => 'border-style:none'), admin_variable_path(variable), method: :delete, :title => t('delete'), :data => {:confirm => t('really_delete_char_number')}
 
 = will_paginate @variables, renderer: BootstrapPagination::Rails
