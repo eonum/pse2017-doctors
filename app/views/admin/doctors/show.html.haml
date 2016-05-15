@@ -67,6 +67,12 @@
 %p
   %b Fachbereiche:
   = @doctor.docfields
+%p
+  %b Spitäler:
+  - @doctor.hospitals.each do |f|
+    %li
+      = f.name
+
 
 = link_to 'Bearbeiten', edit_admin_doctor_path(@doctor)
 \|

@@ -16,7 +16,7 @@ admin = User.first
 admin.password = ´new_password_very_secret'
 admin.password_confirmation = 'new_password_very_secret'
 admin.save
-```
+```rail
 
 ### Create doctor logins or reset the database
 1. Run 'rake create_users:doctors' to create a user for every

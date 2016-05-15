@@ -13,6 +13,9 @@
       %a{href: '#locations', role: 'tab', 'data-toggle' => 'tab'}
         = fa_icon('hospital-o', t('locations'))
     %li
+      %a{href: '#doctorshospitals', role: 'tab', 'data-toggle' => 'tab'}
+        = fa_icon('user-md', t('doctors'))
+    %li
       %a{href: '#doctors', role: 'tab', 'data-toggle' => 'tab'}
         = fa_icon('user-md', t('doctors'))
   .tab-content.top-buffer
@@ -39,5 +42,7 @@
                 - unless location.phone2.blank?
                   %br
                   = tel_to location.phone2
+    #doctorshospitals.tab-pane.fade
+      = render partial: 'doctorshospitals'
     #doctors.tab-pane.fade
       = render partial: 'doctors'

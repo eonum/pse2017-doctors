@@ -2,7 +2,7 @@ require File.expand_path('../boot', __FILE__)
 
 # Pick the frameworks you want:
 require "active_model/railtie"
-# require "active_record/railtie"
+#require "active_record/railtie"
 require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
@@ -29,5 +29,9 @@ module MongoidTest
     config.i18n.default_locale = :de
     config.i18n.fallbacks =[:de, :fr, :it, :en]
     config.i18n.enforce_available_locales = false
+
+    config.generators do |g|
+      g.orm :active_record
+    end
   end
 end

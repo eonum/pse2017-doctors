@@ -2,8 +2,6 @@ class Admin::AdminController < ApplicationController
   before_filter :authenticate_user!
   before_filter :admin_only, :except => :get_doctor_path
 
-
-
   def admin_only
     unless current_user.is_admin?
       unless request.env['PATH_INFO'].include? get_doctor_path
@@ -29,5 +27,6 @@ class Admin::AdminController < ApplicationController
   end
 
   layout :select_layout
+  layout 'admin'
 
 end

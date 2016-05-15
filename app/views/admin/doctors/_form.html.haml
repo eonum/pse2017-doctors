@@ -1,3 +1,12 @@
+:javascript
+  var listEntry = "<div class='top-buffer'>#{j select_tag('doctor[hospital_ids][]', options_for_select(Hospital.all.map { |v| [v.name, v.id]}))}"
+  + " #{j image_tag '/bullet_toggle_minus.png', :title =>'delete', :onclick => '$(this).closest(\'div\').remove()', :class => 'delete_button_array_list'}</div>";
+
+  $(function() {
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+  });
+
 = form_for [:admin, @doctor] do |f|
   - if @doctor.errors.any?
     #error_explanation
@@ -46,5 +55,18 @@
 
           %td= f.text_field :docfields, :disabled => true
 
+
+  %div
+    %span
+      %strong Spitäler
+      %br
+      #sortable
+        - (@doctor['hospital_ids']  || []).each do |var|
+          %div.top-buffer
+            = select_tag'doctor[hospital_ids][]', options_for_select(Hospital.all.map { |v|[v.name, v.id]},var)
+            = image_tag '/bullet_toggle_minus.png', :title => 'delete', :onclick => '$(this).closest(\'div\').remove()', :class => 'delete_button_array_list'
+    %span.pseudoLink{onclick: "$('#sortable').append(listEntry);", title: ""} Spital hinzufügen
+
+  %br
   .actions
     = f.submit 'Speichern'

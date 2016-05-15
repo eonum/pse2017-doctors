@@ -1,0 +1,16 @@
+%ul.list-group
+  %li.list-group-item.list-group-item-info
+    %h4= t('doctors-in-hospital')
+    %div.top-buffer
+      = t('doctor-change-request')
+      = mail_to 'spital@qualitaetsmedizin.ch', 'spital@qualitaetsmedizin.ch'
+  - @hospital.doctors.each do |f|
+    %li.list-group-item
+      %p= f.title
+      %strong= f.name
+      %strong= f.name
+      %p= doctor_address(f)
+
+      %p= tel_to f.phone2 unless f.phone2.blank?
+      %p= mail_to(f.email, fa_icon('envelope-o', f.email), target: '_blank') unless f.email.blank?
+      %p= link_to(fa_icon('external-link',f.website), f.website) unless f.website.blank?

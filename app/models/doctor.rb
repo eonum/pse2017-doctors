@@ -2,7 +2,7 @@ class Doctor
   include Mongoid::Document
   include Geocoder::Model::Mongoid
 
-  has_many :hospital
+  has_and_belongs_to_many :hospitals
 
   field :name
   field :title
@@ -29,5 +29,13 @@ class Doctor
 
   def clean_address
     address.gsub(/\u00a0/, ' ')
+  end
+  def hospitals
+    # Unfortunately this is necessary because mongoid won't return
+    # has_many relations in the order stored in the database. Maybe
+    # someone has a better solution for this problem?
+    hospitals = []
+    self.hospital_ids.each {|id| hospitals << Hospital.find(id)}
+    hospitals
   end
 end
