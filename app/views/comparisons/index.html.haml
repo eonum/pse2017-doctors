@@ -1,32 +1,14 @@
-%link{:rel => :stylesheet,:href => "fonts.css"}
 %div
   - @comparisons.each_with_index do |comparison, index|
-    -if index%2==0
-      =link_to comparison, class:'btn btn-info' do
-        %b
-          =comparison.localized_field('name', locale)
-        %br
-          %em
-            =comparison.localized_field('description', locale)
-        %br
-          -if index==0
-            %i.fa.fa-list
-          -if index==2
-            %i.fa.fa-heart
-          -if index==6
-            %i.glyphicon.glyphicon-balance-scale
-    -else
-      =link_to comparison, class:'btn btn-info2' do
-        %b
-          =comparison.localized_field('name', locale)
-        %br
-          %em
-            =comparison.localized_field('description', locale)
-        %br
-          -if index==1
-            %data-icon-050.path3
-          -if index==5
-            %i.fa.fa-medkit
+    =link_to comparison, class:'btn btn-info' do
+      %b
+        = comparison.localized_field('name', locale)
+      %br
+        %em
+          = comparison.localized_field('description', locale)
+      %br
+        = show_icon comparison
+
 %p
   =raw t('welcome-title') + t('welcome-text')
 %p= link_to fa_icon('file-pdf-o', t('presentation-link')), "/qm1_Spitaldaten_Kennzahlen_Relevanz_Spitalvergleich.pdf", target: '_blank'

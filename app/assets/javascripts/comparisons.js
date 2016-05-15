@@ -1,3 +1,4 @@
+//= require swipetooltip.js.erb
 
 var ready = function() {
     $(".orange-highlight").animate({backgroundColor: 'rgb(250, 234, 120)'}, 2500);
@@ -7,15 +8,13 @@ var ready = function() {
         })
     }
 
-
-
     $(".cantons").removeClass("highlight", 150);
     var canton = getUrlParameter('canton');
     if (canton != undefined) {
         $("#canton-" + canton).addClass("highlight", 250);
     }
 
-    $(document).on('click', '.hopmodal', function() {
+    $(document).on('click', '.hopmodal', function () {
         console.log($(this).attr('data-modalhref'));
         var $hopModal = $('#hop-modal');
         $hopModal.removeData("bs.modal").find(".modal-content").empty();
@@ -25,17 +24,16 @@ var ready = function() {
         });
     });
 
+    var $table = $("#comparison-table");
+
     // initialize tablesaw for our comparison table
-    $("#comparison-table").tablesaw();
+    $table.tablesaw();
+
+    addSwipeTooltip();
 };
 
 $(document).ready(ready);
 $(document).on('page:load', ready);
-
-/*$(document).on("hidden.bs.modal", '#hop-modal', function (e) {
-    $(e.target).removeData("bs.modal").find(".modal-content").empty();
-});*/
-
 
 $( function() {
     var change_comparison = function() {
@@ -62,5 +60,37 @@ var getUrlParameter = function getUrlParameter(sParam) {
     }
 };
 
+$(document).ready(colourButtons);
+$(window).resize(colourButtons);
+
+function colourButtons(){
+    var $buttons = $(".btn-info");
+    var rowLength;
+    if($(window).width() >= 1200)
+        rowLength = 4;
+    else if($(window).width() >= 645)
+        rowLength = 2;
+    else
+        rowLength = 1;
+
+    $buttons.each(function (i) {
+        var row = Math.floor(i / rowLength);
+        var rowIndex = i - (row*rowLength);
+        if(row % 2 === 0) {
+            if (rowIndex % 2 === 0) {
+                $(this).css('background-color', '#E0E0E0');
+            }
+            else
+                $(this).css('background-color', 'white');
+        }
+        else {
+            if (rowIndex % 2 === 1) {
+                $(this).css('background-color', '#E0E0E0');
+            }
+            else
+                $(this).css('background-color', 'white');
+        }
+    });
+}
 
 

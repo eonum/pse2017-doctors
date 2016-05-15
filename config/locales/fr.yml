@@ -69,29 +69,9 @@ fr:
                        plutôt les services des cliniques et non pas la qualité des prestations médicales qui sont évalués. De plus,
                        ces dernières années les évaluations ont toujours été bonnes voir très bonnes, ce qui compromet leur pertinence
                        statistique. D’après les évaluations actuelles, toutes les cliniques et tous les hôpitaux sont recommandables
-                       et tous les patients / clients sont satisfaits.
-                       <ul class='top-buffer'>
-                         <li>Un premier tri se fait en fonction de la proximité géographique.</li>
-                         <li>
-                           Les barres vertes foncé représentent le nombre de patients traités.
-                           <div class='meter' style='max-width: 20%'>
-                             <span style='width: 40%'></span>
-                           </div>
-                           Les barres vertes donnent des indications sur la pertinence ou l’aptitude de l’hôpital dans la comparaison nationale:
-                           <div class='meter relevance' style='max-width: 20%'>
-                             <span style='width: 40%'></span>
-                           </div>
-                         </li>
-                         <li>
-                           <span class='orange-highlight'>Les chiffres caractéristiques colorés en orange donnent des indications sur</span>
-                           d’éventuelles anomalies (par ex. des chiffres de qualité inférieurs à la moyenne).
-                         </li>
-                         <li>
-                           Les caractères positifs supplémentaires de l’institution sont soulignés avec
-                           <img style=\"border-style:none\" src=\"/assets/accept.png\" alt=\"Accept\" />
-                         </li>
-                       </ul>
-                       <p><a href='http://qm1.ch'>qm1.ch</a> - Votre choix pour l’hôpital approprié</p>
+                       et tous les patients / clients sont satisfaits."
+
+  help2:              "<p><a href='http://qm1.ch'>qm1.ch</a> - Votre choix pour l’hôpital approprié</p>
                        <p class='top-buffer'>Le 'meilleur hôpital' n’existe pas. Cela vaut la peine de choisir l’hôpital selon vos critères propres et en accord avec votre médecin ou d’autres personnes de confiance. Tout d’abord il s’agit de déterminer, si une hospitalisation ou une intervention s’impose. Chaque prestation médicale comporte ses risques. Voir aussi: <a href='http://www.qualitaetsmedizin.ch/fur-patienten/aerztlicher-rat-zweitmeinung/' target='_blank'> http://www.qualitaetsmedizin.ch/fur-patienten/aerztlicher-rat-zweitmeinung/</a> </p><p> Pour mieux comprendre et évaluer les chances et les risques, vous trouvez les informations pertinentes sous  <a href='http://qm1.ch'>qm1.ch</a> , c’est-à-dire des indicateurs vérifiés de l’hôpital et de la qualité. Les indicateurs critiques sont mis en évidence en tant qu’indice pour des domaines à problèmes dans l’hôpital respectif.
                        </p> <h4><a href='http://qm1.ch'>qm1.ch</a> - Pertinence</h4> <p>
                        Notre appréciation globale au sujet de la pertinence de l‘hôpital peut aussi vous aider. Cet indicateur spécifique porte sur le traitement respectif, l’intervention prévue ou le domaine de spécialisation par hôpital. La valeur est établie sur le plan national et peut varier entre 0% et 100%. Plus le taux est élevé, mieux c’est. Sont pris en considération divers facteurs pour le calcul, surtout le nombre de patients traités et l’importance des prestations dans l’hôpital respectif ou la clinique respective. </p><p> Les informations sur l’infrastructure, la participation aux mesures qualitatives, les prestations particulières et les priorités complètent la fiche signalétique de l’hôpital. </p><p> En cas de question, n'hésitez pas de nous contacter pour le choix du médecin ou de l’hôpital: <a href='mailto:doc@qm1.ch'>doc@qm1.ch</a> </p>
@@ -123,10 +103,135 @@ fr:
                          <dd>Professionnels de la santé</dd>
                          <dt>CIRS</dt>
                          <dd>\"Critical Incident Reporting System - un critère de qualité fréquent Système de rapport pour une déclaration anonyme d'incidents critiques et quasi dommages. En suivent des formations/audits réguliers, afin d'éviter des incidents de ce genre, respectivement d'améliorer les structures et les processus de travail. Les résultats sont mesurés de façon continue, documentés et en partie publiés dans le rapport de qualité.\"</dd>
-                       </dl>
-                     </div>"
+                       </dl>"
   navbar-help: "Aide"
   navbar-about: "Sur"
   navbar-topics: "Page d'Accueil"
-  show: " Montre Tableau"
-  hide: " Cache Tableau"
+  show_table: " Montre Tableau"
+  hide_table: " Cache Tableau"
+
+  address-title: "Anrede / Titel"
+  name-surname: "Vorname Name"
+  hospital_name: "Name des Spitals"
+  loc_name: "Name des Standortes / der Klinik"
+  hospital_network: "Spitalverbund"
+  no_assignment: "Keine Zurodnung"
+  new_loc: "Neuer Standort"
+  belongs_to: "Gehört zu"
+  new_hospital: "Neues Spital"
+  street_no: "Strasse, Nr."
+  postcode_city: "PLZ Ort"
+  bfs_typology: "BFS Typologie"
+  number_locs: "Anzahl Standorte"
+  map_coord: "Karte / Koordinaten"
+  locate_new: "Neu lokalisieren"
+  create_new_loc: "Erstelle Standort mit identischer Adresse - Hauptsitz"
+  show_all_fields: "Alle Felder anzeigen"
+  variable_name: "Variablenname"
+  timeline: "Zeitreihe"
+  add_value: "Wert hinzufügen"
+  variable_type: "Variablentyp"
+  possible_values: "Mögliche Werte falls Aufzählung: Kein Eintrag => Freitext"
+  freetext_listing: "Freitext oder Aufzählung"
+  percentnumber: "Prozentzahl"
+  number_of_cases: "Fallzahl"
+  relevance: "Relevanz"
+  descriptions_german: "Beschreibungen Deutsch"
+  descriptions_french: "Beschreibungen Französisch"
+  highlight_limit: "Highlight Limit (nur bei Prozentangaben)"
+  new_variable: "Neue Variable"
+  show_chosen_sets: "Ausgewählte Sets anzeigen"
+  really_delete_char_number: "Möchten Sie diese Kennzahl wirklich löschen?"
+  value_descr: "Wertbeschreibungen"
+
+  name: "Name"
+  department: "Département"
+  hospitals: "Hôpitaux"
+  location: "Standort"
+  numbers: "Kennzahlen"
+  comp: "Vergleiche"
+  logout: "Logout"
+  navbar-help: "Hilfe"
+  loc-select: "Standortauswahl"
+  close: "Schliessen"
+  save-changes: "Änderungen speichern"
+  prohibition-admin: "Speichern von admin_comparison unterbunden:"
+  name: "Name"
+  default-Name: "Default Name"
+  german-name: "Name Deutsch"
+  french-name: "Name Französisch"
+  it-name: "Name Italienish"
+  german-descr: "Bschrieb Deutsch"
+  french-descr: "Beschrieb Französisch"
+  it-descr: "Beschrieb Italienisch"
+  base-year: "Basisjahr"
+  sort-rank: "Sortierrang"
+  draft-mode: "Entwurfmodus"
+  doctor-spec: "Arzt Fachbereich"
+  add-number: "Füge Kennzahl hinzu"
+  save: "Speichern"
+  delete: "Löschen"
+  cond: "Bedingung"
+  display: "Anzeigen"
+  back: "Zurück"
+  mode: "Modus"
+  numb-data: "Anzahl Kennwerte"
+  edit: "Bearbeiten"
+  destroy: "Zerstören"
+  sure: "Sind Sie sicher?"
+  draft: "Entwurf"
+  published: "veröffentlicht"
+  overview-comp: "Overview Comoparisons"
+  address: "Adresse"
+  phone-no: "Telefonnr."
+  canton: "Kanton"
+  specialities: "Fachbereiche"
+  prohibition-doctor: "Speichern von doctor unterbunden:"
+  back-to-overview: "Zurück zur Übersicht"
+  doc-register: "Neuen Arzt registrieren"
+  search: "Suchen"
+  title: "Titel"
+  email: "Email"
+  relocate: "Neu lokalisieren"
+  show: "Zeigen"
+  recreate: "Neu erstellen"
+  edit-field: "Feld bearbeiten"
+  for: "für"
+  create-field: "Neues Feld erstellen"
+  prohibition_admin_loc: "Speichern von admin_hospital_location unterbunden:"
+  undefined: "Undefiniert"
+  prohibition_admin_hospital: "Speichern von admin_hospital unterbunden:"
+  link: "Link"
+  flag: "Flag"
+  sets: "Sets"
+  freetext: "      <br> Freitext: Darstellung als Freitext ohne Änderung.<br/>
+                   <br> Prozentzahl: Zahl zwischen 0 und 100, dargestellt als Zahl mit Hintergrundhighlighting ab Highlight limit<br/>
+                   <br> Fallzahl: Ganze Zahl. Dargestellt als Balken mit Zahl. Balken ist normiert auf den höchsten Wert auf der aktuellen Ansicht. Bei Anzeige auf Spitalvisitenkarte wird nur die Zahl angezeigt, falls mehrere Jahre vorhanden sind, wird ein Chart angezeigt<br/>
+                   <br> Flag: boolean wert, leer oder 'X'. Dargestellt als grünes Gutzeichen.<br/>
+                   <br> Link. URL, Dargestellt als Icon verlinkt mit der URL<br/>
+                   <br> Relevanz: Zahl zwischen 0 und 100 dargestellt als Balken<br/>
+                   <br><br/>"
+  create_comp: "Neuen Vergleich erstellen"
+  no_loc_linked: "Noch keine Standort verknüpft mit diesem Spital."
+  type: "Type"
+  variables: "Variables"
+  hospital_list: "Spitalliste"
+  list_hosp_loc: "Liste der Spitalstandorte"
+  all_comp: "Alle Vergleiche"
+  doc_list: "Liste de docteurs"
+  swipetooltip: "essuie pour voir plus"
+  icon: "Icon"
+  raw_html: "Raw HTML code (e.g. a favicon)"
+  raw: "Raw HTML code"
+
+  first_order: "Un premier tri se fait en fonction de la proximité géographique."
+  patient_cases: "Les barres vertes foncé représentent le nombre de patients traités."
+  national_comparison: "Les barres vertes donnent des indications sur la pertinence ou l’aptitude de l’hôpital dans la comparaison nationale:"
+  last_data_year: "Un clic sur le nombre de cas démontre la tendance univoque à travers les dernières années de données."
+  with: "Les caractères positifs supplémentaires de l’institution sont soulignés avec"
+  conspicuousness: "d’éventuelles anomalies (par ex. des chiffres de qualité inférieurs à la moyenne)."
+  positive_features: ""
+  orange: "Les chiffres caractéristiques colorés en orange donnent des indications sur"
+  plan: "conception"
+  released: "publié"
+

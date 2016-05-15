@@ -1,4 +1,9 @@
 module ComparisonsHelper
+
+  def show_icon comparison
+    comparison.image_link != "" ? image_tag(comparison.image_link, size:"30") : raw(comparison.raw_html_icon)
+  end
+
   def format_hospital_variable variable, hospital
     value = hospital[variable.field_name]
     return I18n.t('no-value') if value.nil?

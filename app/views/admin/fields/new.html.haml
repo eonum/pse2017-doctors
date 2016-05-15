@@ -1,5 +1,5 @@
-%h2= "Erstellen neues Feld #{params[:id]} (#{@variable.localized_field 'name', locale}) für #{@hospital.name}"
+%h2= t('create-field')+" #{params[:id]} (#{@variable.localized_field 'name', locale}) " +t('for')+" #{@hospital.name}"
 
 = render 'form'
 
-= link_to 'Back', admin_hospital_fields_path
+= link_to t('back'), admin_hospital_fields_path
