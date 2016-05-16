@@ -84,12 +84,15 @@ class Admin::DoctorsController < Admin::AdminController
   def doctor_params
     p = params.require(:doctor).permit(:name, :title, :address, :email, :website, :phone1, :phone2, :canton, :docfields, :location,:hospital_ids=>[])
     p[:docfields] = p[:docfields].split(',').map(&:strip) if p[:docfields]
+    # assume doctor no longer has connected hospitals, if no hospital_ids were given
+    if params['doctor']['hospital_ids'].nil?
+      p[:hospital_ids] = []
+    end
     p
   end
 
   def set_hospitals
     return if params['doctor']['hospital_ids'].nil?
     @doctor.hospital_ids = params['doctor']['hospital_ids'].map {|hospital_id|  BSON::ObjectId.from_string(hospital_id)}
-    params['doctor'].delete('hospital_ids')
   end
 end
