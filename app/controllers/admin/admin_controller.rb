@@ -27,6 +27,5 @@ class Admin::AdminController < ApplicationController
   end
 
   layout :select_layout
-  layout 'admin'
 
 end

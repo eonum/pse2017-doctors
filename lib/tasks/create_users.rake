@@ -22,10 +22,12 @@ namespace :create_users do
     end
   end
 
-  desc 'Creating a new admin with password asdf'
+  desc 'Creating a new admin with password asdf or upgrades the current one to really count as an admin'
   task admin: :environment do
     if User.where(email: 'admin@qualitaetsmedizin.ch').entries == []
       User.create!(:email => 'admin@qualitaetsmedizin.ch',:password => 'asdf', :password_confirmation => 'asdf', :is_admin => true)
+    else
+      User.update(:email => 'admin@qualitaetsmedizin.ch', :is_admin => true)
     end
   end
 

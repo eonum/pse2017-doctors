@@ -24,6 +24,7 @@ doctor in the database. The login-Date gets saved to the file loginData.csv
 in the qualimed_hospitals directory
 2. Run 'rake create_users:admin' to create an admin-entry to the database
 with the default password 'asdf'
+If you already have an admin-user this will upgrade it and add all newly needed rights
 3. Run 'rake create_users:reset' to delete all users and create an admin user
 with the default password 'asdf'_
 
