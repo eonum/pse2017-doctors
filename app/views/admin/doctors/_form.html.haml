@@ -10,22 +10,22 @@
 = form_for [:admin, @doctor] do |f|
   - if @doctor.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@doctor.errors.count, "error")} prohibited this doctor from being saved:"
+      %h2= "#{pluralize(@doctor.errors.count, "error")} " + t('prohibition-doctor')
       %ul
         - @doctor.errors.full_messages.each do |msg|
           %li= msg
   %table.table
     %tr
       %td
-        %strong Anrede / Titel
+        %strong= t('address-title')
       %td= f.text_field :title
     %tr
       %td
-        %strong Vorname Name
+        %strong= t('name-surname')
       %td= f.text_field :name
     %tr
       %td
-        %strong Adresse
+        %strong= t('address')
       %td= f.text_field :address
     %tr
       %td= f.label :email
@@ -36,19 +36,19 @@
       %td= f.text_field :website
     %tr
       %td
-        %strong Telefonnr. 1
+        %strong= t('phone-no')+" 1"
       %td= f.text_field :phone1
     %tr
       %td
-        %strong Telefonnr. 2
+        %strong= t('phone-no')+" 2"
       %td= f.text_field :phone2
     %tr
       %td
-        %strong Kanton
+        %strong= t('canton')
       %td= f.select(:canton, options_for_select(@cantons.map {|value| [value,value]}, :selected => f.object.canton))
     %tr
       %td
-        %strong Fachbereiche
+        %strong= t('specialities')
         -if current_user.is_admin
           %td= f.text_field :docfields, :disabled => false
         -else
@@ -69,4 +69,4 @@
 
   %br
   .actions
-    = f.submit 'Speichern'
+    = f.submit t('save')

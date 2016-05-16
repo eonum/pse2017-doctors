@@ -1,23 +1,23 @@
-%h2 Spitalliste
+%h2= t('hospital_list')
 
-= link_to 'Neues Spital', new_admin_hospital_path
+= link_to t('new_hospital'), new_admin_hospital_path
 %br
 %br
 = form_tag(admin_hospitals_path, :method => "get") do
-  = label_tag(:q, 'Suche')
+  = label_tag(:q, t('search'))
   = text_field_tag(:q, params[:q])
-  = submit_tag('Suche')
+  = submit_tag(t('search'))
 
 = will_paginate @hospitals, renderer: BootstrapPagination::Rails
 %table.table-striped.table
   %thead
     %tr
-      %th Name
-      %th Strasse, Nr.
-      %th PLZ Ort
-      %th BFS Typologie
-      %th Kanton
-      %th Anzahl Standorte
+      %th= t('name')
+      %th= t('street_no')
+      %th= t('postcode_city')
+      %th= t('bfs_typology')
+      %th= t('canton')
+      %th= t('number_locs')
       %th
       %th
       %th
@@ -31,8 +31,8 @@
         %td= hospital.bfs_typo
         %td= hospital.canton
         %td= hospital.hospital_locations.length
-        %td= link_to 'Bearbeiten', edit_admin_hospital_path(hospital)
-        %td= link_to 'Löschen', admin_hospital_path(hospital), :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to t('edit'), edit_admin_hospital_path(hospital)
+        %td= link_to t('delete'), admin_hospital_path(hospital), :method => :delete, :data => { :confirm => t('sure') }
 
 = will_paginate @hospitals, renderer: BootstrapPagination::Rails
 

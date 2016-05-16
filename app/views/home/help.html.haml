@@ -1,0 +1,24 @@
+.container
+  .row
+    .col-md-12
+      .panel.panel-default
+        =raw t('help')
+        %ul.top-buffer
+          %li= t('first_order')
+          %li
+            = t('patient_cases')
+            %div.meter{ style: 'max-width: 20%'}
+              %span{ style: 'width: 40%' }
+            = t('national_comparison')
+            %div.meter.relevance{ style: 'max-width: 20%'}
+              %span{ style: 'width: 40%' }
+          %li
+            %span.orange-highlight= t('orange')
+            = t('conspicuousness')
+          %li
+            = t('with')
+            = image_tag('accept.png', :style => 'border-style:none')
+            = t('positive_features')
+        =raw t('help2')
+
+

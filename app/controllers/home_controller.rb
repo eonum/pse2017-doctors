@@ -12,6 +12,6 @@ class HomeController < ApplicationController
   end
 
   def redirect
-    redirect_to "/#{session[:language] || I18n.locale}"
+    redirect_to comparison_url(Comparison.where(:is_draft.ne => true).order_by(:rank => 'asc').first)
   end
 end

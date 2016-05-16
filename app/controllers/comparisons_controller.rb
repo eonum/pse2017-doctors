@@ -3,8 +3,8 @@ class ComparisonsController < ApplicationController
 
   def index
     @comparisons = Comparison.where(:is_draft.ne => true).order_by(:rank => 'asc')
-    render layout: 'main'
   end
+  @images = Dir.glob("app/assets/images/*")
 
   def show
     @comparison = Comparison.find(params['id'])

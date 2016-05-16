@@ -19,7 +19,8 @@ geocode = () =>
         @app.address = results[0].formatted_address.replace(', Schweiz', '')
         console.log @app.address
         console.log @app.location
-        $('#location-btn').html('<i class="fa fa-location-arrow"></i> ' + @app.address)
+        $('#location-input').val(@app.address)
+
         $.cookie 'location', @app.address,
           expires: 1,
           path: '/'
@@ -30,6 +31,9 @@ geocode = () =>
 
 # show map and get location
 ready = (geolocate = true) =>
+  $mapModal = $('#map-modal')
+  $locationInput = $('#location-input')
+
   location = getUrlParameter('location')
   if !location? && geolocate
     geoloc()
@@ -42,7 +46,7 @@ ready = (geolocate = true) =>
       console.log @app.location
     geocode()
 
-  $('#map-modal').on 'show.bs.modal', =>
+  $mapModal.on 'show.bs.modal', =>
     console.log 'Showing map...'
     @app.map = new GMaps
       div: '#map',
@@ -63,9 +67,9 @@ ready = (geolocate = true) =>
     @app.map.setCenter(@app.location[0], @app.location[1])
 
   console.log 'Displaying address'
-  $('#location-btn').html('<i class="fa fa-location-arrow"></i> ' + @app.address) if @app.address?
+  $locationInput.val(@app.address) if @app.address?
 
-  $('#map-modal').on 'shown.bs.modal', =>
+  $mapModal.on 'shown.bs.modal', =>
     console.log 'refreshing map'
     @app.map.refresh()
     @app.map.setCenter(@app.location[0], @app.location[1])
@@ -73,7 +77,7 @@ ready = (geolocate = true) =>
   $(window).trigger 'resize'
 
 
-  $('#map-modal').on 'hidden.bs.modal', =>
+  $mapModal.on 'hidden.bs.modal', =>
     comparison_url = $('#comparison').find(":selected").val()
     Turbolinks.visit(comparison_url + '?location=' + @app.location, { change: ['main-content'] })
 
@@ -85,6 +89,25 @@ ready = (geolocate = true) =>
         comparison_url = $('#comparison').find(":selected").val()
         Turbolinks.visit(comparison_url + '?location=' + @app.location, { change: ['main-content'] })
 
+  # geocoding with address as input
+  $locationInput.keydown =>
+    if (event.keyCode == 13)
+      console.log 'Geolocate using address'
+      GMaps.geocode
+        address: $('#location-input').val(),
+        region: 'ch',
+        callback: (position, status) =>
+          location = position[0].geometry.location
+          @app.location = [location.lat(), location.lng()]
+          comparison_url = $('#comparison').find(":selected").val()
+          Turbolinks.visit(comparison_url + '?location=' + @app.location, { change: ['main-content'] })
+      return false
+
+  # select all text when click on address bar
+  $locationInput.click =>
+    $locationInput.select()
+
+
 # Do not geolocate on turbolink refresh
 $(document).on 'page:load', =>
   ready(false)
@@ -95,3 +118,35 @@ $(document).ready ready
 $(window).on 'resize', ->
   console.log 'resizing'
   $('#search-bar').parent().height($(window).height()-131)
+
+# creates all tooltips in the navbar, as soon as the site gets or is bigger than 768px (changes from mobile to desktop version)
+# in the mobile-view the tooltips would get created at the wrong place
+
+$(document).ready ->
+  tooltipDestroyed = false
+  $tooltipHolder = $('[data-toggle="tooltip"]')
+  toggleTooltip = ->
+    width = $(window).width()
+    mobileNavbarThreshold = 768
+    if width >= mobileNavbarThreshold && !tooltipDestroyed
+      $tooltipHolder.tooltip(
+        placement: 'bottom'
+        trigger: 'manual').tooltip 'show'
+      $tooltipHolder.hover ->
+        $(this).tooltip 'destroy'
+        tooltipDestroyed = true
+
+    if width < mobileNavbarThreshold
+      $tooltipHolder.tooltip 'destroy'
+
+  #destroy tooltip when you click anywhere on page so it's not in the way
+  $(window).click ->
+    $tooltipHolder.tooltip 'destroy'
+    tooltipDestroyed = true
+
+  $(window).resize toggleTooltip
+  toggleTooltip()
+
+
+
+

@@ -1,12 +1,17 @@
 module ComparisonsHelper
+
+  def show_icon comparison
+    comparison.image_link != "" ? image_tag(comparison.image_link, size:"30") : raw(comparison.raw_html_icon)
+  end
+
   def format_hospital_variable variable, hospital
     value = hospital[variable.field_name]
-    return '' if value.nil?
+    return I18n.t('no-value') if value.nil?
     value = value[@comparison.base_year] if variable.is_time_series
-    return '' if value.nil?
+    return I18n.t('no-value') if value.nil?
 
     if(variable.variable_type == :percentage)
-      return '' if value.blank?
+      return I18n.t('no-value') if value.blank?
       value = value.to_f
       return "#{'%.1f' % value}%"
     end
@@ -21,7 +26,7 @@ module ComparisonsHelper
       return raw "<div class='meter'><span style='width: 0%' id='numcase-#{hospital.id}-#{variable.field_name}'></span></div><div class='numcase_overlay'>#{value}</div>"
     end
     if(variable.variable_type == :relevance)
-      return '' if value.blank?
+      return I18n.t('no-value') if value.blank?
       value = value.to_f
       return raw "<div class='meter relevance'><span style='width: 0%' id='numcase-#{hospital.id}-#{variable.field_name}'></span></div><div class='numcase_overlay'>#{'%.1f' % value}%</div>"
     end
@@ -31,12 +36,11 @@ module ComparisonsHelper
   def hospital_variable_class variable, hospital
     classes = []
     value = hospital[variable.field_name]
-    return '' if value.nil?
+    return 'no-value' if value.nil?
     value = value[@comparison.base_year] if variable.is_time_series
     limit = variable.highlight_threshold
     classes << 'orange-highlight' if(limit > 0 && limit < 100 && limit <= value)
     classes << 'text-center' if [:boolean, :link].include? variable.variable_type
-    classes << 'time-series' if variable.is_time_series && hospital[variable.field_name].length > 1 && [:number, :percentage, :relevance].include?(variable.variable_type)
 
     return classes.join(' ')
   end

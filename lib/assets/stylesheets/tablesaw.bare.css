@@ -270,6 +270,10 @@ table.tablesaw {
   clear: both;
   font-family: sans-serif;
 }
+.table > thead > tr > th.tablesaw-ignore {
+  border-color: red;
+  border-bottom: hidden;
+}
 
 .tablesaw-toolbar {
   font-size: .875em;
@@ -716,8 +720,8 @@ table.tablesaw {
 }
 
 .tablesaw-advance-dots li i {
-  width: .25em;
-  height: .25em;
+  width: .45em;
+  height: .45em;
   background: #555;
   border-radius: 100%;
   display: inline-block;
@@ -729,3 +733,4 @@ table.tablesaw {
   cursor: default;
   pointer-events: none;
 }
+

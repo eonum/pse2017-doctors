@@ -1,12 +1,14 @@
-%table.table-striped.table
-  %thead
-    %tr
-      %th= t('speciality')
-      %th= t('description')
+%div
+  - @comparisons.each_with_index do |comparison, index|
+    =link_to comparison, class:'btn btn-info' do
+      %b
+        = comparison.localized_field('name', locale)
+      %br
+        %em
+          = comparison.localized_field('description', locale)
+      %br
+        = show_icon comparison
 
-  %tbody
-    - @comparisons.each do |comparison|
-      %tr
-        %td= link_to comparison.localized_field('name', locale), comparison
-        %td= comparison.localized_field('description', locale)
-
+%p
+  =raw t('welcome-title') + t('welcome-text')
+%p= link_to fa_icon('file-pdf-o', t('presentation-link')), "/qm1_Spitaldaten_Kennzahlen_Relevanz_Spitalvergleich.pdf", target: '_blank'

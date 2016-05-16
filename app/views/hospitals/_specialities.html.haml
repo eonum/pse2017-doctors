@@ -5,19 +5,30 @@
         .h4
           = comparison.localized_field 'name', locale
           .small.top-buffer= link_to t('other-nearby-from-specialty'), comparison_path(comparison, location: "#{@hospital.location[1]},#{@hospital.location[0]}")
+
       .panel-body
-        %table{:class=>"tablesaw tablesaw-swipe", "data-tablesaw-mode"=>"swipe", "data-tablesaw-minimap"=>""}
+        %span.pseudoLink{:onclick => "toggle(\""+  comparison.id + "\");", :id => "span" + comparison.id, :class => "arrow-span"}
+          %i.fa.fa-chevron-down
+          =t('show_table')
+        %p
+
+        %table
           %thead#comparison-head
-            %tr
+            %tr{ 'data-hopid' => @hospital.id, :style => "display:none;", :id => comparison.id}
               - comparison.variables.each do |var|
-                %th.hopcell.qim-header-cell
-                  = var.localized_field 'name', locale
-                  %h5
-                    %small= var.localized_field 'description', locale
-          %tbody
-            %tr{ 'data-hopid' => @hospital.id }
-              - comparison.variables.each do |var|
-                %td.hopcell{ :class => hop_hospital_variable_class(var, comparison), 'data-fieldnam' => var.field_name, 'data-varid' => var.id }= hop_format_hospital_variable(var, comparison)
+                %td.hopcell_outer
+                  %table
+                    %thead#comparison-head_inner
+                      %tr
+                        %th.hopcell.qim-header-cell
+                          = var.localized_field 'name', locale
+                          %h5
+                            %small= var.localized_field 'description', locale
+                      %tr
+                        %td.hopcell{ :class => hop_hospital_variable_class(var, comparison), 'data-fieldnam' => var.field_name, 'data-varid' => var.id }= hop_format_hospital_variable(var, comparison)
+
 
 :javascript
   var numcase_data = #{hop_numcase_data(@comparisons).to_json};
+
+

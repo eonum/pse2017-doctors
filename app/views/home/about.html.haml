@@ -1,25 +1,17 @@
 .container
-  %hr/
   .row
     .col-md-12
       .panel.panel-default
         .panel-heading
           %h3 About.
         .panel-body
-          Qualitätsmedizin Schweiz ist eine Initiative für relevante und aussagekräftige Informationen
-          zur Qualitätsversorgung in Arztpraxen, Ärztenetzen, Spitälern und Kliniken.
-          Sie organisiert eine jährliche Veranstaltungsreihe.
-          %br
-          Die Initiative wird unterstützt von der
-          = link_to 'Schweizerischen Gesellschaft für Medizincontrolling', 'http://www.medizincontroller.ch', target: '_blank'
-          = '.'
-          = button_to t('back'), :back, class: 'btn top-buffer', method: 'get'
+          =raw t('welcome-title') + t('welcome-text')
   .row
     .col-lg-12
       %br/
       %br/
       %p.pull-right
-        © 2015
+        © 2016
         %a{:href => 'http://www.qualitaetsmedizin.ch'} Qualitätsmedizin.ch
         | created by
         %a{:href => 'http://www.eonum.ch'} eonum
