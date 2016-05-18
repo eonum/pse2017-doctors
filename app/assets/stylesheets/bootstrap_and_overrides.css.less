@@ -45,10 +45,6 @@
   margin-bottom: 20px;
 }
 
-.map-holder {
-  height: 500px;
-}
-
 .list-group-item {
   //box-shadow: 0 0 30px 0px #888;
   //margin-bottom: 5px;
@@ -117,6 +113,11 @@ dl {
   &.doctor {
     font-size: 12px;
   }
+}
+
+//This actually should be made more dynamically adjusted to the display size
+.map-holder {
+  height: 300px;//it was 500px before, which is too large for small devices, especially with the social network buttons
 }
 
 table {
