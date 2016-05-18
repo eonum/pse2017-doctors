@@ -27,7 +27,7 @@ namespace :create_users do
     if User.where(email: 'admin@qualitaetsmedizin.ch').entries == []
       User.create!(:email => 'admin@qualitaetsmedizin.ch',:password => 'asdf', :password_confirmation => 'asdf', :is_admin => true)
     else
-      User.update(:email => 'admin@qualitaetsmedizin.ch', :is_admin => true)
+      User.where(:email => 'admin@qualitaetsmedizin.ch').update_all(:is_admin => true)
     end
   end
 
