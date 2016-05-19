@@ -55,6 +55,7 @@ ready = (geolocate = true) =>
       height: '100%',
       width: '100%'
 
+
     marker = @app.map.addMarker
       lat: @app.location[0],
       lng: @app.location[1],
@@ -65,6 +66,7 @@ ready = (geolocate = true) =>
       console.log @app.location
 
     @app.map.setCenter(@app.location[0], @app.location[1])
+    $(".modal-body").css({'height': $(window).height()*0.8-48-56});# please somebody make this better
 
   console.log 'Displaying address'
   $locationInput.val(@app.address) if @app.address?
@@ -116,6 +118,7 @@ $(document).on 'page:load', =>
 $(document).ready ready
 
 $(window).on 'resize', ->
+  $(".modal-body").css({'height': $(window).height()*0.8-48-56});# please somebody make this better
   console.log 'resizing'
   $('#search-bar').parent().height($(window).height()-131)
 
