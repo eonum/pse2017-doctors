@@ -19,6 +19,8 @@
         %li{ :class => ("active" if current_page?(about_url)) }
           = link_to fa_icon('exclamation-circle', t('navbar-about')), about_url
       %ul.nav.navbar-nav.navbar-right
+        - if user_signed_in?
+          %li= link_to fa_icon('sign-out', t('logout')), destroy_user_session_path, :method => :delete
         %li{ :class => ("active" if current_page?(help_url)) }
           %a{:href => help_url}
             %i.fa.fa-question-circle
