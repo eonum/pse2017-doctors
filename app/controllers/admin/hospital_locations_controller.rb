@@ -33,7 +33,7 @@ class Admin::HospitalLocationsController < Admin::AdminController
 
     respond_to do |format|
       if @hospital_location.save
-        format.html { redirect_to [:admin, @hospital_location], notice: 'Hospital location was successfully created.' }
+        format.html { redirect_to [:admin, @hospital_location], notice: t('hosp_loc_created') }
         format.json { render :show, status: :created, location: [:admin, @hospital_location] }
       else
         format.html { render :new }
@@ -47,7 +47,7 @@ class Admin::HospitalLocationsController < Admin::AdminController
   def update
     respond_to do |format|
       if @hospital_location.update(hospital_location_params)
-        format.html { redirect_to [:admin, @hospital_location], notice: 'Hospital location was successfully updated.' }
+        format.html { redirect_to [:admin, @hospital_location], notice: t('hosp_loc_updated') }
         format.json { render :show, status: :ok, location: [:admin, @hospital_location] }
       else
         format.html { render :edit }
@@ -61,7 +61,7 @@ class Admin::HospitalLocationsController < Admin::AdminController
   def destroy
     @hospital_location.destroy
     respond_to do |format|
-      format.html { redirect_to admin_hospital_locations_url, notice: 'Hospital location was successfully destroyed.' }
+      format.html { redirect_to admin_hospital_locations_url, notice: t('hosp_loc_destroyed') }
       format.json { head :no_content }
     end
   end

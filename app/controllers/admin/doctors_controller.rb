@@ -62,9 +62,9 @@ class Admin::DoctorsController < Admin::AdminController
     location = Geocoder.coordinates(@doctor.address)
     @doctor.location = [location[1], location[0]]
     if @doctor.save
-      redirect_to :back, notice: 'Erfolgreich neu lokalisiert.'
+      redirect_to :back, notice: t('relocated')
     else
-      redirect_to :back, alert: "Fehler bei der Lokalisation dieses Arztes. #{@doctor.errors.full_messages.each{|msg| msg}}"
+      redirect_to :back, alert: t('error_locating')+" #{@doctor.errors.full_messages.each{|msg| msg}}"
     end
   end
 

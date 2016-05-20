@@ -30,7 +30,7 @@ class Admin::ComparisonsController < Admin::AdminController
     set_variables
     respond_to do |format|
       if @comparison.save
-        format.html { redirect_to [:admin, @comparison], notice: 'Comparison was successfully created.' }
+        format.html { redirect_to [:admin, @comparison], notice: t('comp_created') }
         format.json { render :show, status: :created, location: [:admin, @comparison] }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class Admin::ComparisonsController < Admin::AdminController
     set_variables
     respond_to do |format|
       if @comparison.update(comparison_params)
-        format.html { redirect_to [:admin, @comparison], notice: 'Comparison was successfully updated.' }
+        format.html { redirect_to [:admin, @comparison], notice: t('comp_updated') }
         format.json { render :show, status: :ok, location: [:admin, @comparison] }
       else
         format.html { render :edit }
@@ -59,7 +59,7 @@ class Admin::ComparisonsController < Admin::AdminController
   def destroy
     @comparison.destroy
     respond_to do |format|
-      format.html { redirect_to admin_comparisons_url, notice: 'Comparison was successfully destroyed.' }
+      format.html { redirect_to admin_comparisons_url, notice: t('comp_destroyed') }
       format.json { head :no_content }
     end
   end

@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
     def error_method
       respond_to do |format|
         format.html { render file: "#{Rails.root}/public/404", layout: false, status: 404 }
-        format.json { render json: 'No such entry has been found!', status: 404 }
+        format.json { render json: t('no_entry_found'), status: 404 }
       end
     end
 

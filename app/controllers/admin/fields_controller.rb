@@ -38,7 +38,7 @@ class Admin::FieldsController < Admin::AdminController
     @hospital[params[:id]] = params[:field]
     respond_to do |format|
       if @hospital.save
-        format.html { redirect_to admin_hospital_field_path(@hospital, params[:id]), notice: 'Field was successfully updated.' }
+        format.html { redirect_to admin_hospital_field_path(@hospital, params[:id]), notice: t('field_update') }
         format.json { render :show, status: :ok, location: admin_hospital_fields_path(@hospital, params[:id]) }
       else
         format.html { render :edit }
@@ -53,7 +53,7 @@ class Admin::FieldsController < Admin::AdminController
     @hospital[params[:id]] = nil
     @hospital.save
     respond_to do |format|
-      format.html { redirect_to admin_hospital_fields_url, notice: 'Field was successfully destroyed.' }
+      format.html { redirect_to admin_hospital_fields_url, notice: t('field_destroyed') }
       format.json { head :no_content }
     end
   end
