@@ -147,7 +147,6 @@ de:
   really_delete_char_number: "Möchten Sie diese Kennzahl wirklich löschen?"
   value_descr: "Wertbeschreibungen"
 
-  name: "Name"
   department: "Abteilung"
   hospitals: "Spitäler"
   location: "Standort"
@@ -159,7 +158,6 @@ de:
   close: "Schliessen"
   save-changes: "Änderungen speichern"
   prohibition-admin: "Speichern von admin_comparison unterbunden:"
-  name: "Name"
   default-Name: "Default Name"
   german-name: "Name Deutsch"
   french-name: "Name Französisch"

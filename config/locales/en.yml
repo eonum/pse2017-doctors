@@ -149,7 +149,6 @@ en:
   close: "Close"
   save-changes: "Save Changes"
   prohibition-admin: "prohibited this admin_comparison from being saved:"
-  name: "Name"
   default-Name: "Default Name"
   german-name: "Name German"
   french-name: "Name French"
@@ -260,7 +259,7 @@ en:
   hospitals_working: "Hospitals you work with"
   add_hospital: "Add Hospital"
   login: "Login"
-  admin-area: "Admin-area"
+  admin-area: "Admin Area"
 
   comp_created: "Comparison was successfully created."
   comp_updated: "Comparison was successfully updated."
