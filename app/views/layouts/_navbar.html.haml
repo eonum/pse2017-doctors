@@ -1,6 +1,6 @@
 -# contains the navbar for normal users
 -# the link-buttons (help, about etc) looks active (pressed) or not based on the page the user currently sees
-.navbar.navbar-inverse.navbar-static-top
+.navbar.navbar-inverse.navbar-static-top#user-navbar
   .container
     .navbar-header
       %button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse")
@@ -21,6 +21,7 @@
       %ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
           %li= link_to fa_icon('sign-out', t('logout')), destroy_user_session_path, :method => :delete
+          %li= link_to fa_icon('user-md', t('admin-area')), home_url+"/admin"
         - else
           %li= link_to fa_icon('sign-in', t('login')), home_url+"/admin"
         %li{ :class => ("active" if current_page?(help_url)) }
