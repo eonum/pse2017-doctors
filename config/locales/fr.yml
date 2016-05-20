@@ -233,4 +233,7 @@ fr:
   orange: "Les chiffres caractéristiques colorés en orange donnent des indications sur"
   plan: "conception"
   released: "publié"
+  doctors-in-hospital: "Liste des médecins qui traivaille avec l'hôpital:"
+  hospitals_working: "Hôpitaux avec lesquels vous travaillez"
+  add_hospital: "Ajoute Hôpital"
 

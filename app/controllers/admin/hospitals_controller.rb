@@ -1,5 +1,6 @@
 class Admin::HospitalsController < Admin::AdminController
   before_action :set_hospital, only: [:show, :edit, :update, :destroy, :create_location, :geolocate]
+  before_action :set_cantons, only: [:new, :edit, :update, :destroy, :create_location, :geolocate]
 
   # GET /admin/hospitals
   # GET /admin/hospitals.json
@@ -104,8 +105,11 @@ class Admin::HospitalsController < Admin::AdminController
       @hospital = Hospital.find(params[:id])
     end
 
+
+    @doctors= Doctor.all
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def hospital_params
-      params.require(:hospital).permit(:name, :address1, :address2, :bfs_typo, :canton)
+      params.require(:hospital).permit(:name, :address1, :address2, :bfs_typo, :canton,:doctor_ids=>[])
     end
 end

@@ -37,4 +37,6 @@
                   %br
                   = tel_to location.phone2
     #doctors.tab-pane.fade
-      = render partial: 'doctors'
+      -if !@hospital.doctors.empty?
+        =render :partial => "doctors", locals: { :doctor => @hospital.doctors, :category_description => t('doctors-in-hospital')}
+      =render :partial => "doctors", locals: { :doctor => @doctors, :category_description => t('nearby-doctors')}

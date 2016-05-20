@@ -1,5 +1,6 @@
 class Admin::ComparisonsController < Admin::AdminController
-  before_action :set_comparison, :set_images, only: [:show, :edit, :update, :destroy]
+  before_action :set_comparison, only: [:show, :edit, :update, :destroy]
+  before_action :set_images, only: [:show, :edit, :update, :destroy, :new]
   helper ComparisonsHelper
 
   # GET /admin/comparisons
@@ -84,9 +85,9 @@ class Admin::ComparisonsController < Admin::AdminController
       p
     end
 
-    def set_variables
-      return if params['comparison']['variable_ids'].nil?
-      @comparison.variable_ids = params['comparison']['variable_ids'].map {|var_id|  BSON::ObjectId.from_string(var_id)}
-      params['comparison'].delete('variable_ids')
-    end
+  def set_variables
+    return if params['comparison']['variable_ids'].nil?
+    @comparison.variable_ids = params['comparison']['variable_ids'].map {|var_id|  BSON::ObjectId.from_string(var_id)}
+    params['comparison'].delete('variable_ids')
+  end
 end

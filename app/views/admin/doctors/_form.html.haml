@@ -1,3 +1,12 @@
+:javascript
+  var listEntry = "<div class='top-buffer'>#{j select_tag('doctor[hospital_ids][]', options_for_select(Hospital.all.map { |v| [v.name, v.id]}))}"
+  + " #{j image_tag '/bullet_toggle_minus.png', :title =>'delete', :onclick => '$(this).closest(\'div\').remove()', :class => 'delete_button_array_list'}</div>";
+
+  $(function() {
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+  });
+
 = form_for [:admin, @doctor] do |f|
   - if @doctor.errors.any?
     #error_explanation
@@ -23,6 +32,10 @@
       %td= f.text_field :email
     %tr
       %td
+        %strong Website
+      %td= f.text_field :website
+    %tr
+      %td
         %strong= t('phone-no')+" 1"
       %td= f.text_field :phone1
     %tr
@@ -32,11 +45,25 @@
     %tr
       %td
         %strong= t('canton')
-      %td= f.text_field :canton
+      %td= f.select(:canton, options_for_select(@cantons.map {|value| [value,value]}, :selected => f.object.canton))
     %tr
       %td
         %strong= t('specialities')
-      %td= f.text_field :docfields
+        -if current_user.is_admin
+          %td= f.text_field :docfields, :disabled => false
+        -else
+          %td= f.text_field :docfields, :disabled => true
+    %tr
+      %td
+        %strong= t('hospitals_working')
+        %br
+        #sortable
+          - (@doctor['hospital_ids']  || []).each do |var|
+            %div.top-buffer
+              = select_tag 'doctor[hospital_ids][]', options_for_select(Hospital.all.map { |v|[v.name, v.id]},var)
+              = image_tag '/bullet_toggle_minus.png', :title => 'delete', :onclick => '$(this).closest(\'div\').remove()', :class => 'delete_button_array_list'
+        %span.pseudoLink{onclick: "$('#sortable').append(listEntry);", title: ""}= t('add_hospital')
 
+  %br
   .actions
     = f.submit t('save')

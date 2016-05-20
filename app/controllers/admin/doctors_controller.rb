@@ -1,5 +1,6 @@
 class Admin::DoctorsController < Admin::AdminController
   before_action :set_doctor, only: [:show, :edit, :update, :destroy, :geolocate]
+  before_action :set_fields, :set_cantons, only: [:new,  :edit, :update, :destroy, :geolocate]
 
   def index
     query = escape_query(params[:q])
@@ -16,10 +17,12 @@ class Admin::DoctorsController < Admin::AdminController
   end
 
   def edit
-  end
 
+
+  end
   def create
     @doctor = Doctor.new(doctor_params)
+    set_hospitals
 
     respond_to do |format|
       if @doctor.save
@@ -33,6 +36,9 @@ class Admin::DoctorsController < Admin::AdminController
   end
 
   def update
+    @doctor = Doctor.find(params[:id])
+    set_hospitals
+
     respond_to do |format|
       if @doctor.update(doctor_params)
         format.html { redirect_to [:admin, @doctor], notice: "#{@doctor.name} wurde erfolgreich geändert." }
@@ -68,10 +74,29 @@ class Admin::DoctorsController < Admin::AdminController
     @doctor = Doctor.find(params['id'])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
+
+    # Never trust parameters from the scary internet, only allow the white list through.
   def doctor_params
-    p = params.require(:doctor).permit(:name, :title, :address, :email, :phone1, :phone2, :canton, :docfields, :location)
+    p = params.require(:doctor).permit(:name, :title, :address, :email, :website, :phone1, :phone2, :canton, :docfields, :location,:hospital_ids=>[])
     p[:docfields] = p[:docfields].split(',').map(&:strip) if p[:docfields]
+    # assume doctor no longer has connected hospitals, if no hospital_ids were given
+    if params['doctor']['hospital_ids'].nil?
+      p[:hospital_ids] = []
+    end
     p
+  end
+
+  def set_hospitals
+    return if params['doctor']['hospital_ids'].nil?
+    @doctor.hospital_ids = params['doctor']['hospital_ids'].map {|hospital_id|  BSON::ObjectId.from_string(hospital_id)}
+  end
+
+  def set_fields
+    @fields = ['Acupuncture', 'Aestetic Surgeons', 'Allergologists', 'Anaesthesiologits', 'Angiologists', 'Anthroposoph. Medicine', 'Cardiologists', 'Child Psychiatrists',
+               'Dentists', 'Dermatologits', 'Diabetologists', 'Endocrinologists', 'Forensic Medicine', 'Gastroenterologists', 'Geriatrists', 'Gynaecologists',
+               'General med.Practioner', 'Haematologists', 'Hand Surgery', 'Homeopathy', 'Infectiologists', 'Internists', 'Manual Medicine', 'Maxillo-Facial-Surgery',
+               'Nephrologists', 'Neurologists', 'Obstetrics', 'Occupational Medicine', 'Ophthalmologists', 'Oncologists (cancer)', 'Orthopaedic Surgery',
+               'Otorhinolaryngologists', 'Paediatrists', 'Pathologists', 'Plastic Surgeons', 'Pneumology', 'Psychiatrists', 'Rheumatologists', 'Radiology',
+               'Surgeons', 'Sports Medicine', 'Travel Medicine', 'Urologists', 'Venerology']
   end
 end

@@ -25,6 +25,7 @@ de:
   nearby-doctors: "Folgende Ärzte befinden sich in der näheren Umgebung dieses Spitals:"
   doctor-change-request: "Falls ein Arzt fehlt oder falsch erfasst ist, melden Sie sich bitte mit der Korrektur unter "
   select-hop: "Wählen Sie ein Spital / eine Klinik aus der Liste für Detailinformationen"
+  doctors-in-hospital: "Folgende Ärzte arbeiten mit diesem Spital zusammen:"
   welcome-title: "<h3><a href='http://qm1.ch'>qm1.ch</a> - Ihr Weg zum geeigneten Spital</h3>"
   welcome-text: "Das 'Beste Spital' gibt es nicht. Es lohnt sich vielmehr, nach Ihren eigenen Kriterien und zusammen mit Ihrem Arzt bzw.
       weiteren Vertrauenspersonen die Spitalwahl zu treffen. Zuvor ist zu prüfen, ob überhaupt ein stationärer Aufenthalt notwendig oder
@@ -236,3 +237,5 @@ de:
   orange: "Orange"
   plan: "Entwurf"
   released: "Veröffentlicht"
+  hospitals_working: "Spitäler, mit denen zusammengearbeitet wird"
+  add_hospital: "Spital hinzufügen"

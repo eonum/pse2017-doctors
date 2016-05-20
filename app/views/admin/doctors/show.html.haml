@@ -49,10 +49,13 @@
   %b= t('email')+":"
   = @doctor.email
 %p
+  %b Website:
+  = @doctor.website
+%p
   %b= t('phone-no')+" 1:"
   = @doctor.phone1
 %p
-  %b= t('canton')+" 2:"
+  %b= t('phone-no')+" 2:"
   = @doctor.phone2
 %p
   %b= t('canton')+":"
@@ -64,6 +67,13 @@
 %p
   %b= t('specialities')+":"
   = @doctor.docfields
+%p
+  %b= t('hospitals_working')+":"
+  - @doctor.hospitals.each do |f|
+    %ul
+      %li
+        = f.name
+
 
 = link_to t('edit'), edit_admin_doctor_path(@doctor)
 \|

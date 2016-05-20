@@ -66,3 +66,6 @@ public/assets/
 data/additional
 .DS_Store
 data/doctor/parse-doctors/
+
+# Local loginData
+loginData.csv

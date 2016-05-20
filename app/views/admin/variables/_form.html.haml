@@ -52,7 +52,7 @@
           %span
             = text_field_tag 'variable[values][]', entry, :style => 'width: 100px;', :class => 'inputText'
             = image_tag '/bullet_toggle_minus.png', :title => t('delete'), :onclick => '$(this).closest(\'span\').remove()', :class => 'delete_button_array_list'
-      %span.pseudoLink{onclick: "$(this).prev().append(listEntry.replace(\"@@variable@@\", \"variable[values][]\"));", title: ""} =t('add_value')
+      %span.pseudoLink{onclick: "$(this).prev().append(listEntry.replace(\"@@variable@@\", \"variable[values][]\"));", title: ""}= t('add_value')
       %br
       %span
         = t('descriptions_german')
@@ -61,7 +61,7 @@
           %span
             = text_field_tag 'variable[values_de][]', entry, :style => 'width: 100px;', :class => 'inputText'
             = image_tag '/bullet_toggle_minus.png', :title => t('delete'), :onclick => '$(this).closest(\'span\').remove()', :class => 'delete_button_array_list'
-      %span.pseudoLink{onclick: "$(this).prev().append(listEntry.replace(\"@@variable@@\", \"variable[values_de][]\"));", title: ""} =t('add_value')
+      %span.pseudoLink{onclick: "$(this).prev().append(listEntry.replace(\"@@variable@@\", \"variable[values_de][]\"));", title: ""}= t('add_value')
       %br
       %span
         = t('descriptions_french')
@@ -70,7 +70,7 @@
           %span
             = text_field_tag 'variable[values_fr][]', entry, :style => 'width: 100px;', :class => 'inputText'
             = image_tag '/bullet_toggle_minus.png', :title => t('delete'), :onclick => '$(this).closest(\'span\').remove()', :class => 'delete_button_array_list'
-      %span.pseudoLink{onclick: "$(this).prev().append(listEntry.replace(\"@@variable@@\", \"variable[values_fr][]\"));", title: ""} =t('add_value')
+      %span.pseudoLink{onclick: "$(this).prev().append(listEntry.replace(\"@@variable@@\", \"variable[values_fr][]\"));", title: ""}= t('add_value')
   .field
     = f.label t('highlight_limit')
     = f.number_field :highlight_threshold, :step => 0.1
