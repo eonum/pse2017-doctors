@@ -1,5 +1,6 @@
 class Admin::DoctorsController < Admin::AdminController
   before_action :set_doctor, only: [:show, :edit, :update, :destroy, :geolocate]
+  before_action :set_fields, :set_cantons, only: [:new,  :edit, :update, :destroy, :geolocate]
 
   def index
     query = escape_query(params[:q])
@@ -16,13 +17,7 @@ class Admin::DoctorsController < Admin::AdminController
   end
 
   def edit
-    @cantons = ['AG','AR','AI','BL','BS','BE','FR','GE','GL','GR','JU','LU','NE','NW','OW','SH','SZ','SO','SG','TI','TG','UR','VD','VS','ZG','ZH']
-    @fields = ['Acupuncture', 'Aestetic Surgeons', 'Allergologists', 'Anaesthesiologits', 'Angiologists', 'Anthroposoph. Medicine', 'Cardiologists', 'Child Psychiatrists',
-               'Dentists', 'Dermatologits', 'Diabetologists', 'Endocrinologists', 'Forensic Medicine', 'Gastroenterologists', 'Geriatrists', 'Gynaecologists',
-               'General med.Practioner', 'Haematologists', 'Hand Surgery', 'Homeopathy', 'Infectiologists', 'Internists', 'Manual Medicine', 'Maxillo-Facial-Surgery',
-               'Nephrologists', 'Neurologists', 'Obstetrics', 'Occupational Medicine', 'Ophthalmologists', 'Oncologists (cancer)', 'Orthopaedic Surgery',
-               'Otorhinolaryngologists', 'Paediatrists', 'Pathologists', 'Plastic Surgeons', 'Pneumology', 'Psychiatrists', 'Rheumatologists', 'Radiology',
-               'Surgeons', 'Sports Medicine', 'Travel Medicine', 'Urologists', 'Venerology']
+
 
   end
   def create
@@ -94,5 +89,14 @@ class Admin::DoctorsController < Admin::AdminController
   def set_hospitals
     return if params['doctor']['hospital_ids'].nil?
     @doctor.hospital_ids = params['doctor']['hospital_ids'].map {|hospital_id|  BSON::ObjectId.from_string(hospital_id)}
+  end
+
+  def set_fields
+    @fields = ['Acupuncture', 'Aestetic Surgeons', 'Allergologists', 'Anaesthesiologits', 'Angiologists', 'Anthroposoph. Medicine', 'Cardiologists', 'Child Psychiatrists',
+               'Dentists', 'Dermatologits', 'Diabetologists', 'Endocrinologists', 'Forensic Medicine', 'Gastroenterologists', 'Geriatrists', 'Gynaecologists',
+               'General med.Practioner', 'Haematologists', 'Hand Surgery', 'Homeopathy', 'Infectiologists', 'Internists', 'Manual Medicine', 'Maxillo-Facial-Surgery',
+               'Nephrologists', 'Neurologists', 'Obstetrics', 'Occupational Medicine', 'Ophthalmologists', 'Oncologists (cancer)', 'Orthopaedic Surgery',
+               'Otorhinolaryngologists', 'Paediatrists', 'Pathologists', 'Plastic Surgeons', 'Pneumology', 'Psychiatrists', 'Rheumatologists', 'Radiology',
+               'Surgeons', 'Sports Medicine', 'Travel Medicine', 'Urologists', 'Venerology']
   end
 end

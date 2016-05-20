@@ -36,7 +36,6 @@
           %ul.nav.navbar-nav.navbar-right
             - if user_signed_in?
               %li= link_to fa_icon('sign-out', t('logout')), destroy_user_session_path, :method => :delete
-            %li= link_to fa_icon('question-circle', t('navbar-help')), help_url
             %li.dropdown
               %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
                 = fa_icon('flag', current_language)

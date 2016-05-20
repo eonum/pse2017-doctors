@@ -1,5 +1,6 @@
 class Admin::ComparisonsController < Admin::AdminController
-  before_action :set_comparison, :set_images, only: [:show, :edit, :update, :destroy]
+  before_action :set_comparison, only: [:show, :edit, :update, :destroy]
+  before_action :set_images, only: [:show, :edit, :update, :destroy, :new]
   helper ComparisonsHelper
 
   # GET /admin/comparisons

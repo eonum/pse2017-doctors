@@ -26,7 +26,7 @@
     %tr
       %td
         %strong= t('canton')
-      %td= f.text_field :canton
+      %td= f.select(:canton, options_for_select(@cantons.map {|value| [value,value]}, :selected => f.object.canton))
 
   .actions
     = f.submit t('save')

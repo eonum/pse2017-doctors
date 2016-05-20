@@ -28,4 +28,7 @@ class Admin::AdminController < ApplicationController
 
   layout :select_layout
 
+  def set_cantons
+    @cantons = ['AG','AR','AI','BL','BS','BE','FR','GE','GL','GR','JU','LU','NE','NW','OW','SH','SZ','SO','SG','TI','TG','UR','VD','VS','ZG','ZH']
+  end
 end

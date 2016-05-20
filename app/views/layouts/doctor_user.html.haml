@@ -18,20 +18,21 @@
   %body
     .navbar.navbar-inverse.navbar-static-top
       .container
-        %button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse")
-          %span.icon-bar
-          %span.icon-bar
-          %span.icon-bar
-        %a.navbar-brand(href="#{home_path}")
-          %i.fa.fa-user-md
-          = 'qm1 Doctor'
+        .navbar-header
+          %button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse")
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand(href="#{home_path}")
+            %i.fa.fa-user-md
+            = 'qm1 Doctor'
         .navbar-collapse.collapse.navbar-responsive-collapse
           %ul.nav.navbar-nav
-            %li= link_to fa_icon('wrench', 'Ärzte'), admin_doctors_url
+            %li= link_to fa_icon('wrench', t('doctors')), admin_doctors_url
           %ul.nav.navbar-nav.navbar-right
             - if user_signed_in?
-              %li= link_to fa_icon('sign-out', 'Logout'), destroy_user_session_path, :method => :delete
-            %li= link_to fa_icon('question-circle', 'Help'), help_url
+              %li= link_to fa_icon('sign-out', t('logout')), destroy_user_session_path, :method => :delete
+            %li= link_to fa_icon('question-circle', t('navbar-help')), help_url
             %li.dropdown
               %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
                 = fa_icon('flag', current_language)

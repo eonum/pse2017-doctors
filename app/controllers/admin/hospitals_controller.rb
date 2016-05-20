@@ -1,5 +1,6 @@
 class Admin::HospitalsController < Admin::AdminController
   before_action :set_hospital, only: [:show, :edit, :update, :destroy, :create_location, :geolocate]
+  before_action :set_cantons, only: [:new, :edit, :update, :destroy, :create_location, :geolocate]
 
   # GET /admin/hospitals
   # GET /admin/hospitals.json

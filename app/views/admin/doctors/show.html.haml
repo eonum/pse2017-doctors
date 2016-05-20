@@ -68,10 +68,11 @@
   %b= t('specialities')+":"
   = @doctor.docfields
 %p
-  %b Spitäler:
+  %b= t('hospitals_working')+":"
   - @doctor.hospitals.each do |f|
-    %li
-      = f.name
+    %ul
+      %li
+        = f.name
 
 
 = link_to t('edit'), edit_admin_doctor_path(@doctor)

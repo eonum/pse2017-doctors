@@ -52,20 +52,17 @@
         -if current_user.is_admin
           %td= f.text_field :docfields, :disabled => false
         -else
-
           %td= f.text_field :docfields, :disabled => true
-
-
-  %div
-    %span
-      %strong Spitäler
-      %br
-      #sortable
-        - (@doctor['hospital_ids']  || []).each do |var|
-          %div.top-buffer
-            = select_tag 'doctor[hospital_ids][]', options_for_select(Hospital.all.map { |v|[v.name, v.id]},var)
-            = image_tag '/bullet_toggle_minus.png', :title => 'delete', :onclick => '$(this).closest(\'div\').remove()', :class => 'delete_button_array_list'
-    %span.pseudoLink{onclick: "$('#sortable').append(listEntry);", title: ""} Spital hinzufügen
+    %tr
+      %td
+        %strong= t('hospitals_working')
+        %br
+        #sortable
+          - (@doctor['hospital_ids']  || []).each do |var|
+            %div.top-buffer
+              = select_tag 'doctor[hospital_ids][]', options_for_select(Hospital.all.map { |v|[v.name, v.id]},var)
+              = image_tag '/bullet_toggle_minus.png', :title => 'delete', :onclick => '$(this).closest(\'div\').remove()', :class => 'delete_button_array_list'
+        %span.pseudoLink{onclick: "$('#sortable').append(listEntry);", title: ""}= t('add_hospital')
 
   %br
   .actions
