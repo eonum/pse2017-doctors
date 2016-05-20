@@ -1,5 +1,4 @@
 @app = {'location' : [46.950745, 7.440618]}
-
 # geolocation: get current location
 geoloc = () =>
   console.log 'Geolocating...'
@@ -66,7 +65,8 @@ ready = (geolocate = true) =>
       console.log @app.location
 
     @app.map.setCenter(@app.location[0], @app.location[1])
-    $(".modal-body").css({'height': $(window).height()*0.8-48-56});# please somebody make this better
+    $("#map-modal").show()
+    calculateMapSize()
 
   console.log 'Displaying address'
   $locationInput.val(@app.address) if @app.address?
@@ -110,6 +110,8 @@ ready = (geolocate = true) =>
     $locationInput.select()
 
 
+
+
 # Do not geolocate on turbolink refresh
 $(document).on 'page:load', =>
   ready(false)
@@ -118,9 +120,12 @@ $(document).on 'page:load', =>
 $(document).ready ready
 
 $(window).on 'resize', ->
-  $(".modal-body").css({'height': $(window).height()*0.8-48-56});# please somebody make this better
+  calculateMapSize()
   console.log 'resizing'
   $('#search-bar').parent().height($(window).height()-131)
+
+calculateMapSize = ->
+  $(".modal-body").css({'height': $(".modal-content").outerHeight()-$(".modal-header").outerHeight()-$(".modal-footer").outerHeight()})
 
 # creates all tooltips in the navbar, as soon as the site gets or is bigger than 768px (changes from mobile to desktop version)
 # in the mobile-view the tooltips would get created at the wrong place
@@ -149,7 +154,6 @@ $(document).ready ->
 
   $(window).resize toggleTooltip
   toggleTooltip()
-
 
 
 
