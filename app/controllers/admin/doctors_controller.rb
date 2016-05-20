@@ -26,7 +26,7 @@ class Admin::DoctorsController < Admin::AdminController
 
     respond_to do |format|
       if @doctor.save
-        format.html { redirect_to [:admin, @doctor], notice: "#{@doctor.name} wurde erfolgreich erstellt." }
+        format.html { redirect_to [:admin, @doctor], notice: "#{@doctor.name} "+t('created') }
         format.json { render :show, status: :created, location: [:admin, @doctor] }
       else
         format.html { render :new }
@@ -41,7 +41,7 @@ class Admin::DoctorsController < Admin::AdminController
 
     respond_to do |format|
       if @doctor.update(doctor_params)
-        format.html { redirect_to [:admin, @doctor], notice: "#{@doctor.name} wurde erfolgreich geändert." }
+        format.html { redirect_to [:admin, @doctor], notice: "#{@doctor.name} "+t('updated') }
         format.json { render :show, status: :ok, location: [:admin, @doctor] }
       else
         format.html { render :edit }
@@ -53,7 +53,7 @@ class Admin::DoctorsController < Admin::AdminController
   def destroy
     @doctor.destroy
     respond_to do |format|
-      format.html { redirect_to admin_doctors_url, notice: "#{@doctor.name} wurde erfolgreich gelöscht." }
+      format.html { redirect_to admin_doctors_url, notice: "#{@doctor.name} "+t('deleted') }
       format.json { head :no_content }
     end
   end

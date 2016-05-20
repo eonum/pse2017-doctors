@@ -281,3 +281,6 @@ en:
   variable_created: "Variable was successfully created."
   variable_updated: "Variable was successfully updated."
   no_entry_found: "No such entry has been found!"
+  created: "was created successfully."
+  updated: "was updated successfully."
+  deleted: "was deleted successfully."

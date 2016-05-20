@@ -261,3 +261,6 @@ de:
   variable_created: "Variable wurde erfolgreich erstellt."
   variable_updated: "Variable wurde erfolgreich aktualisiert."
   no_entry_found: "Kein solcher Eintrag gefunden!"
+  created: "wurde erfolgreich erstellt."
+  updated: "wurde erfolgreich geändert."
+  deleted: "wurde erfolgreich gelöscht."
