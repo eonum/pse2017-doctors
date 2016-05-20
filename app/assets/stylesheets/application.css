@@ -59,16 +59,8 @@ a.active
     margin: 10px;
 }
 
-#regeolocate {
-    max-width: 12%;
-}
-
 .distance {
     color: #ff6a07;
-}
-
-#cats{
-    white-space: pre-line;
 }
 
 .hopcell {/*this is now the cell within the hopcell_outer*/
