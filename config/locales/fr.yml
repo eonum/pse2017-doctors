@@ -216,7 +216,7 @@ fr:
   list_hosp_loc: "Liste der Spitalstandorte"
   all_comp: "Toutes les Comparaisons"
   doc_list: "Liste de docteurs"
-  swipetooltip: "essuie pour voir plus"
+  swipetooltip: "Essuie pour voir plus"
   icon: "Icon"
   raw_html: "Raw HTML code (e.g. a favicon)"
   raw: "Raw HTML code"

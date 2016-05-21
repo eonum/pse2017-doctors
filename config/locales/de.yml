@@ -220,7 +220,7 @@ de:
   list_hosp_loc: "Liste der Spitalstandorte"
   all_comp: "Alle Vergleiche"
   doc_list: "Arztliste"
-  swipetooltip: "Swipe um mehr zu sehen"
+  swipetooltip: "Swipe, um mehr zu sehen"
   icon: "Icon"
   raw_html: "Unkompilierter HTML-Code (z.B. für ein favicon)"
   raw: "Unkompilierter HTML-Code"
