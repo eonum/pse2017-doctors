@@ -1,6 +1,6 @@
 %p#notice= notice
 %h2
-  = @variable.field_name + ' - ' + @variable.localized_field(t('name'), locale)
+  = @variable.field_name + ' - ' + @variable.localized_field('name', locale)
 %div
   = @variable.localized_field(t('description'), locale)
 .field

@@ -6,21 +6,25 @@
     #error_explanation
       %h2
         = pluralize(@variable.errors.count, "error")
-        prohibited this variable from being saved:
+        = t('prohibition_variable')
       %ul
         - @variable.errors.full_messages.each do |msg|
           %li= msg
   .field
     = f.label t('variable_name')
     = f.text_field :field_name
-    Rank:#{f.number_field :rank, :style => 'width: 40px;'}
-    Import Rank:#{f.number_field :import_rank, :style => 'width: 40px;'}
+    %br
+    =f.label t('rank')
+    #{f.number_field :rank, :style => 'width: 40px;'}
+    %br
+    =f.label t('import_rank')
+    #{f.number_field :import_rank, :style => 'width: 40px;'}
   .field
     = f.label t('timeline')
     = f.check_box :is_time_series
   %div
     %span
-      Sets
+      =t('sets')
       %br
       - @variable['variable_sets'].each do |entry|
         %span
