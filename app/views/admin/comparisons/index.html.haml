@@ -1,5 +1,7 @@
 %h2= t('all_comp')
 
+= link_to t('create_comp'), new_admin_comparison_path
+
 %table.table-striped.table
   %thead
     %tr
@@ -32,7 +34,3 @@
         %td= comparison.is_draft ? t('plan') : t('released')
         %td= link_to t('edit'), edit_admin_comparison_path(comparison)
         %td= link_to t('delete'), [:admin, comparison], :method => :delete, :data => { :confirm => t('sure') }
-
-%br
-
-= link_to t('create_comp'), new_admin_comparison_path
