@@ -276,6 +276,14 @@ table {
     }
   }
 }
+@media only screen and (max-width: 979px) {//979px is the point where the share bar moves to page bottom
+  #empty-footer-for-addthis-to-have-space {//not best work-around yet, but otherwise, you can't see bottom text on
+    height: 48px!important;//mobile screens due to share bar
+  }
+}
+#empty-footer-for-addthis-to-have-space {
+  height: 0;
+}
 
 
 
