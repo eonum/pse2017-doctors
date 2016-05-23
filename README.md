@@ -16,7 +16,7 @@ in the qualimed_hospitals directory
 with the default password 'asdf'
 If you already have an admin-user this will upgrade it and add all newly needed rights
 3. Run 'rake create_users:reset' to delete all users and create an admin user
-with the default password 'asdf'_
+with the default password 'asdf'
 
 ### Add icons to comparisons
 1. Run 'rake comparisons:add_icons' to add icons to all seven comparisons currently existing on qm1.ch
