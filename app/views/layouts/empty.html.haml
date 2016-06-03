@@ -18,12 +18,6 @@
     = render :partial => 'layouts/navbar'
     = yield
     %div.text-center.top-buffer
-      = t('more-information')
-      = mail_to 'spital@qualitaetsmedizin.ch', 'spital@qualitaetsmedizin.ch'
-      %p
-        © 2016
-        %a{:href => 'http://www.qualitaetsmedizin.ch'} Qualitätsmedizin.ch
-        | created by
-        %a{:href => 'http://www.eonum.ch'} eonum
+      = render 'shared/footer'
   %footer#empty-footer-for-addthis-to-have-space
 

@@ -29,7 +29,7 @@
       ga('send', 'pageview');
 
     / Go to www.addthis.com/dashboard to customize your tools
-    = javascript_include_tag "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5714ec24938e8b77"
+    /= javascript_include_tag "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5714ec24938e8b77"
 
 
   %body
@@ -59,13 +59,7 @@
           = bootstrap_flash
           = yield
           %div.text-center.top-buffer
-            = t('more-information')
-            = mail_to 'spital@qualitaetsmedizin.ch', 'spital@qualitaetsmedizin.ch'
-            %p
-              © 2016
-              %a{:href => 'http://www.qualitaetsmedizin.ch'} Qualitätsmedizin.ch
-              | created by
-              %a{:href => 'http://www.eonum.ch'} eonum
+            = render 'shared/footer'
     #map-modal.modal.fade.bs-example-modal-lg{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel", :role => "dialog", :tabindex => "-1"}
       .modal-dialog.modal-lg
         .modal-content
