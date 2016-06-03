@@ -15,4 +15,9 @@
     = javascript_include_tag "application"
 
   %body
+    = render :partial => 'layouts/navbar'
     = yield
+    %div.text-center.top-buffer
+      = render 'shared/footer'
+  %footer#empty-footer-for-addthis-to-have-space
+

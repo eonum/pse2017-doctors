@@ -1,6 +1,3 @@
-:javascript
-  $.getJSON("#{field_hospital_path(@hospital, field_name: 'AustStatT')}",  visualize_time_series)
-
 %div{ :style => 'padding: 30px;'}
   %h2= @hospital.name
 
@@ -40,4 +37,6 @@
                   %br
                   = tel_to location.phone2
     #doctors.tab-pane.fade
-      = render partial: 'doctors'
+      -if !@hospital.doctors.empty?
+        =render :partial => "doctors", locals: { :doctor => @hospital.doctors, :category_description => t('doctors-in-hospital')}
+      =render :partial => "doctors", locals: { :doctor => @doctors, :category_description => t('nearby-doctors')}

@@ -1,25 +1,32 @@
 = form_for [:admin, @hospital] do |f|
   - if @hospital.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@hospital.errors.count, "error")} prohibited this admin_hospital from being saved:"
+      %h2= "#{pluralize(@hospital.errors.count, "error")} "+t('prohibition_admin_hospital')
       %ul
         - @hospital.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :address1
-    = f.text_field :address1
-  .field
-    = f.label :address2
-    = f.text_field :address2
-  .field
-    = f.label :bfs_typo
-    = f.text_field :bfs_typo
-  .field
-    = f.label :canton
-    = f.text_field :canton
+  %table.table
+    %tr
+      %td
+        %strong= t('name')
+      %td= f.text_field :name
+    %tr
+      %td
+        %strong= t('address')+" 1"
+      %td= f.text_field :address1
+    %tr
+      %td
+        %strong= t('address')+" 2"
+      %td= f.text_field :address2
+    %tr
+      %td
+        %strong= t('bfs_typology')
+      %td= f.text_field :bfs_typo
+    %tr
+      %td
+        %strong= t('canton')
+      %td= f.select(:canton, options_for_select(@cantons.map {|value| [value,value]}, :selected => f.object.canton))
+
   .actions
-    = f.submit 'Save'
+    = f.submit t('save')

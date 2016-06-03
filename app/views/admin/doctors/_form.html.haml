@@ -1,42 +1,70 @@
+:javascript
+  var listEntry = "<div class='top-buffer'>#{j select_tag('doctor[hospital_ids][]', options_for_select(Hospital.all.map { |v| [v.name, v.id]}))}"
+  + " #{j image_tag '/bullet_toggle_minus.png', :title =>'delete', :onclick => '$(this).closest(\'div\').remove()', :class => 'delete_button_array_list'}</div>";
+
+  $(function() {
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+  });
+
 = form_for [:admin, @doctor] do |f|
   - if @doctor.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@doctor.errors.count, "error")} prohibited this doctor from being saved:"
+      %h2= "#{pluralize(@doctor.errors.count, "error")} " + t('prohibition-doctor')
       %ul
         - @doctor.errors.full_messages.each do |msg|
           %li= msg
   %table.table
     %tr
       %td
-        %strong Anrede / Titel
+        %strong= t('address-title')
       %td= f.text_field :title
     %tr
       %td
-        %strong Vorname Name
+        %strong= t('name-surname')
       %td= f.text_field :name
     %tr
       %td
-        %strong Adresse
+        %strong= t('address')
       %td= f.text_field :address
     %tr
       %td= f.label :email
       %td= f.text_field :email
     %tr
       %td
-        %strong Telefonnr. 1
+        %strong= t('website')
+      %td= f.text_field :website
+    %tr
+      %td
+        %strong= t('phone-no')+" 1"
       %td= f.text_field :phone1
     %tr
       %td
-        %strong Telefonr. 2
+        %strong= t('phone-no')+" 2"
       %td= f.text_field :phone2
     %tr
       %td
-        %strong Kanton
-      %td= f.text_field :canton
+        %strong= t('canton')
+      %td= f.select(:canton, options_for_select(@cantons.map {|value| [value,value]}, :selected => f.object.canton))
     %tr
       %td
-        %strong Fachbereiche
-      %td= f.text_field :docfields
+        %strong= t('specialities')
+        -if current_user.is_admin
+          %td= f.text_field :docfields, :disabled => false
+        -else
+          %td= f.text_field :docfields, :disabled => true
+  %table.table
+    %tr
+      %td
+        %strong= t('hospitals_working')
+        %br
+        #sortable
+          - (@doctor['hospital_ids']  || []).each do |var|
+            %div.top-buffer
+              = select_tag 'doctor[hospital_ids][]', options_for_select(Hospital.all.map { |v|[v.name, v.id]},var)
+              = image_tag '/bullet_toggle_minus.png', :title => 'delete', :onclick => '$(this).closest(\'div\').remove()', :class => 'delete_button_array_list'
+        %span.pseudoLink{onclick: "$('#sortable').append(listEntry);", title: ""}= t('add_hospital')
 
+  %br
   .actions
-    = f.submit 'Speichern'
+    = f.submit t('save')

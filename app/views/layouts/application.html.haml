@@ -29,57 +29,37 @@
       ga('send', 'pageview');
 
     / Go to www.addthis.com/dashboard to customize your tools
-    = javascript_include_tag "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5714ec24938e8b77"
+    /= javascript_include_tag "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5714ec24938e8b77"
 
 
   %body
-    .navbar.navbar-inverse.navbar-static-top
-      .container
-        %button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse")
-          %span.icon-bar
-          %span.icon-bar
-          %span.icon-bar
-        %a.navbar-brand(href="#{home_path}")
-          %i.fa.fa-user-md
-          = t('app-title')
-        .navbar-collapse.collapse.navbar-responsive-collapse
-          %ul.nav.navbar-nav
-            %li= link_to fa_icon('home', 'Home'), home_url
-            %li= link_to fa_icon('exclamation-circle', 'About'), 'http://www.qualitaetsmedizin.ch/startseite/', target: '_blank'
-          %ul.nav.navbar-nav.navbar-right
-            %li= link_to fa_icon('question-circle', 'Help'), help_url
-            %li.dropdown
-              %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-                = fa_icon('flag', current_language)
-                %span.caret
-              %ul.dropdown-menu{:role => "menu"}
-                %li= link_to 'Deutsch', params.merge({ locale: :de })
-                %li= link_to 'Francais', params.merge({ locale: :fr })
+    = render :partial => 'layouts/navbar'
 
     .container
       .row
-        .col-lg-4
+        .col-lg-12
           #search.well.well-sm
             %form#comparison-selection-form
-              %span#regeolocate.pseudoLink{title: t('regeolocate'), style: 'margin: 5px;'}= image_tag '/location-small.png'
+              %span#regeolocate.has-popover.pseudoLink{'data-content' => t('regeolocate'), style: 'margin: 5px;'}= image_tag '/location-small.png'
+              %input#location-input.input-sm.locbutton2.btn.btn-default.distance.has-popover{value: current_address, 'data-content' => t('location-box')}
+              -#locbutton2 so that it doesn't interfere with layout of locbutton on the right
               %button#location-btn.btn.btn-default.navbar-btn.distance.has-popover.locbutton{"data-target" => "#map-modal", "data-toggle" => "modal",
                  :type => 'button', 'data-content' => t('location-selection')}
                 %i.fa.fa-location-arrow.comparison-selection
-                = current_address
 
               .cantons
                 - cantons.each do |k,v|
                   = link_to k, url_for(params.merge(location: "#{v[:location][0]},#{v[:location][1]}").merge(canton: k)), :class => 'canton', :id => "canton-#{k}"
-              %div.dropdown
+              %div.dropdown{:style => ("display:none" if is_comparison_selection_page?)}
                 .top-buffer= label_tag t('speciality')
                 = select_tag('comparison', options_for_select(Comparison.where(:is_draft.ne => true).order_by(:rank => 'asc').map { |c| [c.localized_field('name', locale), comparison_path(c)]}, @comparison.nil? ? nil : comparison_path(@comparison)), class: 'form-control')
-          %div#field-info-box
-        #main-content.col-lg-8
+        -# div#field-info-box
+
+        #main-content.col-lg-12
           = bootstrap_flash
           = yield
           %div.text-center.top-buffer
-            = t('more-information')
-            = mail_to 'spital@qualitaetsmedizin.ch', 'spital@qualitaetsmedizin.ch'
+            = render 'shared/footer'
     #map-modal.modal.fade.bs-example-modal-lg{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel", :role => "dialog", :tabindex => "-1"}
       .modal-dialog.modal-lg
         .modal-content
@@ -92,3 +72,4 @@
               #map
           .modal-footer
             %a.btn{"data-dismiss" => "modal"}= t('close-location-search')
+  %footer#empty-footer-for-addthis-to-have-space

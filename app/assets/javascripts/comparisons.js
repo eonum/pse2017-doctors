@@ -1,3 +1,4 @@
+//= require swipetooltip.js.erb
 
 var ready = function() {
     $(".orange-highlight").animate({backgroundColor: 'rgb(250, 234, 120)'}, 2500);
@@ -7,44 +8,38 @@ var ready = function() {
         })
     }
 
-
-    $('.time-series').prop('title', I18n.t('show_time_series'));
-    $(document).on('click', '.time-series', function () {
-        var varid = $(this).closest('td').attr("data-varid");
-        var hopid = $(this).closest('tr').attr("data-hopid");
-        // Is there a way of using a rails url helper here?
-        $.getJSON('../hospitals/' + hopid + '/field?varid=' + varid,  visualize_time_series)
-    });
-
     $(".cantons").removeClass("highlight", 150);
     var canton = getUrlParameter('canton');
     if (canton != undefined) {
         $("#canton-" + canton).addClass("highlight", 250);
     }
 
-    $(document).on('click', '.hopmodal', function() {
+    $(document).on('click', '.hopmodal', function () {
         console.log($(this).attr('data-modalhref'));
-        $('#hop-modal').removeData("bs.modal").find(".modal-content").empty();
-        $('#hop-modal').modal({
+        var $hopModal = $('#hop-modal');
+        $hopModal.removeData("bs.modal").find(".modal-content").empty();
+        $hopModal.modal({
             show: true,
             remote: $(this).attr('data-modalhref')
         });
     });
+
+    var $table = $("#comparison-table");
+
+    // initialize tablesaw for our comparison table
+    $table.tablesaw();
+
+    addSwipeTooltip();
 };
 
 $(document).ready(ready);
-$(document).on('page:load', ready)
-
-/*$(document).on("hidden.bs.modal", '#hop-modal', function (e) {
-    $(e.target).removeData("bs.modal").find(".modal-content").empty();
-});*/
-
+$(document).on('page:load', ready);
 
 $( function() {
     var change_comparison = function() {
         var comparison_url = $('#comparison').find(":selected").val();
         Turbolinks.visit(comparison_url + '?location=' + app.location, { change: ['main-content'] });
-    }
+    };
 
     $(document).on('change', '#comparison-selection-form button a, #comparison-selection-form select', change_comparison);
 });
@@ -65,22 +60,37 @@ var getUrlParameter = function getUrlParameter(sParam) {
     }
 };
 
-var visualize_time_series = function visualize_time_series(time_series) {
-    var data_array = [];
-    data_array.push([I18n.t('year'), time_series.var_name]);
-    Object.keys(time_series.response).forEach(function (year) {
-        var value = parseFloat(time_series.response[year]);
-        data_array.push([year, value]);
-    })
+$(document).ready(colourButtons);
+$(window).resize(colourButtons);
 
-    var data = google.visualization.arrayToDataTable(data_array);
+function colourButtons(){
+    var $buttons = $(".btn-info");
+    var rowLength;
+    if($(window).width() >= 1200)
+        rowLength = 4;
+    else if($(window).width() >= 645)
+        rowLength = 2;
+    else
+        rowLength = 1;
 
-    var options = {
-        title: time_series.hop_name,
-        hAxis: {title: I18n.t('year'),  titleTextStyle: {color: '#333'}},
-        legend: {position: 'top'}
-    };
-
-    var chart = new google.visualization.AreaChart(document.getElementById('field-info-box'));
-    chart.draw(data, options);
+    $buttons.each(function (i) {
+        var row = Math.floor(i / rowLength);
+        var rowIndex = i - (row*rowLength);
+        if(row % 2 === 0) {
+            if (rowIndex % 2 === 0) {
+                $(this).css('background-color', '#E0E0E0');
+            }
+            else
+                $(this).css('background-color', 'white');
+        }
+        else {
+            if (rowIndex % 2 === 1) {
+                $(this).css('background-color', '#E0E0E0');
+            }
+            else
+                $(this).css('background-color', 'white');
+        }
+    });
 }
+
+

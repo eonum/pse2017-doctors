@@ -2,7 +2,7 @@
 %h2
   = @variable.field_name + ' - ' + @variable.localized_field('name', locale)
 %div
-  = @variable.localized_field('description', locale)
+  = @variable.localized_field(t('description'), locale)
 .field
   %p
     = t('data_type')
@@ -10,16 +10,16 @@
     \#{@variable.variable_type}
   %p
     - if !@variable['values'].empty?
-      = 'Mögliche Werte'
+      = t('possible_values')
       %br
       %span
         - @variable['values'].each do |entry|
           %span.tm-tag= entry
   %p
     - if @variable['values_' + locale.to_s] != nil && !@variable['values_' + locale.to_s].empty?
-      = 'Wertbeschreibungen'
+      = t('value_descr')
       %br
       %span
         - @variable['values_' + locale.to_s].each do |entry|
           %span.tm-tag= entry
-= link_to 'Bearbeiten', edit_admin_variable_path(@variable)
+= link_to t('edit'), edit_admin_variable_path(@variable)

@@ -1,84 +1,82 @@
 :javascript
   var listEntry = "<span>#{j text_field_tag '@@variable@@', '', :style => 'width: 100px; margin-right: 2px', :class => 'inputText listsOnly'}"
-  + "#{j image_tag '/bullet_toggle_minus.png', :title =>'delete', :onclick => '$(this).closest(\'span\').remove()', :class => 'delete_button_array_list'}</span>";
+  + "#{j image_tag '/bullet_toggle_minus.png', :title =>t('delete'), :onclick => '$(this).closest(\'span\').remove()', :class => 'delete_button_array_list'}</span>";
 = form_for [:admin, @variable] do |f|
   - if @variable.errors.any?
     #error_explanation
       %h2
         = pluralize(@variable.errors.count, "error")
-        prohibited this variable from being saved:
+        = t('prohibition_variable')
       %ul
         - @variable.errors.full_messages.each do |msg|
           %li= msg
   .field
-    = f.label 'Variablenname'
+    = f.label t('variable_name')
     = f.text_field :field_name
-    Rank:#{f.number_field :rank, :style => 'width: 40px;'}
-    Import Rank:#{f.number_field :import_rank, :style => 'width: 40px;'}
+    %br
+    =f.label t('rank')
+    #{f.number_field :rank, :style => 'width: 40px;'}
+    %br
+    =f.label t('import_rank')
+    #{f.number_field :import_rank, :style => 'width: 40px;'}
   .field
-    = f.label 'Zeitreihe'
+    = f.label t('timeline')
     = f.check_box :is_time_series
   %div
     %span
-      Sets
+      =t('sets')
       %br
       - @variable['variable_sets'].each do |entry|
         %span
           = text_field_tag 'variable[variable_sets][]', entry, :style => 'width: 100px;', :class => 'inputText'
-          = image_tag '/bullet_toggle_minus.png', :title => 'delete', :onclick => '$(this).closest(\'span\').remove()', :class => 'delete_button_array_list'
-    %span.pseudoLink{onclick: "$(this).prev().append(listEntry.replace(\"@@variable@@\", \"variable[variable_sets][]\"));", title: ""} Wert hinzufügen
+          = image_tag '/bullet_toggle_minus.png', :title => t('delete'), :onclick => '$(this).closest(\'span\').remove()', :class => 'delete_button_array_list'
+    %span.pseudoLink{onclick: "$(this).prev().append(listEntry.replace(\"@@variable@@\", \"variable[variable_sets][]\"));", title: ""}= t('add_value')
   .field
-    = f.label 'Name'
+    = f.label t('name')
     %br
     = f.text_field :name_de
     = f.text_field :name_fr
     = f.text_field :name_it
   .field
-    = f.label 'Beschrieb'
+    = f.label t('description')
     %br
     = f.text_area :description_de, {:cols => 35, :rows => 10}
     = f.text_area :description_fr, {:cols => 35, :rows => 10}
     = f.text_area :description_it, {:cols => 35, :rows => 10}
   .field
     %p
-      = f.label 'Variablentyp'
-      %br Freitext: Darstellung als Freitext ohne Änderung.
-      %br Prozentzahl: Zahl zwischen 0 und 100, dargestellt als Zahl mit Hintergrundhighlighting ab Highlight limit
-      %br Fallzahl: Ganze Zahl. Dargestellt als Balken mit Zahl. Balken ist normiert auf den höchsten Wert auf der aktuellen Ansicht. Bei Anzeige auf Spitalvisitenkarte wird nur die Zahl angezeigt, falls mehrere Jahre vorhanden sind, wird ein Chart angezeigt
-      %br Flag: boolean wert, leer oder 'X'. Dargestellt als grünes Gutzeichen.
-      %br Link. URL, Dargestellt als Icon verlinkt mit der URL
-      %br Relevanz: Zahl zwischen 0 und 100 dargestellt als Balken
-      %br
-      = f.select :variable_type, options_for_select([['Freitext oder Aufzählung', :string], ['Prozentzahl', :percentage], ['Fallzahl', :number], ['Flag', :boolean], ['Link', :link], ['Relevanz', :relevance]], @variable['variable_type'])
+      = f.label t('variable_type')
+      = raw t('variable_type_manual')
+      = f.select :variable_type, options_for_select([[t('freetext_listing'), :string], [t('percentnumber'), :percentage], [t('number_of_cases'), :number], [t('flag'), :boolean], [t('link'), :link], [t('relevance'), :relevance]], @variable['variable_type'])
     %p
-      = f.label 'Mögliche Werte falls Aufzählung: Kein Eintrag => Freitext'
+      = f.label t('possible_values')
       %br
       %span
         - @variable['values'].each do |entry|
           %span
             = text_field_tag 'variable[values][]', entry, :style => 'width: 100px;', :class => 'inputText'
-            = image_tag '/bullet_toggle_minus.png', :title => 'delete', :onclick => '$(this).closest(\'span\').remove()', :class => 'delete_button_array_list'
-      %span.pseudoLink{onclick: "$(this).prev().append(listEntry.replace(\"@@variable@@\", \"variable[values][]\"));", title: ""} Wert hinzufügen
+            = image_tag '/bullet_toggle_minus.png', :title => t('delete'), :onclick => '$(this).closest(\'span\').remove()', :class => 'delete_button_array_list'
+      %span.pseudoLink{onclick: "$(this).prev().append(listEntry.replace(\"@@variable@@\", \"variable[values][]\"));", title: ""}= t('add_value')
       %br
       %span
-        Beschreibungen Deutsch
+        = t('descriptions_german')
         %br
         - @variable['values_de'].each do |entry|
           %span
             = text_field_tag 'variable[values_de][]', entry, :style => 'width: 100px;', :class => 'inputText'
-            = image_tag '/bullet_toggle_minus.png', :title => 'delete', :onclick => '$(this).closest(\'span\').remove()', :class => 'delete_button_array_list'
-      %span.pseudoLink{onclick: "$(this).prev().append(listEntry.replace(\"@@variable@@\", \"variable[values_de][]\"));", title: ""} Wert hinzufügen
+            = image_tag '/bullet_toggle_minus.png', :title => t('delete'), :onclick => '$(this).closest(\'span\').remove()', :class => 'delete_button_array_list'
+      %span.pseudoLink{onclick: "$(this).prev().append(listEntry.replace(\"@@variable@@\", \"variable[values_de][]\"));", title: ""}= t('add_value')
       %br
       %span
-        Beschreibungen Französisch
+        = t('descriptions_french')
         %br
         - @variable['values_fr'].each do |entry|
           %span
             = text_field_tag 'variable[values_fr][]', entry, :style => 'width: 100px;', :class => 'inputText'
-            = image_tag '/bullet_toggle_minus.png', :title => 'delete', :onclick => '$(this).closest(\'span\').remove()', :class => 'delete_button_array_list'
-      %span.pseudoLink{onclick: "$(this).prev().append(listEntry.replace(\"@@variable@@\", \"variable[values_fr][]\"));", title: ""} Wert hinzufügen
+            = image_tag '/bullet_toggle_minus.png', :title => t('delete'), :onclick => '$(this).closest(\'span\').remove()', :class => 'delete_button_array_list'
+      %span.pseudoLink{onclick: "$(this).prev().append(listEntry.replace(\"@@variable@@\", \"variable[values_fr][]\"));", title: ""}= t('add_value')
   .field
-    = f.label 'Highlight Limit (nur bei Prozentangaben)'
+    = f.label t('highlight_limit')
     = f.number_field :highlight_threshold, :step => 0.1
   .actions
-    = f.submit 'Speichern'
+    = f.submit t('save')

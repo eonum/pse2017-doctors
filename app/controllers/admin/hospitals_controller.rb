@@ -1,5 +1,6 @@
 class Admin::HospitalsController < Admin::AdminController
   before_action :set_hospital, only: [:show, :edit, :update, :destroy, :create_location, :geolocate]
+  before_action :set_cantons, only: [:new, :edit, :update, :destroy, :create_location, :geolocate]
 
   # GET /admin/hospitals
   # GET /admin/hospitals.json
@@ -30,9 +31,9 @@ class Admin::HospitalsController < Admin::AdminController
     @location.doc_id = Random.rand(10000)
 
     if @location.save
-      redirect_to :back, notice: 'Hauptsitz für dieses Spital wurde erfolgreich erstellt.'
+      redirect_to :back, notice: t('headquarter_created')
     else
-      redirect_to :back, alert: "Fehler beim Erstellen des Hauptsitzes für dieses Spital. #{@location.errors.full_messages.each{|msg| msg}}"
+      redirect_to :back, alert: t('error_creating_headquarter')+" #{@location.errors.full_messages.each{|msg| msg}}"
     end
 
   end
@@ -43,9 +44,9 @@ class Admin::HospitalsController < Admin::AdminController
     location = Geocoder.coordinates(@hospital.name) if location == nil
     @hospital.location = [location[1], location[0]]
     if @hospital.save
-      redirect_to :back, notice: 'Erfolgreich neu lokalisiert.'
+      redirect_to :back, notice: t('relocated')
     else
-      redirect_to :back, alert: "Fehler bei der Lokalisation dieses Spitals. #{@hospital.errors.full_messages.each{|msg| msg}}"
+      redirect_to :back, alert: t('error_locating_hosp')+" #{@hospital.errors.full_messages.each{|msg| msg}}"
     end
   end
 
@@ -65,7 +66,7 @@ class Admin::HospitalsController < Admin::AdminController
 
     respond_to do |format|
       if @hospital.save
-        format.html { redirect_to [:admin, @hospital], notice: 'Hospital was successfully created.' }
+        format.html { redirect_to [:admin, @hospital], notice: t('hosp_created') }
         format.json { render :show, status: :created, location: [:admin, @hospital] }
       else
         format.html { render :new }
@@ -79,7 +80,7 @@ class Admin::HospitalsController < Admin::AdminController
   def update
     respond_to do |format|
       if @hospital.update(hospital_params)
-        format.html { redirect_to [:admin, @hospital], notice: 'Hospital was successfully updated.' }
+        format.html { redirect_to [:admin, @hospital], notice: t('hosp_updated') }
         format.json { render :show, status: :ok, location: [:admin, @hospital] }
       else
         format.html { render :edit }
@@ -93,7 +94,7 @@ class Admin::HospitalsController < Admin::AdminController
   def destroy
     @hospital.destroy
     respond_to do |format|
-      format.html { redirect_to admin_hospitals_url, notice: 'Hospital was successfully destroyed.' }
+      format.html { redirect_to admin_hospitals_url, notice: t('hosp_destroyed') }
       format.json { head :no_content }
     end
   end
@@ -104,8 +105,11 @@ class Admin::HospitalsController < Admin::AdminController
       @hospital = Hospital.find(params[:id])
     end
 
+
+    @doctors= Doctor.all
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def hospital_params
-      params.require(:hospital).permit(:name, :address1, :address2, :bfs_typo, :canton)
+      params.require(:hospital).permit(:name, :address1, :address2, :bfs_typo, :canton,:doctor_ids=>[])
     end
 end

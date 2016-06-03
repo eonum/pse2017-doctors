@@ -6,7 +6,7 @@ module ApplicationHelper
   def current_language
     case I18n.locale
       when :de then 'Deutsch'
-      when :fr then 'Francais'
+      when :fr then 'Français'
       when :it then 'Italiana'
       when :en then 'English'
       else 'No Idea'
@@ -19,6 +19,10 @@ module ApplicationHelper
 
   def fa_icon(name, text='')
     safe_join([content_tag(:i, nil, class: "fa fa-#{name}"), " #{text}"])
+  end
+
+  def is_comparison_selection_page?
+    current_page?(url_for(:controller => '/comparisons', :action => 'index')) || current_page?(home_url)
   end
 
   def progress_bar(value, css_class)

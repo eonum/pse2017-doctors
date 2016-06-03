@@ -1,5 +1,7 @@
 class Admin::ComparisonsController < Admin::AdminController
   before_action :set_comparison, only: [:show, :edit, :update, :destroy]
+  before_action :set_images, only: [:show, :edit, :update, :destroy, :new]
+  helper ComparisonsHelper
 
   # GET /admin/comparisons
   # GET /admin/comparisons.json
@@ -28,7 +30,7 @@ class Admin::ComparisonsController < Admin::AdminController
     set_variables
     respond_to do |format|
       if @comparison.save
-        format.html { redirect_to [:admin, @comparison], notice: 'Comparison was successfully created.' }
+        format.html { redirect_to [:admin, @comparison], notice: t('comp_created') }
         format.json { render :show, status: :created, location: [:admin, @comparison] }
       else
         format.html { render :new }
@@ -43,7 +45,7 @@ class Admin::ComparisonsController < Admin::AdminController
     set_variables
     respond_to do |format|
       if @comparison.update(comparison_params)
-        format.html { redirect_to [:admin, @comparison], notice: 'Comparison was successfully updated.' }
+        format.html { redirect_to [:admin, @comparison], notice: t('comp_updated') }
         format.json { render :show, status: :ok, location: [:admin, @comparison] }
       else
         format.html { render :edit }
@@ -57,30 +59,35 @@ class Admin::ComparisonsController < Admin::AdminController
   def destroy
     @comparison.destroy
     respond_to do |format|
-      format.html { redirect_to admin_comparisons_url, notice: 'Comparison was successfully destroyed.' }
+      format.html { redirect_to admin_comparisons_url, notice: t('comp_destroyed') }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+  # Use callbacks to share common setup or constraints between actions.
     def set_comparison
       @comparison = Comparison.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+  def set_images
+    @images = Dir.glob("app/assets/images/*.png").map do |f| File.basename f end
+  end
+
+
+  # Never trust parameters from the scary internet, only allow the white list through.
     def comparison_params
       p = params.require(:comparison).permit(:name, :name_de, :name_fr, :name_it, :description_de,
                                          :description_fr, :description_it, :limit_field,
                                          :limit_operator, :limit_value, :base_year, :rank, :doctor_fields,
-                                          :is_draft)
+                                          :is_draft,:image_link, :raw_html_icon)
       p[:doctor_fields] = p[:doctor_fields].split(',').map(&:strip) if p[:doctor_fields]
       p
     end
 
-    def set_variables
-      return if params['comparison']['variable_ids'].nil?
-      @comparison.variable_ids = params['comparison']['variable_ids'].map {|var_id|  BSON::ObjectId.from_string(var_id)}
-      params['comparison'].delete('variable_ids')
-    end
+  def set_variables
+    return if params['comparison']['variable_ids'].nil?
+    @comparison.variable_ids = params['comparison']['variable_ids'].map {|var_id|  BSON::ObjectId.from_string(var_id)}
+    params['comparison'].delete('variable_ids')
+  end
 end

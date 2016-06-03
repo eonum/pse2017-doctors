@@ -3,10 +3,10 @@
 
 %p= @comparison.localized_field 'description', locale
 
-%table.table.table-striped
-  %thead#comparison-head
+%table.table.table-striped#comparison-table
+  %thead#comparison-head{:style=>"background-color: white"}
     %tr
-      %th.qim-header-cell{ width: "25%" }
+      %th.qim-header-cell{ "data-tablesaw-priority"=>"persist", :style => "width: 25%" }
         = t('institution')
         %h5
           %small= t('institution-description')
@@ -28,3 +28,5 @@
 
 :javascript
   var numcase_data = #{numcase_data(@hospitals, @variables).to_json};
+
+

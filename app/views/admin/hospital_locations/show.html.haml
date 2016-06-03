@@ -4,34 +4,34 @@
   %b Doc:
   = @hospital_location.doc_id
 %p
-  %b Name:
+  %b= t('name')+":"
   = @hospital_location.name
 %p
-  %b Title:
+  %b= t('title')+":"
   = @hospital_location.title
 %p
-  %b Address:
+  %b= t('address')+":"
   = @hospital_location.address
 %p
-  %b Email:
+  %b= t('email')+":"
   = @hospital_location.email
 %p
-  %b Phone1:
+  %b= t('phone-no')+"1:"
   = @hospital_location.phone1
 %p
-  %b Phone2:
+  %b= t('phone-no')+"2:"
   = @hospital_location.phone2
 %p
-  %b Canton:
+  %b= t('canton')+":"
   = @hospital_location.canton
 %p
-  %b Location:
+  %b= t('location')+":"
   = @hospital_location.location
 
 %p
-  %b Spitalverbund:
-  = @hospital_location.hospital == nil ? 'Undefined' : @hospital_location.hospital.name
+  %b= t('hospital_network')
+  = @hospital_location.hospital == nil ? t('undefined') : @hospital_location.hospital.name
 
-= link_to 'Edit', edit_admin_hospital_location_path(@hospital_location)
+= link_to t('edit'), edit_admin_hospital_location_path(@hospital_location)
 \|
-= link_to 'Back', admin_hospital_locations_path
+= link_to t('back'), admin_hospital_locations_path

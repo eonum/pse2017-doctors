@@ -37,37 +37,47 @@
 %p#notice= notice
 
 %p
-  %b Name:
+  %b= t('name')+":"
   = @doctor.name
 %p
-  %b Title:
+  %b= t('title')+":"
   = @doctor.title
 %p
-  %b Address:
+  %b= t('address')+":"
   = @doctor.address
 %p
-  %b Email:
+  %b= t('email')+":"
   = @doctor.email
 %p
-  %b Phone1:
+  %b= t('website')+":"
+  = @doctor.website
+%p
+  %b= t('phone-no')+" 1:"
   = @doctor.phone1
 %p
-  %b Phone2:
+  %b= t('phone-no')+" 2:"
   = @doctor.phone2
 %p
-  %b Canton:
+  %b= t('canton')+":"
   = @doctor.canton
 %p
-  %b Location:
+  %b= t('location') +":"
   = @doctor.location
-  = link_to 'Neu lokalisieren', geolocate_admin_doctor_path(@doctor), method: :post
+  = link_to t('relocate'), geolocate_admin_doctor_path(@doctor), method: :post
 %p
-  %b Fachbereiche:
+  %b= t('specialities')+":"
   = @doctor.docfields
+%p
+  %b= t('hospitals_working')+":"
+  - @doctor.hospitals.each do |f|
+    %ul
+      %li
+        = f.name
 
-= link_to 'Bearbeiten', edit_admin_doctor_path(@doctor)
+
+= link_to t('edit'), edit_admin_doctor_path(@doctor)
 \|
-= link_to 'Back', admin_doctors_path
+= link_to t('back'), admin_doctors_path
 
 %div{ id:  "map", style: "height:500px" }
 

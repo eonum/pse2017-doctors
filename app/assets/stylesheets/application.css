@@ -16,8 +16,19 @@
  *= require nprogress_and_overrides
  *= require tagmanager
  *= require jquery-ui/sortable
+ *= require tablesaw.bare
  */
 
+@media only screen and (max-width: 767px) {
+    #field-info-box2 {
+        display: none;
+    }
+}
+
+a.active
+{
+    background-color: #3b4064;
+}
 
 .pseudoLink, .time-series {
     cursor: hand;
@@ -42,17 +53,39 @@
 }
 
 .locbutton {
-    font-size: 1.0em;
+    max-width:15%;
+    height: 30px;
+    align-self: right;
+    margin: 10px;
 }
 
 .distance {
     color: #ff6a07;
 }
 
-.hopcell {
+.hopcell {/*this is now the cell within the hopcell_outer*/
+    width: 100%;
+    word-wrap:break-word;
+}
+.hopcell_outer {
     padding: 5px;
+    display: inline-block;/*with that, the cell number per row changes dynamically with the window width*/
+    vertical-align:top;
+    width: 200px;/*seemed like a reasonable number, could be changed however. It should still be absolute, though*/
 }
 
 a, a:visited {
     color: rgb(59, 114, 184);
 }
+
+.blau{
+    color: #4E5584;
+}
+
+#location-input {
+    text-align: left;
+    width: 61%;/*experimental value so that it still looks good with 320px display width*/
+    overflow: hidden;
+    margin-outside: 0px;
+}
+

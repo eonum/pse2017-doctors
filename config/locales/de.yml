@@ -12,7 +12,10 @@ de:
   show_time_series: "Zeitlicher Verlauf anzeigen"
   year: "Jahr"
   more-information: "Fordern Sie mehr Informationen an unter: "
-  location-selection: "Ortsauswahl"
+  location-selection: "Ortsauswahl mit Karte"
+  location-box: "Manuelle Ortseingabe"
+  topics-info: "Hier klicken, um alle Fachbereiche zu sehen"
+  topics-subtitle: "Wählen Sie einen Vergleich aus"
   close-location-search: "Übernehmen"
   back: "Zurück"
   doctors: "Ärzte"
@@ -22,7 +25,8 @@ de:
   nearby-doctors: "Folgende Ärzte befinden sich in der näheren Umgebung dieses Spitals:"
   doctor-change-request: "Falls ein Arzt fehlt oder falsch erfasst ist, melden Sie sich bitte mit der Korrektur unter "
   select-hop: "Wählen Sie ein Spital / eine Klinik aus der Liste für Detailinformationen"
-  welcome-title: "<a href='http://qm1.ch'>qm1.ch</a> - Ihr Weg zum geeigneten Spital"
+  doctors-in-hospital: "Folgende Ärzte arbeiten mit diesem Spital zusammen:"
+  welcome-title: "<h3><a href='http://qm1.ch'>qm1.ch</a> - Ihr Weg zum geeigneten Spital</h3>"
   welcome-text: "Das 'Beste Spital' gibt es nicht. Es lohnt sich vielmehr, nach Ihren eigenen Kriterien und zusammen mit Ihrem Arzt bzw.
       weiteren Vertrauenspersonen die Spitalwahl zu treffen. Zuvor ist zu prüfen, ob überhaupt ein stationärer Aufenthalt notwendig oder
       ein Eingriff angezeigt ist. Denn jede medizinische Dienstleistung birgt auch Risiken. Siehe auch:
@@ -49,3 +53,219 @@ de:
                  "
   no-value: "keine Angabe"
   presentation-link: "Kurze Präsentation zu qm1.ch"
+  help: "<div class='panel-heading'>
+                       <h3>Hilfe.</h3>
+                     </div>
+                     <div class='panel-body'>
+                       Die Kennzahlen und Daten zu den Institutionen entstammen publizierten Angaben und aktuellen Datenquellen,
+                       u.a des Bundesamtes für Gesundheit (BAG), des Nationalen Vereins für Qualitätsentwicklung in Spitälern und
+                       Kliniken (ANQ) und publizierten Informationen / Jahresberichten. Allfällige Fehler bitten wir schriftlich zu melden an
+                       <a href=\"mailto:spital@qm1.ch\">spital@qm1.ch</a>
+                       <p></p>
+                       Die Zahlen zur Patientenzufriedenheit finden Sie bei Bedarf auf den Seiten des ANQ (
+                       <a href='http://www.anq.ch/messergebnisse/ergebnisse-akutsomatik/' target='_blank'>http://www.anq.ch/messergebnisse/ergebnisse-akutsomatik/</a>
+                       ). Wir erachten diese als nicht aussagekräftig und irreführend, da die Wertungen eher mit den Serviceleistungen
+                       der Kliniken als mit der tatsächlichen medizinischen Qualität verbunden sind. Zudem bewegen sich die
+                       Ergebnisse seit Jahren in einem Band zwischen guten und sehr guten Bewertungen, was die statistische
+                       Aussagekraft beeinträchtigt. Es ist davon auszugehen, dass alle Kliniken und Spitäler aus dieser Optik
+                       empfohlen werden können und die Patienten / Kunden durchweg zufrieden sind."
+
+
+
+  help2:              "<p><a href='http://qm1.ch'>qm1.ch</a> - Ihr Weg zum geeigneten Spital</p>
+                       <p class='top-buffer'>
+                         Das 'Beste Spital' gibt es nicht. Es lohnt sich vielmehr, nach Ihren eigenen Kriterien und zusammen mit Ihrem Arzt bzw. weiteren Vertrauenspersonen die Spitalwahl zu treffen. Zuvor ist zu prüfen, ob überhaupt ein stationärer Aufenthalt notwendig oder ein Eingriff angezeigt ist. Denn jede medizinische Dienstleistung birgt auch Risiken. Siehe auch: <a href='http://www.qualitaetsmedizin.ch/fur-patienten/aerztlicher-rat-zweitmeinung/' target='_blank'> http://www.qualitaetsmedizin.ch/fur-patienten/aerztlicher-rat-zweitmeinung/</a> </p><p> Um Chancen und Risiken besser zu verstehen und abzuwägen, stehen Ihnen auf qm1.ch die relevanten Informationen, d.h. geprüfte Spital- und Qualitätskennzahlen, zur Verfügung. Kritische Kennzahlen werden hervorgehoben, als zusätzliche Anhaltspunkte für Problembereiche im jeweiligen Spital. </p> <h4><a href='http://qm1.ch'>qm1.ch</a> - Relevanz</h4> <p>
+                         Zudem hilft Ihnen unsere zusammenfassende Beurteilung zur Relevanz des Spital. Diese spezifische Kennzahl wird Ihnen pro Spital zum jeweiligen Behandlungsanlass, zum geplanten Eingriff bzw. zum Fachbereich ausgewiesen. Der Wert wird national, d.h. schweizweit errechnet, und kann zwischen 0% und 100% liegen. Je höher desto besser. Für die Berechnung gewichten wir verschiedene Faktoren, insbesondere die Zahl behandelter Patienten und den Stellenwert der Leistungen im jeweiligen Spital bzw. der Klinik. </p><p> Komplettiert wird der Steckbrief zum Spital mit Informationen zur Infrastruktur, der Teilnahme an qualitätssichernden Massnahmen, besonderen Leistungen und Schwerpunkten. </p><p> Bei Fragen unterstützen wir Sie auch persönlich bei der Arzt- und Spitalwahl: <a href='mailto:arzt@qm1.ch'>arzt@qm1.ch</a>
+                       </p>
+                       <p></p>
+                       Abkürzungen
+                       <dl class='dl-horizontal'>
+                         <dt>BfS</dt>
+                         <dd>Bundesamt für Statistik</dd>
+                         <dt>ANQ</dt>
+                         <dd>Nationaler Verein für Qualitätsentwicklung in Spitälern und Kliniken</dd>
+                         <dt>MRI</dt>
+                         <dd>Magnetic Resonance Imaging, ein bildgebendes Verfahren zur Darstellung der Gewebestrukturen im Körperinneren</dd>
+                         <dt>CT</dt>
+                         <dd>Computertomographie ist ein Röntgenverfahren, mit dem der menschliche Körper in Querschnittbildern (Schnittbildverfahren) dargestellt wird.</dd>
+                         <dt>PET</dt>
+                         <dd>Positronen-Emissions-Tomographie, ein bildgebendes Verfahren der Nuklearmedizin, das Schnittbilder von lebenden Organismen erzeugt, indem es die Verteilung einer schwach radioaktiv markierten Substanz im Organismus sichtbar macht und damit biochemische und physiologische Funktionen abbildet.</dd>
+                         <dt>CC</dt>
+                         <dd>Gamma Camera (inkl. Szintigraphie und SPECT-Scanner); die Untersuchungen werden als Szintigraphie bezeichnet und mit einer Gamma-Kamera angefertigt. So entstehen Abbildungen verschiedenster Stoffwechselprozesse, die eine optimale Ergänzung zu anderen bildgebenden Verfahren wie beispielsweise Röntgenuntersuchungen oder Computertomographien sind, die lediglich anatomische Strukturen zeigen.</dd>
+                         <dt>LB</dt>
+                         <dd>Linearbeschleuniger (Radiotherapie); Ein Linearbeschleuniger ist ein Teilchenbeschleuniger, mit dem elektrisch geladene Teilchen beschleunigt werden. Hierbei wird eine vorher festgelegte  Energiedosis freigesetzt. Linearbeschleuniger werden zur Strahlentherapie von Krebstumoren verwendet. Bestrahlungen können auf den Millimeter genau durchgeführt werden. Das gesunde Gewebe wird dabei weitestgehend geschont, belastende Nebenwirkungen werden auf ein Minimum reduziert.</dd>
+                         <dt>Lito</dt>
+                         <dd>Lithotriptor; bei der Extrakorporalen Stoßwellenlithotripsie wird versucht, mit Hilfe von auf die betroffene Stelle gerichteten gebündelten Schallwellen den Fremdkörper ohne einen percutanen Schnitt so weit zu zerkleinern, dass er entweder natürlich oder operativ entfernt werden kann. Bei Anwendung des Verfahrens der Lithotripsie als Therapie gegen Nierensteine kann meist auf einen stationären Eingriff verzichtet werden.</dd>
+                         <dt>NF</dt>
+                         <dd>Notfall</dd>
+                         <dt>IPS</dt>
+                         <dd>zertifizierte Intensivstation</dd>
+                         <dt>MSt</dt>
+                         <dd>Medizinstudenten</dd>
+                         <dt>BGs</dt>
+                         <dd>Berufe im Gesundheitssektor</dd>
+                         <dt>CIRS</dt>
+                         <dd>\"Critical Incident Reporting System - direktes Qualitätsmerkmal Berichtssystem zur anonymisierten Meldung von kritischen Ereignissen und Beinahe-Schäden. Hierauf erfolgen regelmässige Schulungen/Audits, um Ereignisse dieser Art zukünftig zu vermeiden bzw. die Strukturen und Arbeitsabläufe zu verbessern. Die Ergebnisse werden kontinuierlich gemessen, dokumentiert und sind z.T. Bestandteil des Qualitätsberichtes.\"</dd>
+                       </dl>"
+  navbar-help: "Hilfe"
+  navbar-about: "Über"
+  navbar-topics: "Home"
+  show_table: " Zeige Tabelle"
+  hide_table: " Verstecke Tabelle"
+
+  address-title: "Anrede / Titel"
+  name-surname: "Vorname Name"
+  hospital_name: "Name des Spitals"
+  loc_name: "Name des Standortes / der Klinik"
+  hospital_network: "Spitalverbund"
+  no_assignment: "Keine Zuodnung"
+  new_loc: "Neuer Standort"
+  belongs_to: "Gehört zu"
+  new_hospital: "Neues Spital"
+  street_no: "Strasse, Nr."
+  postcode_city: "PLZ Ort"
+  bfs_typology: "BFS Typologie"
+  number_locs: "Anzahl Standorte"
+  map_coord: "Karte / Koordinaten"
+  locate_new: "Neu lokalisieren"
+  create_new_loc: "Erstelle Standort mit identischer Adresse - Hauptsitz"
+  show_all_fields: "Alle Felder anzeigen"
+  variable_name: "Variablenname"
+  timeline: "Zeitreihe"
+  add_value: "Wert hinzufügen"
+  variable_type: "Variablentyp"
+  possible_values: "Mögliche Werte falls Aufzählung: Kein Eintrag => Freitext"
+  freetext_listing: "Freitext oder Aufzählung"
+  percentnumber: "Prozentzahl"
+  number_of_cases: "Fallzahl"
+  relevance: "Relevanz"
+  descriptions_german: "Beschreibungen Deutsch"
+  descriptions_french: "Beschreibungen Französisch"
+  highlight_limit: "Highlight Limit (nur bei Prozentangaben)"
+  new_variable: "Neue Variable"
+  show_chosen_sets: "Ausgewählte Sets anzeigen"
+  really_delete_char_number: "Möchten Sie diese Kennzahl wirklich löschen?"
+  value_descr: "Wertbeschreibungen"
+
+  department: "Abteilung"
+  hospitals: "Spitäler"
+  location: "Standort"
+  numbers: "Kennzahlen"
+  comp: "Vergleiche"
+  logout: "Logout"
+  navbar-help: "Hilfe"
+  loc-select: "Standortauswahl"
+  close: "Schliessen"
+  save-changes: "Änderungen speichern"
+  prohibition-admin: "Speichern von admin_comparison unterbunden:"
+  default-Name: "Default Name"
+  german-name: "Name Deutsch"
+  french-name: "Name Französisch"
+  it-name: "Name Italienish"
+  german-descr: "Beschrieb Deutsch"
+  french-descr: "Beschrieb Französisch"
+  it-descr: "Beschrieb Italienisch"
+  base-year: "Basisjahr"
+  sort-rank: "Sortierrang"
+  draft-mode: "Entwurfmodus"
+  doctor-spec: "Arzt Fachbereich"
+  add-number: "Füge Kennzahl hinzu"
+  save: "Speichern"
+  delete: "Löschen"
+  cond: "Bedingung"
+  display: "Anzeigen"
+  back: "Zurück"
+  mode: "Modus"
+  numb-data: "Anzahl Kennwerte"
+  edit: "Bearbeiten"
+  destroy: "Zerstören"
+  sure: "Sind Sie sicher?"
+  draft: "Entwurf"
+  published: "veröffentlicht"
+  overview-comp: "Übersicht Vergleiche"
+  address: "Adresse"
+  phone-no: "Telefonnr."
+  canton: "Kanton"
+  specialities: "Fachbereiche"
+  prohibition-doctor: "Speichern von doctor unterbunden:"
+  back-to-overview: "Zurück zur Übersicht"
+  doc-register: "Neuen Arzt registrieren"
+  search: "Suchen"
+  title: "Titel"
+  email: "Email"
+  relocate: "Neu lokalisieren"
+  show: "Zeigen"
+  recreate: "Neu erstellen"
+  edit-field: "Feld bearbeiten"
+  for: "für"
+  create-field: "Neues Feld erstellen"
+  prohibition_admin_loc: "Speichern von admin_hospital_location unterbunden:"
+  undefined: "Undefiniert"
+  prohibition_admin_hospital: "Speichern von admin_hospital unterbunden:"
+  link: "Link"
+  flag: "Flag"
+  sets: "Sets"
+  variable_type_manual: "      <br> Freitext: Darstellung als Freitext ohne Änderung.<br/>
+                   <br> Prozentzahl: Zahl zwischen 0 und 100, dargestellt als Zahl mit Hintergrundhighlighting ab Highlight limit<br/>
+                   <br> Fallzahl: Ganze Zahl. Dargestellt als Balken mit Zahl. Balken ist normiert auf den höchsten Wert auf der aktuellen Ansicht. Bei Anzeige auf Spitalvisitenkarte wird nur die Zahl angezeigt, falls mehrere Jahre vorhanden sind, wird ein Chart angezeigt<br/>
+                   <br> Flag: boolean wert, leer oder 'X'. Dargestellt als grünes Gutzeichen.<br/>
+                   <br> Link. URL, Dargestellt als Icon verlinkt mit der URL<br/>
+                   <br> Relevanz: Zahl zwischen 0 und 100 dargestellt als Balken<br/>
+                   <br><br/>"
+  create_comp: "Neuen Vergleich erstellen"
+  no_loc_linked: "Noch keine Standorte verknüpft mit diesem Spital."
+  type: "Typ"
+  variables: "Variablen"
+  hospital_list: "Spitalliste"
+  list_hosp_loc: "Liste der Spitalstandorte"
+  all_comp: "Alle Vergleiche"
+  doc_list: "Arztliste"
+  swipetooltip: "Swipe, um mehr zu sehen"
+  icon: "Icon"
+  raw_html: "Unkompilierter HTML-Code (z.B. für ein favicon)"
+  raw: "Unkompilierter HTML-Code"
+
+  first_order: "Eine erste Sortierung erfolgt nach geographischer Nähe"
+  patient_cases: "Dunkelgrüne Balken veranschaulichen die Zahl der behandelten Patientenfälle."
+  national_comparison: "Grüne Balken geben Hinweise auf die Relevanz bzw. Eignung des Spitals im nationalen Vergleich:"
+  last_data_year: "Ein Klick auf die Fallzahlen zeigt den zeitlichen Trend über die letzten Datenjahre."
+  with: "Mit"
+  conspicuousness: "hinterlegte Kennzahlen geben Hinweise auf Auffälligkeiten (z.B. unterdurchschnittliche Qualitätskennzahlen)"
+  positive_features: "werden zusätzliche, positive Merkmale der Institution hervorgehoben"
+  orange: "Orange"
+  plan: "Entwurf"
+  released: "Veröffentlicht"
+  hospitals_working: "Spitäler, mit denen zusammengearbeitet wird"
+  add_hospital: "Spital hinzufügen"
+  login: "Login"
+  admin-area: "Einstellungen"
+
+  comp_created: "Vergleich wurde erfolgreich erstellt."
+  comp_updated: "Vergleich wurde erfolgreich aktualisiert."
+  comp_destroyed: "Vergleich wurde erfolgreich gelöscht."
+  relocated: "Erfolgreich neu lokalisiert."
+  error_locating: "Fehler bei der Lokalisation dieses Arztes."
+  field_update: "Feld wurde erfolgreich aktualisiert."
+  field_destroyed: "Feld wurde erfolgreich gelöscht."
+  hosp_loc_created: "Spitalort wurde erfolgreich erstellt."
+  hosp_loc_updated: "Spitalort wurde erfolgreich aktualisiert."
+  hosp_loc_destroyed: "Spitalort wurde erfolgreich gelöscht."
+  headquarter_created: "Hauptsitz für dieses Spital wurde erfolgreich erstellt."
+  error_creating_headquarter: "Fehler beim Erstellen des Hauptsitzes für dieses Spital."
+  error_locating_hosp: "Fehler bei der Lokalisation dieses Spitals."
+  hosp_created: "Spital wurde erfolgreich erstellt."
+  hosp_updated: "Spital wurde erfolgreich aktualisiert."
+  hosp_destroyed: "Spital wurde erfolgreich gelöscht."
+  variable_created: "Variable wurde erfolgreich erstellt."
+  variable_updated: "Variable wurde erfolgreich aktualisiert."
+  no_entry_found: "Kein solcher Eintrag gefunden!"
+  created: "wurde erfolgreich erstellt."
+  updated: "wurde erfolgreich geändert."
+  deleted: "wurde erfolgreich gelöscht."
+  new_hosp_loc: "Neuer Spitalstandort"
+  register_doc: "Erfasse Arzt"
+  website: "Website"
+  prohibition_variable: "Speichern der Variable unterbunden:"
+  rank: "Rang:"
+  import_rank: "Rang importieren"
+  new_comp: "Neuen Vergleich erstellen"

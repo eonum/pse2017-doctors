@@ -25,4 +25,8 @@
 //= require tagmanager
 //= require i18n
 //= require i18n/translations
+//= require tablesaw
 //= require_tree .
+
+
+
