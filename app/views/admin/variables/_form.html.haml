@@ -46,7 +46,7 @@
   .field
     %p
       = f.label t('variable_type')
-      = raw t('freetext')
+      = raw t('variable_type_manual')
       = f.select :variable_type, options_for_select([[t('freetext_listing'), :string], [t('percentnumber'), :percentage], [t('number_of_cases'), :number], [t('flag'), :boolean], [t('link'), :link], [t('relevance'), :relevance]], @variable['variable_type'])
     %p
       = f.label t('possible_values')

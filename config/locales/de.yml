@@ -205,7 +205,7 @@ de:
   link: "Link"
   flag: "Flag"
   sets: "Sets"
-  freetext: "      <br> Freitext: Darstellung als Freitext ohne Änderung.<br/>
+  variable_type_manual: "      <br> Freitext: Darstellung als Freitext ohne Änderung.<br/>
                    <br> Prozentzahl: Zahl zwischen 0 und 100, dargestellt als Zahl mit Hintergrundhighlighting ab Highlight limit<br/>
                    <br> Fallzahl: Ganze Zahl. Dargestellt als Balken mit Zahl. Balken ist normiert auf den höchsten Wert auf der aktuellen Ansicht. Bei Anzeige auf Spitalvisitenkarte wird nur die Zahl angezeigt, falls mehrere Jahre vorhanden sind, wird ein Chart angezeigt<br/>
                    <br> Flag: boolean wert, leer oder 'X'. Dargestellt als grünes Gutzeichen.<br/>
@@ -213,7 +213,7 @@ de:
                    <br> Relevanz: Zahl zwischen 0 und 100 dargestellt als Balken<br/>
                    <br><br/>"
   create_comp: "Neuen Vergleich erstellen"
-  no_loc_linked: "Noch keine Standort verknüpft mit diesem Spital."
+  no_loc_linked: "Noch keine Standorte verknüpft mit diesem Spital."
   type: "Typ"
   variables: "Variablen"
   hospital_list: "Spitalliste"
@@ -238,7 +238,7 @@ de:
   hospitals_working: "Spitäler, mit denen zusammengearbeitet wird"
   add_hospital: "Spital hinzufügen"
   login: "Login"
-  admin-area: "Adminbereich"
+  admin-area: "Einstellungen"
 
   comp_created: "Vergleich wurde erfolgreich erstellt."
   comp_updated: "Vergleich wurde erfolgreich aktualisiert."

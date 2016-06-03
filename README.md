@@ -33,7 +33,7 @@ admin = User.first
 admin.password = 'new_password_very_secret'
 admin.password_confirmation = 'new_password_very_secret'
 admin.save
-```rail
+```
 
 
 
