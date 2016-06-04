@@ -5,21 +5,18 @@ namespace :create_users do
   desc 'Creating new users for all doctors'
   # TODO: This task is reportedly very slow.
   task doctors: :environment do
+    existing_users = User.all.map {|u| u.email}
 
-    for doc in Doctor
+    CSV.open('loginData.csv','a+') do |csv|
+      for doc in Doctor
+        docId = doc.id.to_s
+        mail = docId + '@qualitaetsmedizin.ch'
+        unless existing_users.include? mail
+          password = (0...8).map { (65 + rand(26)).chr }.join
+          user = User.create!(:email => mail, :password => password, :password_confirmation => password , :is_admin => false)
+          puts 'Doctor login created: ' << user.email << '   Password= ' << password
 
-      docId = doc.id.to_s
-      mail = docId + '@qualitaetsmedizin.ch'
-      # TODO: Optimize by caching existing users (move User.where query outside of the loop)
-      #       and by adding transaction support
-      if User.where(email: mail).entries == []
-        password = (0...8).map { (65 + rand(26)).chr }.join
-        user = User.create!(:email => mail, :password => password, :password_confirmation => password , :is_admin => false)
-        puts 'Doctor login created: ' << user.email << '   Password= ' << password
-
-        #Writing Login-Data to CSV
-        # TODO: move CSV.open outside of doctor loop to avoid repeated open/close on file
-        CSV.open('loginData.csv','a+') do |csv|
+          # Writing Login-Data to CSV
           csv << [doc.name,mail,password,doc.email]
         end
       end
