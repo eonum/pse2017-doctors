@@ -3,24 +3,25 @@ require 'csv'
 namespace :create_users do
 
   desc 'Creating new users for all doctors'
-  # TODO: This task is reportedly very slow.
   task doctors: :environment do
     existing_users = User.all.map {|u| u.email}
 
+    users = []
     CSV.open('loginData.csv','a+') do |csv|
       for doc in Doctor
         docId = doc.id.to_s
         mail = docId + '@qualitaetsmedizin.ch'
         unless existing_users.include? mail
           password = (0...8).map { (65 + rand(26)).chr }.join
-          user = User.create!(:email => mail, :password => password, :password_confirmation => password , :is_admin => false)
-          puts 'Doctor login created: ' << user.email << '   Password= ' << password
+          users << {:email => mail, :password => password, :password_confirmation => password , :is_admin => false}
+          puts 'Doctor login created: ' << mail << '   Password= ' << password
 
           # Writing Login-Data to CSV
           csv << [doc.name,mail,password,doc.email]
         end
       end
     end
+    User.create(users)
   end
 
   desc 'Creating a new admin with password asdf or upgrades the current one to really count as an admin'
