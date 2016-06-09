@@ -116,6 +116,10 @@ ready = (geolocate = true) =>
 $(document).on 'page:load', =>
   ready(false)
 
+# Google Analytics tracking
+$(document).on 'page:change', =>
+  ga('send', 'pageview', window.location.pathname)
+
 # Do geolocate only on hard refresh
 $(document).ready ready
 
