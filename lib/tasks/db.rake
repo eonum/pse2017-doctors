@@ -86,8 +86,9 @@ namespace :db do
     Hospital.delete_all
 
     # configuration
-    master = 2013
+    master = 2014
     files = {
+        2014 => Rails.root.join('data', 'medical', 'kzp14_daten.csv'),
         2013 => Rails.root.join('data', 'medical', 'kzp13_daten.csv'),
         2012 => Rails.root.join('data', 'medical', 'kzp12_daten.csv'),
         2011 => Rails.root.join('data', 'medical', 'kzp11_daten.csv')
@@ -171,6 +172,89 @@ namespace :db do
     HospitalLocation.create_indexes
   end
 
+  desc 'Update Hospitals with KZP data. This task is idempotent'
+  task update_hospitals: :environment do
+
+    # configuration
+    year = 2014
+    file = Rails.root.join('data', 'medical', 'kzp14_daten.csv')
+
+    # Use only the variables described in the KZP variable set.
+    variables = {}
+    valid_field_names = Variable.where({ 'variable_sets' => { '$in' => ['kzp'] }}).map {|var| var.field_name }
+
+    # read master hospitals and their addresses
+    count = `wc -l #{file}`.to_i
+    hop_file = IO.readlines(file)
+
+    hop_cache = hospital_cache()
+
+    pg = ProgressBar.create(total: count, title: 'Updating Hospitals Master')
+    hop_file.each_with_index do |line, index|
+      pg.increment
+
+      next if line.blank?
+      row = line.split(';')
+      next if(index == 0)
+
+      next if row[1].strip.blank?
+
+      hop = get_hospital(hop_cache, row[1].strip)
+
+      if(hop == nil)
+        puts "Add hospital #{row[1].strip} to master"
+        Hospital.create do |d|
+          d.canton = row[0].strip
+          d.name = row[1].strip
+          d.address1 = row[2].strip
+          d.address2 = row[3].strip
+          d.bfs_typo = row[4].strip
+        end
+      end
+
+    end
+
+    hop_cache = hospital_cache()
+    hop_not_found = {}
+
+    count = `wc -l #{file}`.to_i
+    hop_file = IO.readlines(file)
+
+    pg = ProgressBar.create(total: count, title: "Updating Hospitals with KZP data #{year}")
+    hop_file.each_with_index do |line, index|
+      pg.increment
+
+      next if line.blank?
+      row = line.split(';')
+      if(index == 0)
+        row.each_with_index { |var_name, index| variables[index] = var_name if(valid_field_names.include? var_name) }
+        next
+      end
+
+      next if row[1].strip.blank?
+
+      hop = get_hospital(hop_cache, row[1], row[2])
+
+      if(hop == nil)
+        hop_not_found[row[1]] = 1
+        next
+      end
+
+      # TODO parse values (numbers, arrays, ..)
+      variables.each do |index, field_name|
+        indicator = hop[field_name] == nil ? {} : hop[field_name].clone
+        indicator[year] = (row[index]||'').strip
+        hop[field_name] = indicator
+        hop.save!
+      end
+    end
+
+    puts
+    puts "#{hop_not_found.length} hospitals not found in master:"
+    puts hop_not_found.keys
+    puts
+  end
+
   desc 'Import QIP variables'
   task seed_qip_variables: :environment do
     Variable.where({ 'variable_sets' => { '$in' => ['qip'] }}).delete
@@ -228,8 +312,9 @@ namespace :db do
     hop_cache = hospital_cache()
 
     files = {
-        2012 => Rails.root.join('data', 'medical', 'qip12_tabdaten.csv'),
-        2013 => Rails.root.join('data', 'medical', 'qip13_tabdaten.csv')
+        #2012 => Rails.root.join('data', 'medical', 'qip12_tabdaten.csv'),
+        #2013 => Rails.root.join('data', 'medical', 'qip13_tabdaten.csv'),
+        2014 => Rails.root.join('data', 'medical', 'qip14_tabdaten.csv')
     }
 
     files.each do |year, file|
@@ -352,7 +437,7 @@ namespace :db do
     end
   end
 
-  desc "Load a CSV file with additional information by hosptial"
+  desc "Load a CSV file with additional information by hospital"
   task :load_csv, [:file_name, :data_year] => :environment do  |t, args|
     hop_cache = hospital_cache()
     hop_not_found = {}
