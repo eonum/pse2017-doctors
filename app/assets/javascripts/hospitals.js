@@ -29,6 +29,6 @@ var visualize_time_series_small = function visualize_time_series_small(time_seri
         legend: {position: 'none'}
     };
 
-    var chart = new google.visualization.AreaChart(document.getElementById('time_series_' + time_series.field_name));
+    var chart = new google.visualization.AreaChart(document.getElementById('time_series_' + time_series.id));
     chart.draw(data, options);
 };

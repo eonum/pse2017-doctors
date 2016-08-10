@@ -20,7 +20,7 @@
                           %h5
                             %small= var.localized_field 'description', locale
                       %tr
-                        %td.hopcell{ :class => hop_hospital_variable_class(var, comparison), 'data-fieldnam' => var.field_name, 'data-varid' => var.id }= hop_format_hospital_variable(var, comparison)
+                        %td.hopcell{ :class => hop_hospital_variable_class(var, comparison), 'data-fieldname' => var.field_name, 'data-varid' => var.id }= hop_format_hospital_variable(var, comparison)
 
 
 :javascript

@@ -20,9 +20,9 @@ module HospitalsHelper
       value = value.to_i
       if variable.is_time_series &&  @hospital[variable.field_name].length > 1
         ret = '<script>'
-        ret += "$.getJSON('#{field_hospital_path(@hospital, varid: variable.id)}',  visualize_time_series_small)"
+        ret += "$.getJSON('#{field_hospital_path(@hospital, varid: variable.id, compid: comparison.id)}',  visualize_time_series_small)"
         ret += '</script>'
-        ret += "<div id='time_series_#{variable.field_name}'></div>"
+        ret += "<div id='time_series_#{variable.field_name}_#{comparison.id}'></div>"
         return raw ret
       else
         return value
