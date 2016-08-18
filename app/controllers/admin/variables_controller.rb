@@ -53,6 +53,23 @@ class Admin::VariablesController < Admin::AdminController
     end
   end
 
+  # JSON API for search
+  # parameters:
+  # term: search term
+  # limit: maximum number of items
+  # locale: language for search term and results
+  def search model
+    res = []
+    query = params[:term].blank? ? '' : params[:term]
+    limit = params[:limit].blank? ? 5 : params[:limit].to_i
+    variables = Variable.where({'text_' + locale => /#{Regexp.escape(query)}/i}).limit(limit)
+    variables.each do |var|
+      res << {:id => var.id.to_s, :text => var.name(locale)}
+    end
+
+    render :json => res
+  end
+
   def preprocess_values params
     params[:variable][:values] = [] if params[:variable][:values] == nil
     params[:variable][:values_de] = [] if params[:variable][:values_de] == nil
