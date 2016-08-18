@@ -1,4 +1,13 @@
 module HospitalsHelper
+  def variable_source variable, comparison
+    source = ''
+    source += t('data_year') + ': ' + comparison.base_year if variable.is_time_series
+    ['kzp', 'qip'].each do |set|
+      source += ' ' + I18n.t(set) if variable['variable_sets'].include? set
+    end
+    return source
+  end
+
   def hop_format_hospital_variable variable, comparison
     value = @hospital[variable.field_name]
     return blank_value(variable) if value.nil?

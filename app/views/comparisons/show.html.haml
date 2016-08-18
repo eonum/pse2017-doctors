@@ -24,7 +24,8 @@
             %small= h.address2
             %small.distance= raw ("%.2f" % h.distance_from(@location)) + '&nbsp;km'
         - @variables.each do |var|
-          %td{ :class => hospital_variable_class(var, h), 'data-fieldnam' => var.field_name, 'data-varid' => var.id }= format_hospital_variable(var, h)
+          %td{ :class => hospital_variable_class(var, h), 'data-fieldnam' => var.field_name, 'data-varid' => var.id, :title => variable_source(var, @comparison)  }
+            = format_hospital_variable(var, h)
 
 :javascript
   var numcase_data = #{numcase_data(@hospitals, @variables).to_json};

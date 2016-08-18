@@ -38,6 +38,7 @@ module ComparisonsHelper
     value = hospital[variable.field_name]
     return 'no-value' if value.nil?
     value = value[@comparison.base_year] if variable.is_time_series
+    value = 0 if value.nil?
     limit = variable.highlight_threshold
     classes << 'orange-highlight' if(limit > 0 && limit < 100 && limit <= value)
     classes << 'text-center' if [:boolean, :link].include? variable.variable_type
