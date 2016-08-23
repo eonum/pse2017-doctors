@@ -2,7 +2,7 @@ module HospitalsHelper
   def variable_source variable, comparison
     source = ''
     source += t('data_year') + ': ' + comparison.base_year if variable.is_time_series
-    ['kzp', 'qip'].each do |set|
+    ['kzp', 'qip', 'anq'].each do |set|
       source += ' ' + I18n.t(set) if variable['variable_sets'].include? set
     end
     source += ' ' + I18n.t('source_homepage') if variable['variable_sets'].any? {|s| s.downcase.include? 'merkmale' }
