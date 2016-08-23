@@ -1,4 +1,4 @@
-%h2= t('list_hosp_loc')
+h2= t('list_hosp_loc')
 
 = link_to t('new_loc'), new_admin_hospital_location_path
 %br
@@ -25,13 +25,13 @@
   %tbody
     - @hospital_locations.each do |hospital_location|
       %tr
-        %td= link_to hospital_location.name, [:admin, hospital_location]
+        %td= hospital_location.name
         %td= hospital_location.title
         %td
           -if hospital_location.hospital == nil
             %span{:style => "color: black;"}= t('undefined')
           -else
-            =link_to(hospital_location.hospital.name, [:admin, hospital_location.hospital])
+            =link_to(hospital_location.hospital.name, edit_admin_hospital_path(hospital_location.hospital))
         %td= hospital_location.address
         %td= hospital_location.canton
         %td= hospital_location.location

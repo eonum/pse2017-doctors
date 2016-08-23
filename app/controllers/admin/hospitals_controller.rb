@@ -13,13 +13,6 @@ class Admin::HospitalsController < Admin::AdminController
     @hospitals = @hospitals.paginate(:page => params[:page], :per_page => 10)
   end
 
-  # GET /admin/hospitals/1
-  # GET /admin/hospitals/1.json
-  def show
-    @variables_qip = Variable.where({ 'variable_sets' => { '$in' => ['qip'] }})
-    @variables_kzp = Variable.where({ 'variable_sets' => { '$in' => ['kzp'] }})
-  end
-
   def create_location
     @location = HospitalLocation.new
     @location.name = @hospital.name
@@ -66,8 +59,8 @@ class Admin::HospitalsController < Admin::AdminController
 
     respond_to do |format|
       if @hospital.save
-        format.html { redirect_to [:admin, @hospital], notice: t('hosp_created') }
-        format.json { render :show, status: :created, location: [:admin, @hospital] }
+        format.html { redirect_to edit_admin_hospital_path, notice: t('hosp_created') }
+        format.json { render :show, status: :created, location: edit_admin_hospital_path }
       else
         format.html { render :new }
         format.json { render json: @hospital.errors, status: :unprocessable_entity }
@@ -80,8 +73,8 @@ class Admin::HospitalsController < Admin::AdminController
   def update
     respond_to do |format|
       if @hospital.update(hospital_params)
-        format.html { redirect_to [:admin, @hospital], notice: t('hosp_updated') }
-        format.json { render :show, status: :ok, location: [:admin, @hospital] }
+        format.html { redirect_to edit_admin_hospital_path, notice: t('hosp_updated') }
+        format.json { render :show, status: :ok, location: edit_admin_hospital_path }
       else
         format.html { render :edit }
         format.json { render json: @hospital.errors, status: :unprocessable_entity }

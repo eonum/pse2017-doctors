@@ -14,12 +14,12 @@ Rails.application.routes.draw do
         post :set_variable_sets, :on => :member
         get :search, :on => :collection
       end
-      resources :hospitals do
+      resources :hospitals, except: ['show'] do
         resources :fields, except: [:create]
         post :create_location, :on => :member
         post :geolocate, :on => :member
       end
-      resources :hospital_locations
+      resources :hospital_locations, except: ['show']
       resources :doctors do
         post :geolocate, :on => :member
       end

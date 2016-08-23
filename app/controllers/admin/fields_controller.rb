@@ -7,7 +7,7 @@ class Admin::FieldsController < Admin::AdminController
   # GET /admin/fields.json
   def index
     @variables = Variable.all
-    @years = {'2011' => '', '2012' => '', '2013' => ''}
+    @years = {'2011' => '', '2012' => '', '2013' => '', '2014' => ''}
   end
 
   # GET /admin/fields/1
@@ -22,7 +22,7 @@ class Admin::FieldsController < Admin::AdminController
     @variable = Variable.find_by(field_name: params[:id])
     @field = ''
     if(@variable.is_time_series)
-      @field = {'2011' => '', '2012' => '', '2013' => ''}
+      @field = {'2011' => '', '2012' => '', '2013' => '', '2014' => ''}
     end
   end
 

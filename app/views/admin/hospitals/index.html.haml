@@ -25,7 +25,7 @@
   %tbody
     - @hospitals.each do |hospital|
       %tr
-        %td= link_to hospital.name, [:admin, hospital]
+        %td= hospital.name
         %td= hospital.address1
         %td= hospital.address2
         %td= hospital.bfs_typo

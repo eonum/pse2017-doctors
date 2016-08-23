@@ -12,11 +12,6 @@ class Admin::HospitalLocationsController < Admin::AdminController
     @hospital_locations = @hospital_locations.paginate(:page => params[:page], :per_page => 10)
   end
 
-  # GET /admin/hospital_locations/1
-  # GET /admin/hospital_locations/1.json
-  def show
-  end
-
   # GET /admin/hospital_locations/new
   def new
     @hospital_location = HospitalLocation.new
