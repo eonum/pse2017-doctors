@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     namespace :admin do
       get '', to: 'hospitals#index', as: 'home'
 
-      resources :variables do
+      resources :variables, except: ['show'] do
         post :set_variable_sets, :on => :member
         get :search, :on => :collection
       end

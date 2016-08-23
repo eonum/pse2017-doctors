@@ -15,10 +15,6 @@ class Admin::VariablesController < Admin::AdminController
     @variables = @variables.paginate(:page => params[:page], :per_page => 10)
   end
 
-  def show
-    @variable = Variable.find(params[:id])
-  end
-
   def new
     @variable = Variable.new
   end
@@ -33,7 +29,7 @@ class Admin::VariablesController < Admin::AdminController
 
     respond_to do |format|
       if @variable.save
-        format.html { redirect_to [:admin, @variable], notice: t('variable_created') }
+        format.html { redirect_to admin_variables_path, notice: t('variable_created') }
       else
         format.html { render action: "new" }
       end
@@ -46,7 +42,7 @@ class Admin::VariablesController < Admin::AdminController
 
     respond_to do |format|
       if @variable.update_attributes(variable_params)
-        format.html { redirect_to [:admin, @variable], notice: t('variable_updated') }
+        format.html { redirect_to admin_variables_path, notice: t('variable_updated') }
       else
         format.html { render action: "edit" }
       end

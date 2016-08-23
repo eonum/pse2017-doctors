@@ -30,7 +30,8 @@
       %th= t('description')
       %th= t('type')
       %th{width: "300px"}= t('sets')
-      %th{width: "80px"}
+      %th
+      %th
   %tbody
     - @variables.each do |variable|
       %tr
@@ -58,8 +59,8 @@
             %input.tm-tag{id: "tag_field_#{variable.field_name}", name: "sets", placeholder: "Sets", style: "width:5em;", type: "text"}
             = submit_tag(t('save'), :class => 'tm-tag', :style => 'margin-top: 0px; padding: 3px;')
         %td
-          = link_to image_tag('application_view_list.png', :style => 'border-style:none'), admin_variable_path(variable)
-          = link_to image_tag('note_edit.png', :style => 'border-style:none'), edit_admin_variable_path(variable)
-          = link_to image_tag('delete.png', :style => 'border-style:none'), admin_variable_path(variable), method: :delete, :title => t('delete'), :data => {:confirm => t('really_delete_char_number')}
+          = link_to t('edit'), edit_admin_variable_path(variable)
+        %td
+          = link_to t('delete'), admin_variable_path(variable), method: :delete, :title => t('delete'), :data => {:confirm => t('really_delete_char_number')}
 
 = will_paginate @variables, renderer: BootstrapPagination::Rails
