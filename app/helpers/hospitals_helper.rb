@@ -5,6 +5,7 @@ module HospitalsHelper
     ['kzp', 'qip'].each do |set|
       source += ' ' + I18n.t(set) if variable['variable_sets'].include? set
     end
+    source += ' ' + I18n.t('source_homepage') if variable['variable_sets'].any? {|s| s.downcase.include? 'merkmale' }
     return source
   end
 
