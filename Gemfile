@@ -27,7 +27,8 @@ gem 'devise' , '~> 3.4'
 gem 'tagmanager-rails'
 
 gem 'mongoid'
-gem 'geocoder'
+gem 'geocoder', '1.2.11'
+
 gem 'ruby-progressbar'
 
 # Should probaly use a development group on some of those gems
