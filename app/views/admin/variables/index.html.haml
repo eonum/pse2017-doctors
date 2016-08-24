@@ -40,8 +40,8 @@
             = variable.field_name
             \:
             %br
-            = variable.localized_field(t('name'), locale)
-        %td= variable.localized_field(t('description'), locale)
+            = variable.localized_field('name', locale)
+        %td= variable.localized_field('description', locale)
         %td= variable.variable_type
         %td
           :javascript

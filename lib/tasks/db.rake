@@ -437,7 +437,7 @@ namespace :db do
     end
   end
 
-  desc "Load a CSV file with additional information by hospital"
+  desc "Load a CSV file with additional information by hospital. This task is idempotent."
   task :load_csv, [:file_name, :data_year] => :environment do  |t, args|
     hop_cache = hospital_cache()
     hop_not_found = {}
@@ -456,9 +456,9 @@ namespace :db do
       variable_type = h_vars[1] unless h_vars[1].nil?
       header_types[field_name] = variable_type.to_sym
 
-      if(Variable.where(field_name: field_name).exists?())
-        next
-      end
+      next if field_name.blank?
+      next if(Variable.where(field_name: field_name).exists?())
+
       # skip variable creation by uncommenting this line
       # next
       Variable.create do |d|
@@ -473,7 +473,7 @@ namespace :db do
         d.is_time_series = true unless args.data_year.blank?
       end
     end
-    header.map!{|h| h.split('--')[0].strip}
+    header.map!{|h| h.split('--')[0].strip}.reject!{|h| h.blank?}
 
     year = args.data_year.to_i
 
@@ -481,7 +481,7 @@ namespace :db do
     while line = file.gets
       pg.increment
 
-      vars = line.split(';')
+      vars = (line + ' ').split(';')
       hop = get_hospital hop_cache, vars[0]
       if(hop == nil)
         hop_not_found[vars[0]] = 1
