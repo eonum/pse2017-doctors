@@ -559,4 +559,50 @@ namespace :db do
 
   end
 
+  desc 'load drgsearch data from FOPH'
+  task :load_drgsearch_data, [:directory, :year, :version] => :environment do |t, args|
+    puts "Load folder #{args.directory}"
+
+    Dir.entries(args.directory).sort.each do |file|
+      next unless file.downcase.end_with?('csv.utf8')
+
+      file_name = File.join(args.directory, file)
+      count = `wc -l "#{file_name}"`.to_i  +  1
+      pg = ProgressBar.create(total: count, title: "Importing #{file_name}..")
+
+      is_hospital_table = file.include? 'hosp_table'
+      csv_contents = CSV.read(file_name, col_sep: ';')
+      # skip header
+      csv_contents.shift
+      version = args.version
+      year = csv_contents[0][1].to_i
+      level = csv_contents[0][3]
+
+      numcases_by_hospital_and_variable = {}
+      hop_by_id = {}
+
+      csv_contents.each do |row|
+        pg.increment
+        if is_hospital_table
+          hop_by_id[row[1].to_i] = row[2]
+        else
+          next unless version == row[2]
+          hop_id = row[0].to_i
+          level = row[3]
+          code = row[4]
+          numcase = row[5].to_i
+
+          if level == 'DRG'
+
+          end
+
+          if level == 'MDC'
+
+          end
+        end
+      end
+      pg.finish
+    end
+  end
+
 end
