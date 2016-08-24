@@ -456,6 +456,9 @@ namespace :db do
       variable_type = h_vars[1] unless h_vars[1].nil?
       header_types[field_name] = variable_type.to_sym
 
+      if(Variable.where(field_name: field_name).exists?())
+        next
+      end
       # skip variable creation by uncommenting this line
       # next
       Variable.create do |d|
