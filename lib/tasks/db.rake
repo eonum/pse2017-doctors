@@ -559,7 +559,7 @@ namespace :db do
 
   end
 
-  desc 'load drgsearch data from FOPH'
+  desc 'load drgsearch data from FOPH. Idempotent. Variables are not created.'
   task :load_drgsearch_data, [:directory, :year, :version] => :environment do |t, args|
     # the variables have to exist or must be created manually
     variables = {
@@ -600,11 +600,13 @@ namespace :db do
       csv_contents.shift
 
       csv_contents.each do |row|
-        pg.increment
         if is_hospital_table
           hop_by_id[row[1].to_i] = row[2]
         else
           next unless version == row[2]
+
+          pg.increment
+
           hop_id = row[0].to_i
           level = row[3]
           code = row[4]
@@ -625,9 +627,9 @@ namespace :db do
     end
 
     numcases_by_hospital_and_variable.each do |hopid, code_numcases|
-      hop = get_hospital hop_cache, vars[0]
+      hop = get_hospital hop_cache, hop_by_id[hopid]
       if(hop == nil)
-        hop_not_found[vars[0]] = 1
+        hop_not_found[hop_by_id[hopid]] = 1
         next
       end
 
