@@ -561,7 +561,31 @@ namespace :db do
 
   desc 'load drgsearch data from FOPH'
   task :load_drgsearch_data, [:directory, :year, :version] => :environment do |t, args|
+    # the variables have to exist or must be created manually
+    variables = {
+        obstetrics_numcases: ['14'],
+        cardiology_numcases: ['05'],
+        ortho_numcases:['I03', 'I04', 'I05', 'I07', 'I08', 'I13', 'I14', 'I18', 'I20',
+                        'I21', 'I23', 'I25', 'I27', 'I28', 'I29', 'I30', 'I33', 'I36',
+                        'I43', 'I44', 'I46', 'I47', 'I59', 'I60', 'I64', 'I74', 'I77',
+                        'I78', 'I95'],
+        ortho_hip_tep_numcases: ['I03', 'I05', 'I08', 'I21', 'I46', 'I47'],
+        ortho_knee_tep_numcases: ['I04', 'I30', 'I43', 'I44'],
+        visceral_surgery_numcases: ['06', '07'],
+        colon_surgery_numcases: ['G02', 'G12', 'G13', 'G16', 'G17', 'G18'],
+        hernia_surgery_numcases: ['G08', 'G09', 'G24', 'G25'],
+        appendectomy_adult_numcases: ['G22', 'G23'],
+        cholecystectomy_numcases: ['H02', 'H05', 'H07', 'H08']
+    }
+
     puts "Load folder #{args.directory}"
+    version = args.version
+    year = args.year
+    hop_cache = hospital_cache()
+    hop_not_found = {}
+
+    numcases_by_hospital_and_variable = {}
+    hop_by_id = {}
 
     Dir.entries(args.directory).sort.each do |file|
       next unless file.downcase.end_with?('csv.utf8')
@@ -574,12 +598,6 @@ namespace :db do
       csv_contents = CSV.read(file_name, col_sep: ';')
       # skip header
       csv_contents.shift
-      version = args.version
-      year = csv_contents[0][1].to_i
-      level = csv_contents[0][3]
-
-      numcases_by_hospital_and_variable = {}
-      hop_by_id = {}
 
       csv_contents.each do |row|
         pg.increment
@@ -592,17 +610,49 @@ namespace :db do
           code = row[4]
           numcase = row[5].to_i
 
+          numcases_by_hospital_and_variable[hop_id] = {} if numcases_by_hospital_and_variable[hop_id].nil?
+
+          numcases_by_hospital_and_variable[hop_id][code] = numcase
+
           if level == 'DRG'
-
-          end
-
-          if level == 'MDC'
-
+            adrg = code[0..2]
+            numcases_by_hospital_and_variable[hop_id][adrg] = 0 if numcases_by_hospital_and_variable[hop_id][adrg].nil?
+            numcases_by_hospital_and_variable[hop_id][adrg] += numcase
           end
         end
       end
       pg.finish
     end
+
+    numcases_by_hospital_and_variable.each do |hopid, code_numcases|
+      hop = get_hospital hop_cache, vars[0]
+      if(hop == nil)
+        hop_not_found[vars[0]] = 1
+        next
+      end
+
+      variables.each do |field_name, codes|
+        numcases = 0
+        codes.each do |code|
+          numcases += code_numcases[code] unless code_numcases[code].nil?
+        end
+
+        next if numcases.nil?
+
+        field = hop[field_name] == nil ? {} : hop[field_name].clone
+        field[year] = numcases
+        hop[field_name] = field
+      end
+
+      hop.save!
+    end
+
+
+    puts
+    puts "#{hop_not_found.length} hospitals not found in master:"
+    puts hop_not_found.keys
+    puts
+
   end
 
 end
