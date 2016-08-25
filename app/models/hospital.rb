@@ -23,6 +23,7 @@ class Hospital
   end
 
   def eval_code(calculation_code)
+    # TODO make this more secure. Currently this is only protected by the admin login
     eval(calculation_code)
   end
 end
