@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       resources :variables, except: ['show'] do
         post :set_variable_sets, :on => :member
         get :search, :on => :collection
+        post :calculate, :on => :member
       end
       resources :hospitals, except: ['show'] do
         resources :fields, except: [:create]
