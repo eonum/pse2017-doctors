@@ -21,4 +21,8 @@ class Hospital
   def full_address
     [address1, address2].join(', ')
   end
+
+  def eval_code(calculation_code)
+    eval(calculation_code)
+  end
 end

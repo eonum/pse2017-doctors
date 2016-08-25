@@ -69,7 +69,8 @@ class Variable
     i = 0
     hospitals.each do |hospital|
       begin
-        hospital[field_name] = eval(calculation_code)
+        hospital[field_name] = hospital.eval_code(calculation_code)
+        hospital.save!
       rescue Exception=>e
         return "Error during calculation of hospital nr. #{i}: #{hospital.name}, error message: #{e.message}"
       end
