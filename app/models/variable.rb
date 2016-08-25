@@ -37,6 +37,9 @@ class Variable
   # highlight level for percentages: values above this threshold will be highlighted
   field :highlight_threshold, type: Float, default: 100
 
+  # javascript code for calculated variables
+  field :calculation_code, type: String, default: ''
+
   def is_enum
     return values != nil && !values.empty?
   end
@@ -56,6 +59,13 @@ class Variable
       return descriptions[i] if values[i] == key
     end
     return 'unknown'
+  end
+
+  # calculate the composite value for each hospital if this is a calculated variable
+  # returns error / info messages
+  def calculate_value_for hospitals
+    return "#{self.field_name} is not a calculated variable" if self.calculation_code.blank?
+
   end
 
 end

@@ -91,6 +91,14 @@ class Admin::VariablesController < Admin::AdminController
     redirect_to variables_path()
   end
 
+  def calculate
+    @variable = Variable.find(params[:id])
+
+    msg = @variable.calculate_value_for Hospital.all
+
+    redirect_to edit_admin_variable_path(@variable), notice: msg
+  end
+
   def variable_params
     params.require(:variable).permit(:field_name, :rank, :import_rank, :name_de,:name_fr, :name_it,
                                      :description_de, :description_fr,:description_it, :variable_type,

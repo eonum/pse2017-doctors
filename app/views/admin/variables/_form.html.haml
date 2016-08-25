@@ -78,5 +78,11 @@
   .field
     = f.label t('highlight_limit')
     = f.number_field :highlight_threshold, :step => 0.1
+
+  .field
+    = t('calculation_code')
+    %div= f.text_area :calculation_code, {:cols => 35, :rows => 10}
+    .button= link_to t('calculate'), calculate_admin_variable_path(@variable), :method => :post
+
   .actions
     = f.submit t('save')

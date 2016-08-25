@@ -275,3 +275,5 @@ de:
   source_homepage: "Quelle: Website des Spitals"
   anq: "Quelle: ANQ - Nationaler Verein für Qualitätsentwicklung in Spitälern und Kliniken"
   bag_drgsearch: "Quelle: BAG DRG-Fallzahlsuche"
+  calculation_code: "Javscript Code für die Kalkulation von aggregierten Kennzahlen. (Bsp. Relevanz)"
+  calculate: "Kennzahl für alle Spitäler kalkulieren"
