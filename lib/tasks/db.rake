@@ -573,7 +573,7 @@ namespace :db do
         ortho_knee_tep_numcases: ['I04', 'I30', 'I43', 'I44'],
         visceral_surgery_numcases: ['06', '07'],
         colon_surgery_numcases: ['G02', 'G12', 'G13', 'G16', 'G17', 'G18'],
-        hernia_surgery_numcases: ['G08', 'G09', 'G24', 'G25'],
+        hernia_numcases: ['G08', 'G09', 'G24', 'G25'],
         appendectomy_adult_numcases: ['G22', 'G23'],
         cholecystectomy_numcases: ['H02', 'H05', 'H07', 'H08']
     }
