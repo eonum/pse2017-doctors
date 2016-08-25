@@ -93,7 +93,6 @@ class Admin::VariablesController < Admin::AdminController
 
   def calculate
     @variable = Variable.find(params[:id])
-
     msg = @variable.calculate_value_for Hospital.all
 
     redirect_to edit_admin_variable_path(@variable), notice: msg

@@ -37,7 +37,7 @@ class Variable
   # highlight level for percentages: values above this threshold will be highlighted
   field :highlight_threshold, type: Float, default: 100
 
-  # javascript code for calculated variables
+  # ruby code for calculated variables
   field :calculation_code, type: String, default: ''
 
   def is_enum
@@ -66,6 +66,18 @@ class Variable
   def calculate_value_for hospitals
     return "#{self.field_name} is not a calculated variable" if self.calculation_code.blank?
 
+    i = 0
+    hospitals.each do |hospital|
+      begin
+        hospital[field_name] = eval(calculation_code)
+      rescue Exception=>e
+        return "Error during calculation of hospital nr. #{i}: #{hospital.name}, error message: #{e.message}"
+      end
+
+      i += 1
+    end
+
+    return "Successfully calculated #{field_name} for all hospitals"
   end
 
 end
