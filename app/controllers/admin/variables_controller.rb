@@ -42,7 +42,7 @@ class Admin::VariablesController < Admin::AdminController
 
     respond_to do |format|
       if @variable.update_attributes(variable_params)
-        format.html { redirect_to admin_variables_path, notice: t('variable_updated') }
+        format.html { redirect_to edit_admin_variable_path(@variable), notice: t('variable_updated') }
       else
         format.html { render action: "edit" }
       end
