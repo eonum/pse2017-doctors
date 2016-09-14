@@ -17,6 +17,6 @@ initAdthis = function(){
 }
 
 // Trigger the function on both jquery's ready event and turbolinks page:change event
-$(document).on('ready page:change', function() {
+$(document).on('turbolinks:load', function() {
     initAdthis();
 });

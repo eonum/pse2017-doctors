@@ -113,15 +113,15 @@ ready = (geolocate = true) =>
 
 
 # Do not geolocate on turbolink refresh
-$(document).on 'page:load', =>
-  ready(false)
-
-# Google Analytics tracking
-$(document).on 'page:change', =>
-  ga('send', 'pageview', window.location.pathname)
+#$(document).on 'page:load', =>
+#  ready(false)
 
 # Do geolocate only on hard refresh
 $(document).ready ready
+$(document).on 'turbolinks:load', =>
+  ready(false)
+  # Google Analytics tracking
+  ga('send', 'pageview', window.location.pathname)
 
 $(window).on 'resize', ->
   calculateMapSize()

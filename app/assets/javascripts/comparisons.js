@@ -32,8 +32,7 @@ var ready = function() {
     addSwipeTooltip();
 };
 
-$(document).ready(ready);
-$(document).on('page:load', ready);
+$(document).on('turbolinks:load', ready);
 
 $( function() {
     var change_comparison = function() {
@@ -60,7 +59,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
     }
 };
 
-$(document).ready(colourButtons);
+$(document).on('turbolinks:load', colourButtons);
 $(window).resize(colourButtons);
 
 function colourButtons(){

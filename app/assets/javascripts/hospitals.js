@@ -10,8 +10,7 @@ var ready = function() {
 };
 
 
-$(document).ready(ready);
-$(document).on('page:load', ready);
+$(document).on('turbolinks:load', ready);
 
 var visualize_time_series_small = function visualize_time_series_small(time_series) {
     var data_array = [];
